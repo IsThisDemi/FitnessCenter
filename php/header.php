@@ -21,7 +21,7 @@ $pagine["pag2"]="pag2.php"
 /// Genera l'header di una data pagina
 function genera_header($pagina){
 	$menu='<ul class="navmenu">'
-	foreach $pagine as $nome => $link) {
+	foreach ($pagine as $nome => $link) {
       	if ($nome != $pagina) {            	
                 	$menu = $menu . "<li><a href=\"" . $link . "\">" . $nome . "</a></li>";
         	} else {
