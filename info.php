@@ -16,8 +16,17 @@
 
 <?php 
 
-genera_header("home");
+genera_header("info");
 
 ?>
+<div id="content">
+<section id="info" class="">
+
+</section>
+<section>
+
+<section id="contatti" class="">
+    
+</div>
 
 </body>
