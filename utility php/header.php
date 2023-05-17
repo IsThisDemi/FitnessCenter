@@ -14,22 +14,39 @@ $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-la
 		...
       </div>'
 
-$pagine=[];//nome->link
-$pagine["home"]="home.php"
-$pagine["pag2"]="pag2.php"
+$link_pagine=[];//nome->link
+$link_pagine["home"]="home.php"
+$link_pagine["info"]="info.php"
 
+$navmenupages=["home","info"];
 
+$genitore_pagine=[];//nome->genitore
+$genitore_pagine["home"]="#"
+$genitore_pagine["info"]="home"
 /// Genera l'header di una data pagina
 function genera_header($pagina){
 	$menu='<ul class="navmenu">'
-	foreach ($pagine as $nome => $link) {
-      	if ($nome != $pagina) {            	
+	foreach ($navmenu as $menuentry) {
+      	if ($menuentry != $pagina) {
+			$link=$link_pagine[$menuentry];
                 	$menu = $menu . "<li><a href=\"" . $link . "\">" . $nome . "</a></li>";
         	} else {
                 	$menu = $menu . "<li class=\"menu_name\">" . $nome . "</li>";
         	}
     	}
 	$menu=$menu.'</ul>'
-	echo str_replace("<MENU/>",$menu,$template);	
+	$output= str_replace("<MENU/>",$menu,$template);
+	$breadcrum=$pagina;
+	$parent=$genitore_pagine[$pagina];
+
+	// genera breadcrumb nel formato genitore/figlio/.....		
+	while($parent&&$parent!="#"){//verifica il raggiungimento della radice
+		// aggiunge genitore/ a breadrumbs in formato figlio/.....
+		$breadcrum="<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a>/".$breadcrum;
+		$parent=$genitore_pagine[$parent];
+	}
+	$output= str_replace("<MENU/>",$menu,$template);
+	$output= str_replace("<BREADCRUMB/>",$breadcrum,$output);
+	echo $output;
 }
 ?>
