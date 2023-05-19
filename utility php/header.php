@@ -11,7 +11,6 @@ $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-la
       </header>
       <div class="breadcrumbs">
       	<p> Ti trovi in: <BREADCRUMB/> </p>
-		...
       </div>'
 
 $link_pagine=[];//nome->link
