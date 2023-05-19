@@ -1,6 +1,18 @@
 <?php 
 require_once "utilityphp/header.php";
-require_once "utilityphp/session_manager.php";
+require_once "utilityphp/user_utilities.php";
+
+if (isset($_GET["action"])) {
+    if($_GET["action"]=="login"&&isset($_GET["username_login"])&&isset($_GET["password_login"])){
+        $LoginResult=LoginUser($_GET["username_login"],$_GET["password_login"]);
+        if($loginresult==""){
+            header("location:home.php");
+        }
+    }
+    if($_GET["action"]=="register"&&isset($_GET["username_registra"])&&isset($_GET["password_registra"])){
+        $RegisterResult=RegisterUser($_GET["username_registra"],$_GET["password_registra"]);        
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -30,9 +42,8 @@ require_once "utilityphp/session_manager.php";
     echo "<p> sei attualmente loggato come ".$user." desideri effettuare il logout?</p>"
     }
     else{
-    //TO DO simpostare il backend di login
 ?>
-    <form action="" method="post" id="login" >
+    <form action="login.php?action=login" method="post" id="login" >
         <label for="username_login" lang="en">Username</label>
         <input id="username_login" type="text" placeholder=" Username" name="username_login" required />
 
@@ -41,7 +52,7 @@ require_once "utilityphp/session_manager.php";
 
         <input type="submit" name="login">
     </form>
-    <form action="" method="post" id="registra" >
+    <form action="login.php?action=register" method="post" id="registra" >
         <label for="username_registra" lang="en">Username</label>
         <input id="username_registra" type="text" placeholder=" Username" name="username_registra" required />
 
@@ -50,6 +61,7 @@ require_once "utilityphp/session_manager.php";
         <input type="submit" name="registra">
     </form>
 <?php
+    //TO DO Display messaggi di errore
     }
 
 ?>    
