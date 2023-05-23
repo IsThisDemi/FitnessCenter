@@ -534,6 +534,19 @@
             </p>
         </div>
 
+        <button class="address">
+            <a href=sssss
+            target="map">Club Cormano</a>
+        </button>
+        <div class="panel">
+            <p>
+                Indirizzo: Via Rodari 25 <br>
+                Città: Cormano (MI) <br>
+                CAP: sssss <br>
+                Telefono: 351 5076731
+            </p>
+        </div>
+
         
         
     </div>
@@ -542,7 +555,7 @@
     <p>
  
 
-            Club Cormano Via Rodari 25 Cormano (MI) - 3515076731
+            Club Cormano   - 
             Club Curno Via Fermi 56 - 3486057477
             Club Cusago Viale Europa 30  - 3484512474
             Club Forlì Via Tripoli 3 - 3517099318
