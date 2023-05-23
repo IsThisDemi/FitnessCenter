@@ -51,13 +51,14 @@
             <a class="bottone" href="LINK PAGINA ISCRIZIONE">Abbonati</a>
         </div id>
         <div id="home_info">
-            <h3>Hai dei dubbi? </h3>
+            <h3>Hai dei dubbi?</h3>
             <p class="home_testo">
                 Per maggiori informazioni consulta la nostra sezione <span lang="en"><abbr title="frequently asked questions">FAQ</abbr></span>
             </p>
-            <a class="bottone" href="LINK PAGINA INFO">Scopri di più</a>
+            <a class="bottone" href="info.php">Scopri di più</a>
         </div id>
     </main>
+
     <footer>
     </footer>
 
