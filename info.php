@@ -23,17 +23,10 @@ genera_header("info");
     <sectioni id="faq">
     <h2>Domande frequenti</h2>
         <dl>
-            <dt>Domanda</dt>
-            <dd>risposta</dd>            
+            <dt>Come posso cancellare il mio abbonamento</dt>
+            <dd>è possibile annullare il proprio abonamento in qualsiasi momento tramite il seguente link</dd>
         </dl>
-    </section>
-    <sectioni id="posizione">
-        <h2>Dove siamo?</h2>        
-            <p class="contactsParagraph">Potete trovarci in Via Vendramini, 20, 35137 Padova (PD).</p>
-            <p class="contactsParagraph">
-                Dalla fermata dell'autobus in piazza Mazzini attraversate il parco e continuate dritti lungo Via Vendramini.
-            </p>
-    </section>
+    </section>    
     <sectioni id="contatti_social">
         <div id="contatti" class="contactsection">
             <h2>Contatti</h2>        
