@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <title><PAGETITLE/></title>
+    <title>FitnessCenter-Sedi</title>
     <meta charset="utf-8"/>
     <meta name="keywords" content="FitnessCenter palestra fitness sedi"/>
     <meta name="description" content="Questa pagina continene una lista delle sedi attualmente presenti con relativa posizione geografica su una mappa." />
@@ -28,9 +28,9 @@
     </div>
 
     <div id="google_map">
-        <iframe id="map" 61504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d4fe82448dd203%3A0xe22cf55c24635e6f!2sItalia!5e0!3m2!1sit!2sit!4v1684500878027!5m2!1sit!2sit"
+        <iframe id="map" 
             title="Mappa dove viene indicata la posizone geografica della palestra" name="map" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12367434.270080628!2d2.1135756967020627!3d40.8193277
+            src="https://www.google.com/maps/d/u/0/embed?mid=1D7uw8ihHL2XQgWA_KycFw-QsIoP7Fws&ehbc=2E312F"
             width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             <!--   da implementare in CSS per .map!!  
                 border:none"              
@@ -42,7 +42,7 @@
     <div id="accordion_container">
 
         <button class="address">
-            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27129181.298069037!2d82.73260625677057!3d33.8982126306769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31508e64e5c642c1%3A0x951daa7c349f366f!2sCina!5e0!3m2!1sit!2sit!4v1684501016370!5m2!1sit!2sit" 
+            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.9753403992813!2d15.167151215312717!3d37.602739379791224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313f9628d3958f5%3A0xbac6b45e7a9bae99!2sFitActive%20Acireale!5e0!3m2!1sit!2sit!4v1684969343268!5m2!1sit!2sit"
             target="map">Club Acireale</a>
         </button>
         <div class="panel">

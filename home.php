@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <title>FitnessCenter</title>
+    <title>FitnessCenter-Home</title>
     <meta charset="utf-8"/>
     <meta name="keywords" content="FitnessCenter, palestra, fitness, corsi, allenamenti, iscrizione, sedi, informazioni"/>
 
@@ -60,6 +60,7 @@
     </main>
 
     <footer>
+        
     </footer>
 
 </body>
