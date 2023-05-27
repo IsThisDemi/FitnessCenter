@@ -206,13 +206,31 @@ nav .menu_name {
 }
 
 .project-type {
-	background: #b2b2fd;
-	color: #1a41cd;
 	font-weight: bold;
 	padding: 0.3em 0.7em;
 	border-radius: 15px;
 	font-size: 12px;
 	letter-spacing: -0.6px
+}
+
+.forza {
+	background: #f74b45;
+	color: #740e0e;
+}
+
+.equilibrio {
+	background: #f7d04b;
+	color: #74510e;
+}
+
+.resistenza {
+	background: #4bf7a8;
+	color: #0e7451;
+}
+
+.stabilita {
+	background: #4b4ff7;
+	color: #0e0e74;
 }
 
 .project-hover {
