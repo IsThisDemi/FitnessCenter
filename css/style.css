@@ -133,9 +133,9 @@ nav .menu_name {
 }
 
 .article-wrapper:hover {
-	-webkit-box-shadow: 10px 10px 0 #4e84ff, 20px 20px 0 #4444bd;
-	box-shadow: 10px 10px 0 #4e84ff, 20px 20px 0 #4444bd;
-	border-color: #0578c5;
+	-webkit-box-shadow: 10px 10px 0 #a8a8a8, 20px 20px 0 #5c5c5c;
+	box-shadow: 10px 10px 0 #a8a8a8, 20px 20px 0 #5c5c5c;
+	border-color: #d3d3d3;
 	-webkit-transform: translate(-20px, -20px);
 	-ms-transform: translate(-20px, -20px);
 	transform: translate(-20px, -20px);
@@ -158,7 +158,6 @@ nav .menu_name {
 }
 
 .rounded-lg {
-	/* class tailwind */
 	border-radius: 10px;
 }
 
@@ -180,13 +179,19 @@ nav .menu_name {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	gap: 20px;
+	text-decoration: none;
+}
+
+.project-image img{
+	width: 100%;
+	border-radius: 10px;
+	object-fit: cover;
 }
 
 .project-title {
 	font-size: 2em;
 	margin: 0;
 	font-weight: 600;
-	/* depend de la font */
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -209,8 +214,8 @@ nav .menu_name {
 	font-weight: bold;
 	padding: 0.3em 0.7em;
 	border-radius: 15px;
-	font-size: 12px;
-	letter-spacing: -0.6px
+	font-size: 1em;
+	letter-spacing: -0.6px;
 }
 
 .forza {
