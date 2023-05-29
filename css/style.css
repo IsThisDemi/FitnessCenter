@@ -2,11 +2,14 @@
 	--primary-color: #121212;
 	--secondary-color: #b80000;
 	--gradient-first-color: #282828;
+	--gradient-first-color-hover: #414141;
+	--gradient-second-color: #1b1b1b;
 	--gradient-last-color: #121212;
 	--visited-links: #BBBBBB;
 	--text-color: white;
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
+	--links-visited-color:#675396;
 	--scrollbar: #585858;
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
@@ -254,3 +257,109 @@ nav .menu_name {
 	height: auto;
 	background: gray;
 }
+
+/* SEDI */
+
+#SediPage {
+	display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "s s"
+    "l m";
+}
+
+#search_bar {
+	grid-area: s;
+}
+
+#google_map {
+	grid-area: m;
+	margin: 1em 2em 0.7em 0em;
+}
+
+iframe#map {
+	height: 100%;
+	width: 100%;
+	border:none;           
+    filter:invert(90%) hue-rotate(180deg);  
+}
+
+#addresses_container {
+	grid-area: l;
+	background-color: var(--gradient-second-color);
+	margin: 1em 0em 1em 2em;
+	padding: 0.5em 0em 0em 0.5em;;
+	height: 600px;
+}
+
+#addresses_container h2 {
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+#addresses_list {
+	margin-top: 1em;
+	height: 90%;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+#addresses_list::-webkit-scrollbar {
+	width: 12px;               /* width of the entire scrollbar */
+}
+  
+#addresses_list::-webkit-scrollbar-track {
+	background: var(--gradient-first-color-hover);        /* color of the tracking area */
+}
+  
+#addresses_list::-webkit-scrollbar-thumb {
+	background-color: var(--gradient-second-color);    	/* color of the scroll thumb */
+	border-radius: 20px;       							/* roundness of the scroll thumb */
+	border: 3px solid #4e4e4e;  					   /* creates padding around scroll thumb */
+}
+
+.address {
+	background-color: var(--gradient-first-color);
+	color: #504b6d;
+	font-size: 1em;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+  }
+
+  .address:after {
+	content: '\02795'; 
+	color: #504b6d;
+	float: right;
+	margin-left: 5px;
+  }
+
+  .address a:visited {
+	color: var(--links-visited-color);
+  }
+  
+  .active:after {
+	content: "\2796"; 
+  }
+  
+  .active, .address:hover {
+	background-color: var(--gradient-first-color-hover);
+  }
+  
+  .panel {
+	font-size:0.8em;
+	padding: 0px 18px;
+	background-color: var(--gradient-last-color);
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+  }
+
+  .panel p {
+	padding: 0.5em;
+  }
