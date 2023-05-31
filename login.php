@@ -6,7 +6,12 @@ if (isset($_GET["action"])) {
     if($_GET["action"]=="login"&&isset($_GET["username_login"])&&isset($_GET["password_login"])){
         $LoginResult=LoginUser($_GET["username_login"],$_GET["password_login"]);
         if($loginresult==""){
-            header("location:home.php");
+            if(isset($_SESSION["prev_page"])){
+                header($_SESSION["prev_page"]);
+            }
+            else{
+                header("location:home.php");
+            }
         }
     }
     if($_GET["action"]=="register"&&isset($_GET["username_registra"])&&isset($_GET["password_registra"])){
