@@ -62,6 +62,11 @@ body {
 }
 img {max-width: 100%;height: auto}
 
+footer {
+	grid-area: f;
+	margin:1em;
+}
+
 .subtitle {
 	padding-top: 1rem;
 	padding-left: 1rem;
@@ -265,16 +270,37 @@ nav .menu_name {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "s s"
-    "l m";
+    "l m"
+	"f f ";
 }
 
 #search_bar {
 	grid-area: s;
+	text-align: center;
+}
+
+#search_title {
+	margin: 1em 1em 0.3em 1em;
+	font-size: 3em;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#searchbar_club {
+	background-color: var(--primary-color);
+	border: 1px solid white;
+	font-size: larger;
+	padding: 0.4em;
+}
+
+#searchbar_club::placeholder {
+	color: white;
+	font-style: italic;
 }
 
 #google_map {
 	grid-area: m;
-	margin: 1em 2em 0.7em 0em;
+	margin: 1em 4em 1.1em 0em;
 }
 
 iframe#map {
@@ -287,15 +313,15 @@ iframe#map {
 #addresses_container {
 	grid-area: l;
 	background-color: var(--gradient-second-color);
-	margin: 1em 0em 1em 2em;
-	padding: 0.5em 0em 0em 0.5em;;
+	margin: 1em 0em 1em 4em;
+	padding: 1em 0em 0.4em 0.5em;;
 	height: 600px;
 }
 
 #addresses_container h2 {
-	text-align: center;
+	text-align: left;
+	padding-left: 0.1em;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 #addresses_list {
@@ -339,8 +365,8 @@ iframe#map {
 	margin-left: 5px;
   }
 
-  .address a:visited {
-	color: var(--links-visited-color);
+  .active a {
+	color: var(--secondary-color);
   }
   
   .active:after {
