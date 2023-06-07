@@ -1,4 +1,4 @@
-<? 
+<?php 
 $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto">salta al contenuto</a>
 	<header>
             <h1> FitnessCenter </h1>
@@ -11,20 +11,20 @@ $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-la
       </header>
       <div class="breadcrumbs">
       	<p> Ti trovi in: <BREADCRUMB/> </p>
-      </div>'
+      </div>';
 
 $link_pagine=[];//nome->link
-$link_pagine["home"]="home.php"
-$link_pagine["info"]="info.php"
+$link_pagine["home"]="home.php";
+$link_pagine["info"]="info.php";
 
 $navmenupages=["home","info"];
 
 $genitore_pagine=[];//nome->genitore
-$genitore_pagine["home"]="#"
-$genitore_pagine["info"]="home"
+$genitore_pagine["home"]="#";
+$genitore_pagine["info"]="home";
 /// Genera l'header di una data pagina
 function genera_header($pagina){
-	$menu='<ul class="navmenu">'
+	$menu='<ul class="navmenu">';
 	foreach ($navmenu as $menuentry) {
       	if ($menuentry != $pagina) {
 			$link=$link_pagine[$menuentry];
@@ -33,7 +33,7 @@ function genera_header($pagina){
                 	$menu = $menu . "<li class=\"menu_name\">" . $nome . "</li>";
         	}
     	}
-	$menu=$menu.'</ul>'
+	$menu=$menu.'</ul>';
 	$output= str_replace("<MENU/>",$menu,$template);
 	$breadcrum=$pagina;
 	$parent=$genitore_pagine[$pagina];
