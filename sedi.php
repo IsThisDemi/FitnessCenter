@@ -1,3 +1,4 @@
+<?php require_once "utilityphp/header.php";?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -13,7 +14,11 @@
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
 </head>
 <body id="SediPage">
-    
+
+    <?php 
+    genera_header("info");
+    ?>
+
     <div id="search_bar">
         <div id="search_title">
             <p>Trova il club più vicino a te</p>
@@ -1205,13 +1210,10 @@
 
         </div>
     </div>
-    <footer>
-        <div class="flex-container">
-            <img src="img/valid-xhtml.png" alt="HTML valido">
-            <p>Nome Palestra - Via Palestra, 1 - 12345 Roma (RM) - Tel. 06 1234567</p>
-            <img src="img/valid-css.gif" alt="CSS valido">
-        </div>
-    </footer>
+    
+    <?php
+    include_once "utilityphp/footer.php";                
+    ?>
 
     <script src="js/searchbar_sedi.js"></script>
     <script src="js/club_list_sedi.js"></script>
