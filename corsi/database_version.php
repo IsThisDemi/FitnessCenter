@@ -3,11 +3,12 @@
 $host = "localhost";
 $username = "root";
 $pass = "";
-$con = mysqli_connect($host, $username, $pass, "palestra") or die(mysqli_error());
+$database = "palestra";
+$conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error());
 
 //Query per ottenere il numero di categorie
 $sql = "SELECT * from categorie";
-if ($result = mysqli_query($con, $sql)) {
+if ($result = mysqli_query($conn, $sql)) {
     $numero_categorie = mysqli_num_rows( $result );
 }
 ?>
@@ -56,30 +57,25 @@ if ($result = mysqli_query($con, $sql)) {
             <div id="corsi">
                 <div class="flex-container">
                     <?php 
-                    for($i = 1; $i < $numero_categorie; $i++)
+                    for($i = 1; $i <= $numero_categorie; $i++)
                     {
-                        //Seleziono nome categoria
-                        $query = "SELECT nome_cat FROM categorie WHERE id_categoria = $i";
-                        $categoria = mysqli_query($con, $query) or die(mysqli_error($con));
-                        //Seleziono numero corsi con quella categoria
-                        $query = "SELECT COUNT(nome_corso) AS numero_corsi FROM corsi WHERE id_categoria = $i";
-                        $numero_corsi = mysqli_query($con, $query) or die(mysqli_error($con));
-                        //Seleziono immagine categoria
-                        $query = "SELECT immagine FROM categorie WHERE id_categoria = $i";
-                        $immagine_categoria = mysqli_query($con, $query) or die(mysqli_error($con));
-                        //Seleziono l'alt dell'immagine per quella categoria
-                        $query = "SELECT alt FROM categorie WHERE id_categoria = $i";
-                        $alt = mysqli_query($con, $query) or die(mysqli_error($con));
+                        //Query per ottenere il le info della categoria
+                        $sql = "SELECT * FROM `categorie` WHERE id_categoria = '$i'";
+                        $result = mysqli_query($conn, $sql);
+                        $row = mysqli_fetch_assoc($result);
 
-                        $categoria = mysqli_fetch_array($categoria);
-                        echo $categoria;
-                        $numero_corsi = mysqli_fetch_array($numero_corsi);
-                        echo $numero_corsi;
-                        $immagine_categoria = mysqli_fetch_array($immagine_categoria);
-                        echo $immagine_categoria;  
-                        $alt = mysqli_fetch_array($alt);
-                        echo $alt;
+                        $categoria = $row['nome_cat'];
+                        $immagine_categoria = $row['immagine'];
+                        $alt = $row['alt'];
 
+                        //Query per ottenere il numero di corsi con quella categoria
+                        $sql = "SELECT COUNT(nome_corso) AS numero_corsi FROM corsi WHERE id_categoria = '$i'";
+                        $result = mysqli_query($conn, $sql);
+                        $row = mysqli_fetch_assoc($result);
+
+                        $numero_corsi = $row['numero_corsi'];
+
+                        //Genero le box contenenti i dati
                         echo '<a href="../corsi/'.$categoria.'">
                                 <article class="article-wrapper">
                                     <div class="rounded-lg container-project">
@@ -96,118 +92,6 @@ if ($result = mysqli_query($con, $sql)) {
                             </a>';
                     }
                     ?>
-                    <a href="../corsi/balance/">
-                        <article class="article-wrapper">
-                            <div class="rounded-lg container-project">
-                                <div class="project-image">
-                                    <img src="../img/corsi/balance-main.jpg" alt="balance">
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <div class="flex-pr">
-                                    <div class="project-title text-nowrap">Balance</div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="../corsi/cycle/">
-                        <article class="article-wrapper">
-                            <div class="rounded-lg container-project">
-                                <div class="project-image">
-                                    <img src="../img/corsi/cycle-main.jpg" alt="cycle">
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <div class="flex-pr">
-                                    <div class="project-title text-nowrap">Cycle</div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="../corsi/dance/">
-                        <article class="article-wrapper">
-                            <div class="rounded-lg container-project">
-                                <div class="project-image">
-                                    <img src="../img/corsi/dance-main.jpg" alt="dance">
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <div class="flex-pr">
-                                    <div class="project-title text-nowrap">Dance</div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="../corsi/functional/">
-                        <article class="article-wrapper">
-                            <div class="rounded-lg container-project">
-                                <div class="project-image">
-                                    <img src="../img/corsi/functional-main.jpg" alt="functional">
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <div class="flex-pr">
-                                    <div class="project-title text-nowrap">Functional</div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="../corsi/running/">
-                        <article class="article-wrapper">
-                            <div class="rounded-lg container-project">
-                                <div class="project-image">
-                                    <img src="../img/corsi/running-main.jpg" alt="running">
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <div class="flex-pr">
-                                    <div class="project-title text-nowrap">Running</div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="../corsi/strength/">
-                        <article class="article-wrapper">
-                            <div class="rounded-lg container-project">
-                                <div class="project-image">
-                                    <img src="../img/corsi/strength-main.jpg" alt="strength">
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <div class="flex-pr">
-                                    <div class="project-title text-nowrap">Strength</div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="../corsi/yoga/">
-                        <article class="article-wrapper">
-                            <div class="rounded-lg container-project">
-                                <div class="project-image">
-                                    <img src="../img/corsi/yoga-main.jpg" alt="yoga">
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <div class="flex-pr">
-                                    <div class="project-title text-nowrap">Yoga</div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="../corsi/water/">
-                        <article class="article-wrapper">
-                            <div class="rounded-lg container-project">
-                                <div class="project-image">
-                                    <img src="../img/corsi/water-main.jpg" alt="water">
-                                </div>
-                            </div>
-                            <div class="project-info">
-                                <div class="flex-pr">
-                                    <div class="project-title text-nowrap">Water</div>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
                 </div>
             </div>
         </section>
