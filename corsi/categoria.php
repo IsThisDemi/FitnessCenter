@@ -59,20 +59,20 @@ if ($result = mysqli_query($conn, $sql)) {
     </header>
     <section>
         <?php
-            //Query per ottenere il le info della categoria
-            $sql = "SELECT * FROM `categorie` WHERE id_categoria = '$categoria'";
-            $result = mysqli_query($conn, $sql);
-            $row = mysqli_fetch_assoc($result);
+        //Query per ottenere il le info della categoria
+        $sql = "SELECT * FROM `categorie` WHERE id_categoria = '$categoria'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
 
-            $categoria = $row['nome_cat'];
-            $immagine_categoria = $row['immagine'];
-            $descrizione = $row['descrizione'];
-            $alt = $row['alt'];
+        $categoria = $row['nome_cat'];
+        $immagine_categoria = $row['immagine'];
+        $descrizione = $row['descrizione'];
+        $alt = $row['alt'];
 
-            echo "<h2><span lang='en'>".$categoria."</span></h2>
-            <p>".$descrizione."</p>";
+        echo "<h2><span lang='en'>" . $categoria . "</span></h2>
+            <p>" . $descrizione . "</p>";
         ?>
-        
+
         <div id="corsi">
             <div class="flex-container">
                 <?php
@@ -91,27 +91,27 @@ if ($result = mysqli_query($conn, $sql)) {
                     $stabilita = $row['stabilità'];
 
                     echo '
-                    <a href="cors.php?id='.$i.'">
+                    <a href="cors.php?id=' . $i . '">
                         <article class="article-wrapper">
                             <div class="rounded-lg container-project">
                                 <div class="project-image">
-                                    <img src="../img/corsi/'.$immagine_corso.'" alt="'.$alt.'">
+                                    <img src="../img/corsi/' . $immagine_corso . '" alt="' . $alt . '">
                                 </div>
                             </div>
                             <div class="project-info">
                                 <div class="flex-pr">
-                                    <div class="project-title text-nowrap">'.$corso.'</div>
+                                    <div class="project-title text-nowrap">' . $corso . '</div>
                                 </div>
                                 <div class="types">';
-                                    if($forza == 1)
-                                        echo '<div class="project-type forza">• Forza</div>';
-                                    if($equilibrio == 1)
-                                        echo '<div class="project-type equilibrio">• Equilibrio</div>';
-                                    if($resistenza == 1)
-                                        echo '<div class="project-type resistenza">• Resistenza</div>';
-                                    if($stabilita == 1)
-                                        echo '<div class="project-type stabilita">• Stabilità</div>';
-                                echo '
+                    if ($forza == 1)
+                        echo '<div class="project-type forza">• Forza</div>';
+                    if ($equilibrio == 1)
+                        echo '<div class="project-type equilibrio">• Equilibrio</div>';
+                    if ($resistenza == 1)
+                        echo '<div class="project-type resistenza">• Resistenza</div>';
+                    if ($stabilita == 1)
+                        echo '<div class="project-type stabilita">• Stabilità</div>';
+                    echo '
                                 </div>
                             </div>
                         </article>
@@ -121,12 +121,9 @@ if ($result = mysqli_query($conn, $sql)) {
             </div>
         </div>
     </section>
-    <footer>
-        <div class="flex-container">
-            <img src="../../img/valid-xhtml.png" alt="HTML valido">
-            <p>Nome Palestra - Via Palestra, 1 - 12345 Roma (RM) - Tel. 06 1234567</p>
-            <img src="../../img/valid-css.gif" alt="CSS valido">
-        </div>
+    <?php
+    include_once "../utilityphp/footer.php";
+    ?>
 </body>
 
 </html>
