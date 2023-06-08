@@ -76,7 +76,7 @@ if ($result = mysqli_query($conn, $sql)) {
                         $numero_corsi = $row['numero_corsi'];
 
                         //Genero le box contenenti i dati
-                        echo '<a href="../corsi/'.$categoria.'">
+                        echo '<a href="../corsi/categoria.php?id='.$i.'">
                                 <article class="article-wrapper">
                                     <div class="rounded-lg container-project">
                                         <div class="project-image">
@@ -87,6 +87,7 @@ if ($result = mysqli_query($conn, $sql)) {
                                         <div class="flex-pr">
                                             <div class="project-title text-nowrap">'.$categoria.'</div>
                                         </div>
+                                        <div class="project-text text-nowrap">'.$numero_corsi.' corsi</div>
                                     </div>
                                 </article>
                             </a>';

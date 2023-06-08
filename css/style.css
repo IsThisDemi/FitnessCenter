@@ -208,6 +208,13 @@ nav .menu_name {
 	color: black;
 }
 
+.project-text {
+	font-size: 1em;
+	margin: 0;
+	font-weight: 600;
+	color: black;
+}
+
 .flex-pr {
 	display: -webkit-box;
 	display: -ms-flexbox;
