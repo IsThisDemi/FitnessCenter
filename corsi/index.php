@@ -11,6 +11,13 @@ $sql = "SELECT * from categorie";
 if ($result = mysqli_query($conn, $sql)) {
     $numero_categorie = mysqli_num_rows($result);
 }
+
+//Ottengo numero di corsi
+ //Query per ottenere il numero di categorie
+$sql = "SELECT * from corsi";
+if ($result = mysqli_query($conn, $sql)) {
+    $numero_corsi = mysqli_num_rows($result);
+}
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -32,17 +39,18 @@ if ($result = mysqli_query($conn, $sql)) {
 </head>
 
 <body>
-    <header>
-        <h1>Corsi</h1>
-        <nav>
-            <a href="home.html"><span lang="en">Home</span></a>
-            <a href="palestra.html">Palestra</a>
-            <a href="corsi.html">Corsi</a>
-            <a href="contatti.html">Contatti</a>
-            <a href="login.html"><span lang="en">Login</span></a>
-        </nav>
-    </header>
     <section>
+        <div class="container">
+            <video autoplay muted playsinline preload="auto">
+                <source src="https://player.vimeo.com/progressive_redirect/playback/787631395/rendition/1080p/file.mp4?loc=external&amp;signature=61fc2002eacfa849cd11c063b1e487d3a25314bf5d41d73e5681328af84d53aa" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay">
+                <h1>Scopri i nostri corsi</h1>
+                <p>Esplora le tue passioni con <?php echo $numero_corsi; ?> corsi tra cui scegliere</p>
+            </div>
+        </div>
+
         <h2>Un corso per ogni tuo obiettivo</h2>
         <h3>Forza</h3>
         <p>Ogni allenamento è pensato per sviluppare in modo mirato le diverse sfumature della dimensione “forza”, in armonia con
