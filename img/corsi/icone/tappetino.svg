@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="77px" height="77px" viewBox="0 0 77 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Icons/Mat</title>
+  <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g transform="translate(-286.000000, -578.000000)" id="Attività-in-palestra">
+      <g transform="translate(94.000000, 521.000000)">
+        <g id="tappetino" transform="translate(188.000000, 57.000000)">
+          <g id="Icons/Mat" transform="translate(4.000000, 0.000000)">
+            <path d="M15,51 C8.935,51 4,55.935 4,62 C4,68.065 8.935,73 15,73 C21.065,73 26,68.065 26,62 C26,55.935 21.065,51 15,51 M15,77 C6.729,77 0,70.271 0,62 C0,53.729 6.729,47 15,47 C23.271,47 30,53.729 30,62 C30,70.271 23.271,77 15,77" id="Fill-1" fill="#A8A0AE"></path>
+            <path d="M70,13 L28,13 L28,17 L70,17 C71.654,17 73,18.346 73,20 L73,70 C73,71.654 71.654,73 70,73 L15,73 L15,77 L70,77 C73.859,77 77,73.859 77,70 L77,20 C77,16.14 73.859,13 70,13" id="Fill-3" fill="#7D7384"></path>
+            <path d="M15,4 C8.935,4 4,8.935 4,15 L4,62 C4,68.065 8.935,73 15,73 C21.065,73 26,68.065 26,62 L26,15 C26,8.935 21.065,4 15,4 M15,77 C6.729,77 0,70.271 0,62 L0,15 C0,6.729 6.729,0 15,0 C23.271,0 30,6.729 30,15 L30,62 C30,70.271 23.271,77 15,77" id="Fill-5" fill="#7D7384"></path>
+            <path d="M26,4 C19.935,4 15,8.935 15,15 L15,62 C15,68.065 19.935,73 26,73 C32.065,73 37,68.065 37,62 L37,15 C37,8.935 32.065,4 26,4" id="Fill-7" fill-opacity="0.8" fill="#E10A0A" style="mix-blend-mode: multiply;"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

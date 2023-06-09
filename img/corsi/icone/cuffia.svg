@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="77px" height="45px" viewBox="0 0 77 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Icons/Swim Cap</title>
+  <defs>
+    <polygon id="path-1" points="1.77635684e-15 0 69 0 69 44.3566 1.77635684e-15 44.3566"></polygon>
+  </defs>
+  <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g transform="translate(-100.000000, -394.000000)" id="Attività-in-acqua">
+      <g transform="translate(100.000000, 304.000000)">
+        <g id="Icons/Swim-Cap" transform="translate(0.000000, 90.000000)">
+          <g id="Group-3" transform="translate(4.000400, 0.000000)">
+            <mask id="mask-2" fill="white">
+              <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-2"></g>
+            <path d="M3.584,40.7726 L65.415,40.7726 L65.415,34.4996 C65.415,17.4526 51.547,3.5846 34.5,3.5846 C17.453,3.5846 3.584,17.4526 3.584,34.4996 L3.584,40.7726 Z M69,44.3566 L1.77635684e-15,44.3566 L1.77635684e-15,34.4996 C1.77635684e-15,15.4766 15.476,-0.0004 34.5,-0.0004 C53.523,-0.0004 69,15.4766 69,34.4996 L69,44.3566 Z" id="Fill-1" fill="#7D7384" mask="url(#mask-2)"></path>
+          </g>
+          <path d="M77,28.0903 L77,28.0903 C77,29.6483 75.945,31.0203 74.434,31.4003 C51.002,37.2923 27.571,24.5143 4.139,29.5893 C2.011,30.0493 0,28.4433 0,26.2663 L0,26.2663 C0,24.7083 1.055,23.3363 2.566,22.9573 C25.998,17.0653 49.429,29.8423 72.861,24.7683 C74.989,24.3073 77,25.9133 77,28.0903" id="Fill-4" fill-opacity="0.8" fill="#E10A0A" style="mix-blend-mode: multiply;"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
