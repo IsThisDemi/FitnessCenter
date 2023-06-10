@@ -4,7 +4,7 @@ if (!isset($_GET['id'])) {
     header("location: index.php");
     exit;
 }
-$id_corso= $_GET['id'];
+$id_corso = $_GET['id'];
 require_once "../utilityphp/header.php";
 //Connessione al database
 $host = "localhost";
@@ -34,61 +34,56 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
 </head>
 
 <body>
-    <header>
-        <h1>Corsi</h1>
-        <nav>
-            <a href="home.html"><span lang="en">Home</span></a>
-            <a href="palestra.html">Palestra</a>
-            <a href="corsi.html">Corsi</a>
-            <a href="contatti.html">Contatti</a>
-            <a href="login.html"><span lang="en">Login</span></a>
-        </nav>
-    </header>
     <section>
         <?php
-    //Query per ottenere il le info del corso
-    //Query per ottenere il le info del corso
-    $sql = "SELECT * FROM `corsi` WHERE id_corso = '$id_corso'";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
+        //Query per ottenere il le info del corso
+        //Query per ottenere il le info del corso
+        $sql = "SELECT * FROM `corsi` WHERE id_corso = '$id_corso'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
 
-    $corso = $row['nome_corso'];
-    $descrizione = $row['descrizione'];
-    $immagine_corso = $row['immagine'];
-    $alt = $row['alt'];
-    $forza = $row['forza'];
-    $equilibrio = $row['equilibrio'];
-    $resistenza = $row['resistenza'];
-    $stabilita = $row['stabilità'];
+        $corso = $row['nome_corso'];
+        $descrizione = $row['descrizione'];
+        $immagine_corso = $row['immagine'];
+        $alt = $row['alt'];
+        $forza = $row['forza'];
+        $equilibrio = $row['equilibrio'];
+        $resistenza = $row['resistenza'];
+        $stabilita = $row['stabilità'];
 
-    $intensita = $row['intensita'];
-    $durata = $row['durata'];
-    $calorie = $row['calorie'];
-    
-    $asciugamano = $row['asciugamano'];
-    $borraccia = $row['borraccia'];
-    $calzini = $row['calzini'];
-    $tappetino = $row['tappetino'];
-    $scarpe_sportive = $row['scarpe_sportive'];
-    $guantoni = $row['guantoni'];
-    $capelli_raccolti = $row['capelli_raccolti'];  
-    $abbigliamento_outdoor = $row['abbigliamento_outdoor'];
-    $scarpe_outdoor = $row['scarpe_outdoor'];
-    $accappatoio = $row['accappatoio'];
-    $cuffia = $row['cuffia'];
-    $costume = $row['costume'];
-    $ciabatte = $row['ciabatte'];
-    $piedi_nudi = $row['piedi_nudi'];
+        $intensita = $row['intensita'];
+        $durata = $row['durata'];
+        $calorie = $row['calorie'];
 
-        echo "<h2><span lang='en'>" . $corso . "</span></h2>
-            <p>" . $descrizione . "</p>";
-        ?>
+        $asciugamano = $row['asciugamano'];
+        $borraccia = $row['borraccia'];
+        $calzini = $row['calzini'];
+        $tappetino = $row['tappetino'];
+        $scarpe_sportive = $row['scarpe_sportive'];
+        $guantoni = $row['guantoni'];
+        $capelli_raccolti = $row['capelli_raccolti'];
+        $abbigliamento_outdoor = $row['abbigliamento_outdoor'];
+        $scarpe_outdoor = $row['scarpe_outdoor'];
+        $accappatoio = $row['accappatoio'];
+        $cuffia = $row['cuffia'];
+        $costume = $row['costume'];
+        $ciabatte = $row['ciabatte'];
+        $piedi_nudi = $row['piedi_nudi'];
 
+        echo '
+        <div class="container">
+        <img src="../img/corsi/' . $immagine_corso . '"alt="' . $alt . '">
+            <div class="overlay">
+                <h1><span lang="en">' . $corso . '</span></h1>
+                <p>' . $descrizione . '</p>
+            </div>';
+            ?>
+        </div>
         <div id="corsi">
             <div class="flex-container">
                 <?php
 
-                        echo '
+                echo '
                         <a href="corso.php?id=' . $i . '">
                             <article class="article-wrapper">
                                 <div class="rounded-lg container-project">
@@ -101,15 +96,15 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
                                         <div class="project-title text-nowrap">' . $corso . '</div>
                                     </div>
                                     <div class="types">';
-                        if ($forza == 1)
-                            echo '<div class="project-type forza">• Forza</div>';
-                        if ($equilibrio == 1)
-                            echo '<div class="project-type equilibrio">• Equilibrio</div>';
-                        if ($resistenza == 1)
-                            echo '<div class="project-type resistenza">• Resistenza</div>';
-                        if ($stabilita == 1)
-                            echo '<div class="project-type stabilita">• Stabilità</div>';
-                        echo '
+                if ($forza == 1)
+                    echo '<div class="project-type forza">• Forza</div>';
+                if ($equilibrio == 1)
+                    echo '<div class="project-type equilibrio">• Equilibrio</div>';
+                if ($resistenza == 1)
+                    echo '<div class="project-type resistenza">• Resistenza</div>';
+                if ($stabilita == 1)
+                    echo '<div class="project-type stabilita">• Stabilità</div>';
+                echo '
                                     </div>
                                 </div>
                             </article>

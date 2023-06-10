@@ -41,7 +41,7 @@ if ($result = mysqli_query($conn, $sql)) {
 <body>
     <section>
         <div class="container">
-            <video autoplay muted playsinline preload="auto">
+            <video class="video-background" autoplay muted playsinline preload="auto">
                 <source src="https://player.vimeo.com/progressive_redirect/playback/787631395/rendition/1080p/file.mp4?loc=external&amp;signature=61fc2002eacfa849cd11c063b1e487d3a25314bf5d41d73e5681328af84d53aa" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -85,7 +85,7 @@ if ($result = mysqli_query($conn, $sql)) {
                     $numero_corsi = $row['numero_corsi'];
 
                     //Genero le box contenenti i dati
-                    echo '<a href="../corsi/categoria.php?id=' . $i . '">
+                    echo '<a class="unstyled" href="../corsi/categoria.php?id=' . $i . '">
                                 <article class="article-wrapper">
                                     <div class="rounded-lg container-project">
                                         <div class="project-image">
