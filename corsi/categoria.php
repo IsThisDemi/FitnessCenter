@@ -73,6 +73,7 @@ if ($result = mysqli_query($conn, $sql)) {
             ?>
         </div>
         <div id="corsi">
+            <?php echo '<h3>'.$numero_corsi.' corsi</h3>'; ?>
             <div class="flex-container">
                 <?php
                 for ($i = $minimo; $i <= $massimo; $i++) {

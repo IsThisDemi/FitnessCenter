@@ -112,16 +112,6 @@ nav .menu_name {
 	font-size: 1.2rem;
 }
 
-/* CORSI */
-.video-background {
-	width: 100%;
-	max-width: -webkit-fill-available;
-	max-width: fill-available;
-}
-.unstyled{
-	text-decoration: none;
-}
-
 /* 
 ====================================================
 						HOME
@@ -263,6 +253,16 @@ nav .menu_name {
 						CORSI
 ====================================================
 */
+.video-background {
+	width: 100%;
+	max-width: -webkit-fill-available;
+	max-width: fill-available;
+}
+
+.unstyled {
+	text-decoration: none;
+}
+
 .container {
 	position: relative;
 }
@@ -272,17 +272,25 @@ nav .menu_name {
 	z-index: 0;
 }
 
-.overlay {
-	position: absolute;
-	z-index: 1;
+.text-container {
 	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 50%;
 	transform: translateY(50%);
 	width: 75%;
-	padding-right: var(--bs-gutter-x, 0.75rem);
-	padding-left: var(--bs-gutter-x, 0.75rem);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.overlay {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	bottom: 50%;
+	transform: translateY(50%);
+	width: 75%;
 	margin-right: auto;
 	margin-left: auto;
 }
