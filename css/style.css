@@ -273,11 +273,9 @@ nav .menu_name {
 }
 
 .text-container {
-	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 50%;
-	transform: translateY(50%);
 	width: 75%;
 	margin-right: auto;
 	margin-left: auto;
@@ -293,6 +291,8 @@ nav .menu_name {
 	width: 75%;
 	margin-right: auto;
 	margin-left: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
 }
 
 .flex-container {
