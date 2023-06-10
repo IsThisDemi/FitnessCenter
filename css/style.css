@@ -7,6 +7,7 @@
 	--gradient-last-color: #121212;
 	--visited-links: #BBBBBB;
 	--text-color: white;
+	--red: rgb(196, 47, 47);
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
 	--links-visited-color:#675396;
@@ -64,7 +65,9 @@ img {max-width: 100%;height: auto}
 
 footer {
 	grid-area: f;
-	margin:1em;
+	border-top: solid 1px var(--text-color);
+	padding-top:1em;
+	padding: 1em;
 }
 
 .subtitle {
@@ -109,7 +112,147 @@ nav .menu_name {
 	font-size: 1.2rem;
 }
 
-/* CORSI */
+/* 
+====================================================
+						HOME
+====================================================
+*/
+
+#HomePage {
+	display:grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "t"
+    "s"
+	"c"
+	"iscr"
+	"info" 
+	"f";
+}
+
+#HomePage b {
+	font-weight: 800;
+	color: inherit;
+}
+
+.first_letter_underlined::first-letter {
+	text-decoration: 2px underline;
+}
+
+.menu_link {
+	background-color: var(--text-color);
+	padding: 1.0em;
+	margin: 2.0em;
+	color: var(--primary-color);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-decoration: none;
+	box-shadow: 5px 5px 5px black;
+}
+
+.menu_link:hover {
+	background-color: var(--visited-links);
+}
+
+#home_titolo_bg {
+	grid-area: t;
+	background-image: url('../img/home_title_background.jpg');
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	height: 1000px;
+	width: 100%;
+}
+
+#home_titolo_text_box {
+	position: absolute;
+	height: 300px;
+	width: 550px;
+	top: 15%;
+	left: 5%;
+}
+
+#home_titolo_titolo {
+	font-size: 4em;
+	line-height: 0.9em;
+}
+
+#home_titolo_testo {
+	margin: 1em;
+	padding: 0.5em;
+	font-size: 1em;
+	line-height: 1.3em;
+}
+
+#home_sedi{
+	grid-area: s;
+	margin: 2em 1em 1em 1em;
+}
+
+#home_sedi_bg {
+	float:right;
+	background-image: url('../img/home_sedi_bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height:400px;
+	width:60%;
+}
+
+#home_sedi_text_box {
+	float: left;
+	height:400px;
+	width:40%;
+	margin: auto;
+	padding: 4em 0 0 0;
+}
+
+#home_sedi_titolo {
+	text-align: center;
+	font-size: 2.5em;
+}
+
+#home_sedi_testo {
+	margin: 1em 1em 0.5em 1em;
+	padding: 0.5em;
+	font-size: 1em;
+}
+
+#home_sedi_text_box .first_letter_underlined {
+	float:right;
+}
+
+#home_sedi_text_box .menu_link {
+	padding: 0.8em 1em;
+}
+
+#home_corsi{
+	grid-area: c;
+	margin:1em;
+}
+
+#home_iscrizione{
+	grid-area: iscr;
+	margin:1em;
+}
+
+#home_info{
+	grid-area: info;
+	margin:1em 1em 2em 1em;
+}
+
+.testo_rosso {
+	color: var(--red);
+}
+
+
+
+/* 
+====================================================
+						CORSI
+====================================================
+*/
 .container {
 	position: relative;
 }
@@ -294,7 +437,11 @@ nav .menu_name {
 	background: #1b1b1b;
 }
 
-/* SEDI */
+/* 
+====================================================
+					SEDI 
+==================================================== 
+*/
 
 #SediPage {
 	display:grid;
