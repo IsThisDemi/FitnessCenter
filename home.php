@@ -17,51 +17,63 @@
     <link rel="stylesheet" href="css/print.css" media="print" />
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
 </head>
-<body>
+<body id="HomePage">
 
-    <?php 
-    genera_header("info");
-    ?>
     
     <main> 
-        <div id="home_titolo">
-            <h1>Allenati per il tuo benessere</h1>
-            <p class="home_testo">
-                Offerta speciale : Cosa aspetti? 
-                Approfitta subito dell'offerta di giugno e preparati per l'arrivo dell'estate: 
-                abbonati ora e ti alleni a 10€ al mese per i primi 3 mesi! Basta scegliere la sede e iscriversi.
-                Solo fino al 31 giugno!
-            </p>
-            <a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="" accesskey="u"><b>U</b>nisciti ora</a>
-        </div id>
+        <div id="home_titolo_bg">
+            <div id="home_titolo_text_box">
+                <h1 id="home_titolo_titolo">Allenati per <span class="testo_rosso">il tuo benessere</span></h1>
+                <p id="home_titolo_testo">
+                    <b>Offerta speciale di giugno :</b> 
+                    preparati per l'arrivo dell'estate abbonandoti ora!<br>
+                    Ti alleni a <span class="testo_rosso">10€ al mese per i primi 3 mesi!</span><br>
+                    Basta scegliere la sede e iscriversi. <br>
+                    Solo fino al 31 giugno!
+                </p>
+                <p class="first_letter_underlined"><a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="" accesskey="u">UNISCITI ORA</a></p>
+            </div> 
+        </div>
+
         <div id="home_sedi">
-            <h3>Trova la sede più vicina a te</h3>
-            <span class="home_testo">Più di 100 palestre affiliate in Italia</span>
-            <a class="menu_link" href="sedi.php" tabindex="0" accesskey="c"><b>C</b>erca</a>
-        </div id>
+            <div id="home_sedi_bg"></div>
+            <div id="home_sedi_text_box">
+                <h3 id="home_sedi_titolo"><span lang="en">Clubs</span></h3>
+                <p id="home_sedi_testo">Più di 100 palestre affiliate sparse in giro per l'Italia.<br>
+                                        Non sai se siamo vicini a te? <br>
+                                        <b>Cerca la sede più vicina a te</b>
+                </p>
+                <p class="first_letter_underlined"><a class="menu_link" href="sedi.php" tabindex="0" accesskey="c">CERCA</a></p>
+            </div>
+        </div>
+
         <div id="home_corsi">
             <h3>Esplora i nostri corsi ed allenamenti</h3>
-            <p class="home_testo">
+            <p id="home_corsi_testo">
                 Corsi di <span lang="en">Yoga, Pilates, Body Building</span> e molto altro
             </p>
-            <a class="menu_link" href="corsi/index.html" tabindex="0" accesskey="e"><b>E</b>splora</a>
-        </div id>
+            <p class="first_letter_underlined"><a class="menu_link" href="corsi/index.html" tabindex="0" accesskey="e">ESPLORA</a></p>
+        </div>
+
         <div id="home_iscrizione">
             <h3>Cosa aspetti ad iscriverti</h3>
-            <a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="0" accesskey="a"><b>A</b>bbonati</a>
-        </div id>
+            <p class="first_letter_underlined"><a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="0" accesskey="a">ABBONATI</a></p>
+        </div>
+
         <div id="home_info">
             <h3>Hai dei dubbi?</h3>
-            <p class="home_testo">
+            <p id="home_info_testo">
                 Per maggiori informazioni consulta la nostra sezione <span lang="en"><abbr title="frequently asked questions">FAQ</abbr></span>
             </p>
-            <a class="menu_link" href="info.php" tabindex="0" accesskey="s"><b>S</b>copri di più</a>
-        </div id>
+            <p class="first_letter_underlined"><a class="menu_link" href="info.php" tabindex="0" accesskey="s">Scopri di più</a></p>
+        </div>
+
+        <?php
+            include_once "utilityphp/footer.php";                
+        ?>
     </main>
 
-    <?php
-        include_once "utilityphp/footer.php";                
-    ?>
+    
 
 </body>
 </html>

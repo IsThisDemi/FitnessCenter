@@ -15,9 +15,6 @@
 </head>
 <body id="SediPage">
 
-    <?php 
-    genera_header("info");
-    ?>
 
     <div id="search_bar">
         <div id="search_title">
