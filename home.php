@@ -19,8 +19,11 @@
 </head>
 <body id="HomePage">
 
-    
-    <main> 
+    <?php
+       genera_header("home");               
+    ?>
+
+    <main id="content"> 
         <div id="home_titolo_bg">
             <div id="home_titolo_text_box">
                 <h1 id="home_titolo_titolo">Allenati per <span class="testo_rosso">il tuo benessere</span></h1>
@@ -31,7 +34,7 @@
                     Basta scegliere la sede e iscriversi. <br>
                     Solo fino al 31 giugno!
                 </p>
-                <p class="first_letter_underlined"><a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="" accesskey="u">UNISCITI ORA</a></p>
+                <p class="first_letter_underlined"><a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="5" accesskey="u">UNISCITI ORA</a></p>
             </div> 
         </div>
 
@@ -43,21 +46,24 @@
                                         Non sai se siamo vicini a te? <br>
                                         <b>Cerca la sede più vicina a te</b>
                 </p>
-                <p class="first_letter_underlined"><a class="menu_link" href="sedi.php" tabindex="0" accesskey="c">CERCA</a></p>
+                <p class="first_letter_underlined"><a class="menu_link" href="clubs.php" tabindex="6" accesskey="c">CERCA</a></p>
             </div>
         </div>
 
         <div id="home_corsi">
-            <h3>Esplora i nostri corsi ed allenamenti</h3>
-            <p id="home_corsi_testo">
-                Corsi di <span lang="en">Yoga, Pilates, Body Building</span> e molto altro
-            </p>
-            <p class="first_letter_underlined"><a class="menu_link" href="corsi/index.html" tabindex="0" accesskey="e">ESPLORA</a></p>
+            <div id="home_corsi_bg"></div>
+            <div id="home_corsi_text_box">
+                <h3 id="home_corsi_titolo">Esplora i nostri corsi ed allenamenti</h3>
+                <p id="home_corsi_testo">
+                    Corsi di <span lang="en">Yoga, Pilates, Body Building</span> e molto altro
+                </p>
+                <p class="first_letter_underlined"><a class="menu_link" href="corsi/index.php" tabindex="7" accesskey="e">ESPLORA</a></p>
+            </div>
         </div>
 
         <div id="home_iscrizione">
             <h3>Cosa aspetti ad iscriverti</h3>
-            <p class="first_letter_underlined"><a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="0" accesskey="a">ABBONATI</a></p>
+            <p class="first_letter_underlined"><a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="8" accesskey="a">ABBONATI</a></p>
         </div>
 
         <div id="home_info">
@@ -65,15 +71,13 @@
             <p id="home_info_testo">
                 Per maggiori informazioni consulta la nostra sezione <span lang="en"><abbr title="frequently asked questions">FAQ</abbr></span>
             </p>
-            <p class="first_letter_underlined"><a class="menu_link" href="info.php" tabindex="0" accesskey="s">Scopri di più</a></p>
+            <p class="first_letter_underlined"><a class="menu_link" href="info.php" tabindex="9" accesskey="f">DOMANDE FREQUENTI</a></p>
         </div>
-
-        <?php
-            include_once "utilityphp/footer.php";                
-        ?>
     </main>
 
-    
+    <?php
+        include_once "utilityphp/footer.php";                
+    ?>
 
 </body>
 </html>

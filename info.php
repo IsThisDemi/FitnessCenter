@@ -16,7 +16,7 @@
 
 <?php 
 
-genera_header("info");
+genera_header("more");
 
 ?>
 <div id="content">

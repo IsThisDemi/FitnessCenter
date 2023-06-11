@@ -44,7 +44,7 @@ if (isset($_GET["action"])) {
 
     $user=get_logged_user();
     if($user&&$user!=""){
-    echo "<p> sei attualmente loggato come ".$user." desideri effettuare il logout?</p>"
+    echo "<p> sei attualmente loggato come ".$user." desideri effettuare il logout?</p>";
     }
     else{
 ?>

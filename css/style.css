@@ -1,6 +1,7 @@
 :root {
 	--primary-color: #121212;
 	--secondary-color: #b80000;
+	--header-color: #a74646;
 	--gradient-first-color: #282828;
 	--gradient-first-color-hover: #414141;
 	--gradient-second-color: #1b1b1b;
@@ -19,6 +20,7 @@
 	padding: 0;
 	margin: 0;
 	color: var(--text-color);
+	box-sizing: border-box;
 }
 
 a{
@@ -63,6 +65,62 @@ body {
 }
 img {max-width: 100%;height: auto}
 
+header {
+	grid-area: h;
+	border: 1px solid var(--secondary-color);
+	background-color: var(--header-color);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-transform: uppercase;
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+header li {
+	display: inline-block;
+  	margin-right: 10px;
+}
+
+.logo {
+	margin-left: 0.5em;
+	background-image: url("../img/fitnesscenter-logo-files/logo-white-no-background.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    text-indent: -1000px;
+    font-size: 4em;
+	width:2em;
+}
+
+.SRskip {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.navmenu {
+	margin: 5px 0 0 0;
+  	padding: 1.5em;
+	list-style: none;
+}
+
+.navmenu a {
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.navmenu a:hover {
+	color: var(--visited-links);
+}
+
 footer {
 	grid-area: f;
 	border-top: solid 1px var(--text-color);
@@ -102,14 +160,39 @@ nav ul {
 nav li a,
 nav li p,
 nav .menu_name {
-	display: block;
 	text-align: center;
 	text-decoration: none;
 	padding: 1rem;
 }
+
 .breadcrumbs {
-	margin: 1rem;
+	grid-area: b;
+	padding: 1rem;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.2rem;
+	background-color: var(--gradient-second-color);
+}
+
+.breadcrumbs #percorso {
+	color: var(--secondary-color);
+	font-weight: bold;
+}
+
+.breadcrumbs a{
+	text-transform: uppercase;
+	color: var(--secondary-color);
+}
+
+.breadcrumbs a:hover{
+	color: var(--header-color);
+}
+
+.breadcrumbs #current_page{
+	text-transform: uppercase
+}
+
+.testo_rosso {
+	color: var(--red);
 }
 
 /* 
@@ -121,7 +204,9 @@ nav .menu_name {
 #HomePage {
 	display:grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
+	"h"
+	"b" 
     "t"
     "s"
 	"c"
@@ -155,6 +240,12 @@ nav .menu_name {
 	background-color: var(--visited-links);
 }
 
+/* 
+---------------
+	TITOLO
+---------------
+*/
+
 #home_titolo_bg {
 	grid-area: t;
 	background-image: url('../img/home_title_background.jpg');
@@ -185,6 +276,12 @@ nav .menu_name {
 	font-size: 1em;
 	line-height: 1.3em;
 }
+
+/* 
+---------------
+	SEDI
+---------------
+*/
 
 #home_sedi{
 	grid-area: s;
@@ -227,26 +324,38 @@ nav .menu_name {
 	padding: 0.8em 1em;
 }
 
+/* 
+---------------
+	CORSI
+---------------
+*/
+
 #home_corsi{
 	grid-area: c;
 	margin:1em;
 }
+
+/* 
+---------------
+	ISCRIZIONE
+---------------
+*/
 
 #home_iscrizione{
 	grid-area: iscr;
 	margin:1em;
 }
 
+/* 
+---------------
+	INFO
+---------------
+*/
+
 #home_info{
 	grid-area: info;
 	margin:1em 1em 2em 1em;
 }
-
-.testo_rosso {
-	color: var(--red);
-}
-
-
 
 /* 
 ====================================================
@@ -445,11 +554,13 @@ nav .menu_name {
 
 #SediPage {
 	display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas: 
-    "s s"
-    "l m"
-	"f f ";
+	"h"
+	"b"
+    "s"
+    "l"
+	"f";
 }
 
 #search_bar {
@@ -475,10 +586,16 @@ nav .menu_name {
 	color: white;
 	font-style: italic;
 }
+#clubs_list_map_container {
+	grid-area: l;
+	height: 600px;
+	margin : 1em;
+}
 
 #google_map {
-	grid-area: m;
-	margin: 1em 4em 1.1em 0em;
+	float: right;
+	height: 600px;
+	width: 50%;
 }
 
 iframe#map {
@@ -489,22 +606,22 @@ iframe#map {
 }
 
 #addresses_container {
-	grid-area: l;
 	background-color: var(--gradient-second-color);
-	margin: 1em 0em 1em 4em;
-	padding: 1em 0em 0.4em 0.5em;;
 	height: 600px;
+	width: 50%;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 #addresses_container h2 {
 	text-align: left;
-	padding-left: 0.1em;
+	padding: 0.5em 0 0 0.5em;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #addresses_list {
 	margin-top: 1em;
-	height: 90%;
+	height: 89%;
 	overflow: scroll;
 	overflow-x: hidden;
 }

@@ -1,6 +1,6 @@
 <?php 
 function get_logged_user(){
-    if(isset($_SESSION["user"]){
+    if(isset($_SESSION["user"])){
         return $_SESSION["user"];
     }
     return "";
