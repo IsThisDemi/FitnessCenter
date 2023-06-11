@@ -52,16 +52,6 @@ if ($result = mysqli_query($conn, $sql)) {
 </head>
 
 <body>
-    <header>
-        <h1>Corsi</h1>
-        <nav>
-            <a href="home.html"><span lang="en">Home</span></a>
-            <a href="palestra.html">Palestra</a>
-            <a href="corsi.html">Corsi</a>
-            <a href="contatti.html">Contatti</a>
-            <a href="login.html"><span lang="en">Login</span></a>
-        </nav>
-    </header>
     <section>
         <?php
         //Query per ottenere il le info della categoria
@@ -73,12 +63,17 @@ if ($result = mysqli_query($conn, $sql)) {
         $immagine_categoria = $row['immagine'];
         $descrizione = $row['descrizione'];
         $alt = $row['alt'];
-
-        echo "<h2><span lang='en'>" . $categoria . "</span></h2>
-            <p>" . $descrizione . "</p>";
         ?>
-
+        <div class="container">
+            <?php echo '<img src="../img/corsi/'.$immagine_categoria.'"alt="'.$alt.'">
+            <div class="overlay">
+                <h1><span lang="en">'.$categoria.'</span></h1>
+                <p>'.$descrizione.'</p>
+            </div>';
+            ?>
+        </div>
         <div id="corsi">
+            <?php echo '<h3>'.$numero_corsi.' corsi</h3>'; ?>
             <div class="flex-container">
                 <?php
                 for ($i = $minimo; $i <= $massimo; $i++) {
@@ -87,8 +82,7 @@ if ($result = mysqli_query($conn, $sql)) {
                     $result = mysqli_query($conn, $sql);
                     //Controllo se il corso esiste
                     $esiste = mysqli_num_rows($result);
-                    if ($esiste == 1)
-                    {
+                    if ($esiste == 1) {
                         $row = mysqli_fetch_assoc($result);
 
                         $corso = $row['nome_corso'];
@@ -100,7 +94,7 @@ if ($result = mysqli_query($conn, $sql)) {
                         $stabilita = $row['stabilità'];
 
                         echo '
-                        <a href="corso.php?id=' . $i . '">
+                        <a class="unstyled" href="corso.php?id=' . $i . '">
                             <article class="article-wrapper">
                                 <div class="rounded-lg container-project">
                                     <div class="project-image">
@@ -112,15 +106,15 @@ if ($result = mysqli_query($conn, $sql)) {
                                         <div class="project-title text-nowrap">' . $corso . '</div>
                                     </div>
                                     <div class="types">';
-                            if ($forza == 1)
+                        if ($forza == 1)
                             echo '<div class="project-type forza">• Forza</div>';
-                            if ($equilibrio == 1)
+                        if ($equilibrio == 1)
                             echo '<div class="project-type equilibrio">• Equilibrio</div>';
-                            if ($resistenza == 1)
+                        if ($resistenza == 1)
                             echo '<div class="project-type resistenza">• Resistenza</div>';
-                            if ($stabilita == 1)
+                        if ($stabilita == 1)
                             echo '<div class="project-type stabilita">• Stabilità</div>';
-                            echo '
+                        echo '
                                     </div>
                                 </div>
                             </article>

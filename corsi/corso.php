@@ -4,7 +4,7 @@ if (!isset($_GET['id'])) {
     header("location: index.php");
     exit;
 }
-$id_corso= $_GET['id'];
+$id_corso = $_GET['id'];
 require_once "../utilityphp/header.php";
 //Connessione al database
 $host = "localhost";
@@ -34,86 +34,126 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
 </head>
 
 <body>
-    <header>
-        <h1>Corsi</h1>
-        <nav>
-            <a href="home.html"><span lang="en">Home</span></a>
-            <a href="palestra.html">Palestra</a>
-            <a href="corsi.html">Corsi</a>
-            <a href="contatti.html">Contatti</a>
-            <a href="login.html"><span lang="en">Login</span></a>
-        </nav>
-    </header>
     <section>
         <?php
-    //Query per ottenere il le info del corso
-    //Query per ottenere il le info del corso
-    $sql = "SELECT * FROM `corsi` WHERE id_corso = '$id_corso'";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
+        //Query per ottenere il le info del corso
+        $sql = "SELECT * FROM `corsi` WHERE id_corso = '$id_corso'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
 
-    $corso = $row['nome_corso'];
-    $descrizione = $row['descrizione'];
-    $immagine_corso = $row['immagine'];
-    $alt = $row['alt'];
-    $forza = $row['forza'];
-    $equilibrio = $row['equilibrio'];
-    $resistenza = $row['resistenza'];
-    $stabilita = $row['stabilità'];
+        $corso = $row['nome_corso'];
+        $descrizione = $row['descrizione'];
+        $immagine_corso = $row['immagine'];
+        $alt = $row['alt'];
+        $forza = $row['forza'];
+        $equilibrio = $row['equilibrio'];
+        $resistenza = $row['resistenza'];
+        $stabilita = $row['stabilità'];
 
-    $intensita = $row['intensita'];
-    $durata = $row['durata'];
-    $calorie = $row['calorie'];
-    
-    $asciugamano = $row['asciugamano'];
-    $borraccia = $row['borraccia'];
-    $calzini = $row['calzini'];
-    $tappetino = $row['tappetino'];
-    $scarpe_sportive = $row['scarpe_sportive'];
-    $guantoni = $row['guantoni'];
-    $capelli_raccolti = $row['capelli_raccolti'];  
-    $abbigliamento_outdoor = $row['abbigliamento_outdoor'];
-    $scarpe_outdoor = $row['scarpe_outdoor'];
-    $accappatoio = $row['accappatoio'];
-    $cuffia = $row['cuffia'];
-    $costume = $row['costume'];
-    $ciabatte = $row['ciabatte'];
-    $piedi_nudi = $row['piedi_nudi'];
+        $intensita = $row['intensita'];
+        $durata = $row['durata'];
+        $calorie = $row['calorie'];
 
-        echo "<h2><span lang='en'>" . $corso . "</span></h2>
-            <p>" . $descrizione . "</p>";
+        $asciugamano = $row['asciugamano'];
+        $borraccia = $row['borraccia'];
+        $calzini = $row['calzini'];
+        $tappetino = $row['tappetino'];
+        $scarpe_sportive = $row['scarpe_sportive'];
+        $guantoni = $row['guantoni'];
+        $capelli_raccolti = $row['capelli_raccolti'];
+        $abbigliamento_outdoor = $row['abbigliamento_outdoor'];
+        $scarpe_outdoor = $row['scarpe_outdoor'];
+        $accappatoio = $row['accappatoio'];
+        $cuffia = $row['cuffia'];
+        $costume = $row['costume'];
+        $ciabatte = $row['ciabatte'];
+        $piedi_nudi = $row['piedi_nudi'];
+
+        echo '
+        <div class="container">
+        <img src="../img/corsi/' . $immagine_corso . '"alt="' . $alt . '">
+            <div class="overlay">
+                <h1><span lang="en">' . $corso . '</span></h1>
+                <p>' . $descrizione . '</p>
+            </div>';
         ?>
-
+        </div>
         <div id="corsi">
             <div class="flex-container">
+                <h3>Allena <?php
+                            if ($forza == 1)
+                                echo 'Forza ';
+                            if ($equilibrio == 1)
+                                echo 'Equilibrio ';
+                            if ($resistenza == 1)
+                                echo 'Resistenza ';
+                            if ($stabilita == 1)
+                                echo 'Stabilità '; ?></h3>
+            </div>
+            <div class="flex-container">
+                <img src="../img/corsi/icone/intensita.svg" alt="intensità">
+                <h3>Intensità</h3>
                 <?php
-
-                        echo '
-                        <a href="corso.php?id=' . $i . '">
-                            <article class="article-wrapper">
-                                <div class="rounded-lg container-project">
-                                    <div class="project-image">
-                                        <img src="../img/corsi/' . $immagine_corso . '" alt="' . $alt . '">
-                                    </div>
-                                </div>
-                                <div class="project-info">
-                                    <div class="flex-pr">
-                                        <div class="project-title text-nowrap">' . $corso . '</div>
-                                    </div>
-                                    <div class="types">';
-                        if ($forza == 1)
-                            echo '<div class="project-type forza">• Forza</div>';
-                        if ($equilibrio == 1)
-                            echo '<div class="project-type equilibrio">• Equilibrio</div>';
-                        if ($resistenza == 1)
-                            echo '<div class="project-type resistenza">• Resistenza</div>';
-                        if ($stabilita == 1)
-                            echo '<div class="project-type stabilita">• Stabilità</div>';
-                        echo '
-                                    </div>
-                                </div>
-                            </article>
-                        </a>';
+                if ($intensita == 1)
+                    echo '<p>Bassa</p>';
+                if ($intensita == 2)
+                    echo '<p>Media</p>';
+                if ($intensita == 3)
+                    echo '<p>Alta</p>'; ?>
+                <img src="../img/corsi/icone/durata.svg" alt="durata">
+                <h3>Durata</h3>
+                <?php echo '<p>' . $durata . ' minuti</p>'; ?>
+                <img src="../img/corsi/icone/calorie.svg" alt="calorie">
+                <h3>Calorie</h3>
+                <?php echo '<p>' . $calorie . ' kcal</p>'; ?>
+            </div>
+            <div class="flex-container">
+                <h3>Ricordati</h3>
+            </div>
+            <div class="flex-container">
+                <?php
+                if ($asciugamano == 1)
+                    echo '<img src="../img/corsi/icone/asciugamano.svg" alt="asciugamano">
+                    <p>Asciugamano</p>';
+                if ($borraccia == 1)
+                    echo '<img src="../img/corsi/icone/borraccia.svg" alt="borraccia">
+                    <p>Borraccia</p>';
+                if ($calzini == 1)
+                    echo '<img src="../img/corsi/icone/calzini.svg" alt="calzini">
+                    <p>Calzini</p>';
+                if ($tappetino == 1)
+                    echo '<img src="../img/corsi/icone/tappetino.svg" alt="tappetino">
+                    <p>Tappetino</p>';
+                if ($scarpe_sportive == 1)
+                    echo '<img src="../img/corsi/icone/scarpe_sportive.svg" alt="scarpe_sportive">
+                    <p>Scarpe sportive</p>';
+                if ($guantoni == 1)
+                    echo '<img src="../img/corsi/icone/guantoni.svg" alt="guantoni">
+                    <p>Guantoni</p>';
+                if ($capelli_raccolti == 1)
+                    echo '<img src="../img/corsi/icone/capelli_raccolti.svg" alt="capelli_raccolti">
+                    <p>Capelli raccolti</p>';
+                if ($abbigliamento_outdoor == 1)
+                    echo '<img src="../img/corsi/icone/abbigliamento_outdoor.svg" alt="abbigliamento_outdoor">
+                    <p>Abbigliamento outdoor</p>';
+                if ($scarpe_outdoor == 1)
+                    echo '<img src="../img/corsi/icone/scarpe_outdoor.svg" alt="scarpe_outdoor">
+                    <p>Scarpe outdoor</p>';
+                if ($accappatoio == 1)
+                    echo '<img src="../img/corsi/icone/accappatoio.svg" alt="accappatoio">
+                    <p>Accappatoio</p>';
+                if ($cuffia == 1)
+                    echo '<img src="../img/corsi/icone/cuffia.svg" alt="cuffia">
+                    <p>Cuffia</p>';
+                if ($costume == 1)
+                    echo '<img src="../img/corsi/icone/costume.svg" alt="costume">
+                    <p>Costume</p>';
+                if ($ciabatte == 1)
+                    echo '<img src="../img/corsi/icone/ciabatte.svg" alt="ciabatte">
+                    <p>Ciabatte</p>';
+                if ($piedi_nudi == 1)
+                    echo '<img src="../img/corsi/icone/piedi_nudi.svg" alt="piedi_nudi">
+                    <p>Piedi nudi</p>';
                 ?>
             </div>
         </div>
