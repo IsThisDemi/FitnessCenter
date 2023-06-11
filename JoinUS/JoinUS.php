@@ -1,0 +1,122 @@
+<?php
+require_once "connessione.php";
+
+$paginaHTML = file_get_contents("JoinUS.html");
+
+use DB\DBAccess; //importa la classe DBAccess presente in "connessione"
+
+$tagPermessi = '<em><strong><ul><li>'; //se ci fosse un tag non permesso, lo rimuove fino alla fine e si ha codice non valido
+$messaggiPerForm = ''; //messaggi di errore per la form
+
+//Variabili per il form
+
+$nome = '';
+$cognome = '';
+$sesso = '';
+$dataNascita = '';
+$email = '';
+$telefono = '';
+$note = '';
+
+function pulisciInput($value) {
+    $value = trim($value); //trim() rimuove gli spazi bianchi (o altri caratteri) dall'inizio e dalla fine di una stringa
+    $value = strip_tags($value); //strip_tags() rimuove le tag HTML e PHP da una stringa
+    $value = htmlentities($value); //htmlentities() converte i caratteri speciali in entità HTML
+    //se faccio prima "htmlentities", "strip_tags" non è più utile
+    return $value;
+}
+function pulisciNote($value){
+    global $tagPermessi;
+
+    $value = trim($value); 
+    $value = strip_tags($value, $tagPermessi); 
+    return $value;
+}
+
+
+//per il controllo degli errori/input, si adotta come si vede il pattern matching
+
+if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'interno della form
+
+
+    $nome = pulisciInput($_POST['nome']); //pulisce il nome
+    if (strlen($nome) == 0){
+        $messaggiPerForm .= '<li>Nome non inserito</li>';
+    }
+    else{
+        if(preg_match("/\d/", $nome)){ //se il nome contiene un numero
+            $messaggiPerForm .= '<li>Nome  non può contenere numeri</li>';
+        }
+    }
+
+    $cognome = pulisciInput($_POST['cognome']); 
+    if (strlen($nome) == 0){
+        $messaggiPerForm .= '<li>Cognome non inserito</li>';
+    }
+    else{
+        if(preg_match("/\d/", $cognome)){ 
+            $messaggiPerForm .= '<li>Cognome  non può contenere numeri</li>';
+        }
+    }
+
+    $sesso = pulisciInput($_POST['sesso']); //pulisce il sesso
+
+
+    $dataNascita = pulisciInput($_POST['dataNascita']); 
+    if (strlen($dataNascita) == 0){
+        $messaggiPerForm .= '<li>Data di nascita non inserita</li>';
+    }
+    else{
+        if(!preg_match("/\d{4}\-\d{2}\-\d{2}/", $dataNascita)){ //se la data non è nel formato corretto (anno - mese - giorno)
+            $messaggiPerForm .= '<li>La data di nascita non è nel formato corretto</li>';
+        }
+    }
+
+
+    $email = pulisciInput($_POST['email']);
+     if (strlen($email) == 0){
+        $messaggiPerForm .= '<li>Email non inserita</li>';
+    }
+    else{
+        if(!preg_match("/^ (?=.{ 1, 64}@)[A - Za - z0 -9_ -] + (\\.[A - Za - z0 -9_ -] +)* @[^ -][A - Za - z0 - 9 -] + (\\.[A - Za - z0 - 9 -] +)* (\\.[A - Za - z]{ 2, }) $/", $email)){
+            $messaggiPerForm .= '<li>Email non è nel formato corretto</li>';
+        }
+    }
+    
+    $telefono = pulisciInput($_POST['telefono']);
+    if (strlen($telefono) == 0){
+        $messaggiPerForm .= '<li>Telefono non inserito</li>';
+    }
+    else{
+        if(preg_match("/\d{10}/", $telefono)){
+            $messaggiPerForm .= '<li>Il numero di telefono deve essere di lughezza 10 e non può contenere caratteri</li>';
+        }
+    }
+    
+    $note = pulisciNote($_POST['note']);
+
+    if($messaggiPerForm=="") {
+        $connessione = new DBAccess();
+        $connOK = $connessione->openDBConnection();
+        if($connOK) {
+            $queryOK = $connessione->insertNewCostumer($nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note);
+            if($queryOK) {
+                $messaggiPerForm = '<div id="greetings"><p>Inserimento avvenuto con successo.</p></div>';
+            } else {
+                $messaggiPerForm = '<div id="messageErrors"><p>Problema nell\'inserimento dei dati, controlla se hai usato caratteri speciali. </p></div>';
+            }
+        } else {
+            $messaggiPerForm = '<div id="messageErrors"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>';
+        }
+    } else {
+        $messaggiPerForm = '<div id="messageErrors"><ul>' . $messaggiPerForm . '</ul></div>';
+    }
+}
+
+$paginaHTML = str_replace("<messaggiForm />", $messaggiPerForm, $paginaHTML); //sostituisce il valore del segnaposto con il codice corrispondente
+$paginaHTML = str_replace("<valoreNome />", $nome, $paginaHTML); //sostituisce il valore del segnaposto con il codice corrispondente
+$paginaHTML = str_replace("<valoreCognome />", $cognome, $paginaHTML);
+$paginaHTML = str_replace("<valData />", $dataNascita, $paginaHTML);
+$paginaHTML = str_replace("<valoreMail />", $email, $paginaHTML);
+$paginaHTML = str_replace("<valoreTel />", $telefono, $paginaHTML);
+?>
