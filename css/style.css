@@ -747,7 +747,6 @@ nav .menu_name {
 	grid-area: m;
 	height: 600px;
 	margin : 1em 1em 1em 0em;
-	width: 50%;
 }
 
 iframe#map {
@@ -762,7 +761,6 @@ iframe#map {
 	background-color: var(--gradient-second-color);
 	height: 600px;
 	margin : 1em 0em 1em 1em;
-	width: 50%;
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
