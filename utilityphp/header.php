@@ -25,7 +25,7 @@ $fl_pagine["index"]="i";
 $fl_pagine["more"]="m";
 $fl_pagine["login"]="l";
 
-$navmenu=["home","clubs","index","more","login"];
+$navmenu=["home","clubs","index","more","login",];
 
 $genitore_pagine=[];//nome->genitore
 $genitore_pagine["home"]="#";
@@ -35,6 +35,7 @@ $genitore_pagine["more"]="home";
 $genitore_pagine["login"]="home";
 $genitore_pagine["categoria"]="index";
 $genitore_pagine["corso"]="categoria";
+$genitore_pagine["area_utente"]="login";
 
 /// Genera l'header di una data pagina
 function genera_header($pagina){
