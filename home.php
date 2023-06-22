@@ -33,7 +33,8 @@
                 Ti alleni a <span class="testo_rosso">10€ al mese per i primi 3 mesi!</span><br>
                 Basta scegliere la sede e iscriversi. <br>
                 Solo fino al 31 giugno!
-            </p><a class="menu_link first_letter_underlined" href="LINK PAGINA ISCRIZIONE" tabindex="5" accesskey="u">UNISCITI ORA</a>
+            </p>
+            <a class="menu_link first_letter_underlined" href="LINK PAGINA ISCRIZIONE" tabindex="5" accesskey="u">UNISCITI ORA</a>
         </div> 
     </div>
 
@@ -106,11 +107,12 @@
     </div>
 
     <div id="home_info">
-        <h3>Hai dei dubbi?</h3>
+        <h3 id="home_info_titolo">Hai dei dubbi?</h3>
         <p id="home_info_testo">
+            Sei ancora indeciso o hai semplicmente dei dubbi?<br>
             Per maggiori informazioni consulta la nostra sezione <span lang="en"><abbr title="frequently asked questions">FAQ</abbr></span>
         </p>
-        <a class="menu_link first_letter_underlined" href="info.php" tabindex="9" accesskey="f">DOMANDE FREQUENTI</a>
+        <a class="menu_link first_letter_underlined" href="info.php" tabindex="9" accesskey="f"><abbr title="frequently asked questions">FAQ</abbr> - SCOPRI DI PIU'</a>
     </div>
 
     <?php

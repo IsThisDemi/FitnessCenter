@@ -80,12 +80,13 @@ header {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	text-transform: uppercase;
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	
 }
 
 header li {
@@ -484,6 +485,9 @@ nav .menu_name {
 	padding: 0.8em 1em;
 	text-transform: uppercase;
 	font-size: 1.4em;
+	border: 5px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 /* 
@@ -492,8 +496,39 @@ nav .menu_name {
 ---------------
 */
 
-#home_info{
+#home_info {
 	grid-area: info;
+	font-size: large;
+	text-align: center;
+}
+
+#home_info_titolo {
+	font-size: 2.5em;
+	color: var(--secondary-color);
+}
+
+#home_info_testo {
+	font-size: 1.5em;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+#home_info .menu_link {
+	margin: 0.5em;
+	padding: 0.8em 1em;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	border: 5px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+#home_info abbr {
+	text-decoration: none;
+}
+
+#home_info .menu_link abbr {
+	color:var(--secondary-color);
 }
 
 /* 
@@ -711,6 +746,7 @@ nav .menu_name {
 #SediPage {
 	display:grid;
     grid-template-columns: 1fr 1fr;
+	row-gap: 2em;
     grid-template-areas: 
 	"h h"
 	"b b"
