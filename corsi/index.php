@@ -39,6 +39,11 @@
 	</head>
 
 	<body>
+	    <?php
+
+        genera_header("corsi");
+
+        ?>
 	    <section>
 	        <div class="container">
 	            <video class="video-background" autoplay muted playsinline preload="auto">
@@ -46,8 +51,8 @@
 	                Your browser does not support the video tag.
 	            </video>
 	            <div class="overlay">
-	                <h1>Scopri i nostri corsi</h1>
-	                <p>Esplora le tue passioni con <?php echo $numero_corsi; ?> corsi tra cui scegliere</p>
+	                <h1 id="home_titolo_titolo">Scopri i nostri corsi</h1>
+	                <p id="home_titolo_testo">Esplora le tue passioni con <b><span class="testo_rosso"><?php echo $numero_corsi; ?> corsi</span></b> tra cui scegliere</p>
 	            </div>
 	        </div>
 	        <div class="text-container">

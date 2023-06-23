@@ -65,10 +65,10 @@ if ($result = mysqli_query($conn, $sql)) {
         $alt = $row['alt'];
         ?>
         <div class="container">
-            <?php echo '<img src="../img/corsi/'.$immagine_categoria.'"alt="'.$alt.'">
+            <?php echo '<img src="../img/corsi/'.$immagine_categoria.'"alt="'.$alt. '">
             <div class="overlay">
-                <h1><span lang="en">'.$categoria.'</span></h1>
-                <p>'.$descrizione.'</p>
+                <h1 id="home_titolo_titolo"><span lang="en">'.$categoria. '</span></h1>
+                <p id="home_titolo_testo">'.$descrizione.'</p>
             </div>';
             ?>
         </div>

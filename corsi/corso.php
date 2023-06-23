@@ -73,26 +73,26 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
         <div class="container">
         <img src="../img/corsi/' . $immagine_corso . '"alt="' . $alt . '">
             <div class="overlay">
-                <h1><span lang="en">' . $corso . '</span></h1>
-                <p>' . $descrizione . '</p>
+                <h1 id="home_titolo_titolo"><span lang="en">' . $corso . '</span></h1>
+                <p id="home_titolo_testo">' . $descrizione . '</p>
             </div>';
         ?>
         </div>
         <div id="corsi">
             <div class="flex-container">
-                <h3>Allena <?php
-                            if ($forza == 1)
-                                echo 'Forza ';
-                            if ($equilibrio == 1)
-                                echo 'Equilibrio ';
-                            if ($resistenza == 1)
-                                echo 'Resistenza ';
-                            if ($stabilita == 1)
-                                echo 'Stabilità '; ?></h3>
+                <h3 id="home_titolo_titolo">Allena <?php
+                    if ($forza == 1)
+                        echo 'Forza ';
+                    if ($equilibrio == 1)
+                        echo 'Equilibrio ';
+                    if ($resistenza == 1)
+                        echo 'Resistenza ';
+                    if ($stabilita == 1)
+                        echo 'Stabilità '; ?></h3>
             </div>
             <div class="flex-container">
                 <img src="../img/corsi/icone/intensita.svg" alt="intensità">
-                <h3>Intensità</h3>
+                <h3 class="etichetta_corsi">Intensità</h3>
                 <?php
                 if ($intensita == 1)
                     echo '<p>Bassa</p>';
@@ -108,7 +108,7 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
                 <?php echo '<p>' . $calorie . ' kcal</p>'; ?>
             </div>
             <div class="flex-container">
-                <h3>Ricordati</h3>
+                <h3 id="home_titolo_titolo">Ricordati</h3>
             </div>
             <div class="flex-container">
                 <?php
