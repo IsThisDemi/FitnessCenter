@@ -142,9 +142,49 @@ header li {
 
 footer {
 	grid-area: f;
-	border-top: solid 1px var(--text-color);
-	padding-top:1em;
+	display: flex;
+	flex-direction: row;
+	border-top: solid 2px var(--text-color);
+	padding-top: 1em;
 	padding: 1em;
+	background-color: var(--header-color);
+}
+
+#footer_text_box {
+	padding: 1em;
+}
+
+#footer_text_box p {
+	padding: 0.2em;
+}
+
+#titolo_footer {
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+	background-image: url("../img/fitnesscenter-logo-files/logo-white-no-background.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    text-indent: -1000px;
+    font-size: 3em;
+	width: 2em;
+}
+
+#copyright_text {
+	margin-top: 2em;
+	font-size: 0.8em;
+	color: var(--gradient-first-color);
+	font-style: italic;
+}
+
+#copyright_text span {
+	color: var(--gradient-first-color);
+}
+
+#autori_text {
+	margin-top: 1em;
+	font-size: 0.8em;
+	color: var(--gradient-first-color);
 }
 
 .subtitle {
@@ -183,6 +223,12 @@ nav .menu_name {
 	text-decoration: none;
 	padding: 1rem;
 }
+
+/* 
+------------------------------------------------------------
+						BREADCRUMBS
+------------------------------------------------------------
+*/
 
 .breadcrumbs {
 	grid-area: b;
@@ -500,6 +546,8 @@ nav .menu_name {
 	grid-area: info;
 	font-size: large;
 	text-align: center;
+	margin-bottom: 2em;
+	padding: 1em;
 }
 
 #home_info_titolo {
