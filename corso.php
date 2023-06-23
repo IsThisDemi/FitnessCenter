@@ -33,7 +33,7 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
     <script src="js/corsi.js"></script>
 </head>
 
-<body>
+<body id="corpo_corso">
     <?php
 
     genera_header("corso");

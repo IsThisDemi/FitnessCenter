@@ -38,7 +38,7 @@
 	    <script src="js/corsi.js"></script>
 	</head>
 
-	<body>
+	<body id="corpo_corso">
 	    <?php
 
         genera_header("offerta corsi");

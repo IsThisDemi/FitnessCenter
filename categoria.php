@@ -51,7 +51,7 @@ if ($result = mysqli_query($conn, $sql)) {
     <script src="js/corsi.js"></script>
 </head>
 
-<body>
+<bod id="corpo_corso">
     <?php
 
     genera_header("categoria");
@@ -133,6 +133,6 @@ if ($result = mysqli_query($conn, $sql)) {
     <?php
     include_once "utilityphp/footer.php";
     ?>
-</body>
+    </body>
 
 </html>

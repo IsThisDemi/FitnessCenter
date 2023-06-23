@@ -354,10 +354,12 @@ nav .menu_name {
 	CORSI
 ---------------
 */
-
-#cover {
-	margin-top: 2em;
+#corpo_corso .breadcrumbs {
+	margin: 0em;
 }
+/*#cover {
+	margin-top: 2em;
+}*/
 
 #home_corsi_bg {
 	grid-area: cb;
