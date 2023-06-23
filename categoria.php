@@ -1,16 +1,16 @@
 <?php
 //Se non è inserita una categoria torno alla pagina principale
 if (!isset($_GET['id'])) {
-    header("location: index.php");
+    header("location: offerta_corsi.php");
     exit;
 }
 $id_categoria = $_GET['id'];
 //Controllo che sia una categoria valida
 if ($id_categoria < 1 || $id_categoria > 8) {
-    header("location: index.php");
+    header("location: offerta_corsi.php");
     exit;
 }
-require_once "../utilityphp/header.php";
+require_once "utilityphp/header.php";
 //Connessione al database
 $host = "localhost";
 $username = "root";
@@ -44,15 +44,20 @@ if ($result = mysqli_query($conn, $sql)) {
     <meta name="keywords" content="corsi, palestra, yoga, pilates, zumba, body building, spinning, step">
     <meta name="author" content="Nome Palestra">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
-    <link rel="stylesheet" href="../css/print.css" media="print" />
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <script src="../js/corsi.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/corsi.js"></script>
 </head>
 
-<body>
-    <section>
+<bod id="corpo_corso">
+    <?php
+
+    genera_header("categoria");
+
+    ?>
+    <section id="cover">
         <?php
         //Query per ottenere il le info della categoria
         $sql = "SELECT * FROM `categorie` WHERE id_categoria = '$id_categoria'";
@@ -65,15 +70,15 @@ if ($result = mysqli_query($conn, $sql)) {
         $alt = $row['alt'];
         ?>
         <div class="container">
-            <?php echo '<img src="../img/corsi/'.$immagine_categoria.'"alt="'.$alt.'">
+            <?php echo '<img src="img/corsi/' . $immagine_categoria . '"alt="' . $alt . '">
             <div class="overlay">
-                <h1><span lang="en">'.$categoria.'</span></h1>
-                <p>'.$descrizione.'</p>
+                <h1 id="home_titolo_titolo"><span lang="en">' . $categoria . '</span></h1>
+                <p id="home_titolo_testo">' . $descrizione . '</p>
             </div>';
             ?>
         </div>
         <div id="corsi">
-            <?php echo '<h3>'.$numero_corsi.' corsi</h3>'; ?>
+            <?php echo '<h3>' . $numero_corsi . ' corsi</h3>'; ?>
             <div class="flex-container">
                 <?php
                 for ($i = $minimo; $i <= $massimo; $i++) {
@@ -98,7 +103,7 @@ if ($result = mysqli_query($conn, $sql)) {
                             <article class="article-wrapper">
                                 <div class="rounded-lg container-project">
                                     <div class="project-image">
-                                        <img src="../img/corsi/' . $immagine_corso . '" alt="' . $alt . '">
+                                        <img src="img/corsi/' . $immagine_corso . '" alt="' . $alt . '">
                                     </div>
                                 </div>
                                 <div class="project-info">
@@ -126,8 +131,8 @@ if ($result = mysqli_query($conn, $sql)) {
         </div>
     </section>
     <?php
-    include_once "../utilityphp/footer.php";
+    include_once "utilityphp/footer.php";
     ?>
-</body>
+    </body>
 
 </html>

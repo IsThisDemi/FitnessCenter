@@ -341,6 +341,7 @@ nav .menu_name {
 #home_titolo_titolo {
 	font-size: 4em;
 	line-height: 0.9em;
+	text-shadow: 2px 2px 5px black;
 }
 
 #home_titolo_testo {
@@ -348,6 +349,7 @@ nav .menu_name {
 	padding: 0.5em;
 	font-size: 1em;
 	line-height: 1.3em;
+	text-shadow: 2px 2px 5px black;
 }
 
 /* 
@@ -398,6 +400,12 @@ nav .menu_name {
 	CORSI
 ---------------
 */
+#corpo_corso .breadcrumbs {
+	margin: 0em;
+}
+/*#cover {
+	margin-top: 2em;
+}*/
 
 #home_corsi_bg {
 	grid-area: cb;
@@ -584,10 +592,20 @@ nav .menu_name {
 						CORSI
 ====================================================
 */
+
+.etichetta_corsi {
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	flex: 1;
+	margin-bottom: 30px;
+	font-weight: 600;
+}
+
 .video-background {
 	width: 100%;
 	max-width: -webkit-fill-available;
-	max-width: fill-available;
+
 }
 
 .unstyled {

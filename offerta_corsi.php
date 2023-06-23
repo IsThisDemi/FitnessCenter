@@ -1,4 +1,4 @@
-	<?php require_once "../utilityphp/header.php";
+	<?php require_once "utilityphp/header.php";
     //Connessione al database
     $host = "localhost";
     $username = "root";
@@ -31,23 +31,28 @@
 	    <meta name="keywords" content="corsi, palestra, yoga, pilates, zumba, body building, spinning, step">
 	    <meta name="author" content="Nome Palestra">
 
-	    <link rel="stylesheet" href="../css/style.css">
+	    <link rel="stylesheet" href="css/style.css">
 	    <link rel="stylesheet" href="css/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
 	    <link rel="stylesheet" href="css/print.css" media="print" />
-	    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-	    <script src="../js/corsi.js"></script>
+	    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	    <script src="js/corsi.js"></script>
 	</head>
 
-	<body>
-	    <section>
+	<body id="corpo_corso">
+	    <?php
+
+        genera_header("offerta corsi");
+
+        ?>
+	    <section id="cover">
 	        <div class="container">
 	            <video class="video-background" autoplay muted playsinline preload="auto">
 	                <source src="https://player.vimeo.com/progressive_redirect/playback/787631395/rendition/1080p/file.mp4?loc=external&amp;signature=61fc2002eacfa849cd11c063b1e487d3a25314bf5d41d73e5681328af84d53aa" type="video/mp4">
 	                Your browser does not support the video tag.
 	            </video>
 	            <div class="overlay">
-	                <h1>Scopri i nostri corsi</h1>
-	                <p>Esplora le tue passioni con <?php echo $numero_corsi; ?> corsi tra cui scegliere</p>
+	                <h1 id="home_titolo_titolo">Scopri i nostri corsi</h1>
+	                <p id="home_titolo_testo">Esplora le tue passioni con <b><span class="testo_rosso"><?php echo $numero_corsi; ?> corsi</span></b> tra cui scegliere</p>
 	            </div>
 	        </div>
 	        <div class="text-container">
@@ -87,11 +92,11 @@
                         $numero_corsi = $row['numero_corsi'];
 
                         //Genero le box contenenti i dati
-                        echo '<a class="unstyled" href="../corsi/categoria.php?id=' . $i . '">
+                        echo '<a class="unstyled" href="categoria.php?id=' . $i . '">
                                 <article class="article-wrapper">
                                     <div class="rounded-lg container-project">
                                         <div class="project-image">
-                                            <img src="../img/corsi/' . $immagine_categoria . '" alt="' . $alt . '">
+                                            <img src="img/corsi/' . $immagine_categoria . '" alt="' . $alt . '">
                                         </div>
                                     </div>
                                     <div class="project-info">
@@ -108,7 +113,7 @@
 	        </div>
 	    </section>
 	    <?php
-        include_once "../utilityphp/footer.php";
+        include_once "utilityphp/footer.php";
         ?>
 	</body>
 

@@ -14,26 +14,28 @@ $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-la
 $link_pagine=[];//nome->link
 $link_pagine["home"]="home.php";
 $link_pagine["clubs"]="clubs.php";
-$link_pagine["index"]="corsi/index.php";
+$link_pagine["offerta corsi"]="offerta_corsi.php";
+$link_pagine["categoria"] = "history.back()";
+$link_pagine["corso"] = "corso.php";
 $link_pagine["more"]="info.php";
 $link_pagine["login"]="login.php";
 
 $fl_pagine=[];//nome->link
 $fl_pagine["home"]="h";
 $fl_pagine["clubs"]="c";
-$fl_pagine["index"]="i";
+$fl_pagine["offerta corsi"]="o";
 $fl_pagine["more"]="m";
 $fl_pagine["login"]="l";
 
-$navmenu=["home","clubs","index","more","login",];
+$navmenu=["home","clubs","offerta corsi","more","login",];
 
 $genitore_pagine=[];//nome->genitore
 $genitore_pagine["home"]="#";
 $genitore_pagine["clubs"]="home";
-$genitore_pagine["index"]="home";
+$genitore_pagine["offerta corsi"]="home";
 $genitore_pagine["more"]="home";
 $genitore_pagine["login"]="home";
-$genitore_pagine["categoria"]="index";
+$genitore_pagine["categoria"]="offerta corsi";
 $genitore_pagine["corso"]="categoria";
 $genitore_pagine["area_utente"]="login";
 
@@ -60,8 +62,15 @@ function genera_header($pagina){
 	// genera breadcrumb nel formato genitore/figlio/.....		
 	while($parent&&$parent!="#"){//verifica il raggiungimento della radice
 		// aggiunge genitore/ a breadrumbs in formato figlio/.....
-		$breadcrumb="<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> > ". $breadcrumb;
-		$parent=$genitore_pagine[$parent];
+		if($parent == "categoria")
+		{
+			$breadcrumb = "<a href='javascript:history.back()'>" . $parent . "</a> > " . $breadcrumb;
+			$parent = $genitore_pagine[$parent];
+		}
+		else {
+			$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> > " . $breadcrumb;
+			$parent = $genitore_pagine[$parent];
+		}
 	}
 	$output= str_replace("<MENU/>",$menu,$template);
 	$output= str_replace("<BREADCRUMB/>",$breadcrumb,$output);
