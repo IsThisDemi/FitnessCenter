@@ -8,6 +8,7 @@
 	--gradient-last-color: #121212;
 	--visited-links: #BBBBBB;
 	--text-color: white;
+	--alternative-text-color: black;
 	--red: rgb(196, 47, 47);
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
@@ -16,6 +17,7 @@
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
 }
+
 * {
 	padding: 0;
 	margin: 0;
@@ -65,6 +67,12 @@ body {
 }
 img {max-width: 100%;height: auto}
 
+/* 
+------------------------------------------------------------
+							HEADER
+------------------------------------------------------------
+*/
+
 header {
 	grid-area: h;
 	border: 1px solid var(--secondary-color);
@@ -72,12 +80,13 @@ header {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	text-transform: uppercase;
 	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	
 }
 
 header li {
@@ -104,6 +113,10 @@ header li {
 	clip: rect(1px, 1px, 1px, 1px);
 }
 
+.menu_name {
+	font-weight: 700;
+}
+
 .navmenu {
 	margin: 5px 0 0 0;
   	padding: 1.5em;
@@ -120,6 +133,12 @@ header li {
 .navmenu a:hover {
 	color: var(--visited-links);
 }
+
+/* 
+------------------------------------------------------------
+							FOOTER
+------------------------------------------------------------
+*/
 
 footer {
 	grid-area: f;
@@ -167,15 +186,16 @@ nav .menu_name {
 
 .breadcrumbs {
 	grid-area: b;
-	padding: 1rem;
+	margin: -2em 0;
+	padding: 1.3em ;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 	background-color: var(--gradient-second-color);
 }
 
 .breadcrumbs #percorso {
 	color: var(--secondary-color);
-	font-weight: bold;
+	font-weight: 700;
 }
 
 .breadcrumbs a{
@@ -184,7 +204,8 @@ nav .menu_name {
 }
 
 .breadcrumbs a:hover{
-	color: var(--header-color);
+	color: var(--links-visited-color);
+	font-weight: 900;
 }
 
 .breadcrumbs #current_page{
@@ -202,17 +223,19 @@ nav .menu_name {
 */
 
 #HomePage {
-	display:grid;
-    grid-template-columns: 1fr;
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 2em;
+	column-gap: 1em;
     grid-template-areas:
-	"h"
-	"b" 
-    "t"
-    "s"
-	"c"
-	"iscr"
-	"info" 
-	"f";
+			"h h h"
+			"b b b"
+			"t t t"
+			"s sb sb"
+			"cb cb c "
+			"iscr iscr iscr"
+			"info info info" 
+			"f f f";
 }
 
 #HomePage b {
@@ -227,7 +250,7 @@ nav .menu_name {
 .menu_link {
 	background-color: var(--text-color);
 	padding: 1.0em;
-	margin: 2.0em;
+	margin: 0 0.5em 0.5em 0;
 	color: var(--primary-color);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 0.8em;
@@ -238,6 +261,10 @@ nav .menu_name {
 
 .menu_link:hover {
 	background-color: var(--visited-links);
+}
+
+.spazio_vuoto {
+	margin: 4em;
 }
 
 /* 
@@ -281,30 +308,26 @@ nav .menu_name {
 
 /* 
 ---------------
-	SEDI
+	  CLUBS
 ---------------
 */
 
-#home_sedi{
-	grid-area: s;
-	margin: 2em 1em 1em 1em;
-}
 
 #home_sedi_bg {
-	float:right;
+	grid-area: sb;
 	background-image: url('../img/home_sedi_bg.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-	height:400px;
-	width:60%;
+	position: relative;
+	height:auto;
 }
 
 #home_sedi_text_box {
-	float: left;
-	height:400px;
-	width:40%;
-	margin: auto;
-	padding: 4em 0 0 0;
+	grid-area: s;
+	background-color: var(--gradient-first-color-hover);
+	height: auto;
+	margin-left: 1em;
+	padding: 2em 0.5em 0em 0.5em;
 }
 
 #home_sedi_titolo {
@@ -332,20 +355,141 @@ nav .menu_name {
 ---------------
 */
 
-#home_corsi{
+#home_corsi_bg {
+	grid-area: cb;
+	background-image: url('../img/corsi/cycle-body-main.jpg');
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: auto;
+}
+
+#home_corsi_text_box {
 	grid-area: c;
-	margin:1em;
+	background-color: var(--gradient-first-color-hover);
+	height: auto;
+	margin-right: 1em;
+	padding: 15% 1em 1em 1em;
+}
+
+#home_corsi_titolo {
+	text-align: center;
+	font-size: 2.5em;
+}
+
+#home_corsi_testo {
+	margin: 1em 1em 0.5em 1em;
+	padding: 0.5em;
+	font-size: 1em;
+}
+
+.u_list {
+	margin: 0.2em 0 0.2em 1.8em;
+}
+
+#home_corsi_text_box .first_letter_underlined {
+	float:right;
+}
+
+#home_corsi_text_box .menu_link {
+	margin: 0 0 1em 0;
+	padding: 0.8em 1em;
+	
 }
 
 /* 
----------------
+------------------
 	ISCRIZIONE
----------------
+------------------
 */
 
-#home_iscrizione{
+#home_iscrizione {
 	grid-area: iscr;
-	margin:1em;
+	margin: 1em;
+	text-align: center;
+	display: grid;
+	gap: 1em;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	"iti iti iti"
+	"ite ite ite"
+	"p1 p2 p3"
+	". b .";
+}
+
+#home_iscrizione_titolo {
+	grid-area: iti;
+	font-size: 2.5em;
+	text-transform: uppercase;
+	padding: 0.3em 0.3em 0 0.3em;
+}
+
+#home_iscrizione_testo {
+	grid-area: ite;
+	background-color: var(--gradient-first-color-hover);
+	width: 60%;
+	height: auto;
+	margin: auto;
+	padding: 1em;
+	text-align: center;
+	line-height: 1.3em;
+	object-position: center;
+}
+
+#home_iscrizione_piano1 {
+	grid-area: p1;
+	background-color: #f74b45;
+}
+
+#home_iscrizione_piano2 {
+	grid-area: p2;
+	background-color: #4386c2;
+}
+
+#home_iscrizione_piano3 {
+	grid-area: p3;
+	background-color: #d4c72f;
+}
+
+#home_iscrizione_piano1:hover {
+	background-color: #e62620;
+}
+
+#home_iscrizione_piano2:hover {
+	background-color: #1b7acc;
+}
+
+#home_iscrizione_piano3:hover {
+	background-color: #aa9d0c;
+}
+
+#home_iscrizione_piano1,
+#home_iscrizione_piano2,
+#home_iscrizione_piano3 {
+	margin: 0.5em;
+	padding: 0.5em;
+	text-align: left;
+	border-radius: 5%;
+}
+
+#home_iscrizione_piano1 h4,
+#home_iscrizione_piano2 h4,
+#home_iscrizione_piano3 h4 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	padding: 10px;
+}
+
+#home_iscrizione .menu_link {
+	grid-area: b;
+	margin: 0.5em;
+	padding: 0.8em 1em;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	border: 5px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 /* 
@@ -354,9 +498,39 @@ nav .menu_name {
 ---------------
 */
 
-#home_info{
+#home_info {
 	grid-area: info;
-	margin:1em 1em 2em 1em;
+	font-size: large;
+	text-align: center;
+}
+
+#home_info_titolo {
+	font-size: 2.5em;
+	color: var(--secondary-color);
+}
+
+#home_info_testo {
+	font-size: 1.5em;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+#home_info .menu_link {
+	margin: 0.5em;
+	padding: 0.8em 1em;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	border: 5px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+#home_info abbr {
+	text-decoration: none;
+}
+
+#home_info .menu_link abbr {
+	color:var(--secondary-color);
 }
 
 /* 
@@ -577,19 +751,20 @@ nav .menu_name {
 
 /* 
 ====================================================
-					SEDI 
+						SEDI 
 ==================================================== 
 */
 
 #SediPage {
 	display:grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+	row-gap: 2em;
     grid-template-areas: 
-	"h"
-	"b"
-    "s"
-    "l"
-	"f";
+	"h h"
+	"b b"
+    "s s"
+    "l m"
+	"f f";
 }
 
 #search_bar {
@@ -615,16 +790,11 @@ nav .menu_name {
 	color: white;
 	font-style: italic;
 }
-#clubs_list_map_container {
-	grid-area: l;
-	height: 600px;
-	margin : 1em;
-}
 
 #google_map {
-	float: right;
+	grid-area: m;
 	height: 600px;
-	width: 50%;
+	margin : 1em 1em 1em 0em;
 }
 
 iframe#map {
@@ -635,9 +805,10 @@ iframe#map {
 }
 
 #addresses_container {
+	grid-area: l;
 	background-color: var(--gradient-second-color);
 	height: 600px;
-	width: 50%;
+	margin : 1em 0em 1em 1em;
 	text-overflow: ellipsis;
 	overflow: hidden;
 }

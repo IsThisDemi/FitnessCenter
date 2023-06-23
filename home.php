@@ -23,61 +23,101 @@
        genera_header("home");               
     ?>
 
-    <main id="content"> 
-        <div id="home_titolo_bg">
-            <div id="home_titolo_text_box">
-                <h1 id="home_titolo_titolo">Allenati per <span class="testo_rosso">il tuo benessere</span></h1>
-                <p id="home_titolo_testo">
-                    <b>Offerta speciale di giugno :</b> 
-                    preparati per l'arrivo dell'estate abbonandoti ora!<br>
-                    Ti alleni a <span class="testo_rosso">10€ al mese per i primi 3 mesi!</span><br>
-                    Basta scegliere la sede e iscriversi. <br>
-                    Solo fino al 31 giugno!
-                </p>
-                <p class="first_letter_underlined"><a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="5" accesskey="u">UNISCITI ORA</a></p>
-            </div> 
-        </div>
-
-        <div id="home_sedi">
-            <div id="home_sedi_bg"></div>
-            <div id="home_sedi_text_box">
-                <h3 id="home_sedi_titolo"><span lang="en">Clubs</span></h3>
-                <p id="home_sedi_testo">Più di 100 palestre affiliate sparse in giro per l'Italia.<br>
-                                        Non sai se siamo vicini a te? <br>
-                                        <b>Cerca la sede più vicina a te</b>
-                </p>
-                <p class="first_letter_underlined"><a class="menu_link" href="clubs.php" tabindex="6" accesskey="c">CERCA</a></p>
-            </div>
-        </div>
-
-        <div id="home_corsi">
-            <div id="home_corsi_bg"></div>
-            <div id="home_corsi_text_box">
-                <h3 id="home_corsi_titolo">Esplora i nostri corsi ed allenamenti</h3>
-                <p id="home_corsi_testo">
-                    Corsi di <span lang="en">Yoga, Pilates, Body Building</span> e molto altro
-                </p>
-                <p class="first_letter_underlined"><a class="menu_link" href="corsi/index.php" tabindex="7" accesskey="e">ESPLORA</a></p>
-            </div>
-        </div>
-
-        <div id="home_iscrizione">
-            <h3>Cosa aspetti ad iscriverti</h3>
-            <p class="first_letter_underlined"><a class="menu_link" href="LINK PAGINA ISCRIZIONE" tabindex="8" accesskey="a">ABBONATI</a></p>
-        </div>
-
-        <div id="home_info">
-            <h3>Hai dei dubbi?</h3>
-            <p id="home_info_testo">
-                Per maggiori informazioni consulta la nostra sezione <span lang="en"><abbr title="frequently asked questions">FAQ</abbr></span>
+    <div id="content"></div>
+    <div id="home_titolo_bg">
+        <div id="home_titolo_text_box">
+            <h1 id="home_titolo_titolo">Allenati per <span class="testo_rosso">il tuo benessere</span></h1>
+            <p id="home_titolo_testo">
+                <b>Offerta speciale di giugno :</b> 
+                preparati per l'arrivo dell'estate abbonandoti ora!<br>
+                Ti alleni a <span class="testo_rosso">10€ al mese per i primi 3 mesi!</span><br>
+                Basta scegliere la sede e iscriversi. <br>
+                Solo fino al 31 giugno!
             </p>
-            <p class="first_letter_underlined"><a class="menu_link" href="info.php" tabindex="9" accesskey="f">DOMANDE FREQUENTI</a></p>
+            <a class="menu_link first_letter_underlined" href="LINK PAGINA ISCRIZIONE" tabindex="5" accesskey="u">UNISCITI ORA</a>
+        </div> 
+    </div>
+
+    <div id="home_sedi_bg"></div>
+    <div id="home_sedi_text_box">
+        <h3 id="home_sedi_titolo"><span lang="en">Clubs</span></h3>
+        <p id="home_sedi_testo">
+            Più di 100 palestre affiliate sparse in giro per l'Italia.<br>
+            Non sai se siamo vicini a te? <br>
+            <b>Cerca la sede più vicina a te</b>
+        </p>
+        <a class="menu_link first_letter_underlined" href="clubs.php" tabindex="6" accesskey="c">CERCA</a>
+    </div>
+
+    <div id="home_corsi_bg"></div>
+    <div id="home_corsi_text_box">
+        <h3 id="home_corsi_titolo">Esplora i nostri corsi</h3>
+        <p id="home_corsi_testo">
+            <p>
+                Non sai da dove iniziare?<br> <b>Unisciti a uno dei nostri corsi</b> e <span class="testo_rosso">raggiungi i tuoi obbiettivi</span> in compagnia.<br><br>
+                Dai un'occhiata alla nostra offerta: 
+            </p> 
+            
+            <ul class="u_list">
+                <li><span lang="en">Yoga</span></li>
+                <li><span lang="en">Pilates</span></li>
+                <li><span lang="en">Full Body</span></li>
+                <li><span lang="en">Chalisthnics</span></li>
+                <li>Danza</li>
+            </ul>
+            <p>
+                e molto altro...
+            </p> 
+        </p>
+        <a class="menu_link first_letter_underlined" href="corsi/index.php" tabindex="7" accesskey="e">ESPLORA</a>
+    </div>
+
+    <div id="home_iscrizione">
+        <h3 id="home_iscrizione_titolo">Diventa un membro</h3>
+        <div id="home_iscrizione_testo">
+            Che tu voglia allenarti in tutta Europa o in un solo club, o se desideri utilizzare il pacchetto di servizi completo 
+            o se preferisci l'offerta più conveniente, abbiamo in ogni caso il contratto giusto per te
         </div>
-    </main>
+        <div id="home_iscrizione_piano1">
+            <h4><span lang="en">Summer Special 10€</span></h4>
+            <ul class="u_list">
+                <li>Allenati in un <span lang="en">club</span> a tua scelta</li>
+                <li>3 corsi compresi</li>
+            </ul>
+        </div>
+        <div id="home_iscrizione_piano2">
+            <h4><span lang="en">Base 40€</span></h4>
+            <ul class="u_list">
+                <li>Allenati in un club a tua scelta</li>
+                <li>5 corsi compresi</li>
+                <li>Consulenza <span lang="en">Personal trainer</span></li>
+            </ul>
+        </div>
+        <div id="home_iscrizione_piano3">
+            <h4><span lang="en"><span lang="en">Premium</span> 70€</span></h4>
+            <ul class="u_list">
+                <li>Allenati in <b>tutti</b> club</li>
+                <li><b>Tutti</b> i corsi compresi</li>
+                <li>Consulenza <span lang="en">Personal trainer</span></li>
+                <li>Consulenza Dietologo</li>
+                <li>Spa</li>
+            </ul>
+        </div>
+        <a class="menu_link first_letter_underlined" href="LINK PAGINA ISCRIZIONE" tabindex="8" accesskey="a">ABBONATI</a>
+    </div>
+
+    <div id="home_info">
+        <h3 id="home_info_titolo">Hai dei dubbi?</h3>
+        <p id="home_info_testo">
+            Sei ancora indeciso o hai semplicmente dei dubbi?<br>
+            Per maggiori informazioni consulta la nostra sezione <span lang="en"><abbr title="frequently asked questions">FAQ</abbr></span>
+        </p>
+        <a class="menu_link first_letter_underlined" href="info.php" tabindex="9" accesskey="f"><abbr title="frequently asked questions">FAQ</abbr> - SCOPRI DI PIU'</a>
+    </div>
 
     <?php
         include_once "utilityphp/footer.php";                
     ?>
-
+    
 </body>
 </html>
