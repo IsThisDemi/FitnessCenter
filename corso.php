@@ -5,7 +5,7 @@ if (!isset($_GET['id'])) {
     exit;
 }
 $id_corso = $_GET['id'];
-require_once "../utilityphp/header.php";
+require_once "utilityphp/header.php";
 //Connessione al database
 $host = "localhost";
 $username = "root";
@@ -26,15 +26,20 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
     <meta name="keywords" content="corsi, palestra, yoga, pilates, zumba, body building, spinning, step">
     <meta name="author" content="Nome Palestra">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
-    <link rel="stylesheet" href="../css/print.css" media="print" />
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <script src="../js/corsi.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/corsi.js"></script>
 </head>
 
 <body>
-    <section>
+    <?php
+
+    genera_header("corso");
+
+    ?>
+    <section id="cover">
         <?php
         //Query per ottenere il le info del corso
         $sql = "SELECT * FROM `corsi` WHERE id_corso = '$id_corso'";
@@ -71,7 +76,7 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
 
         echo '
         <div class="container">
-        <img src="../img/corsi/' . $immagine_corso . '"alt="' . $alt . '">
+        <img src="img/corsi/' . $immagine_corso . '"alt="' . $alt . '">
             <div class="overlay">
                 <h1 id="home_titolo_titolo"><span lang="en">' . $corso . '</span></h1>
                 <p id="home_titolo_testo">' . $descrizione . '</p>
@@ -81,17 +86,17 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
         <div id="corsi">
             <div class="flex-container">
                 <h3 id="home_titolo_titolo">Allena <?php
-                    if ($forza == 1)
-                        echo 'Forza ';
-                    if ($equilibrio == 1)
-                        echo 'Equilibrio ';
-                    if ($resistenza == 1)
-                        echo 'Resistenza ';
-                    if ($stabilita == 1)
-                        echo 'Stabilità '; ?></h3>
+                                                    if ($forza == 1)
+                                                        echo 'Forza ';
+                                                    if ($equilibrio == 1)
+                                                        echo 'Equilibrio ';
+                                                    if ($resistenza == 1)
+                                                        echo 'Resistenza ';
+                                                    if ($stabilita == 1)
+                                                        echo 'Stabilità '; ?></h3>
             </div>
             <div class="flex-container">
-                <img src="../img/corsi/icone/intensita.svg" alt="intensità">
+                <img src="img/corsi/icone/intensita.svg" alt="intensità">
                 <h3 class="etichetta_corsi">Intensità</h3>
                 <?php
                 if ($intensita == 1)
@@ -100,10 +105,10 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
                     echo '<p>Media</p>';
                 if ($intensita == 3)
                     echo '<p>Alta</p>'; ?>
-                <img src="../img/corsi/icone/durata.svg" alt="durata">
+                <img src="img/corsi/icone/durata.svg" alt="durata">
                 <h3>Durata</h3>
                 <?php echo '<p>' . $durata . ' minuti</p>'; ?>
-                <img src="../img/corsi/icone/calorie.svg" alt="calorie">
+                <img src="img/corsi/icone/calorie.svg" alt="calorie">
                 <h3>Calorie</h3>
                 <?php echo '<p>' . $calorie . ' kcal</p>'; ?>
             </div>
@@ -113,53 +118,53 @@ $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error()
             <div class="flex-container">
                 <?php
                 if ($asciugamano == 1)
-                    echo '<img src="../img/corsi/icone/asciugamano.svg" alt="asciugamano">
+                    echo '<img src="img/corsi/icone/asciugamano.svg" alt="asciugamano">
                     <p>Asciugamano</p>';
                 if ($borraccia == 1)
-                    echo '<img src="../img/corsi/icone/borraccia.svg" alt="borraccia">
+                    echo '<img src="img/corsi/icone/borraccia.svg" alt="borraccia">
                     <p>Borraccia</p>';
                 if ($calzini == 1)
-                    echo '<img src="../img/corsi/icone/calzini.svg" alt="calzini">
+                    echo '<img src="img/corsi/icone/calzini.svg" alt="calzini">
                     <p>Calzini</p>';
                 if ($tappetino == 1)
-                    echo '<img src="../img/corsi/icone/tappetino.svg" alt="tappetino">
+                    echo '<img src="img/corsi/icone/tappetino.svg" alt="tappetino">
                     <p>Tappetino</p>';
                 if ($scarpe_sportive == 1)
-                    echo '<img src="../img/corsi/icone/scarpe_sportive.svg" alt="scarpe_sportive">
+                    echo '<img src="img/corsi/icone/scarpe_sportive.svg" alt="scarpe_sportive">
                     <p>Scarpe sportive</p>';
                 if ($guantoni == 1)
-                    echo '<img src="../img/corsi/icone/guantoni.svg" alt="guantoni">
+                    echo '<img src="img/corsi/icone/guantoni.svg" alt="guantoni">
                     <p>Guantoni</p>';
                 if ($capelli_raccolti == 1)
-                    echo '<img src="../img/corsi/icone/capelli_raccolti.svg" alt="capelli_raccolti">
+                    echo '<img src="img/corsi/icone/capelli_raccolti.svg" alt="capelli_raccolti">
                     <p>Capelli raccolti</p>';
                 if ($abbigliamento_outdoor == 1)
-                    echo '<img src="../img/corsi/icone/abbigliamento_outdoor.svg" alt="abbigliamento_outdoor">
+                    echo '<img src="img/corsi/icone/abbigliamento_outdoor.svg" alt="abbigliamento_outdoor">
                     <p>Abbigliamento outdoor</p>';
                 if ($scarpe_outdoor == 1)
-                    echo '<img src="../img/corsi/icone/scarpe_outdoor.svg" alt="scarpe_outdoor">
+                    echo '<img src="img/corsi/icone/scarpe_outdoor.svg" alt="scarpe_outdoor">
                     <p>Scarpe outdoor</p>';
                 if ($accappatoio == 1)
-                    echo '<img src="../img/corsi/icone/accappatoio.svg" alt="accappatoio">
+                    echo '<img src="img/corsi/icone/accappatoio.svg" alt="accappatoio">
                     <p>Accappatoio</p>';
                 if ($cuffia == 1)
-                    echo '<img src="../img/corsi/icone/cuffia.svg" alt="cuffia">
+                    echo '<img src="img/corsi/icone/cuffia.svg" alt="cuffia">
                     <p>Cuffia</p>';
                 if ($costume == 1)
-                    echo '<img src="../img/corsi/icone/costume.svg" alt="costume">
+                    echo '<img src="img/corsi/icone/costume.svg" alt="costume">
                     <p>Costume</p>';
                 if ($ciabatte == 1)
-                    echo '<img src="../img/corsi/icone/ciabatte.svg" alt="ciabatte">
+                    echo '<img src="img/corsi/icone/ciabatte.svg" alt="ciabatte">
                     <p>Ciabatte</p>';
                 if ($piedi_nudi == 1)
-                    echo '<img src="../img/corsi/icone/piedi_nudi.svg" alt="piedi_nudi">
+                    echo '<img src="img/corsi/icone/piedi_nudi.svg" alt="piedi_nudi">
                     <p>Piedi nudi</p>';
                 ?>
             </div>
         </div>
     </section>
     <?php
-    include_once "../utilityphp/footer.php";
+    include_once "utilityphp/footer.php";
     ?>
 </body>
 

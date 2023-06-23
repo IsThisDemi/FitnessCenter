@@ -355,6 +355,10 @@ nav .menu_name {
 ---------------
 */
 
+#cover {
+	margin-top: 2em;
+}
+
 #home_corsi_bg {
 	grid-area: cb;
 	background-image: url('../img/corsi/cycle-body-main.jpg');
