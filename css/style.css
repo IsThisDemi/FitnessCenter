@@ -626,8 +626,55 @@ nav .menu_name {
 	right: 0;
 	bottom: 50%;
 	width: 75%;
-	margin-right: auto;
-	margin-left: auto;
+	margin: 1em auto;
+}
+
+.text-container h2 {
+	font-size: 2.5em;
+}
+
+.text-container h3 {
+	padding: 0 0 0.5em 0;
+}
+
+.text-container div {
+	margin: 1em;
+	border: 5px solid;
+	border-radius: 10px;
+	padding: 0.5em;
+	box-shadow: 5px 5px 5px rgb(65, 65, 65);
+}
+
+#Forza_box {
+	border-color: #f74b45;
+}
+
+#Forza_box h3 {
+	color: #f74b45;
+}
+
+#Equilibrio_box {
+	border-color: #f7d04b;
+}
+
+#Equilibrio_box h3 {
+	color: #f7d04b;
+}
+
+#Resistenza_box {
+	border-color: #4bf7a8;
+}
+
+#Resistenza_box h3 {
+	color: #4bf7a8;
+}
+
+#Stabilità_box {
+	border-color: #4b4ff7;
+}
+
+#Stabilità_box h3 {
+	color: #4b4ff7;
 }
 
 .overlay {
@@ -642,6 +689,10 @@ nav .menu_name {
 	margin-left: auto;
 	margin-top: 2em;
 	margin-bottom: 2em;
+}
+
+#corsi {
+	margin: 2em 0;
 }
 
 .flex-container {
