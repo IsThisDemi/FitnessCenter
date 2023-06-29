@@ -605,6 +605,16 @@ nav .menu_name {
 	align-content: center;
 }
 
+.flex-container-col {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	padding: 1em;
+}
+
 .article-wrapper a:visited {
 	color: var(--primary-color);
 }
