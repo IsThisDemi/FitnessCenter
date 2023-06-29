@@ -1058,3 +1058,68 @@ iframe#map {
 .hidden{
 	display: none;
 }
+/* 
+---------------
+	info
+---------------
+
+.infopage{
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	align-content: start;
+	text-align: left;
+}
+*/
+.infopage *{
+	padding: 0.25rem;
+	border-radius: 0.5rem;
+	margin: 0.25rem;
+}
+.infopage dt{
+	/*color: var(--alternative-text-color);*/
+	background-color: var(--header-color);
+}
+.infopage{
+	display: grid;
+	grid: 'paddingleft faq     faq paddingright'
+		  'paddingleft contacts .  paddingright';
+	grid-template-columns: 5% 90% 0% 5%;
+}
+.infopage dt, .infopage dd{
+	width: fit-content;
+}
+/*#faq::before{
+	content: "";
+	grid-area: paddingleft;
+}*/
+#faq{
+	grid-area: faq;
+}
+#contatti_social{
+	grid-area: contacts;
+}
+/*#contatti_social::after{
+	content: "";
+	grid-area: paddingright;
+}*/
+@media only screen and (min-width: 25rem) {
+	.infopage{
+		grid-template-columns: 10% 40% 40% 10%;
+	}
+	.contactsection dl{
+		display: grid;
+		gap: 0.1em;
+	}
+	.contactsection dt{
+		grid-column: 1;
+	}
+	.contactsection dd{
+		grid-column: 2;
+	}
+}
+@media only screen and (min-width: 30rem) {
+	.infopage{
+		grid-template-columns: 15% 25% 45% 15%;
+	}
+}
