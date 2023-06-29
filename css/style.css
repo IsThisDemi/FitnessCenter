@@ -142,9 +142,49 @@ header li {
 
 footer {
 	grid-area: f;
-	border-top: solid 1px var(--text-color);
-	padding-top:1em;
+	display: flex;
+	flex-direction: row;
+	border-top: solid 2px var(--text-color);
+	padding-top: 1em;
 	padding: 1em;
+	background-color: var(--header-color);
+}
+
+#footer_text_box {
+	padding: 1em;
+}
+
+#footer_text_box p {
+	padding: 0.2em;
+}
+
+#titolo_footer {
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+	background-image: url("../img/fitnesscenter-logo-files/logo-white-no-background.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    text-indent: -1000px;
+    font-size: 3em;
+	width: 2em;
+}
+
+#copyright_text {
+	margin-top: 2em;
+	font-size: 0.8em;
+	color: var(--gradient-first-color);
+	font-style: italic;
+}
+
+#copyright_text span {
+	color: var(--gradient-first-color);
+}
+
+#autori_text {
+	margin-top: 1em;
+	font-size: 0.8em;
+	color: var(--gradient-first-color);
 }
 
 .subtitle {
@@ -184,10 +224,16 @@ nav .menu_name {
 	padding: 1rem;
 }
 
+/* 
+------------------------------------------------------------
+						BREADCRUMBS
+------------------------------------------------------------
+*/
+
 .breadcrumbs {
 	grid-area: b;
-	margin: -2em 0;
-	padding: 1.3em ;
+	margin: 0.5em 0;
+	padding: 0.7em ;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.4rem;
 	background-color: var(--gradient-second-color);
@@ -508,6 +554,8 @@ nav .menu_name {
 	grid-area: info;
 	font-size: large;
 	text-align: center;
+	margin-bottom: 2em;
+	padding: 1em;
 }
 
 #home_info_titolo {
@@ -578,8 +626,55 @@ nav .menu_name {
 	right: 0;
 	bottom: 50%;
 	width: 75%;
-	margin-right: auto;
-	margin-left: auto;
+	margin: 1em auto;
+}
+
+.text-container h2 {
+	font-size: 2.5em;
+}
+
+.text-container h3 {
+	padding: 0 0 0.5em 0;
+}
+
+.text-container div {
+	margin: 1em;
+	border: 5px solid;
+	border-radius: 10px;
+	padding: 0.5em;
+	box-shadow: 5px 5px 5px rgb(65, 65, 65);
+}
+
+#Forza_box {
+	border-color: #f74b45;
+}
+
+#Forza_box h3 {
+	color: #f74b45;
+}
+
+#Equilibrio_box {
+	border-color: #f7d04b;
+}
+
+#Equilibrio_box h3 {
+	color: #f7d04b;
+}
+
+#Resistenza_box {
+	border-color: #4bf7a8;
+}
+
+#Resistenza_box h3 {
+	color: #4bf7a8;
+}
+
+#Stabilità_box {
+	border-color: #4b4ff7;
+}
+
+#Stabilità_box h3 {
+	color: #4b4ff7;
 }
 
 .overlay {
@@ -594,6 +689,10 @@ nav .menu_name {
 	margin-left: auto;
 	margin-top: 2em;
 	margin-bottom: 2em;
+}
+
+#corsi {
+	margin: 2em 0;
 }
 
 .flex-container {
@@ -900,3 +999,137 @@ iframe#map {
   .panel p {
 	padding: 0.5em;
   }
+/* 
+---------------
+	Login
+---------------
+*/
+.loginpage input,.loginpage button{
+	color: var(--text-color);
+	background-color: var(--primary-color);
+	font-size: 1.2rem;
+}
+.loginpage .selected{
+	color: var(--alternative-text-color);
+	background-color: var(--header-color);
+}
+.loginpage{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+}
+.loginpage *{
+	padding: 0.25rem;
+	border-radius: 0.5rem;
+	margin: 0.25rem;
+	align-self: center;
+	align-content: center;
+}
+#logoutmessage{	
+	width: calc(min(40rem,80%));
+	/*grid-row: 1;
+	grid-column: 2;*/
+}
+.topselector{
+	width: calc(min(20rem,80%));
+	background-color: var(--scrollbar);
+	display:flex ;
+	list-style: none;
+	flex-direction: row;
+	/*grid-row: 2;
+	grid-column: 2;*/
+}
+.topselector li{
+	flex: 50%;
+	align-items: center;
+}
+.topselector li button{
+	width: 80%;
+	align-self: center;
+}
+.loginform{
+	display:flex ;
+	flex-direction: column;
+	width: calc(min(20rem,80%));
+	/*grid-row: 3;
+	grid-column: 2;*/
+}
+.loginform *{
+	width: 80%;
+	align-self: center;
+}
+.formresult{
+	width: calc(min(50rem,80%));
+	/*grid-row: 4;
+	grid-column: 2;*/
+}
+.hidden{
+	display: none;
+}
+/* 
+---------------
+	info
+---------------
+
+.infopage{
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	align-content: start;
+	text-align: left;
+}
+*/
+.infopage *{
+	padding: 0.25rem;
+	border-radius: 0.5rem;
+	margin: 0.25rem;
+}
+.infopage dt{
+	/*color: var(--alternative-text-color);*/
+	background-color: var(--header-color);
+}
+.infopage{
+	display: grid;
+	grid: 'paddingleft faq     faq paddingright'
+		  'paddingleft contacts .  paddingright';
+	grid-template-columns: 5% 90% 0% 5%;
+}
+.infopage dt, .infopage dd{
+	width: fit-content;
+}
+/*#faq::before{
+	content: "";
+	grid-area: paddingleft;
+}*/
+#faq{
+	grid-area: faq;
+}
+#contatti_social{
+	grid-area: contacts;
+}
+/*#contatti_social::after{
+	content: "";
+	grid-area: paddingright;
+}*/
+@media only screen and (min-width: 25rem) {
+	.infopage{
+		grid-template-columns: 10% 40% 40% 10%;
+	}
+	.contactsection dl{
+		display: grid;
+		gap: 0.1em;
+	}
+	.contactsection dt{
+		grid-column: 1;
+	}
+	.contactsection dd{
+		grid-column: 2;
+	}
+}
+@media only screen and (min-width: 30rem) {
+	.infopage{
+		grid-template-columns: 15% 25% 45% 15%;
+	}
+}

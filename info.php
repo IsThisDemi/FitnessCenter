@@ -8,9 +8,9 @@
     <meta name="description" content="informazioni e contatti per gim" />
 	<meta name="author" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link type="text/css"  rel="stylesheet" href="../css/style.css" />
-	<link rel="stylesheet" media="print" href="../css/print.css" type="text/css"/>
-	<link rel="shortcut icon" href="../images/favicon.ico" />
+    <link type="text/css"  rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" media="print" href="css/print.css" type="text/css"/>
+	<link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
 
@@ -19,12 +19,12 @@
 genera_header("more");
 
 ?>
-<div id="content">
+<div id="content" class="infopage">
     <sectioni id="faq">
-    <h2>Domande frequenti</h2>
+        <h2>Domande frequenti</h2>
         <dl>
             <dt>Come posso cancellare il mio abbonamento</dt>
-            <dd>è possibile annullare il proprio abonamento in qualsiasi momento tramite il seguente link</dd>
+            <dd>è possibile annullare il proprio abonamento in qualsiasi momento telefonando</dd>
         </dl>
     </section>    
     <sectioni id="contatti_social">
@@ -44,7 +44,7 @@ genera_header("more");
                 <dt lang="en">Telegram</dt>
                 <dd><a href="https://t.me/gim">t.me/gim</a></dd>
                 <dt lang="en">Twitter</dt>
-                <dd>@<a href="https://twitter.com/gim">gim</a></dd>
+                <dd><a href="https://twitter.com/gim">@gim</a></dd>
             </dl>
         </div>
     </section>

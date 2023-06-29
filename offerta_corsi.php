@@ -57,18 +57,26 @@
 	        </div>
 	        <div class="text-container">
 	            <h2>Un corso per ogni tuo obiettivo</h2>
-	            <h3>Forza</h3>
-	            <p>Ogni allenamento è pensato per sviluppare in modo mirato le diverse sfumature della dimensione “forza”, in armonia con
+                <div id="Forza_box">
+                    <h3>Forza</h3>
+	                <p>Ogni allenamento è pensato per sviluppare in modo mirato le diverse sfumature della dimensione “forza”, in armonia con
 	                le necessità del corpo.</p>
-	            <h3>Equilibrio</h3>
-	            <p>Allenarsi per ritrovare una maggiore serenità interiore, mettendo al centro di tutto proprio il “potere della mente” che
-	                agisce sul corpo.</p>
-	            <h3>Resistenza</h3>
-	            <p>Ottimizzare i risultati di allenamento in poco tempo è possibile, razionalizzando l'uso della forza e mantenendo alta
-	                l'intensità.</p>
-	            <h3>Stabilità</h3>
-	            <p>Stabilità è soprattutto ricerca del benessere fisico, sentire le articolazioni che funzionano, i muscoli che lavorano, e
-	                la testa che segue questo percorso.</p>
+                </div>
+                <div id="Equilibrio_box">
+                    <h3>Equilibrio</h3>
+                    <p>Allenarsi per ritrovare una maggiore serenità interiore, mettendo al centro di tutto proprio il “potere della mente” che
+	                    agisce sul corpo.</p>
+                </div>
+                <div id="Resistenza_box">
+                    <h3>Resistenza</h3>
+                    <p>Ottimizzare i risultati di allenamento in poco tempo è possibile, razionalizzando l'uso della forza e mantenendo alta
+                        l'intensità.</p>
+                </div>
+                <div id="Stabilità_box">
+                    <h3>Stabilità</h3>
+                    <p>Stabilità è soprattutto ricerca del benessere fisico, sentire le articolazioni che funzionano, i muscoli che lavorano, e
+                        la testa che segue questo percorso.</p>
+                </div>
 	        </div>
 
 	        <div id="corsi">
