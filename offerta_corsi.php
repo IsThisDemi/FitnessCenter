@@ -1,128 +1,42 @@
-	<?php require_once "utilityphp/header.php";
-    //Connessione al database
-    $host = "localhost";
-    $username = "root";
-    $pass = "";
-    $database = "palestra";
-    $conn = mysqli_connect($host, $username, $pass, $database) or die(mysqli_error());
+<?php
+    session_start();     
+	require_once "utilityphp/connessione.php";
+	require_once "utilityphp/header.php";
+	require_once "utilityphp/card.php";
 
-    //Query per ottenere il numero di categorie
-    $sql = "SELECT * from categorie";
-    if ($result = mysqli_query($conn, $sql)) {
-        $numero_categorie = mysqli_num_rows($result);
-    }
+    //Includo file html
+    $paginaHTML = file_get_contents("html/offerta_corsi.html");
+    //Includo footer
+    $footer = file_get_contents("utilityphp/footer.php");
 
-    //Ottengo numero di corsi
-    //Query per ottenere il numero di categorie
-    $sql = "SELECT * from corsi";
-    if ($result = mysqli_query($conn, $sql)) {
-        $numero_corsi = mysqli_num_rows($result);
-    }
-    ?>
-	<!DOCTYPE html>
-	<html lang="it">
+    //Stabilisco connessione con il database
+	$connessione = new Connection();
 
-	<head>
-	    <meta charset="UTF-8">
+	if (!$connessione->apriConnessione()) {
+		exit();
+	}
 
-	    <title>Corsi</title>
+	genera_header("offerta corsi");
 
-	    <meta name="description" content="Questa pagina continene una lista dei corsi fornita dalla palestra e una loro breve descrizione.">
-	    <meta name="keywords" content="corsi, palestra, yoga, pilates, zumba, body building, spinning, step">
-	    <meta name="author" content="Nome Palestra">
+    //Conto il numero di corsi usando la funzione contaCorsi() della classe Connection
+    $numero_corsi = $connessione->contaCorsi();
 
-	    <link rel="stylesheet" href="css/style.css">
-	    <link rel="stylesheet" href="css/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
-	    <link rel="stylesheet" href="css/print.css" media="print" />
-	    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	    <script src="js/corsi.js"></script>
-	</head>
-
-	<body id="corpo_corso">
-	    <?php
-
-        genera_header("offerta corsi");
-
-        ?>
-	    <section id="cover">
-	        <div class="container">
-	            <video class="video-background" autoplay muted playsinline preload="auto">
-	                <source src="https://player.vimeo.com/progressive_redirect/playback/787631395/rendition/1080p/file.mp4?loc=external&amp;signature=61fc2002eacfa849cd11c063b1e487d3a25314bf5d41d73e5681328af84d53aa" type="video/mp4">
-	                Your browser does not support the video tag.
-	            </video>
-	            <div class="overlay">
-	                <h1 id="home_titolo_titolo">Scopri i nostri corsi</h1>
-	                <p id="home_titolo_testo">Esplora le tue passioni con <b><span class="testo_rosso"><?php echo $numero_corsi; ?> corsi</span></b> tra cui scegliere</p>
-	            </div>
-	        </div>
-	        <div class="text-container">
-	            <h2>Un corso per ogni tuo obiettivo</h2>
-                <div id="Forza_box">
-                    <h3>Forza</h3>
-	                <p>Ogni allenamento è pensato per sviluppare in modo mirato le diverse sfumature della dimensione “forza”, in armonia con
-	                le necessità del corpo.</p>
-                </div>
-                <div id="Equilibrio_box">
-                    <h3>Equilibrio</h3>
-                    <p>Allenarsi per ritrovare una maggiore serenità interiore, mettendo al centro di tutto proprio il “potere della mente” che
-	                    agisce sul corpo.</p>
-                </div>
-                <div id="Resistenza_box">
-                    <h3>Resistenza</h3>
-                    <p>Ottimizzare i risultati di allenamento in poco tempo è possibile, razionalizzando l'uso della forza e mantenendo alta
-                        l'intensità.</p>
-                </div>
-                <div id="Stabilità_box">
-                    <h3>Stabilità</h3>
-                    <p>Stabilità è soprattutto ricerca del benessere fisico, sentire le articolazioni che funzionano, i muscoli che lavorano, e
-                        la testa che segue questo percorso.</p>
-                </div>
-	        </div>
-
-	        <div id="corsi">
-	            <div class="flex-container">
-	                <?php
-                    for ($i = 1; $i <= $numero_categorie; $i++) {
-                        //Query per ottenere il le info della categoria
-                        $sql = "SELECT * FROM `categorie` WHERE id_categoria = '$i'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-
-                        $categoria = $row['nome_cat'];
-                        $immagine_categoria = $row['immagine'];
-                        $alt = $row['alt'];
-
-                        //Query per ottenere il numero di corsi con quella categoria
-                        $sql = "SELECT COUNT(nome_corso) AS numero_corsi FROM corsi WHERE id_categoria = '$i'";
-                        $result = mysqli_query($conn, $sql);
-                        $row = mysqli_fetch_assoc($result);
-
-                        $numero_corsi = $row['numero_corsi'];
-
-                        //Genero le box contenenti i dati
-                        echo '<a class="unstyled" href="categoria.php?id=' . $i . '">
-                                <article class="article-wrapper">
-                                    <div class="rounded-lg container-project">
-                                        <div class="project-image">
-                                            <img src="img/corsi/' . $immagine_categoria . '" alt="' . $alt . '">
-                                        </div>
-                                    </div>
-                                    <div class="project-info">
-                                        <div class="flex-pr">
-                                            <div class="project-title text-nowrap">' . $categoria . '</div>
-                                        </div>
-                                        <div class="project-text text-nowrap">' . $numero_corsi . ' corsi</div>
-                                    </div>
-                                </article>
-                            </a>';
-                    }
-                    ?>
-	            </div>
-	        </div>
-	    </section>
-	    <?php
-        include_once "utilityphp/footer.php";
-        ?>
-	</body>
-
-	</html>
+    //Costruzione delle card di tipo offerta_corsi
+    $query_categorie = "SELECT categorie.id_categoria, nome_cat, categorie.immagine, categorie.alt, COUNT(nome_corso) AS numero_corsi FROM categorie, corsi WHERE categorie.id_categoria = corsi.id_categoria GROUP BY nome_cat;";
+	$risultato_info_categorie = $connessione->interrogaDB($query_categorie);
+	$listaCard_offerta = '';
+	if ($risultato_info_categorie) {
+		foreach ($risultato_info_categorie as $ris) {
+			$card = new Card($ris);
+			$listaCard_offerta .= $card->makeCard_offerta();
+		}
+	} else {
+		$listaCard_offerta= "<p>Errore nel recupero delle categorie</p>";
+	}
+    
+    //Sostituzione dei campi della pagina html con i valori				
+	$campi_replace = array("%footer%", "%numero_corsi%", "%lista_categorie%");
+	$valori_replace = array($footer, $numero_corsi, $listaCard_offerta);
+	
+	echo str_replace($campi_replace, $valori_replace, $paginaHTML);
+?>
