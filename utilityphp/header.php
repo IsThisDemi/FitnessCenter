@@ -19,6 +19,14 @@ $link_pagine["categoria"] = "history.back()";
 $link_pagine["corso"] = "corso.php";
 $link_pagine["more"]="info.php";
 $link_pagine["login"]="login.php";
+$link_pagine["Balance"]="categoria.php?id=1";
+$link_pagine["Cycle"]="categoria.php?id=2";
+$link_pagine["Dance"]="categoria.php?id=3";
+$link_pagine["Functional"]="categoria.php?id=4";
+$link_pagine["Running"]="categoria.php?id=5";
+$link_pagine["Strenght"]="categoria.php?id=6";
+$link_pagine["Swimming"]="categoria.php?id=7";
+$link_pagine["Yoga"]="categoria.php?id=8";
 
 $fl_pagine=[];//nome->link
 $fl_pagine["home"]="h";
@@ -36,6 +44,44 @@ $genitore_pagine["offerta corsi"]="home";
 $genitore_pagine["more"]="home";
 $genitore_pagine["login"]="home";
 $genitore_pagine["categoria"]="offerta corsi";
+
+//Genitore e figli delle categorie
+$genitore_pagine["Balance"] = "offerta corsi";
+$genitore_pagine["Cycle"] = "offerta corsi";
+$genitore_pagine["Dance"] = "offerta corsi";
+$genitore_pagine["Functional"] = "offerta corsi";
+$genitore_pagine["Running"] = "offerta corsi";
+$genitore_pagine["Strenght"] = "offerta corsi";
+$genitore_pagine["Water"] = "offerta corsi";
+$genitore_pagine["Yoga"] = "offerta corsi";
+
+//Genitore e figli dei corsi
+$genitore_pagine["Flexability"] = "Balance";
+$genitore_pagine["Pancafit"] = "Balance";
+$genitore_pagine["Postural"] = "Balance";
+$genitore_pagine["Cycle Body"] = "Cycle";
+$genitore_pagine["Cycle Race"] = "Cycle";
+$genitore_pagine["Cycle Spirit"] = "Cycle";
+$genitore_pagine["Aero Dance"] = "Dance";
+$genitore_pagine["Step"] = "Dance";
+$genitore_pagine["Zumba"] = "Dance";
+$genitore_pagine["Boxe"] = "Functional";
+$genitore_pagine["Calisthenics"] = "Functional";
+$genitore_pagine["Grid"] = "Functional";
+$genitore_pagine["Long Run"] = "Running";
+$genitore_pagine["Speed Run"] = "Running";
+$genitore_pagine["Walking"] = "Running";
+$genitore_pagine["Barre"] = "Strenght";
+$genitore_pagine["Full Body"] = "Strenght";
+$genitore_pagine["Sculpt"] = "Strenght";
+$genitore_pagine["Water Endurance"] = "Water";
+$genitore_pagine["Water Hydrobike"] = "Water";
+$genitore_pagine["Water Reax Raft"] = "Water";
+$genitore_pagine["Water Tone"] = "Water";
+$genitore_pagine["Yoga Align"] = "Yoga";
+$genitore_pagine["Yoga Calm"] = "Yoga";
+$genitore_pagine["Yoga Strength"] = "Yoga";
+
 $genitore_pagine["corso"]="categoria";
 $genitore_pagine["area_utente"]="login";
 

@@ -18,12 +18,12 @@ class Connection{
             return false; //Connessione fallita
     }
 
-    //Funzione che conta il numero di corsi presenti nel database
-    public function contaCorsi(){
-        $query = "SELECT COUNT(*) FROM corsi";
-        $result = $this->conn->query($query);
+    //Funzione che restituisce il valore della prima query
+    public function query_singolaDB($stringaQuery)
+    {
+        $result = $this->conn->query($stringaQuery);
         $row = $result->fetch_array(MYSQLI_NUM);
-        return $row[0];
+        return $row;
     }
 
     //Funzione che ottiene le informazioni di una query
