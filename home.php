@@ -20,7 +20,7 @@
 <body id="HomePage">
 
     <?php
-       genera_header("home");               
+       echo genera_header("home");               
     ?>
 
     <div id="content"></div>

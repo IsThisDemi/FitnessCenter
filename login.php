@@ -46,7 +46,7 @@ if (isset($_GET["action"])) {
 
 <?php 
 
-    genera_header("login");
+    echo genera_header("login");
 
 ?>
 <div id="content" class="loginpage">

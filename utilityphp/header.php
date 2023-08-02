@@ -120,6 +120,6 @@ function genera_header($pagina){
 	}
 	$output= str_replace("<MENU/>",$menu,$template);
 	$output= str_replace("<BREADCRUMB/>",$breadcrumb,$output);
-	echo $output;
+	return $output;
 }
 ?>

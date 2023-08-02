@@ -16,7 +16,7 @@
 
 <?php 
 
-genera_header("more");
+echo genera_header("more");
 
 ?>
 <div id="content" class="infopage">

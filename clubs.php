@@ -16,7 +16,7 @@
 <body id="SediPage" >
 
     <?php
-       genera_header("clubs");               
+       echo genera_header("clubs");               
     ?>
 
     <div id="search_bar">

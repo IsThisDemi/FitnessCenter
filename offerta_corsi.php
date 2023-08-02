@@ -8,8 +8,8 @@
     $paginaHTML = file_get_contents("html/offerta_corsi.html");
     //Includo footer
     $footer = file_get_contents("utilityphp/footer.php");
-    //Genero l'header
-    $header = genera_header("offerta corsi");
+	//Gererazione header
+	$header = genera_header("offerta corsi");
 
     //Stabilisco connessione con il database
 	$connessione = new Connection();
@@ -36,7 +36,7 @@
 	}
     
     //Sostituzione dei campi della pagina html con i valori				
-	$campi_replace = array("%header%","%footer%", "%numero_corsi%", "%lista_categorie%");
+	$campi_replace = array("%header%", "%footer%", "%numero_corsi%", "%lista_categorie%");
 	$valori_replace = array($header, $footer, $numero_corsi, $listaCard_offerta);
 	
 	$paginaHTML = str_replace($campi_replace, $valori_replace, $paginaHTML);

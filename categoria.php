@@ -40,9 +40,6 @@
     $immagine_categoria = $info_categoria['3'];
     $alt_categoria = $info_categoria['4'];
 
-    //Genero l'header
-    $header = genera_header($nome_categoria);
-
     //Costruzione delle card di tipo corso
     $query_categorie = "SELECT * FROM corsi WHERE id_categoria = '$id_categoria';";
     $risultato_info_categorie = $connessione->interrogaDB($query_categorie);
@@ -57,8 +54,8 @@
     }
 
     //Sostituzione dei campi della pagina html con i valori				
-    $campi_replace = array("%header%", "%footer%", "%numero_corsi%", "%lista_corsi%", "%categoria%", "%descrizione%", "%immagine_categoria%", "%alt%");
-    $valori_replace = array($header, $footer, $numero_corsi, $listaCard_offerta, $nome_categoria, $descrizione_categoria, $immagine_categoria, $alt_categoria);
+    $campi_replace = array("%footer%", "%numero_corsi%", "%lista_corsi%", "%categoria%", "%descrizione%", "%immagine_categoria%", "%alt%", "%header%");
+    $valori_replace = array($footer, $numero_corsi, $listaCard_offerta, $nome_categoria, $descrizione_categoria, $immagine_categoria, $alt_categoria, genera_header($nome_categoria));
 
     $paginaHTML = str_replace($campi_replace, $valori_replace, $paginaHTML);
     echo $paginaHTML;

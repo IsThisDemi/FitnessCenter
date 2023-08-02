@@ -42,9 +42,6 @@
     $immagine_corso = $info_corso['2'];
     $alt_corso = $info_corso['3'];
 
-    //Genero l'header
-    $header = genera_header($nome_corso);
-
     //Costruzione della tabella informativa del corso
     $query_categorie = "SELECT * FROM corsi WHERE id_corso = '$id_corso';";
     $risultato_info_categorie = $connessione->interrogaDB($query_categorie);
@@ -60,7 +57,7 @@
 
     //Sostituzione dei campi della pagina html con i valori				
     $campi_replace = array("%header%", "%footer%",  "%info_corso%", "%corso%", "%descrizione%", "%immagine_corso%", "%alt%");
-    $valori_replace = array($header, $footer, $listaCard_offerta, $nome_corso, $descrizione_corso, $immagine_corso, $alt_corso);
+    $valori_replace = array(genera_header($nome_corso), $footer, $listaCard_offerta, $nome_corso, $descrizione_corso, $immagine_corso, $alt_corso);
 
     $paginaHTML = str_replace($campi_replace, $valori_replace, $paginaHTML);
     echo $paginaHTML;
