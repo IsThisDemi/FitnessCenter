@@ -25,7 +25,7 @@ $link_pagine["Dance"]="categoria.php?id=3";
 $link_pagine["Functional"]="categoria.php?id=4";
 $link_pagine["Running"]="categoria.php?id=5";
 $link_pagine["Strenght"]="categoria.php?id=6";
-$link_pagine["Swimming"]="categoria.php?id=7";
+$link_pagine["Water"]="categoria.php?id=7";
 $link_pagine["Yoga"]="categoria.php?id=8";
 
 $fl_pagine=[];//nome->link
