@@ -1,7 +1,10 @@
 <?php
-require_once "connessione.php";
+require_once "utilityphp/connessione.php";
+require_once "utilityphp/header.php";
 
-$paginaHTML = file_get_contents("JoinUS.html");
+$paginaHTML = file_get_contents("html/JoinUS.html");
+$header =  genera_header("Join US");
+$footer = file_get_contents("utilityphp/footer.php");
 
 use DB\DBAccess; //importa la classe DBAccess presente in "connessione"
 
@@ -35,6 +38,7 @@ function pulisciNote($value){
 
 
 //per il controllo degli errori/input, si adotta come si vede il pattern matching
+
 
 if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'interno della form
 
@@ -78,7 +82,7 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
         $messaggiPerForm .= '<li>Email non inserita</li>';
     }
     else{
-        if(!preg_match("/^ (?=.{ 1, 64}@)[A - Za - z0 -9_ -] + (\\.[A - Za - z0 -9_ -] +)* @[^ -][A - Za - z0 - 9 -] + (\\.[A - Za - z0 - 9 -] +)* (\\.[A - Za - z]{ 2, }) $/", $email)){
+        if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/", $email)){
             $messaggiPerForm .= '<li>Email non è nel formato corretto</li>';
         }
     }
@@ -88,7 +92,7 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
         $messaggiPerForm .= '<li>Telefono non inserito</li>';
     }
     else{
-        if(preg_match("/\d{10}/", $telefono)){
+        if(!preg_match("/\d{10}/", $telefono)){  
             $messaggiPerForm .= '<li>Il numero di telefono deve essere di lughezza 10 e non può contenere caratteri</li>';
         }
     }
@@ -96,10 +100,10 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
     $note = pulisciNote($_POST['note']);
 
     if($messaggiPerForm=="") {
-        $connessione = new DBAccess();
-        $connOK = $connessione->openDBConnection();
+        $connessione1 = new Connection();
+        $connOK = $connessione1->apriConnessione();
         if($connOK) {
-            $queryOK = $connessione->insertNewCostumer($nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note);
+            $queryOK = $connessione1->insertNewCostumer($nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note);
             if($queryOK) {
                 $messaggiPerForm = '<div id="greetings"><p>Inserimento avvenuto con successo.</p></div>';
             } else {
@@ -111,12 +115,17 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
     } else {
         $messaggiPerForm = '<div id="messageErrors"><ul>' . $messaggiPerForm . '</ul></div>';
     }
+     echo $messaggiPerForm;
 }
 
+
+$paginaHTML = str_replace("%header%", $header, $paginaHTML);
+$paginaHTML = str_replace("%footer%", $footer, $paginaHTML);
 $paginaHTML = str_replace("<messaggiForm />", $messaggiPerForm, $paginaHTML); //sostituisce il valore del segnaposto con il codice corrispondente
-$paginaHTML = str_replace("<valoreNome />", $nome, $paginaHTML); //sostituisce il valore del segnaposto con il codice corrispondente
+$paginaHTML = str_replace("<valoreNome />", $nome, $paginaHTML); 
 $paginaHTML = str_replace("<valoreCognome />", $cognome, $paginaHTML);
 $paginaHTML = str_replace("<valData />", $dataNascita, $paginaHTML);
 $paginaHTML = str_replace("<valoreMail />", $email, $paginaHTML);
 $paginaHTML = str_replace("<valoreTel />", $telefono, $paginaHTML);
+echo $paginaHTML;
 ?>

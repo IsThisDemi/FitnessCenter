@@ -12,6 +12,7 @@ $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-la
       </div>';
 
 $link_pagine=[];//nome->link
+$link_pagine["Join US"]="JoinUS.php";
 $link_pagine["home"]="home.php";
 $link_pagine["clubs"]="clubs.php";
 $link_pagine["offerta corsi"]="offerta_corsi.php";
@@ -44,6 +45,7 @@ $genitore_pagine["offerta corsi"]="home";
 $genitore_pagine["more"]="home";
 $genitore_pagine["login"]="home";
 $genitore_pagine["categoria"]="offerta corsi";
+$genitore_pagine["Join US"]="home";
 
 //Genitore e figli delle categorie
 $genitore_pagine["Balance"] = "offerta corsi";

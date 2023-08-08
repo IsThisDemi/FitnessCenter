@@ -1123,3 +1123,84 @@ iframe#map {
 		grid-template-columns: 15% 25% 45% 15%;
 	}
 }
+
+/* 
+---------------------------------------------------------------------------------------------------------------------------------------
+JoinUS
+-------------------------------------------------------------------------------------------------------------------
+*/
+.titleform h1 {
+	padding-left: 10em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+.formpage {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em;
+}
+
+@media (min-width: 600px) {
+	.formpage {
+		padding: 0;
+	}
+}
+
+.formint label,
+.formint p {
+	padding-left: .5em;
+}
+
+.radioform label {
+	padding-left: 0;
+}
+
+.radioform span {
+	padding-left: .5em;
+}
+
+
+@media (min-width: 700px) {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+}
+
+.formint {
+	display: grid;
+	grid-template-columns: 1fr;
+	background: #b80000;
+}
+
+.formint input,
+.formint textarea {
+	padding: .5em;
+	border-radius: 4px;
+	color: #000000;
+}
+
+.formint textarea {
+	margin: 1em;
+	margin-top: .5em;
+	width: 95%;
+	border: 1px solid #000;
+	resize: none;
+}
+
+
+.margineSinistro {
+	float: right;
+	padding: .5em;
+	margin: .5em;
+}
+
+.top {
+	margin-top: .5em;
+}
+
+.imgform img {
+	min-height: 100%;
+}

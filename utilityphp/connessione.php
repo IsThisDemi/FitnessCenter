@@ -40,5 +40,42 @@ class Connection{
         } else
             return false;
     }
+
+    /*
+    public function openDBConnection(){
+        // mysqli_report(MYSQLI_REPORT_ERROR); qui disabilita errori 
+        // mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); qui disabilita errori e lancia eccezioni
+        $this->conn = mysqli_connect(Connection::HOST, Connection::USERNAME, Connection::PASS, Connection::DATABASE); //crea una connessione con tutti i dati sopra
+        
+        if(mysqli_connect_errno()){ //se la connessione fallisce
+            return false;  //ritorna false
+        }
+        else{
+            return true; //altrimenti ritorna true
+        }
+    }
+    */
+
+    public function closeDBConnection(){
+        if($this->conn != null){
+            $this->conn->close();
+        }
+    }
+    
+    public function insertNewCostumer($nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note){
+        //le virgolette servono per evitare errori di sintassi e la query non compilerebbe (non riconoscerebbe le variabili)
+        $query = "INSERT INTO costumer (nome, cognome, sesso, dataNascita, email, telefono, note) 
+        VALUES(\"$nome\", \"$cognome\", \"$sesso\", \"$dataNascita\", \"$email\", \"$telefono\", \"$note\")";
+       
+        //alternativamente si sceglie tra questo modo e mysqli_affected_rows
+        $queryResult=mysqli_query($this->conn, $query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        
+        if(mysqli_affected_rows($this->conn) > 0){ //se ci sono dei dati da ritornare
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 ?>

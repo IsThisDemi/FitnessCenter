@@ -61,7 +61,24 @@ CREATE TABLE `corsi` (
   `forza` tinyint(1) NOT NULL DEFAULT 0,
   `equilibrio` tinyint(1) NOT NULL DEFAULT 0,
   `resistenza` tinyint(1) NOT NULL DEFAULT 0,
-  `stabilità` tinyint(1) NOT NULL DEFAULT 0
+  `stabilità` tinyint(1) NOT NULL DEFAULT 0,
+  `intensita` int(1) NOT NULL,
+  `durata` varchar(15) NOT NULL,
+  `calorie` varchar(15) NOT NULL,
+  `asciugamano` tinyint(1) NOT NULL DEFAULT 0,
+  `borraccia` tinyint(1) NOT NULL DEFAULT 0,
+  `calzini` tinyint(1) NOT NULL DEFAULT 0,
+  `tappetino` tinyint(1) NOT NULL DEFAULT 0,
+  `scarpe_sportive` tinyint(1) NOT NULL DEFAULT 0,
+  `guantoni` tinyint(1) DEFAULT 0,
+  `capelli_raccolti` tinyint(1) NOT NULL DEFAULT 0,
+  `abbigliamento_outdoor` tinyint(1) NOT NULL DEFAULT 0,
+  `scarpe_outdoor` tinyint(1) NOT NULL DEFAULT 0,
+  `accappatoio` tinyint(1) NOT NULL DEFAULT 0,
+  `cuffia` tinyint(1) NOT NULL DEFAULT 0,
+  `costume` tinyint(1) NOT NULL DEFAULT 0,
+  `ciabatte` tinyint(1) NOT NULL DEFAULT 0,
+  `piedi_nudi` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -115,3 +132,18 @@ ALTER TABLE `corsi`
 ALTER TABLE `corsi`
   MODIFY `id_corso` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
+
+
+--
+-- Struttura della tabella `costumer`
+--
+
+CREATE TABLE `costumer` (
+    `nome` varchar(100) NOT NULL,
+    `cognome` varchar(100) NOT NULL,
+    `sesso` varchar(10) NOT NULL,
+    `dataNascita` varchar(100) NOT NULL,
+    `email` varchar(100) NOT NULL,
+    `telefono` varchar(100) NOT NULL,
+    `note` varchar(100)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
