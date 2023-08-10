@@ -77,5 +77,29 @@ class Connection{
             return false;
         }
     }
+    public function UserExists($username){
+        $query='SELECT count(*) FROM costumer where email=?';
+        $preparedQuery = $connection->prepare($query);
+        $preparedQuery->bind_param(
+            'ss',
+            $email
+            $password
+        );
+        $preparedQuery->execute();
+        $res=$preparedQuery->get_result();
+        return $res->fetch_array(MYSQLI_NUM)[0]>0;
+    }
+    public function Checklogin($email,$password){
+        $query='SELECT count(*) FROM costumer where email=? AND password=?';
+        $preparedQuery = $connection->prepare($query);
+        $preparedQuery->bind_param(
+            'ss',
+            $email
+            $password
+        );
+        $preparedQuery->execute();
+        $res=$preparedQuery->get_result();
+        return $res->fetch_array(MYSQLI_NUM)[0]>0;
+    }
 }
 ?>
