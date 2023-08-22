@@ -15,25 +15,33 @@ function LoginUser($email,$password){
     if(!$connOK) {
         return "errore di connessione"
     }
-    if(!$queryOK = $connessione1->user_exist($email)){
+    $username=$connessione1->user_exist($email)
+    if(!$username){
         return "utente inesistente";
     }
-    if(!$queryOK = $connessione1->check_password($email,$password)){
+    if(!$connessione1->check_password($username,$password)){
         return "password errata";
     }
-    $_SESSION["user"]=$email;
-    $_SESSION["admin"]
+    $_SESSION["user"]=$username;
+    $_SESSION["admin"]=$connessione1->CheckUserPriviledge($username)=="ADMIN");
     return "";
 }
 function logout(){
     $_SESSION["user"]=null;
     $_SESSION["admin"]=false;
 }
-/*function RegisterUser($username,$password){
-    if(user_exist($username)){
-        return "utente gia registrato";
+function RegisterUser($username,$password){
+    connessione1 = new Connection();
+    $connOK = $connessione1->apriConnessione();
+    if(!$connOK) {
+        return "errore di connessione"
     }
-    add_user($username,$password);
+    if($connessione1->user_exist($email)){
+        return "mail or username gia in uso";
+    }
+    if(!$connessione1->RegisterNewUser($username,$email,$password)){
+        return "errore registrazione utente";
+    };
     return "";
-}*/
+}
 ?>
