@@ -63,22 +63,20 @@ class Connection{
     }
     
     public function insertNewCostumer($nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note){
-        //le virgolette servono per evitare errori di sintassi e la query non compilerebbe (non riconoscerebbe le variabili)
         $query = "INSERT INTO costumer (nome, cognome, sesso, dataNascita, email, telefono, note) 
-        VALUES(\"$nome\", \"$cognome\", \"$sesso\", \"$dataNascita\", \"$email\", \"$telefono\", \"$note\")";
-       
-        //alternativamente si sceglie tra questo modo e mysqli_affected_rows
-        $queryResult=mysqli_query($this->conn, $query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
-        
-        if(mysqli_affected_rows($this->conn) > 0){ //se ci sono dei dati da ritornare
-            return true;
-        }
-        else{
-            return false;
-        }
+        VALUES('?', '?', '?', '?', '?', '?', '?')";
+        $preparedQuery = $connection->prepare($query);
+        $preparedQuery->bind_param(
+            'sssssss',
+            $nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note
+        );
+        $res=$preparedQuery->execute();
+        $connection->disconnect();
+        $preparedQuery->close();
+        return $res;
     }
     public function UserExists($username){
-        $query='SELECT count(*) FROM costumer where where email=? OR username=?';
+        $query='SELECT username FROM costumer where where email=? OR username=?';
         $preparedQuery = $connection->prepare($query);
         $preparedQuery->bind_param(
             'sss',
@@ -88,18 +86,23 @@ class Connection{
         );
         $preparedQuery->execute();
         $res=$preparedQuery->get_result();
-        $exist= $res->fetch_array(MYSQLI_NUM)[0]>0;
+        $exist= mysqli_num_rows($res)>0;
+        if(!$exist){
+            $connection->disconnect();
+            $preparedQuery->close();
+            return "";
+        }
+        $username=$res -> fetch_row()[0];
         $connection->disconnect();
         $preparedQuery->close();
-        return $exist;
+        return $username;
     }
-    public function CheckLogin($email,$password){
-        $query='SELECT count(*) FROM costumer where (email=? OR username=?) AND password=?';
+    public function CheckLogin($username,$password){
+        $query='SELECT count(*) FROM costumer where username=? AND password=?';
         $preparedQuery = $connection->prepare($query);
         $preparedQuery->bind_param(
-            'sss',
-            $email,
-            $email,
+            'ss',
+            $username,
             $password,
         );
         $preparedQuery->execute();
@@ -125,11 +128,10 @@ class Connection{
         return $res;
     }    
     public function CheckUserPriviledge($username){
-        $query='SELECT type FROM costumer where email=? OR username=?';
+        $query='SELECT type FROM costumer where username=?';
         $preparedQuery = $connection->prepare($query);
         $preparedQuery->bind_param(
-            'ss',
-            $username,
+            's',
             $username
         );
         $preparedQuery->execute();
