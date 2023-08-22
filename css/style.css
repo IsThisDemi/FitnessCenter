@@ -1130,7 +1130,7 @@ JoinUS
 -------------------------------------------------------------------------------------------------------------------
 */
 .titleform h1 {
-	padding-left: 10em;
+	padding-left: 15em;
 	padding-top: .5em;
 	padding-bottom: .5em;
 }
@@ -1140,6 +1140,7 @@ JoinUS
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1em;
+	margin-bottom: 2em;
 }
 
 @media (min-width: 600px) {
