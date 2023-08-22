@@ -1130,7 +1130,7 @@ JoinUS
 -------------------------------------------------------------------------------------------------------------------
 */
 .titleform h1 {
-	padding-left: 13em;
+	padding-left: 12em;
 	padding-top: .5em;
 	padding-bottom: .5em;
 }
@@ -1173,7 +1173,7 @@ JoinUS
 .formint {
 	display: grid;
 	grid-template-columns: 1fr;
-	background: #f74b45;
+	background: #a74646;
 }
 
 .formint input,
