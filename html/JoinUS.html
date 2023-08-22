@@ -97,9 +97,9 @@
                     <img src="img/immagine_stock1.jpg">
                 </div>
                 <div class="formint">
-                    <form method="post" action="../JoinUS.php" onsubmit="return validazioneForm();">
-                        <messaggiForm />
+                    <form method="post" action="JoinUS.php" onsubmit="return validazioneForm();">
                         <fieldset>
+                            <messaggiForm />
                             <div class="top">
                                 <label for="nome">Nome: </label>
                                 <span><input type="text" name="nome" id="nome" value="<valoreNome />"></span></br>
@@ -111,7 +111,7 @@
 
                             <p>Sesso:</p>
                             <div class="radioform">
-                                <span><input type="radio" id="maschio" name="sesso" value="maschio"></span>
+                                <span><input type="radio" id="maschio" name="sesso" value="maschio" checked></span>
                                 <label for="maschio">M</label><br>
                                 <span><input type="radio" id="femmina" name="sesso" value="femmina"></span>
                                 <label for="femmina">F</label><br>

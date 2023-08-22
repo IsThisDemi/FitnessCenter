@@ -65,7 +65,6 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
 
     $sesso = pulisciInput($_POST['sesso']); //pulisce il sesso
 
-
     $dataNascita = pulisciInput($_POST['dataNascita']); 
     if (strlen($dataNascita) == 0){
         $messaggiPerForm .= '<li>Data di nascita non inserita</li>';
@@ -115,7 +114,6 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
     } else {
         $messaggiPerForm = '<div id="messageErrors"><ul>' . $messaggiPerForm . '</ul></div>';
     }
-     echo $messaggiPerForm;
 }
 
 

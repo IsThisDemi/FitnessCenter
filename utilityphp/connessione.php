@@ -77,6 +77,7 @@ class Connection{
             return false;
         }
     }
+    /*
     public function UserExists($username){
         $query='SELECT count(*) FROM costumer where email=?';
         $preparedQuery = $connection->prepare($query);
@@ -101,5 +102,6 @@ class Connection{
         $res=$preparedQuery->get_result();
         return $res->fetch_array(MYSQLI_NUM)[0]>0;
     }
+    */
 }
 ?>
