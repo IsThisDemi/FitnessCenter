@@ -147,3 +147,10 @@ CREATE TABLE `costumer` (
     `telefono` varchar(100) NOT NULL,
     `note` varchar(100)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+CREATE TABLE `user` (
+    `username` varchar(100) NOT NULL,
+    `email` varchar(100) NOT NULL,
+    `password` varchar(100) NOT NULL,
+    `type` varchar(10) NOT NULL,
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;

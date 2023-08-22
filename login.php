@@ -10,7 +10,7 @@ if (isset($_GET["action"])) {
         if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/", $username_login)){
             $DisplayMessage = 'Email non è nel formato corretto';
         }
-        else{        
+        else{
             $BackendResult=LoginUser($_POST["username_login"],$_POST["password_login"]);
             if($BackendResult==""){
                 if(isset($_SESSION["prev_page"])){
@@ -25,7 +25,7 @@ if (isset($_GET["action"])) {
             }
         }
     }
-    /*if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["password_registra"])){
+    if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["password_registra"])){
         $BackendResult=RegisterUser($_POST["username_registra"],$_POST["password_registra"]);
         if($BackendResult==""){
             $DisplayMessage="registrazione completa";
@@ -33,7 +33,7 @@ if (isset($_GET["action"])) {
         else{
             $DisplayMessage=$BackendResult;
         }
-    }*/
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -65,11 +65,10 @@ if (isset($_GET["action"])) {
     }
     else{
 ?>
-    <!--<ul class="topselector">
+    <ul class="topselector">
         <li><button type="button" id=loginselector class="selected">login</button></il>
         <li><button type="button" id=registerelector>register</button></il>
     </ul>
-    -->
     <form class="loginform" action="login.php?action=login" method="post" id="login" >
         <label for="username_login" lang="en">Username o mail</label>
         <input id="username_login" type="text" placeholder=" Username" name="username_login" required />
@@ -79,20 +78,14 @@ if (isset($_GET["action"])) {
 
         <input type="submit" name="login">
     </form>
-
-
-    <a href="/joinUS.php"> Iscriviti </a>
-
-
-
-    <!--<form class="loginform hidden" action="login.php?action=register" method="post" id="registra">
+    <form class="loginform hidden" action="login.php?action=register" method="post" id="registra">
         <label for="username_registra" lang="en">Username</label>
         <input id="username_registra" type="text" placeholder=" Username" name="username_registra" required />
 
         <label for="password_registra" lang="en">Password</label>
         <input id="password_registra" type="password" placeholder=" Password" name="password_registra" required />
         <input type="submit" name="registra">
-    </form>-->
+    </form>
     
 <?php
     if($DisplayMessage!=""){
@@ -104,5 +97,5 @@ if (isset($_GET["action"])) {
     
 ?>    
 </div>
-<!--<script src="js/login.js"> </script>-->
+<script src="js/login.js"> </script>
 </body>
