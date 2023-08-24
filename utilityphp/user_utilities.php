@@ -30,13 +30,13 @@ function logout(){
     $_SESSION["user"]=null;
     $_SESSION["admin"]=false;
 }
-function RegisterUser($username,$password){
+function RegisterUser($username,$mail,$password){
     connessione1 = new Connection();
     $connOK = $connessione1->apriConnessione();
     if(!$connOK) {
         return "errore di connessione"
     }
-    if($connessione1->user_exist($email)){
+    if($connessione1->user_exist($username)||$connessione1->user_exist($email)){
         return "mail or username gia in uso";
     }
     if(!$connessione1->RegisterNewUser($username,$email,$password)){

@@ -3,36 +3,51 @@ require_once "utilityphp/header.php";
 require_once "utilityphp/admin_utilities.php";
 $BackendResult="";
 $DisplayMessage="";
-if (isset($_GET["action"])) {
-    if($_GET["action"]=="login"&&isset($_POST["username_login"])&&isset($_POST["password_login"])){
-        $username_login=$_POST["username_login"];
-        $password_login=$_POST["password_login"];
-        /*if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/", $username_login)){
-            $DisplayMessage = 'Email non è nel formato corretto';
+if(!$_SESSION["admin"]){
+    $_SESSION["prev_page"]="adminpage.php"
+    header("location:login.php");
+}
+else
+{
+    if (isset($_GET["action"])) {
+        //id_corso`, `nome_corso`, `id_categoria`, `descrizione`, `immagine`, `alt`, `forza`, `equilibrio`, `resistenza`, `stabilità`, `intensita`, `durata`, `calorie`, `asciugamano`, `borraccia`, `calzini`, `tappetino`, `scarpe_sportive`, `guantoni`, `capelli_raccolti`, `abbigliamento_outdoor`, `scarpe_outdoor`, `accappatoio`, `cuffia`, `costume`, `ciabatte`, `piedi_nudi`
+        if($_GET["action"]=="add_corso"
+        &&isset($_POST["id_corso"])
+        &&isset($_POST["nome_corso"])
+        &&isset($_POST["id_categoria"])
+        &&isset($_POST["descrizione"])
+        &&isset($_POST["immagine"])
+        &&isset($_POST["alt"])
+        &&isset($_POST["forza"])
+        &&isset($_POST["equilibrio"])
+        &&isset($_POST["stabilità"])
+        &&isset($_POST["durata"])
+        &&isset($_POST["calorie"])
+        &&isset($_POST["asciugamano"])
+        &&isset($_POST["borraccia"])
+        &&isset($_POST["stabilità"])
+        &&isset($_POST["calzini"])
+        &&isset($_POST["tappetino"])
+        &&isset($_POST["scarpe_sportive"])
+        &&isset($_POST["guantoni"])
+        &&isset($_POST["capelli_raccolti"])
+        &&isset($_POST["abbigliamento_outdoor"])
+        &&isset($_POST["scarpe_outdoor"])
+        &&isset($_POST["accappatoio"])
+        &&isset($_POST["cuffia"])
+        &&isset($_POST["costume"])
+        &&isset($_POST["ciabatte"])
+        &&isset($_POST["piedi_nudi"])){
+            
         }
-        else{*/
-            $BackendResult=LoginUser($_POST["username_login"],$_POST["password_login"]);
-            if($BackendResult==""){
-                if(isset($_SESSION["prev_page"])){
-                    header($_SESSION["prev_page"]);
-                }
-                else{
-                    header("location:home.php");
-                }
-            }
-            else{
-                $DisplayMessage=$BackendResult;
-            }
-        //}
+        if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["password_registra"])){
+            
+        }
     }
-    if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["password_registra"])){
-        $BackendResult=RegisterUser($_POST["username_registra"],$_POST["password_registra"]);
-        if($BackendResult==""){
-            $DisplayMessage="registrazione completa";
-        }
-        else{
-            $DisplayMessage=$BackendResult;
-        }
-    }
+?>
+
+
+
+<?php 
 }
 ?>

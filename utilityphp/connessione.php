@@ -77,7 +77,6 @@ class Connection{
             return false;
         }
     }
-    /*
     public function UserExists($username){
         $query='SELECT count(*) FROM costumer where where email=? OR username=?';
         $preparedQuery = $connection->prepare($query);
@@ -140,6 +139,20 @@ class Connection{
         $preparedQuery->close();
         return $type;
     }
-    */
+    public function CheckUserPriviledge($username){
+        $query='SELECT type FROM costumer where email=? OR username=?';
+        $preparedQuery = $connection->prepare($query);
+        $preparedQuery->bind_param(
+            'ss',
+            $username,
+            $username
+        );
+        $preparedQuery->execute();
+        $res=$preparedQuery->get_result();
+        $type= $res->fetch_array(MYSQLI_NUM)[0];
+        $connection->disconnect();
+        $preparedQuery->close();
+        return $type;
+    }
 }
 ?>
