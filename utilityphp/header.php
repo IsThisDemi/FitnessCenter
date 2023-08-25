@@ -1,5 +1,7 @@
 <?php 
-session_start();
+if(!isset($_SESSION)){
+	session_start();
+}
 $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto" tabindex="0" acceskey="s">salta al contenuto</a>
 	<header>
             <h1 class="logo"> FitnessCenter </h1>
