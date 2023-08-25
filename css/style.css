@@ -232,7 +232,6 @@ nav .menu_name {
 
 .breadcrumbs {
 	grid-area: b;
-	margin: 0.5em 0;
 	padding: 0.7em ;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.4rem;
@@ -268,20 +267,17 @@ nav .menu_name {
 ====================================================
 */
 
-#HomePage {
+#home_content {
 	display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 	row-gap: 2em;
 	column-gap: 1em;
     grid-template-areas:
-			"h h h"
-			"b b b"
 			"t t t"
 			"s sb sb"
 			"cb cb c "
 			"iscr iscr iscr"
-			"info info info" 
-			"f f f";
+			"info info info";
 }
 
 #HomePage b {
@@ -856,29 +852,28 @@ nav .menu_name {
 
 /* 
 ====================================================
-						SEDI 
+						CLUBS
 ==================================================== 
 */
 
-#SediPage {
+#clubs_content {
 	display:grid;
     grid-template-columns: 1fr 1fr;
 	row-gap: 2em;
     grid-template-areas: 
-	"h h"
-	"b b"
     "s s"
-    "l m"
-	"f f";
+    "l m";
+	margin-bottom: 1em;
 }
 
 #search_bar {
 	grid-area: s;
 	text-align: center;
+	padding: 1em;
 }
 
 #search_title {
-	margin: 1em 1em 0.3em 1em;
+	margin: 0.5em 1em 0.5em 1em;
 	font-size: 3em;
 	font-weight: bold;
 	font-family: Arial, Helvetica, sans-serif;
@@ -1130,7 +1125,7 @@ JoinUS
 -------------------------------------------------------------------------------------------------------------------
 */
 .titleform h1 {
-	padding-left: 12em;
+	padding-left: 10em;
 	padding-top: .5em;
 	padding-bottom: .5em;
 }
@@ -1140,7 +1135,6 @@ JoinUS
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1em;
-	margin-bottom: 2em;
 }
 
 @media (min-width: 600px) {
@@ -1173,7 +1167,7 @@ JoinUS
 .formint {
 	display: grid;
 	grid-template-columns: 1fr;
-	background: #a74646;
+	background: #b80000;
 }
 
 .formint input,

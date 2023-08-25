@@ -19,37 +19,39 @@
        echo genera_header("clubs");               
     ?>
 
-    <div id="search_bar">
-        <div id="search_title">
-            <p>Trova il club più vicino a te</p>
-        </div>
-        <input id= "searchbar_club" type="text" placeholder="Inserisci città" name="searchbar_club" onkeyup="search_club()">
-    </div>
-        
-    <div id="google_map">
-        <iframe id="map" 
-            title="Mappa dove viene indicata la posizone geografica della palestra" name="map" 
-            src="https://www.google.com/maps/d/u/0/embed?mid=1D7uw8ihHL2XQgWA_KycFw-QsIoP7Fws&ehbc=2E312F"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
+    <div id="clubs_content">
 
-    <div id="addresses_container">
+        <div id="search_bar">
+            <div id="search_title">
+                <p>Trova il club più vicino a te</p>
+            </div>
+            <input id= "searchbar_club" type="text" placeholder="Inserisci città" name="searchbar_club" onkeyup="search_club()">
+        </div>
+            
+        <div id="google_map">
+            <iframe id="map" 
+                title="Mappa dove viene indicata la posizone geografica della palestra" name="map" 
+                src="https://www.google.com/maps/d/u/0/embed?mid=1D7uw8ihHL2XQgWA_KycFw-QsIoP7Fws&ehbc=2E312F"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div id="addresses_container">
             <h2 lang="en">FitnessCenter Clubs</h3>
             <div id="addresses_list">
                     
-                <button class="address">
-                    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.9753403992813!2d15.167151215312717!3d37.602739379791224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313f9628d3958f5%3A0xbac6b45e7a9bae99!2sFitActive%20Acireale!5e0!3m2!1sit!2sit!4v1684969343268!5m2!1sit!2sit"
-                    target="map">Club Acireale</a>
-                </button>
-                <div class="panel">
-                    <p>
-                        Indirizzo: Via Madonna delle Grazie 1 <br>
-                        Città: Acireale (CT) <br>
-                        CAP: 95024 <br>
-                        Telefono: 328 8912714
-                    </p>
-                </div>
+                    <button class="address">
+                        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.9753403992813!2d15.167151215312717!3d37.602739379791224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313f9628d3958f5%3A0xbac6b45e7a9bae99!2sFitActive%20Acireale!5e0!3m2!1sit!2sit!4v1684969343268!5m2!1sit!2sit"
+                        target="map">Club Acireale</a>
+                    </button>
+                    <div class="panel">
+                        <p>
+                            Indirizzo: Via Madonna delle Grazie 1 <br>
+                            Città: Acireale (CT) <br>
+                            CAP: 95024 <br>
+                            Telefono: 328 8912714
+                        </p>
+                    </div>
 
                     <button class="address">
                         <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2787.2130762938523!2d9.749193615564945!3d45.6866957791042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47815b613781c203%3A0x3908aa1ca2db5afd!2sFitActive%20Albano%20Sant&#39;Alessandro!5e0!3m2!1sit!2sit!4v1684795851241!5m2!1sit!2sit"
@@ -1208,9 +1210,11 @@
                     </div> 
 
                 </div>
+            </div>
         </div>
+    </div>
     
-
+    
     <?php
         include_once "utilityphp/footer.php";                
     ?>
@@ -1219,3 +1223,35 @@
     <script src="js/club_list_sedi.js"></script>
 </body>
 </html>
+
+
+
+<!--
+
+<button class="address">
+                        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.9753403992813!2d15.167151215312717!3d37.602739379791224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313f9628d3958f5%3A0xbac6b45e7a9bae99!2sFitActive%20Acireale!5e0!3m2!1sit!2sit!4v1684969343268!5m2!1sit!2sit"
+                        target="map">Club Acireale</a>
+                    </button>
+                    <div class="panel">
+                        <p>
+                            Indirizzo: Via Madonna delle Grazie 1 <br>
+                            Città: Acireale (CT) <br>
+                            CAP: 95024 <br>
+                            Telefono: 328 8912714
+                        </p>
+                    </div>
+
+                    <button class="address">
+                        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2787.2130762938523!2d9.749193615564945!3d45.6866957791042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47815b613781c203%3A0x3908aa1ca2db5afd!2sFitActive%20Albano%20Sant&#39;Alessandro!5e0!3m2!1sit!2sit!4v1684795851241!5m2!1sit!2sit"
+                        target="map">Club Albano Sant'Alessandro</a>
+                    </button>
+                    <div class="panel">
+                        <p>
+                            Indirizzo: Via Tonale 6 <br>
+                            Città: Albano Sant'Alessandro (BG) <br>
+                            CAP: 24061 <br>
+                            Telefono: 3792771491
+                        </p>
+                    </div>
+                    
+-->
