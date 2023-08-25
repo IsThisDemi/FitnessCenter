@@ -5,16 +5,16 @@ $BackendResult="";
 $DisplayMessage="";
 if (isset($_GET["action"])) {
     if($_GET["action"]=="login"&&isset($_POST["username_login"])&&isset($_POST["password_login"])){
-        $username_login=$_POST["username_login"];
-        $password_login=$_POST["password_login"];
-        if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/", $username_login)){
+        $username_login=htmlentities(trim($_POST["username_login"]));
+        $password_login=htmlentities(trim($_POST["password_login"]));
+        /*if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/", $username_login)){
             $DisplayMessage = 'Email non è nel formato corretto';
         }
-        else{
+        else{*/
             $BackendResult=LoginUser($_POST["username_login"],$_POST["password_login"]);
             if($BackendResult==""){
                 if(isset($_SESSION["prev_page"])){
-                    header($_SESSION["prev_page"]);
+                    header("location:".$_SESSION["prev_page"]);
                 }
                 else{
                     header("location:home.php");
@@ -23,10 +23,13 @@ if (isset($_GET["action"])) {
             else{
                 $DisplayMessage=$BackendResult;
             }
-        }
+        //}
     }
-    if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["password_registra"])){
-        $BackendResult=RegisterUser($_POST["username_registra"],$_POST["password_registra"]);
+    if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["email_registra"])&&isset($_POST["password_registra"])){
+        $username_registra=htmlentities(trim($_POST["username_registra"]));
+        $email_registra=htmlentities(trim($_POST["email_registra"]));
+        $password_registra=htmlentities(trim($_POST["password_registra"]));
+        $BackendResult=RegisterUser($username_registra,$email_registra,$password_registra);
         if($BackendResult==""){
             $DisplayMessage="registrazione completa";
         }
@@ -61,7 +64,16 @@ if (isset($_GET["action"])) {
 
     $user=get_logged_user();
     if($user&&$user!=""){
-    echo "<p id='logoutmessage'> sei attualmente loggato come ".$user." desideri effettuare il logout?</p>";
+?>  <p id='logoutmessage'> sei attualmente loggato come <?php echo $user ?></p>
+    <form class="loginform" action="login.php?action=logout" method="post" id="login" >
+        <button type="submit" lang='eng'> log out</button>
+    </form>
+<?php
+        if($_SESSION["admin"]){
+    ?>  
+        <a href=adminpage.php class="adminlink">accedi all area di amministrazione </a>
+    <?php
+        }
     }
     else{
 ?>
@@ -82,6 +94,9 @@ if (isset($_GET["action"])) {
         <label for="username_registra" lang="en">Username</label>
         <input id="username_registra" type="text" placeholder=" Username" name="username_registra" required />
 
+        <label for="email_registra" lang="en">Password</label>
+        <input id="email_registra" type="email" placeholder=" email@provider.com" name="email_registra" required />
+    
         <label for="password_registra" lang="en">Password</label>
         <input id="password_registra" type="password" placeholder=" Password" name="password_registra" required />
         <input type="submit" name="registra">

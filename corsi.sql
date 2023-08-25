@@ -149,10 +149,11 @@ CREATE TABLE `costumer` (
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `user` (
+    `id_user` int(16) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `username` varchar(100) NOT NULL,
     `email` varchar(100) NOT NULL,
     `password` varchar(100) NOT NULL,
-    `type` varchar(10) NOT NULL,
+    `type` varchar(10) NOT NULL
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --

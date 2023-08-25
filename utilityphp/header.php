@@ -1,4 +1,7 @@
 <?php 
+if(!isset($_SESSION)){
+	session_start();
+}
 $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto" tabindex="0" acceskey="s">salta al contenuto</a>
 	<header>
             <h1 class="logo"> FitnessCenter </h1>
@@ -28,6 +31,7 @@ $link_pagine["Running"]="categoria.php?id=5";
 $link_pagine["Strenght"]="categoria.php?id=6";
 $link_pagine["Water"]="categoria.php?id=7";
 $link_pagine["Yoga"]="categoria.php?id=8";
+$link_pagine["admin"]="adminpage.php";
 
 $fl_pagine=[];//nome->link
 $fl_pagine["home"]="h";
@@ -46,6 +50,7 @@ $genitore_pagine["more"]="home";
 $genitore_pagine["login"]="home";
 $genitore_pagine["categoria"]="offerta corsi";
 $genitore_pagine["Join US"]="home";
+$genitore_pagine["admin"]="login";
 
 //Genitore e figli delle categorie
 $genitore_pagine["Balance"] = "offerta corsi";
@@ -96,7 +101,12 @@ function genera_header($pagina){
       	if ($menuentry != $pagina) {
 			$link=$link_pagine[$menuentry];
 			$fl=$fl_pagine[$menuentry];
-            $menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . $i . "\" acceskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
+			if($menuentry=="login"&&isset($_SESSION["user"]))
+			{
+				$menuentry=$_SESSION["user"];
+			}
+			$menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . $i . "\" acceskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
+			
         } else {
             $menu = $menu . "<li class=\"menu_name\" \"first_letter_underlined\">" . $menuentry . "</li>";
         }
