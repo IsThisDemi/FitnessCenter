@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto" tabindex="0" acceskey="s">salta al contenuto</a>
 	<header>
             <h1 class="logo"> FitnessCenter </h1>
@@ -96,7 +97,12 @@ function genera_header($pagina){
       	if ($menuentry != $pagina) {
 			$link=$link_pagine[$menuentry];
 			$fl=$fl_pagine[$menuentry];
-            $menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . $i . "\" acceskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
+			if($menuentry=="login"&&isset($_SESSION["user"]))
+			{
+				$menuentry=$_SESSION["user"];
+			}
+			$menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . $i . "\" acceskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
+			
         } else {
             $menu = $menu . "<li class=\"menu_name\" \"first_letter_underlined\">" . $menuentry . "</li>";
         }

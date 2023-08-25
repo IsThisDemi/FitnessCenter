@@ -4,7 +4,7 @@ require_once "utilityphp/admin_utilities.php";
 $BackendResult="";
 $DisplayMessage="";
 if(!$_SESSION["admin"]){
-    $_SESSION["prev_page"]="adminpage.php"
+    $_SESSION["prev_page"]="adminpage.php";
     header("location:login.php");
 }
 else

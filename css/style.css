@@ -994,7 +994,7 @@ iframe#map {
 	Login
 ---------------
 */
-.loginpage input,.loginpage button{
+.loginpage input,.loginpage button,.loginpage input[type=email]{
 	color: var(--text-color);
 	background-color: var(--primary-color);
 	font-size: 1.2rem;
@@ -1204,4 +1204,15 @@ JoinUS
 
 .imgform img {
 	min-height: 100%;
+}
+
+/*
+
+ADMIN
+
+
+*/
+
+.adminlink{
+	margin-top: 2rem;
 }

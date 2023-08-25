@@ -78,79 +78,66 @@ class Connection{
         }
     }
     public function UserExists($username){
-        $query='SELECT count(*) FROM costumer where where email=? OR username=?';
+        $connection=$this->conn;
+        $query='SELECT username FROM user where email=? OR username=?';
         $preparedQuery = $connection->prepare($query);
         $preparedQuery->bind_param(
-            'sss',
-            $email,
-            $email,
+            'ss',
+            $username,
+            $username
+        );
+        $preparedQuery->execute();
+        $res=$preparedQuery->get_result();
+        $exist= $res->fetch_array();
+        if(!$exist){
+            $preparedQuery->close();
+            return null;
+        }
+        $preparedQuery->close();
+        return $exist[0];
+    }
+    public function CheckLogin($username,$password){
+        $connection=$this->conn;
+        $query='SELECT count(*) FROM user where  username=? AND password=?';
+        $preparedQuery = $connection->prepare($query);
+        $preparedQuery->bind_param(
+            'ss',
+            $username,
             $password
         );
         $preparedQuery->execute();
         $res=$preparedQuery->get_result();
         $exist= $res->fetch_array(MYSQLI_NUM)[0]>0;
-        $connection->disconnect();
-        $preparedQuery->close();
-        return $exist;
-    }
-    public function CheckLogin($email,$password){
-        $query='SELECT count(*) FROM costumer where (email=? OR username=?) AND password=?';
-        $preparedQuery = $connection->prepare($query);
-        $preparedQuery->bind_param(
-            'sss',
-            $email,
-            $email,
-            $password,
-        );
-        $preparedQuery->execute();
-        $res=$preparedQuery->get_result();
-        $exist= $res->fetch_array(MYSQLI_NUM)[0]>0;
-        $connection->disconnect();
         $preparedQuery->close();
         return $exist;
     }
     public function RegisterNewUser($username,$email,$password){
-        $query='INSERT INTO costumer (username, email, password, type)VALUES(?,?,?,?)';
+        $connection=$this->conn;
+        $query='INSERT INTO user (username, email, password, type)VALUES(?,?,?,?)';
         $preparedQuery = $connection->prepare($query);
+        $usertype="BasicUser";
         $preparedQuery->bind_param(
             'ssss',
             $username,
             $email,
             $password,
-            "BasicUser"
+            $usertype
         );
         $res=$preparedQuery->execute();
-        $connection->disconnect();
         $preparedQuery->close();
         return $res;
     }    
     public function CheckUserPriviledge($username){
-        $query='SELECT type FROM costumer where email=? OR username=?';
+        $connection=$this->conn;
+        $query='SELECT type FROM user where username=?';
         $preparedQuery = $connection->prepare($query);
         $preparedQuery->bind_param(
-            'ss',
-            $username,
+            's',
             $username
         );
         $preparedQuery->execute();
         $res=$preparedQuery->get_result();
         $type= $res->fetch_array(MYSQLI_NUM)[0];
-        $connection->disconnect();
-        $preparedQuery->close();
-        return $type;
-    }
-    public function CheckUserPriviledge($username){
-        $query='SELECT type FROM costumer where email=? OR username=?';
-        $preparedQuery = $connection->prepare($query);
-        $preparedQuery->bind_param(
-            'ss',
-            $username,
-            $username
-        );
-        $preparedQuery->execute();
-        $res=$preparedQuery->get_result();
-        $type= $res->fetch_array(MYSQLI_NUM)[0];
-        $connection->disconnect();
         $preparedQuery->close();
         return $type;
     }

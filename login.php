@@ -64,7 +64,16 @@ if (isset($_GET["action"])) {
 
     $user=get_logged_user();
     if($user&&$user!=""){
-    echo "<p id='logoutmessage'> sei attualmente loggato come ".$user." desideri effettuare il logout?</p>";
+?>  <p id='logoutmessage'> sei attualmente loggato come <?php echo $user ?></p>
+    <form class="loginform" action="login.php?action=logout" method="post" id="login" >
+        <button type="submit" lang='eng'> log out</button>
+    </form>
+<?php
+        if($_SESSION["admin"]){
+    ?>  
+        <a href=adminpage.php class="adminlink">accedi all area di amministrazione </a>
+    <?php
+        }
     }
     else{
 ?>
@@ -85,6 +94,9 @@ if (isset($_GET["action"])) {
         <label for="username_registra" lang="en">Username</label>
         <input id="username_registra" type="text" placeholder=" Username" name="username_registra" required />
 
+        <label for="email_registra" lang="en">Password</label>
+        <input id="email_registra" type="email" placeholder=" email@provider.com" name="email_registra" required />
+    
         <label for="password_registra" lang="en">Password</label>
         <input id="password_registra" type="password" placeholder=" Password" name="password_registra" required />
         <input type="submit" name="registra">
