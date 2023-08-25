@@ -29,6 +29,7 @@ $link_pagine["Running"]="categoria.php?id=5";
 $link_pagine["Strenght"]="categoria.php?id=6";
 $link_pagine["Water"]="categoria.php?id=7";
 $link_pagine["Yoga"]="categoria.php?id=8";
+$link_pagine["admin"]="adminpage.php";
 
 $fl_pagine=[];//nome->link
 $fl_pagine["home"]="h";
@@ -47,6 +48,7 @@ $genitore_pagine["more"]="home";
 $genitore_pagine["login"]="home";
 $genitore_pagine["categoria"]="offerta corsi";
 $genitore_pagine["Join US"]="home";
+$genitore_pagine["admin"]="login";
 
 //Genitore e figli delle categorie
 $genitore_pagine["Balance"] = "offerta corsi";

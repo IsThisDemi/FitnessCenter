@@ -3,7 +3,7 @@ require_once "utilityphp/header.php";
 require_once "utilityphp/admin_utilities.php";
 $BackendResult="";
 $DisplayMessage="";
-if(!$_SESSION["admin"]){
+if(!isset($_SESSION["admin"])||!$_SESSION["admin"]){
     $_SESSION["prev_page"]="adminpage.php";
     header("location:login.php");
 }
@@ -40,12 +40,34 @@ else
         &&isset($_POST["piedi_nudi"])){
             
         }
-        if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["password_registra"])){
+        /*if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["password_registra"])){
             
-        }
+        }*/
     }
 ?>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Login FitnessCenter</title>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="Login FitnessCenter"/>
+    <meta name="description" content="pagina di login per FitnessCenter" />
+	<meta name="author" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link type="text/css"  rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" media="print" href="css/print.css" type="text/css"/>
+	<link rel="shortcut icon" href="../images/favicon.ico" />
+</head>
+<body>
 
+<?php 
+
+    echo genera_header("admin");
+
+?>
+<div id="content" class="loginpage">
+
+</div>
 
 
 <?php 
