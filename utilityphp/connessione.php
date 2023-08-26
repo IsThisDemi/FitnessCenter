@@ -18,6 +18,22 @@ class Connection{
             return false; //Connessione fallita
     }
 
+    public function getList(){
+        $query = "SELECT * FROM clubs ORDER BY id_club ASC";
+        $queryResult=mysqli_query($this->conn, $query) or die("Errore in apriConnessione: ".mysqli_error($this->conn)); //esegue la query e se fallisce ritorna un errore
+        if (mysqli_num_rows($queryResult) == 0){ //se non ci sono righe di qualche risultato
+            return null; //ritorna null
+        }
+        else{
+            $result = array(); //altrimenti crea un array
+            while($row = mysqli_fetch_assoc($queryResult)){ //mentre ci sono righe nel risultato
+                array_push($result, $row); //aggiungi la riga all'array result
+            }
+            $queryResult->free(); //libero la memoria
+            return $result; //ritorna la lista contenente tutti i risultati
+        }
+    }
+
     //Funzione che restituisce il valore della prima query
     public function query_singolaDB($stringaQuery)
     {

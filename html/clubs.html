@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Clubs-FitnessCenter</title>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="FitnessCenter palestra fitness sedi"/>
+    <meta name="description" content="Questa pagina continene una lista delle sedi attualmente presenti con relativa posizione geografica su una mappa." />
+	<meta name="author" content=""/>
+    <meta name="viewport" content="width=device-width initial-scale=1"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mini.css"  media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+</head>
+
+<body id="SediPage" >
+
+    %header%
+
+    <div id="clubs_content">
+
+        <div id="search_bar">
+            <div id="search_title">
+                <p>Trova il club più vicino a te</p>
+            </div>
+            <input id= "searchbar_club" type="text" placeholder="Inserisci città" name="searchbar_club" onkeyup="search_club()">
+        </div>
+            
+        <div id="google_map">
+            <iframe id="map" 
+                title="Mappa dove viene indicata la posizone geografica della palestra" name="map" 
+                src="https://www.google.com/maps/d/u/0/embed?mid=1D7uw8ihHL2XQgWA_KycFw-QsIoP7Fws&ehbc=2E312F"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div id="addresses_container">
+            <h2 lang="en">FitnessCenter Clubs</h2>
+            <div id="addresses_list">
+                
+                %lista_club%
+
+            </div>
+        </div>
+    </div>
+    
+    %footer%
+
+    <script src="js/searchbar_sedi.js"></script>
+    <script src="js/club_list_sedi.js"></script>
+</body>
+</html>
