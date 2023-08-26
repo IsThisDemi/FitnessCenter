@@ -40,7 +40,7 @@ $fl_pagine["offerta corsi"]="o";
 $fl_pagine["more"]="m";
 $fl_pagine["login"]="l";
 
-$navmenu=["home","clubs","offerta corsi","more","login",];
+$navmenu=["home","clubs","offerta corsi","more","login"];
 
 $genitore_pagine=[];//nome->genitore
 $genitore_pagine["home"]="#";

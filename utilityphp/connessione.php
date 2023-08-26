@@ -141,5 +141,22 @@ class Connection{
         $preparedQuery->close();
         return $type;
     }
+    public function GetCategorie(){
+        $connection=$this->conn;
+        $query='SELECT id_categoria , nome_cat FROM categorie';
+        $preparedQuery = $connection->prepare($query);
+        $preparedQuery->bind_param(
+            's',
+            $username
+        );
+        $preparedQuery->execute();
+        $res=$preparedQuery->get_result();
+        $categorie=[];
+        while($row = $res->fetch_assoc()){
+            $categorie[$row["id_categoria"]]=$row["nome_cat"];
+        }
+        $preparedQuery->close();
+        return $categorie;
+    }
 }
 ?>
