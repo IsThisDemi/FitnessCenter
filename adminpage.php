@@ -12,37 +12,48 @@ else
     if (isset($_GET["action"])) {
         //id_corso`, `nome_corso`, `id_categoria`, `descrizione`, `immagine`, `alt`, `forza`, `equilibrio`, `resistenza`, `stabilità`, `intensita`, `durata`, `calorie`, `asciugamano`, `borraccia`, `calzini`, `tappetino`, `scarpe_sportive`, `guantoni`, `capelli_raccolti`, `abbigliamento_outdoor`, `scarpe_outdoor`, `accappatoio`, `cuffia`, `costume`, `ciabatte`, `piedi_nudi`
         if($_GET["action"]=="add_corso"
-        &&isset($_POST["id_corso"])
         &&isset($_POST["nome_corso"])
         &&isset($_POST["id_categoria"])
         &&isset($_POST["descrizione"])
         &&isset($_POST["immagine"])
         &&isset($_POST["alt"])
-        &&isset($_POST["forza"])
-        &&isset($_POST["equilibrio"])
-        &&isset($_POST["stabilità"])
+        &&isset($_POST["intensita"])
         &&isset($_POST["durata"])
         &&isset($_POST["calorie"])
-        &&isset($_POST["asciugamano"])
-        &&isset($_POST["borraccia"])
-        &&isset($_POST["stabilità"])
-        &&isset($_POST["calzini"])
-        &&isset($_POST["tappetino"])
-        &&isset($_POST["scarpe_sportive"])
-        &&isset($_POST["guantoni"])
-        &&isset($_POST["capelli_raccolti"])
-        &&isset($_POST["abbigliamento_outdoor"])
-        &&isset($_POST["scarpe_outdoor"])
-        &&isset($_POST["accappatoio"])
-        &&isset($_POST["cuffia"])
-        &&isset($_POST["costume"])
-        &&isset($_POST["ciabatte"])
-        &&isset($_POST["piedi_nudi"])){
-            
+        &&isset($_POST["calzature"])
+        ){
+            $nome_corso=htmlentities(trim($_POST["nome_corso"]));
+            $id_categoria=htmlentities(trim($_POST["id_categoria"]));
+            $descrizione=htmlentities(trim($_POST["descrizione"]));
+            $immagine=htmlentities(trim($_POST["immagine"]));
+            $alt=htmlentities(trim($_POST["alt"]));
+            $intensita=htmlentities(trim($_POST["intensita"]));
+            $durata=htmlentities(trim($_POST["durata"]));
+            $calorie=htmlentities(trim($_POST["calorie"]));
+            $calzature=htmlentities(trim($_POST["calzature"]));
+            $forza=isset($_POST["calzature"]);
+            $equilibrio=isset($_POST["equilibrio"]);
+            $resistenza=isset($_POST["resistenza"]);
+            $stabilita=isset($_POST["stabilita"]);
+            $tappetino=isset($_POST["tappetino"]);
+            $asciugamano=isset($_POST["asciugamano"]);
+            $borraccia=isset($_POST["borraccia"]);
+            $guantoni=isset($_POST["guantoni"]);
+            $capelli_raccolti=isset($_POST["capelli_raccolti"]);
+            $abbigliamento_outdoor=isset($_POST["abbigliamento_outdoor"]);
+            $accappatoio=isset($_POST["accappatoio"]);
+            $cuffia=isset($_POST["cuffia"]);
+            $costume=isset($_POST["costume"]);
+
+
+            $BackendResult=InserisciCorso($nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilita,$intensita,$durata,$calorie,$calzature,$tappetino,$asciugamano,$borraccia,$tappetino,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$accappatoio,$cuffia,$costume);
+            if($BackendResult==""){
+                $DisplayMessage="inserimento completato";
+            }
+            else{
+                $DisplayMessage=$BackendResult;
+            }
         }
-        /*if($_GET["action"]=="register"&&isset($_POST["username_registra"])&&isset($_POST["password_registra"])){
-            
-        }*/
     }
 ?>
 <!DOCTYPE html>
@@ -64,10 +75,12 @@ else
 
     echo genera_header("admin");
     $categorie;
-    if(GetCategorie($categorie)!="success"){
+    if(GetCategorie($categorie)!="success"||!$categorie){
 
         ?>
-        
+
+            <p>errore connessione o database</p>
+        </body>
         
         <?php 
     }
@@ -75,6 +88,13 @@ else
 
 ?>
 <div id="content" class="adminpage">
+<?php
+if($DisplayMessage!=""){
+        echo '<p class="formresult">';
+        echo $DisplayMessage;
+        echo '</p>';
+    }
+?>
     <form class="adminform" action="adminpage.php?action=insert" method="post" id="inserisci">
         <label for="nome_corso" lang="it">Nome</label>    
         <input id="nome_corso" type="text" placeholder="Nome corso" name="nome_corso" required />
@@ -98,7 +118,7 @@ else
             <input id="link_immagine" type="text" placeholder="image.png" name="link_immagine" required />
             <label for="alt_immagine" lang="it">Alt text immagine</label>    
             <textarea id="alt_immagine" name="alt_immagine" rows="2" cols="25" required>
-                Breve descrizione del immagine
+                Breve descrizione dell' immagine
             </textarea>
         </fieldset>
         <fieldset>
@@ -115,6 +135,11 @@ else
                 <label for="stabilità">stabilità</label>
                 <input type="checkbox" id="intensita" name="intensita" value="intensita">
                 <label for="intensita">intensita</label>
+                <input type="number" id="intensita" name="intensita" required min="0" max="3">
+                <label for="durata">durata in minuti</label>
+                <input type="number" id="durata" name="durata" required>
+                <label for="calorie">calorie esercizio</label>
+                <input type="number" id="calorie" name="calorie" required>
         </fieldset>
         <fieldset>
             <legend>equipaggiamento</legend>

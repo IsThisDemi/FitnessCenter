@@ -174,5 +174,45 @@ class Connection{
         $preparedQuery->close();
         return $categorie;
     }
+    public function InsertCorso($nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilità,$intensita,$durata,$calorie,$asciugamano,$borraccia,$calzini,$tappetino,$scarpesportive,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$scarpeoutdoor,$accappatoio,$cuffia,$costume,$ciabatte,$piedinudi){
+
+        $connection=$this->conn;
+        $query='INSERT INTO corsi (`nome_corso`, `id_categoria`, `descrizione`, `immagine`, `alt`, `forza`, `equilibrio`, `resistenza`, `stabilità`, `intensita`, `durata`, `calorie`, `asciugamano`, `borraccia`, `calzini`, `tappetino`, `scarpe_sportive`, `guantoni`, `capelli_raccolti`, `abbigliamento_outdoor`, `scarpe_outdoor`, `accappatoio`, `cuffia`, `costume`, `ciabatte`, `piedi_nudi`)
+                        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+        $preparedQuery = $connection->prepare($query);
+        $usertype="BasicUser";
+        $preparedQuery->bind_param(
+            'ssssssssssssssssssssssssss',
+            $nome_corso,
+            $id_categoria,
+            $descrizione,
+            $immagine,
+            $alt,
+            $forza,
+            $equilibrio,
+            $resistenza,
+            $stabilità,
+            $intensita,
+            $durata,
+            $calorie,
+            $asciugamano,
+            $borraccia,
+            $calzini,
+            $tappetino,
+            $scarpesportive,
+            $guantoni,
+            $capelli_raccolti,
+            $abbigliamento_outdoor,
+            $scarpeoutdoor,
+            $accappatoio,
+            $cuffia,
+            $costume,
+            $ciabatte,
+            $piedinudi
+        );
+        $res=$preparedQuery->execute();
+        $preparedQuery->close();
+        return $res;
+    }    
 }
 ?>
