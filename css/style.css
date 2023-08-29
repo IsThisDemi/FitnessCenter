@@ -662,11 +662,11 @@ nav .menu_name {
 	color: #4bf7a8;
 }
 
-#Stabilità_box {
+#StabilitÃ _box {
 	border-color: #4b4ff7;
 }
 
-#Stabilità_box h3 {
+#StabilitÃ _box h3 {
 	color: #4b4ff7;
 }
 
@@ -1139,7 +1139,7 @@ JoinUS
 
 @media (min-width: 600px) {
 	.formpage {
-		padding: 0;
+		padding: 1em;
 	}
 }
 
