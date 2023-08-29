@@ -161,10 +161,6 @@ class Connection{
         $connection=$this->conn;
         $query='SELECT id_categoria , nome_cat FROM categorie';
         $preparedQuery = $connection->prepare($query);
-        $preparedQuery->bind_param(
-            's',
-            $username
-        );
         $preparedQuery->execute();
         $res=$preparedQuery->get_result();
         $categorie=[];

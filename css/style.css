@@ -986,19 +986,27 @@ iframe#map {
   }
 /* 
 ---------------
-	Login
+	Login And Admin
 ---------------
 */
-.loginpage input,.loginpage button,.loginpage input[type=email]{
+
+.adminlink{
+	margin-top: 2rem;
+}
+
+.loginpage input,.loginpage button,.loginpage input[type=email],.adminpage input,.adminpage button,.adminpage select{
 	color: var(--text-color);
 	background-color: var(--primary-color);
 	font-size: 1.2rem;
+}
+.adminpage fieldset{
+	border-color: var(--header-color);
 }
 .loginpage .selected{
 	color: var(--alternative-text-color);
 	background-color: var(--header-color);
 }
-.loginpage{
+.loginpage,.adminpage{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -1009,6 +1017,13 @@ iframe#map {
 	padding: 0.25rem;
 	border-radius: 0.5rem;
 	margin: 0.25rem;
+	align-self: center;
+	align-content: center;
+}
+.adminpage *{
+	padding: 0.25rem;
+	border-radius: 0.5rem;
+	margin: 0.125rem;
 	align-self: center;
 	align-content: center;
 }
@@ -1040,6 +1055,33 @@ iframe#map {
 	width: calc(min(20rem,80%));
 	/*grid-row: 3;
 	grid-column: 2;*/
+}
+.adminform{
+	display:flex ;
+	flex-direction: column;
+	width: calc(min(30rem,80%));
+	width: 80%;
+}
+.adminform fieldset{
+	display:grid;
+	grid-template-columns: auto auto auto auto;
+	width: 80%;
+}
+.adminform input,.adminform textarea,.adminform select{
+	align-self:left;
+	grid-column: 2;
+}
+.adminform label{
+	align-self:left;
+	align-content:left;
+	text-align: left;
+	grid-column: 1;
+}
+.adminform label[class=column2]{
+	grid-column: 3;
+}
+.adminform input[class=column2]{
+	grid-column: 4;
 }
 .loginform *{
 	width: 80%;
@@ -1202,14 +1244,4 @@ JoinUS
 
 .messaggi {
 	margin-left: 1em;
-}
-/*
-
-ADMIN
-
-
-*/
-
-.adminlink{
-	margin-top: 2rem;
 }

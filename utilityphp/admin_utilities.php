@@ -23,7 +23,7 @@ function GetCorsi(&$corsi){
     $connessione1->closeDBConnection();
     return "success";
 }
-function InserisciCorso($nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilita,$intensita,$durata,$calorie,$calzature,$tappetino,$asciugamano,$borraccia,$tappetino,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$accappatoio,$cuffia,$costume){
+function InserisciCorso($nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilita,$intensita,$durata,$calorie,$calzature,$asciugamano,$borraccia,$tappetino,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$accappatoio,$cuffia,$costume){
     $categorie=[];
     GetCategorie($categorie);
     if(!isset($categorie[$id_categoria])){
@@ -60,10 +60,11 @@ function InserisciCorso($nome_corso,$id_categoria,$descrizione,$immagine,$alt,$f
         (int)$cuffia,
         (int)$costume,
         (int)($calzature==4),
-        (int)($calzature==5)){
+        (int)($calzature==5)))
+        {
             $connessione1->closeDBConnection();
-            return ""
+            return "";
         }
     $connessione1->closeDBConnection();
-    return "errore inserimento database"
+    return "errore inserimento database";
 }
