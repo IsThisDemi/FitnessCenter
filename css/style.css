@@ -73,8 +73,11 @@ img {max-width: 100%;height: auto}
 ------------------------------------------------------------
 */
 
+header, .breadcrumbs, footer {
+	width:max-content;
+}
+
 header {
-	grid-area: h;
 	border: 1px solid var(--secondary-color);
 	background-color: var(--header-color);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -86,7 +89,6 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	
 }
 
 header li {
@@ -231,7 +233,6 @@ nav .menu_name {
 */
 
 .breadcrumbs {
-	grid-area: b;
 	padding: 0.7em ;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.4rem;
@@ -269,7 +270,7 @@ nav .menu_name {
 
 #home_content {
 	display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
 	row-gap: 2em;
 	column-gap: 1em;
     grid-template-areas:
