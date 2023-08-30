@@ -8,7 +8,7 @@ $footer = file_get_contents("utilityphp/footer.php");
 
 use DB\DBAccess; //importa la classe DBAccess presente in "connessione"
 
-$tagPermessi = '<em><strong><ul><li>'; //se ci fosse un tag non permesso, lo rimuove fino alla fine e si ha codice non valido
+$tagPermessi = '<em><strong><ul><p>'; //se ci fosse un tag non permesso, lo rimuove fino alla fine e si ha codice non valido
 $messaggiPerForm = ''; //messaggi di errore per la form
 
 //Variabili per il form
@@ -45,21 +45,21 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
 
     $nome = pulisciInput($_POST['nome']); //pulisce il nome
     if (strlen($nome) == 0){
-        $messaggiPerForm .= '<li>Nome non inserito</li>';
+        $messaggiPerForm .= '<p>Nome non inserito</p>';
     }
     else{
         if(preg_match("/\d/", $nome)){ //se il nome contiene un numero
-            $messaggiPerForm .= '<li>Nome  non può contenere numeri</li>';
+            $messaggiPerForm .= '<p>Nome  non può contenere numeri</p>';
         }
     }
 
     $cognome = pulisciInput($_POST['cognome']); 
     if (strlen($nome) == 0){
-        $messaggiPerForm .= '<li>Cognome non inserito</li>';
+        $messaggiPerForm .= '<p>Cognome non inserito</p>';
     }
     else{
         if(preg_match("/\d/", $cognome)){ 
-            $messaggiPerForm .= '<li>Cognome  non può contenere numeri</li>';
+            $messaggiPerForm .= '<p>Cognome  non può contenere numeri</p>';
         }
     }
 
@@ -67,32 +67,32 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
 
     $dataNascita = pulisciInput($_POST['dataNascita']); 
     if (strlen($dataNascita) == 0){
-        $messaggiPerForm .= '<li>Data di nascita non inserita</li>';
+        $messaggiPerForm .= '<p>Data di nascita non inserita</p>';
     }
     else{
         if(!preg_match("/\d{4}\-\d{2}\-\d{2}/", $dataNascita)){ //se la data non è nel formato corretto (anno - mese - giorno)
-            $messaggiPerForm .= '<li>La data di nascita non è nel formato corretto</li>';
+            $messaggiPerForm .= '<p>La data di nascita non è nel formato corretto</p>';
         }
     }
 
 
     $email = pulisciInput($_POST['email']);
      if (strlen($email) == 0){
-        $messaggiPerForm .= '<li>Email non inserita</li>';
+        $messaggiPerForm .= '<p>Email non inserita</p>';
     }
     else{
         if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/", $email)){
-            $messaggiPerForm .= '<li>Email non è nel formato corretto</li>';
+            $messaggiPerForm .= '<p>Email non è nel formato corretto</p>';
         }
     }
     
     $telefono = pulisciInput($_POST['telefono']);
     if (strlen($telefono) == 0){
-        $messaggiPerForm .= '<li>Telefono non inserito</li>';
+        $messaggiPerForm .= '<p>Telefono non inserito</p>';
     }
     else{
         if(!preg_match("/\d{10}/", $telefono)){  
-            $messaggiPerForm .= '<li>Il numero di telefono deve essere di lughezza 10 e non può contenere caratteri</li>';
+            $messaggiPerForm .= '<p>Il numero di telefono deve essere di lughezza 10 e non può contenere caratteri</p>';
         }
     }
     
