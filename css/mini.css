@@ -1,0 +1,581 @@
+:root {
+	--primary-color: #121212;
+	--secondary-color: #b80000;
+	--header-color: #a74646;
+	--gradient-first-color: #282828;
+	--gradient-first-color-hover: #414141;
+	--gradient-second-color: #1b1b1b;
+	--gradient-last-color: #121212;
+	--visited-links: #BBBBBB;
+	--text-color: white;
+	--alternative-text-color: black;
+	--red: rgb(196, 47, 47);
+	--error-color: #C2B800;
+	--links-hover-color: #ffdd36;
+	--links-visited-color:#675396;
+	--scrollbar: #585858;
+	--scrollbar-background: #282828;
+	--disabled-color: #888888;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	color: var(--text-color);
+	box-sizing: border-box;
+}
+
+a{
+	cursor:pointer;
+}
+button{
+	cursor:pointer;
+}
+input[type="text"] {
+	cursor: text;
+}
+select{
+	cursor:context-menu;
+}
+
+.disabled {
+    user-select : none;
+    -moz-user-select : none;
+    -webkit-user-select : none;
+    color: var(--disabled-color);
+}
+
+a:visited span{
+	color: var(--visited-links);
+}
+a:hover span{
+	color: var(--links-hover-color);
+}
+
+html {
+	font-size: 100%;
+	font-family: "Arial", sans-serif;
+	margin: auto;
+	background-color: var(--primary-color);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5rem;
+	margin: auto;
+	margin-bottom: 200px;
+	width: fit-content;
+}
+img {max-width: 100%; height: auto}
+
+/* 
+------------------------------------------------------------
+							HEADER
+------------------------------------------------------------
+*/
+
+header {
+	border: 1px solid var(--secondary-color);
+	background-color: #b80000;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.7em;
+	text-transform: uppercase;
+	
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+
+header li {
+	display: inline-block;
+  	margin: 0 10px 0 10px;
+}
+
+.logo {
+	display: none;
+}
+
+.SRskip {
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.menu_name {
+	font-weight: 700;
+}
+
+.navmenu {
+	list-style: none;
+}
+
+.navmenu a {
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.navmenu a:hover {
+	color: var(--visited-links);
+}
+
+nav li a,
+nav li p,
+nav .menu_name {
+	text-align: center;
+	text-decoration: none;
+	padding: 2em 30px 2em 30px;
+}
+
+/* 
+------------------------------------------------------------
+						BREADCRUMBS
+------------------------------------------------------------
+*/
+
+.breadcrumbs {
+	padding: 0.7em ;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.4rem;
+	background-color: var(--gradient-second-color);
+}
+
+.breadcrumbs #percorso {
+	color: var(--secondary-color);
+	font-weight: 700;
+}
+
+.breadcrumbs a{
+	text-transform: uppercase;
+	color: var(--secondary-color);
+}
+
+.breadcrumbs a:hover{
+	color: var(--links-visited-color);
+	font-weight: 900;
+}
+
+.breadcrumbs #current_page{
+	text-transform: uppercase
+}
+
+.testo_rosso {
+	color: var(--red);
+}
+
+/* 
+------------------------------------------------------------
+							FOOTER
+------------------------------------------------------------
+*/
+
+footer {
+	display: flex;
+	flex-direction: row;
+	border-top: solid 2px var(--text-color);
+	padding-top: 1em;
+	padding: 1em;
+	background-color: var(--header-color);
+    width: max-content;
+}
+
+#footer_text_box {
+	padding: 1em;
+}
+
+#footer_text_box p {
+	padding: 0.2em;
+}
+
+#titolo_footer {
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+	background-image: url("../img/fitnesscenter-logo-files/logo-white-no-background.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    text-indent: -1000px;
+    font-size: 4em;
+	width: 2em;
+}
+
+#info_sede_centrale {
+	font-size: 1.5em;
+}
+
+#copyright_text {
+	margin-top: 2em;
+	font-size: 1em;
+	color: var(--gradient-first-color);
+	font-style: italic;
+}
+
+#copyright_text span {
+	color: var(--gradient-first-color);
+}
+
+#autori_text {
+	margin-top: 1em;
+	font-size: 1em;
+	color: var(--gradient-first-color);
+}
+
+/* 
+---------------------------------------------------------------------
+*/
+
+.subtitle {
+	padding-top: 1rem;
+	padding-left: 1rem;
+}
+
+header h1 {
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+h3 {
+	padding-top: 1rem;
+}
+
+.headerWrapper {
+	background-image: linear-gradient(var(--gradient-first-color), var(--gradient-last-color));
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+.selectable{
+	cursor: pointer;
+}
+
+.hidden{
+	display:none;
+}
+
+
+
+/* 
+====================================================
+						HOME
+====================================================
+*/
+
+#home_content {
+	display: grid;
+    grid-template-columns: auto auto auto;
+	row-gap: 2em;
+	column-gap: 1em;
+    grid-template-areas:
+			"t t t"
+			"s sb sb"
+			"cb cb c "
+			"iscr iscr iscr"
+			"info info info";
+}
+
+#HomePage b {
+	font-weight: 800;
+	color: inherit;
+}
+
+.first_letter_underlined::first-letter {
+	text-decoration: 2px underline;
+}
+
+.menu_link {
+	background-color: var(--text-color);
+	padding: 1.0em;
+	margin: 0 0.5em 0.5em 0;
+	color: var(--primary-color);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-decoration: none;
+	box-shadow: 5px 5px 5px black;
+}
+
+.menu_link:hover {
+	background-color: var(--visited-links);
+}
+
+.spazio_vuoto {
+	margin: 4em;
+}
+
+/* 
+---------------
+	TITOLO
+---------------
+*/
+
+#home_titolo_bg {
+	grid-area: t;
+	background-image: url('../img/home_title_background.jpg');
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 1000px;
+	width: 100%;
+}
+
+#home_titolo_text_box {
+	height: 300px;
+	width: 550px;
+	margin: 2em 0 0 2em;
+}
+
+#home_titolo_titolo {
+	font-size: 4em;
+	line-height: 0.9em;
+	text-shadow: 2px 2px 5px black;
+}
+
+#home_titolo_testo {
+	margin: 1em;
+	padding: 0.5em;
+	font-size: 1em;
+	line-height: 1.3em;
+	text-shadow: 2px 2px 5px black;
+}
+
+/* 
+---------------
+	  CLUBS
+---------------
+*/
+
+
+#home_sedi_bg {
+	grid-area: sb;
+	background-image: url('../img/home_sedi_bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height:auto;
+}
+
+#home_sedi_text_box {
+	grid-area: s;
+	background-color: var(--gradient-first-color-hover);
+	height: auto;
+	margin-left: 1em;
+	padding: 2em 0.5em 0em 0.5em;
+}
+
+#home_sedi_titolo {
+	text-align: center;
+	font-size: 2.5em;
+}
+
+#home_sedi_testo {
+	margin: 1em 1em 0.5em 1em;
+	padding: 0.5em;
+	font-size: 1em;
+}
+
+#home_sedi_text_box .first_letter_underlined {
+	float:right;
+}
+
+#home_sedi_text_box .menu_link {
+	padding: 0.8em 1em;
+}
+
+/* 
+---------------
+	CORSI
+---------------
+*/
+#corpo_corso .breadcrumbs {
+	margin: 0em;
+}
+
+#home_corsi_bg {
+	grid-area: cb;
+	background-image: url('../img/corsi/cycle-body-main.jpg');
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: auto;
+}
+
+#home_corsi_text_box {
+	grid-area: c;
+	background-color: var(--gradient-first-color-hover);
+	height: auto;
+	margin-right: 1em;
+	padding: 15% 1em 1em 1em;
+}
+
+#home_corsi_titolo {
+	text-align: center;
+	font-size: 2.5em;
+}
+
+#home_corsi_testo {
+	margin: 1em 1em 0.5em 1em;
+	padding: 0.5em;
+	font-size: 1em;
+}
+
+.u_list {
+	margin: 0.2em 0 0.2em 1.8em;
+}
+
+#home_corsi_text_box .first_letter_underlined {
+	float:right;
+}
+
+#home_corsi_text_box .menu_link {
+	margin: 0 0 1em 0;
+	padding: 0.8em 1em;
+	
+}
+
+/* 
+------------------
+	ISCRIZIONE
+------------------
+*/
+
+#home_iscrizione {
+	grid-area: iscr;
+	margin: 1em;
+	text-align: center;
+	display: grid;
+	gap: 1em;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	"iti iti iti"
+	"ite ite ite"
+	"p1 p2 p3"
+	". b .";
+}
+
+#home_iscrizione_titolo {
+	grid-area: iti;
+	font-size: 2.5em;
+	text-transform: uppercase;
+	padding: 0.3em 0.3em 0 0.3em;
+}
+
+#home_iscrizione_testo {
+	grid-area: ite;
+	background-color: var(--gradient-first-color-hover);
+	width: 60%;
+	height: auto;
+	margin: auto;
+	padding: 1em;
+	text-align: center;
+	line-height: 1.3em;
+	object-position: center;
+}
+
+#home_iscrizione_piano1 {
+	grid-area: p1;
+	background-color: #f74b45;
+}
+
+#home_iscrizione_piano2 {
+	grid-area: p2;
+	background-color: #4386c2;
+}
+
+#home_iscrizione_piano3 {
+	grid-area: p3;
+	background-color: #d4c72f;
+}
+
+#home_iscrizione_piano1:hover {
+	background-color: #e62620;
+}
+
+#home_iscrizione_piano2:hover {
+	background-color: #1b7acc;
+}
+
+#home_iscrizione_piano3:hover {
+	background-color: #aa9d0c;
+}
+
+#home_iscrizione_piano1,
+#home_iscrizione_piano2,
+#home_iscrizione_piano3 {
+	margin: 0.5em;
+	padding: 0.5em;
+	text-align: left;
+	border-radius: 5%;
+}
+
+#home_iscrizione_piano1 h4,
+#home_iscrizione_piano2 h4,
+#home_iscrizione_piano3 h4 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	padding: 10px;
+}
+
+#home_iscrizione .menu_link {
+	grid-area: b;
+	margin: 0.5em;
+	padding: 0.8em 1em;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	border: 5px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+/* 
+---------------
+	INFO
+---------------
+*/
+
+#home_info {
+	grid-area: info;
+	font-size: large;
+	text-align: center;
+	margin-bottom: 2em;
+	padding: 1em;
+}
+
+#home_info_titolo {
+	font-size: 2.5em;
+	color: var(--secondary-color);
+}
+
+#home_info_testo {
+	font-size: 1.5em;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+#home_info .menu_link {
+	margin: 0.5em;
+	padding: 0.8em 1em;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	border: 5px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+}
+
+#home_info abbr {
+	text-decoration: none;
+}
+
+#home_info .menu_link abbr {
+	color:var(--secondary-color);
+}
