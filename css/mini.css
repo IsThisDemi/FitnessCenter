@@ -600,4 +600,9 @@ JOINUS
       padding-right: 0;
 }
 
+.titleform h1 {
+    padding-left: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
 
