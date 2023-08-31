@@ -62,18 +62,26 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 1.5rem;
+	font-size: 1.5em;
 	margin: auto;
 	margin-bottom: 200px;
 	width: fit-content;
 }
-img {max-width: 100%; height: auto}
+
+img {
+	max-width: 100%;
+	height: auto
+}
 
 /* 
 ------------------------------------------------------------
 							HEADER
 ------------------------------------------------------------
 */
+
+header, .breadcrumbs, footer {
+	width: 100%;
+}
 
 header {
 	border: 1px solid var(--secondary-color);
@@ -82,7 +90,6 @@ header {
 	font-size: 1.7em;
 	text-transform: uppercase;
 	
-	width: 100%;
 	position: fixed;
 	bottom: 0;
 
@@ -145,7 +152,7 @@ nav .menu_name {
 .breadcrumbs {
 	padding: 0.7em ;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 1.4rem;
+	font-size: 2em;
 	background-color: var(--gradient-second-color);
 }
 
@@ -234,17 +241,17 @@ footer {
 */
 
 .subtitle {
-	padding-top: 1rem;
-	padding-left: 1rem;
+	padding-top: 1em;
+	padding-left: 1em;
 }
 
 header h1 {
-	padding: 1rem;
-	font-size: 2rem;
+	padding: 1em;
+	font-size: 2em;
 }
 
 h3 {
-	padding-top: 1rem;
+	padding-top: 1em;
 }
 
 .headerWrapper {
@@ -273,15 +280,14 @@ nav ul {
 
 #home_content {
 	display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr;
 	row-gap: 2em;
-	column-gap: 1em;
     grid-template-areas:
-			"t t t"
-			"s sb sb"
-			"cb cb c "
-			"iscr iscr iscr"
-			"info info info";
+			"t"
+			"s"
+			"c "
+			"iscr"
+			"info";
 }
 
 #HomePage b {
@@ -579,3 +585,24 @@ nav ul {
 #home_info .menu_link abbr {
 	color:var(--secondary-color);
 }
+
+/*
+-------------------------------------------------------------------------------------------
+JOINUS
+-------------------------------------------------------------------------------------------*/
+
+.imgform {
+        display: none;
+}
+
+.formpage {
+      padding-left: 0;
+      padding-right: 0;
+}
+
+.titleform h1 {
+    padding-left: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
