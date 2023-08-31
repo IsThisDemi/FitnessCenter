@@ -1187,11 +1187,6 @@ JoinUS
 	padding: 1em;
 }
 
-@media (min-width: 600px) {
-	.formpage {
-		padding: 1em;
-	}
-}
 
 .formint label,
 .formint p {
@@ -1207,7 +1202,7 @@ JoinUS
 }
 
 
-@media (min-width: 700px) {
+@media (min-width: 769px) {
 	.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
