@@ -241,7 +241,7 @@ nav .menu_name {
 footer {
 	display: flex;
 	flex-direction: row;
-	border-top: solid 2px var(--text-color);
+	border-top: solid 2px var(--primary-color);
 	padding-top: 1em;
 	padding: 1em;
 	background-color: var(--header-color);
@@ -804,7 +804,7 @@ nav ul {
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
-	background-color: #1b1b1b;
+	background-color: var(--gradient-second-color);
 }
 
 .project-info {
@@ -894,7 +894,7 @@ nav ul {
 .container-project {
 	width: 100%;
 	height: auto;
-	background: #1b1b1b;
+	background: var(--gradient-second-color);
 }
 
 /* 
@@ -928,13 +928,13 @@ nav ul {
 
 #searchbar_club {
 	background-color: var(--primary-color);
-	border: 1px solid white;
+	border: 1px solid var(--text-color);
 	font-size: larger;
 	padding: 0.4em;
 }
 
 #searchbar_club::placeholder {
-	color: white;
+	color: var(--text-color);
 	font-style: italic;
 }
 
@@ -1258,7 +1258,8 @@ JoinUS
 .formint textarea {
 	padding: .5em;
 	border-radius: 4px;
-	color: #000000;
+	color: var(--text-color);
+	background: var(--primary-color);
 }
 
 .formint textarea {
