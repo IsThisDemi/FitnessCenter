@@ -11,8 +11,8 @@
     
 	<meta name="author" content="Tao Ren Federico Ye"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="css/style.css" media="handheld, screen and (min-width:769px), only screen and (min-device-width:769px)">
-    <link rel="stylesheet" href="css/mini.css"  media="handheld, screen and (max-width:768px), only screen and (max-device-width:768px)" />
+    <link rel="stylesheet" href="css/style.css"/> 
+    <link rel="stylesheet" href="css/mini.css" media="handheld, screen and (max-width:768px), only screen and (max-device-width:768px)" />
     <link rel="stylesheet" href="css/print.css" media="print" />
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
 </head>
@@ -36,36 +36,37 @@
 
         <div id="home_sedi_bg"></div>
         <div id="home_sedi_text_box">
-            <h3 id="home_sedi_titolo"><span lang="en">Clubs</span></h3>
-            <p id="home_sedi_testo">
-                Più di 100 palestre affiliate sparse in giro per l'Italia.<br>
-                Non sai se siamo vicini a te? <br>
-                <b>Cerca la sede più vicina a te</b>
-            </p>
-            <a class="menu_link first_letter_underlined" href="clubs.php" tabindex="6" accesskey="c">CERCA</a>
+            <div id="home_sedi_for_mobile">
+                <h3 id="home_sedi_titolo"><span lang="en">Clubs</span></h3>
+                <p id="home_sedi_testo">
+                    Più di 100 palestre affiliate sparse in giro per l'Italia.<br>
+                    Non sai se siamo vicini a te? <br>
+                    <b>Cerca la sede più vicina a te</b>
+                </p>
+                <a class="menu_link first_letter_underlined" href="clubs.php" tabindex="6" accesskey="c">CERCA</a>
+            </div>
         </div>
 
         <div id="home_corsi_bg"></div>
         <div id="home_corsi_text_box">
-            <h3 id="home_corsi_titolo">Scopri i nostri corsi</h3>
-            <p id="home_corsi_testo">
-                <p>
+            <div id="home_corsi_for_mobile">
+                <h3 id="home_corsi_titolo">Scopri i nostri corsi</h3>
+                <p class="home_corsi_testo">
                     Non sai da dove iniziare?<br> <b>Unisciti a uno dei nostri corsi</b> e <span class="testo_rosso">raggiungi i tuoi obbiettivi</span> in compagnia.<br><br>
                     Dai un'occhiata alla nostra offerta: 
-                </p> 
-                
-                <ul class="u_list">
-                    <li><span lang="en">Yoga</span></li>
-                    <li><span lang="en">Pilates</span></li>
-                    <li><span lang="en">Full Body</span></li>
-                    <li><span lang="en">Chalisthnics</span></li>
-                    <li>Danza</li>
-                </ul>
-                <p>
+                    <ul class="u_list">
+                        <li><span lang="en">Yoga</span></li>
+                        <li><span lang="en">Pilates</span></li>
+                        <li><span lang="en">Full Body</span></li>
+                        <li><span lang="en">Chalisthnics</span></li>
+                        <li>Danza</li>
+                    </ul>
+                </p>
+                <p class="home_corsi_testo">
                     e molto altro...
-                </p> 
-            </p>
-            <a class="menu_link first_letter_underlined" href="offerta_corsi.php" tabindex="7" accesskey="s">SCOPRI</a>
+                </p>
+                <a class="menu_link first_letter_underlined" href="offerta_corsi.php" tabindex="7" accesskey="s">SCOPRI</a>
+            </div>
         </div>
         
 
