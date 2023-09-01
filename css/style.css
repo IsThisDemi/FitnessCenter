@@ -16,8 +16,43 @@
 	--scrollbar: #585858;
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
+
+	--forza: #f74b45;
+	--equilibrio: #f7d04b;
+	--resistenza: #4bf7a8;
+	--stabilita: #4b4ff7;
+
 }
 
+/* Tema scuro ========================= */
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--primary-color: #f7f7f7;
+		--secondary-color: #b80000;
+		--header-color: #a74646;
+		--gradient-first-color: #282828;
+		--gradient-first-color-hover: #414141;
+		--gradient-second-color: #1b1b1b;
+		--gradient-last-color: #121212;
+		--visited-links: #BBBBBB;
+		--text-color: black;
+		--alternative-text-color: black;
+		--red: rgb(196, 47, 47);
+		--error-color: #C2B800;
+		--links-hover-color: #ffdd36;
+		--links-visited-color:#675396;
+		--scrollbar: #585858;
+		--scrollbar-background: #282828;
+		--disabled-color: #888888;
+	
+		--forza: #f74b45;
+		--equilibrio: #f7d04b;
+		--resistenza: #4bf7a8;
+		--stabilita: #4b4ff7;
+	
+	}
+}
 * {
 	padding: 0;
 	margin: 0;
@@ -61,7 +96,7 @@ html {
 
 body {
 	padding: 0;
-	font-size: 1em;
+	font-size: 1.5em;
 	margin: auto;
 }
 
@@ -637,35 +672,35 @@ nav ul {
 }
 
 #Forza_box {
-	border-color: #f74b45;
+	border-color: var(--forza);
 }
 
 #Forza_box h3 {
-	color: #f74b45;
+	color: var(--forza);
 }
 
 #Equilibrio_box {
-	border-color: #f7d04b;
+	border-color: var(--equilibrio);
 }
 
 #Equilibrio_box h3 {
-	color: #f7d04b;
+	color: var(--equilibrio);
 }
 
 #Resistenza_box {
-	border-color: #4bf7a8;
+	border-color: var(--resistenza);
 }
 
 #Resistenza_box h3 {
-	color: #4bf7a8;
+	color: var(--resistenza);
 }
 
 #StabilitÃ _box {
-	border-color: #4b4ff7;
+	border-color: var(--stabilita);
 }
 
 #StabilitÃ _box h3 {
-	color: #4b4ff7;
+	color: var(--stabilita);
 }
 
 .overlay {
