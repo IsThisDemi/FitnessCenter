@@ -328,16 +328,13 @@ nav ul {
 */
 
 #home_content {
-	display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-	row-gap: 2em;
-	column-gap: 1em;
-    grid-template-areas:
-			"t t t"
-			"s sb sb"
-			"cb cb c "
-			"iscr iscr iscr"
-			"info info info";
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	padding: 1em;
 }
 
 #HomePage b {
