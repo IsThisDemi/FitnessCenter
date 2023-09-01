@@ -6,7 +6,7 @@
 	--gradient-first-color-hover: #414141;
 	--gradient-second-color: #1b1b1b;
 	--gradient-last-color: #121212;
-	--visited-links: #BBBBBB;
+	--visited-links: #911f1f;
 	--text-color: white;
 	--alternative-text-color: black;
 	--red: rgb(196, 47, 47);
@@ -44,7 +44,7 @@
 		--gradient-first-color-hover: #bebebe;
 		--gradient-second-color: #929292;
 		--gradient-last-color: #858585;
-		--visited-links: #BBBBBB;
+		--visited-links: #911f1f;
 		--text-color: black;
 		--alternative-text-color: black;
 		--red: rgb(196, 47, 47);
@@ -350,7 +350,7 @@ nav ul {
 }
 
 .menu_link {
-	background-color: var(--text-color);
+	background-color: var(--secondary-color);
 	padding: 1.0em;
 	margin: 0 0.5em 0.5em 0;
 	color: var(--primary-color);
@@ -358,7 +358,7 @@ nav ul {
 	font-size: 0.8em;
 	font-weight: bold;
 	text-decoration: none;
-	box-shadow: 5px 5px 5px black;
+	box-shadow: 5px 5px 5px var(--box-shadow-1);
 }
 
 .menu_link:hover {
@@ -691,7 +691,7 @@ nav ul {
 	border: 5px solid;
 	border-radius: 10px;
 	padding: 0.5em;
-	box-shadow: 5px 5px 5px rgb(65, 65, 65);
+	box-shadow: 5px 5px 5px var(--box-shadow-1);
 }
 
 #Forza_box {
