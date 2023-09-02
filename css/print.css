@@ -1,15 +1,15 @@
 :root {
-	--primary-color: #121212;
-	--secondary-color: #b80000;
-	--header-color: #a74646;
+	--primary-color: white;
+	--secondary-color: black;
+	--header-color: black;
 	--gradient-first-color: #282828;
 	--gradient-first-color-hover: #414141;
 	--gradient-second-color: #1b1b1b;
 	--gradient-last-color: #121212;
 	--visited-links: #333333;
-	--text-color: white;
+	--text-color: black;
 	--alternative-text-color: black;
-	--red: rgb(196, 47, 47);
+	--red: black;
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
 	--links-visited-color:#675396;
@@ -17,19 +17,19 @@
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
 
-	--forza: black;
-	--forza-text: white;
-	--equilibrio: black;
-	--equilibrio-text: white;
-	--resistenza: black;
-	--resistenza-text: white;
-	--stabilita: black;
-	--stabilita-text: white;
+	--forza: white;
+	--forza-text: black;
+	--equilibrio: white;
+	--equilibrio-text: black;
+	--resistenza: white;
+	--resistenza-text: black;
+	--stabilita: white;
+	--stabilita-text: black;
 
-	--box-shadow-1: #282828;
-	--box-shadow-2: #1b1b1b;
-	--titoli: #ffffff;
-	--titoli-shadow: #1b1b1b;
+	--box-shadow-1: #28282800;
+	--box-shadow-2: #1b1b1b00;
+	--titoli: black;
+	--titoli-shadow: #1b1b1b00;
 
 }
 
@@ -82,7 +82,7 @@ body {
 
 img {
 	max-width: 100%;
-	height: auto
+	height: auto;
 }
 
 /* 
@@ -96,6 +96,7 @@ header, .breadcrumbs, footer {
 }
 
 header {
+	/*
 	border: 1px solid var(--secondary-color);
 	background-color: var(--header-color);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -108,6 +109,8 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	*/
+	display: none;
 }
 
 header li {
@@ -172,7 +175,7 @@ nav .menu_name {
 	padding: 0.7em ;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.4em;
-	background-color: var(--gradient-second-color);
+	background-color: white;
 }
 
 .breadcrumbs #percorso {
@@ -210,7 +213,7 @@ footer {
 	border-top: solid 2px var(--primary-color);
 	padding-top: 1em;
 	padding: 1em;
-	background-color: var(--header-color);
+	background-color: rgba(168, 125, 125, 0);
 }
 
 #footer_text_box {
@@ -231,23 +234,24 @@ footer {
     text-indent: -1000px;
     font-size: 3em;
 	width: 2em;
+	filter: invert(100%);
 }
 
 #copyright_text {
 	margin-top: 2em;
 	font-size: 0.8em;
-	color: var(--gradient-first-color);
+	color: var(--text-color);
 	font-style: italic;
 }
 
 #copyright_text span {
-	color: var(--gradient-first-color);
+	color: var(--text-color);
 }
 
 #autori_text {
 	margin-top: 1em;
 	font-size: 0.8em;
-	color: var(--gradient-first-color);
+	color: var(--text-color);
 }
 
 /* 
@@ -340,12 +344,12 @@ nav ul {
 
 #home_titolo_bg {
 	grid-area: t;
-	background-image: url('../img/home_title_background.jpg');
+	background-image: url();
 	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
-	height: 1000px;
+	height: 100%;
 	width: 100%;
 }
 
@@ -389,11 +393,12 @@ nav ul {
 	background-repeat: no-repeat;
 	position: relative;
 	height:auto;
+	filter: grayscale(100%);
 }
 
 #home_sedi_text_box {
 	grid-area: s;
-	background-color: var(--gradient-first-color-hover);
+	background-color: var(--primary-color);
 	height: auto;
 	margin-left: 1em;
 	padding: 2em 0.5em 0em 0.5em;
@@ -434,11 +439,12 @@ nav ul {
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: auto;
+	filter: grayscale(100%);
 }
 
 #home_corsi_text_box {
 	grid-area: c;
-	background-color: var(--gradient-first-color-hover);
+	background-color: var(--primary-color);
 	height: auto;
 	margin-right: 1em;
 	padding: 1em;
@@ -498,7 +504,7 @@ nav ul {
 
 #home_iscrizione_testo {
 	grid-area: ite;
-	background-color: var(--gradient-first-color-hover);
+	background-color: var(--primary-color);
 	width: 60%;
 	height: auto;
 	margin: auto;
@@ -510,29 +516,32 @@ nav ul {
 
 #home_iscrizione_piano1 {
 	grid-area: p1;
-	background-color: #f74b45;
+	background-color: var(--primary-color);
+	border: #000000 solid 4px;
 }
 
 #home_iscrizione_piano2 {
 	grid-area: p2;
-	background-color: #4386c2;
+	background-color: var(--primary-color);
+	border: #000000 solid 4px;
 }
 
 #home_iscrizione_piano3 {
 	grid-area: p3;
-	background-color: #d4c72f;
+	background-color: var(--primary-color);
+	border: #000000 solid 4px;
 }
 
 #home_iscrizione_piano1:hover {
-	background-color: #e62620;
+	background-color: var(--primary-color);
 }
 
 #home_iscrizione_piano2:hover {
-	background-color: #1b7acc;
+	background-color: var(--primary-color);
 }
 
 #home_iscrizione_piano3:hover {
-	background-color: #aa9d0c;
+	background-color: var(--primary-color);
 }
 
 #home_iscrizione_piano1,
@@ -636,6 +645,10 @@ nav ul {
 	position: relative;
 }
 
+.container img {
+	display: none;
+}
+
 .container video {
 	position: relative;
 	z-index: 0;
@@ -729,6 +742,10 @@ nav ul {
 	padding: 1em;
 }
 
+.flex-container-col img {
+	filter: grayscale(100%);
+}
+
 .article-wrapper a:visited {
 	color: var(--primary-color);
 }
@@ -744,18 +761,18 @@ nav ul {
 	border-radius: 10px;
 	margin: 20px;
 	padding: 5px;
-	border: 4px solid transparent;
+	border: 4px solid var(--text-color);
 	cursor: pointer;
-	background-color: var(--gradient-first-color-hover);
+	background-color: var(--primary-color);
 }
 
 .article-wrapper:hover {
 	-webkit-box-shadow: 10px 10px 0 var(--box-shadow-1), 20px 20px 0 var(--box-shadow-2);
 	box-shadow: 10px 10px 0 var(--box-shadow-1), 20px 20px 0 var(--box-shadow-2);
 	border-color: var(--gradient-second-color);
-	-webkit-transform: translate(-20px, -20px);
-	-ms-transform: translate(-20px, -20px);
-	transform: translate(-20px, -20px);
+	-webkit-transform: translate(-0, -0);
+	-ms-transform: translate(-0, -0);
+	transform: translate(-0, -0);
 }
 
 .article-wrapper:active {
@@ -851,7 +868,7 @@ nav ul {
 }
 
 .testo-forza {
-	color: var(--forza);
+	color: var(--forza-text);
 }
 
 .equilibrio {
@@ -860,7 +877,7 @@ nav ul {
 }
 
 .testo-equilibrio {
-	color: var(--equilibrio);
+	color: var(--equilibrio-text);
 }
 
 .resistenza {
@@ -869,7 +886,7 @@ nav ul {
 }
 
 .testo-resistenza {
-	color: var(--resistenza);
+	color: var(--resistenza-text);
 }
 
 .stabilita {
@@ -878,7 +895,7 @@ nav ul {
 }
 
 .testo-stabilita {
-	color: var(--stabilita);
+	color: var(--stabilita-text);
 }
 
 .project-hover {
@@ -947,16 +964,17 @@ iframe#map {
 	height: 100%;
 	width: 100%;
 	border:none;           
-    filter:invert(90%) hue-rotate(180deg);  
+    filter:invert(90%) hue-rotate(180deg) grayscale(100%);  
 }
 
 #addresses_container {
 	grid-area: l;
-	background-color: var(--gradient-second-color);
+	background-color: var(--primary-color);
 	height: 600px;
 	margin : 1em 0em 1em 1em;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	border: #000000 solid 4px;
 }
 
 #addresses_container h2 {
@@ -987,8 +1005,8 @@ iframe#map {
 }
 
 .address {
-	background-color: var(--gradient-first-color);
-	color: #504b6d;
+	background-color: var(--primary-color);
+	color: var(--primary-color);
 	font-size: 1em;
 	cursor: pointer;
 	padding: 18px;
@@ -1001,7 +1019,7 @@ iframe#map {
 
   .address:after {
 	content: '\02795'; 
-	color: #504b6d;
+	color: var(--primary-color);
 	float: right;
 	margin-left: 5px;
   }
@@ -1015,7 +1033,7 @@ iframe#map {
   }
   
   .active, .address:hover {
-	background-color: var(--gradient-first-color-hover);
+	background-color: var(--primary-color);
   }
   
   .panel {
@@ -1161,7 +1179,8 @@ iframe#map {
 }
 .infopage dt{
 	/*color: var(--alternative-text-color);*/
-	background-color: var(--header-color);
+	background-color: var(--primary-color);
+	border: #000000 solid 4px;
 }
 .infopage{
 	display: grid;
