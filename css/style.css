@@ -31,6 +31,7 @@
 	--titoli: #ffffff;
 	--titoli-shadow: #1b1b1b;
 
+	--gradient-blurry : #000000d8;
 }
 
 /* Tema chiaro ========================= */
@@ -68,6 +69,8 @@
 		--box-shadow-2: #e7e7e7;
 		--titoli: #ffffff;
 		--titoli-shadow: #1b1b1b;
+
+		--gradient-blurry : #ffffffd8;
 	}
 }
 * {
@@ -177,7 +180,7 @@ header li {
 
 .navmenu {
 	list-style: none;
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 .navmenu a {
@@ -328,16 +331,13 @@ nav ul {
 */
 
 #home_content {
-	display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-	row-gap: 2em;
-	column-gap: 1em;
-    grid-template-areas:
-			"t t t"
-			"s sb sb"
-			"cb cb c "
-			"iscr iscr iscr"
-			"info info info";
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	padding: 1em;
 }
 
 #HomePage b {
@@ -352,10 +352,10 @@ nav ul {
 .menu_link {
 	background-color: var(--secondary-color);
 	padding: 1.0em;
-	margin: 0 0.5em 0.5em 0;
-	color: var(--primary-color);
+	margin: 0 0 0.5em 0;
+	color: var(--text-color);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 0.8em;
+	font-size: 1.2em;
 	font-weight: bold;
 	text-decoration: none;
 	box-shadow: 5px 5px 5px var(--box-shadow-1);
@@ -372,13 +372,13 @@ nav ul {
 */
 
 #home_titolo_bg {
-	grid-area: t;
 	background-image: url('../img/home_title_background.jpg');
 	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 1000px;
+	height: 800px;
 	width: 100%;
+	margin-bottom: 1em;
 }
 
 #home_titolo_text_box {
@@ -398,7 +398,7 @@ nav ul {
 	color: var(--titoli);
 	margin: 1em;
 	padding: 0.5em;
-	font-size: 1em;
+	font-size: 1.3em;
 	line-height: 1.3em;
 	text-shadow: 2px 2px 5px var(--titoli-shadow);
 }
@@ -413,33 +413,33 @@ nav ul {
 ---------------
 */
 
-
-#home_sedi_bg {
-	grid-area: sb;
+#home_sedi_text_box {
 	background-image: url('../img/home_sedi_bg.png');
+	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
-	position: relative;
-	height:auto;
+	height: auto;
+	width: 100%;
+	margin: 1em;
 }
 
-#home_sedi_text_box {
-	grid-area: s;
+#home_sedi_for_mobile {
 	background-color: var(--gradient-first-color-hover);
-	height: auto;
-	margin-left: 1em;
-	padding: 2em 0.5em 0em 0.5em;
+	background-color: var(--gradient-blurry);
+	margin: 3em 0.5em 3em 12em;
 }
 
 #home_sedi_titolo {
 	text-align: center;
-	font-size: 2.5em;
+	font-size: 2em;
+	padding-top: 0.5em;
 }
 
 #home_sedi_testo {
-	margin: 1em 1em 0.5em 1em;
+	text-align: center;
+	margin: 1em 0 0.5em 1em;
 	padding: 0.5em;
-	font-size: 1em;
+	font-size: 1.3em;
 }
 
 #home_sedi_text_box .first_letter_underlined {
@@ -456,36 +456,38 @@ nav ul {
 ---------------
 */
 
-#home_corsi_bg {
-	grid-area: cb;
+#home_corsi_text_box {
 	background-image: url('../img/corsi/cycle-body-main.jpg');
-	background-position: right;
+	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: auto;
+	width: 100%;
+	margin: 1em;
 }
 
-#home_corsi_text_box {
-	grid-area: c;
+#home_corsi_for_mobile {
 	background-color: var(--gradient-first-color-hover);
-	height: auto;
-	margin-right: 1em;
-	padding: 1em;
+	background-color: var(--gradient-blurry);
+	margin: 3em 0.5em 3em 12em;
 }
 
 #home_corsi_titolo {
 	text-align: center;
-	font-size: 2.5em;
+	font-size: 2em;
+	padding-top: 0.5em;
 }
 
 .home_corsi_testo {
 	margin: 1em 1em 0.5em 1em;
 	padding: 0.5em;
-	font-size: 1em;
+	font-size: 1.3em;
 }
 
 .u_list {
-	margin: 0.2em 0 0.2em 1.8em;
+	margin-left: 4em;
+	font-size: 1.3em;
+	list-style-type: circle;
 }
 
 #home_corsi_text_box .first_letter_underlined {
@@ -505,11 +507,12 @@ nav ul {
 */
 
 #home_iscrizione {
-	grid-area: iscr;
 	margin: 1em;
+	margin-bottom: 0.5em;
 	text-align: center;
 	display: grid;
-	gap: 1em;
+	row-gap: 1em;
+	column-gap: 0em;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas: 
 	"iti iti iti"
@@ -528,13 +531,18 @@ nav ul {
 #home_iscrizione_testo {
 	grid-area: ite;
 	background-color: var(--gradient-first-color-hover);
-	width: 60%;
+	width: 70%;
 	height: auto;
 	margin: auto;
 	padding: 1em;
+	font-size: 1.3em;
 	text-align: center;
 	line-height: 1.3em;
 	object-position: center;
+}
+
+#home_iscrizione .u_list {
+	margin: 0.2em 0 0.2em 1.8em;
 }
 
 #home_iscrizione_piano1 {
