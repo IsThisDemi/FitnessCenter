@@ -8,7 +8,7 @@
     //Includo footer
     $footer = file_get_contents("utilityphp/footer.php");
 	//Gererazione header
-	$header = genera_header("clubs");
+	$header = genera_header("palestre");
 
     //Stabilisco connessione con il database
 	$connessione = new Connection();

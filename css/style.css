@@ -442,7 +442,7 @@ nav ul {
 	font-size: 1.3em;
 }
 
-#home_sedi_text_box .first_letter_underlined {
+#home_sedi_text_box .menu_link {
 	float:right;
 }
 
@@ -490,7 +490,7 @@ nav ul {
 	list-style-type: circle;
 }
 
-#home_corsi_text_box .first_letter_underlined {
+#home_corsi_text_box .menu_link {
 	float:right;
 }
 
@@ -595,9 +595,6 @@ nav ul {
 	padding: 0.8em 1em;
 	text-transform: uppercase;
 	font-size: 1.4em;
-	border: 5px solid var(--secondary-color);
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
 }
 
 /* 
@@ -630,9 +627,6 @@ nav ul {
 	padding: 0.8em 1em;
 	text-transform: uppercase;
 	font-size: 1.4em;
-	border: 5px solid var(--secondary-color);
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
 }
 
 #home_info abbr {
@@ -640,7 +634,7 @@ nav ul {
 }
 
 #home_info .menu_link abbr {
-	color:var(--secondary-color);
+	color:var(--text-color);
 }
 
 /* 
@@ -1273,11 +1267,10 @@ JoinUS
 }
 
 
-@media (min-width: 769px) {
-	.wrapper {
+/* @media (min-width: 769px) { */
+.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
-	}
 }
 
 .formint {
