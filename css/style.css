@@ -1267,11 +1267,10 @@ JoinUS
 }
 
 
-@media (min-width: 769px) {
-	.wrapper {
+/* @media (min-width: 769px) { */
+.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
-	}
 }
 
 .formint {
