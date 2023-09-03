@@ -295,16 +295,13 @@ nav ul {
 */
 
 #home_content {
-	display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-	row-gap: 2em;
-	column-gap: 1em;
-    grid-template-areas:
-			"t t t"
-			"s sb sb"
-			"cb cb c "
-			"iscr iscr iscr"
-			"info info info";
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	padding: 1em;
 }
 
 #HomePage b {
@@ -332,10 +329,6 @@ nav ul {
 	background-color: var(--visited-links);
 }
 
-.spazio_vuoto {
-	margin: 4em;
-}
-
 /* 
 ---------------
 	TITOLO
@@ -343,7 +336,6 @@ nav ul {
 */
 
 #home_titolo_bg {
-	grid-area: t;
 	background-image: url();
 	background-position: top;
 	background-size: cover;
@@ -385,31 +377,30 @@ nav ul {
 ---------------
 */
 
-
-#home_sedi_bg {
-	grid-area: sb;
-	background-image: url('../img/home_sedi_bg.png');
+#home_sedi_text_box {
+	background-image: url('');
+	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
-	position: relative;
-	height:auto;
-	filter: grayscale(100%);
+	height: auto;
+	width: 100%;
+	margin: 1em;
 }
 
-#home_sedi_text_box {
-	grid-area: s;
+#home_sedi_for_mobile {
 	background-color: var(--primary-color);
-	height: auto;
-	margin-left: 1em;
-	padding: 2em 0.5em 0em 0.5em;
+	background-color: var(--primary-color);
+	margin: 3em 0.5em 3em 12em;
 }
 
 #home_sedi_titolo {
 	text-align: center;
+	font-size: 2em;
 	font-size: 2.5em;
 }
 
 #home_sedi_testo {
+	text-align: center;
 	margin: 1em 1em 0.5em 1em;
 	padding: 0.5em;
 	font-size: 1em;
@@ -432,26 +423,25 @@ nav ul {
 	margin: 0em;
 }
 
-#home_corsi_bg {
-	grid-area: cb;
-	background-image: url('../img/corsi/cycle-body-main.jpg');
-	background-position: right;
+#home_corsi_text_box {
+	background-image: url('');
+	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: auto;
-	filter: grayscale(100%);
+	width: 100%;
+	margin: 1em;
 }
 
-#home_corsi_text_box {
-	grid-area: c;
+#home_corsi_for_mobile {
 	background-color: var(--primary-color);
-	height: auto;
-	margin-right: 1em;
-	padding: 1em;
+	background-color: var(--primary-color);
+	margin: 3em 0.5em 3em 12em;
 }
 
 #home_corsi_titolo {
 	text-align: center;
+	font-size: 2em;
 	font-size: 2.5em;
 }
 
@@ -462,7 +452,9 @@ nav ul {
 }
 
 .u_list {
-	margin: 0.2em 0 0.2em 1.8em;
+	margin-left: 4em;
+	font-size: 1.3em;
+	list-style-type: circle;
 }
 
 #home_corsi_text_box .first_letter_underlined {
@@ -482,7 +474,6 @@ nav ul {
 */
 
 #home_iscrizione {
-	grid-area: iscr;
 	margin: 1em;
 	text-align: center;
 	display: grid;
@@ -512,6 +503,10 @@ nav ul {
 	text-align: center;
 	line-height: 1.3em;
 	object-position: center;
+}
+
+#home_iscrizione .u_list {
+	margin: 0.2em 0 0.2em 1.8em;
 }
 
 #home_iscrizione_piano1 {
