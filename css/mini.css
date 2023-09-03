@@ -291,4 +291,8 @@ JOINUS
       padding-right: 0;
 }
 
+.wrapper {
+		display: flex;
+}
+
 
