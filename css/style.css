@@ -34,6 +34,7 @@
 	--gradient-blurry : #000000d8;
 
 	--error-color: #00328f;
+	--breadcrumb-color: #ec0000;
 }
 
 /* Tema chiaro ========================= */
@@ -41,7 +42,7 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--primary-color: #f7f7f7;
-		--secondary-color: #750000;
+		--secondary-color: #d44e4e;
 		--header-color: #a74646;
 		--gradient-first-color: #a5a5a5;
 		--gradient-first-color-hover: #bebebe;
@@ -75,6 +76,7 @@
 		--gradient-blurry : #ffffffd8;
 
 		--error-color: #fbff00;
+		--breadcrumb-color: #500000;
 	}
 }
 * {
@@ -229,13 +231,13 @@ nav .menu_name {
 }
 
 .breadcrumbs #percorso {
-	color: var(--secondary-color);
+	color: var(--text-color);
 	font-weight: 700;
 }
 
 .breadcrumbs a{
 	text-transform: uppercase;
-	color: var(--secondary-color);
+	color: var(--breadcrumb-color);
 }
 
 .breadcrumbs a:hover{
@@ -1089,8 +1091,8 @@ iframe#map {
 	border-color: var(--header-color);
 }
 .loginpage .selected{
-	color: var(--alternative-text-color);
-	background-color: var(--header-color);
+	color: var(--text-color);
+	background-color: var(--secondary-color);
 }
 .loginpage,.adminpage{
 	display: flex;
