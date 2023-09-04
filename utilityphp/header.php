@@ -32,6 +32,8 @@ $link_pagine["Strenght"]="categoria.php?id=6";
 $link_pagine["Water"]="categoria.php?id=7";
 $link_pagine["Yoga"]="categoria.php?id=8";
 $link_pagine["admin"]="adminpage.php";
+$link_pagine["404"]="404.php";
+$link_pagine["500"]="500.php";
 
 $fl_pagine=[];//nome->link
 $fl_pagine["home"]="h";
@@ -43,6 +45,8 @@ $fl_pagine["login"]="l";
 $navmenu=["home","palestre","offerta corsi","more","login"];
 
 $genitore_pagine=[];//nome->genitore
+$genitore_pagine["404"]="#";
+$genitore_pagine["500"]="#";
 $genitore_pagine["home"]="#";
 $genitore_pagine["palestre"]="home";
 $genitore_pagine["offerta corsi"]="home";
