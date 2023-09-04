@@ -24,12 +24,12 @@
 		if($clubs != null) {
 
 			foreach ($clubs as $club) {
-				$stringa_clubs .= '<button class="address">'
-								.'<a href="' . $club['link'] . '" target="map">' . $club['nome'] . '</a>'
-								.'</button>'
-								.'<div class="panel">'
-								.'<p>' . $club['info'] . '</p>'
-								.'</div>';
+				$stringa_clubs .= '<a class="address" href="' . $club['link'] . '" target="map">'
+								. '<button id="palestra"><label for="palestra">' . $club['nome'] . '</label></button>' 
+								. '</a>'
+								. '<div class="panel">'
+								. '<p>' . $club['info'] . '</p>'
+								. '</div>';
 			}
 		} else {
 			$stringa_clubs = "<p>Nessun club presente</p>";
