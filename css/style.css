@@ -658,6 +658,12 @@ nav ul {
 ====================================================
 */
 
+.titolo_corsi {
+	color: var(--text-color);
+	font-size: 4em;
+	line-height: 0.9em;
+}
+
 .etichetta_corsi {
 	font-size: 14px;
 	text-align: center;
