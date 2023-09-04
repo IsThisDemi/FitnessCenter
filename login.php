@@ -85,7 +85,7 @@ if (isset($_GET["action"])) {
         <label for="username_login" lang="en">Username o mail</label>
         <input id="username_login" type="text" placeholder=" Username" name="username_login" required />
 
-        <label for="password_login" lang="en">Password</label>
+        <label for="password_login" lang="en">Password </label>
         <input id="password_login" type="password" placeholder=" Password" name="password_login" required />
 
         <input type="submit" name="login" value="Accedi">
