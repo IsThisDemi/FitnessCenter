@@ -6,7 +6,7 @@
 	--gradient-first-color-hover: #414141;
 	--gradient-second-color: #1b1b1b;
 	--gradient-last-color: #121212;
-	--visited-links: #333333;
+	--visited-links: #191919 ;
 	--text-color: white;
 	--alternative-text-color: black;
 	--red: rgb(196, 47, 47);
@@ -48,7 +48,7 @@
 		--gradient-first-color-hover: #bebebe;
 		--gradient-second-color: #929292;
 		--gradient-last-color: #858585;
-		--visited-links: #911f1f;
+		--visited-links: #191919 ;
 		--text-color: black;
 		--alternative-text-color: black;
 		--red: rgb(196, 47, 47);
@@ -561,25 +561,25 @@ nav ul {
 
 #home_iscrizione_piano1 {
 	grid-area: p1;
-	background-color: #f74b45;
+	background-color: #ca1f19;
 }
 
 #home_iscrizione_piano2 {
 	grid-area: p2;
-	background-color: #4386c2;
+	background-color: #195c97;
 }
 
 #home_iscrizione_piano3 {
 	grid-area: p3;
-	background-color: #8d8100;
+	background-color: #696100;
 }
 
 #home_iscrizione_piano1:hover {
-	background-color: #e62620;
+	background-color: #ad130e;
 }
 
 #home_iscrizione_piano2:hover {
-	background-color: #1b7acc;
+	background-color: #0c4c85;
 }
 
 #home_iscrizione_piano3:hover {
@@ -1093,6 +1093,9 @@ iframe#map {
 	background-color: var(--primary-color);
 	font-size: 1.2rem;
 }
+.loginpage input[type=submit]{
+	background-color: var(--secondary-color);
+}
 .adminpage fieldset{
 	border-color: var(--header-color);
 }
@@ -1150,6 +1153,11 @@ iframe#map {
 	/*grid-row: 3;
 	grid-column: 2;*/
 }
+
+.submit-button{
+	background-color: var(--secondary-color);
+}
+
 .adminform{
 	display:flex ;
 	flex-direction: column;
