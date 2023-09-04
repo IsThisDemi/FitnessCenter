@@ -1215,6 +1215,13 @@ iframe#map {
 #faq{
 	grid-area: faq;
 }
+#faq dt{
+	font-weight: 700;
+}
+#faq dd{
+	margin-left: 1em;
+	font-size: 0.8em;
+}
 #contatti_social{
 	grid-area: contacts;
 }
