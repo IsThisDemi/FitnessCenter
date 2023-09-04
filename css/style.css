@@ -1,6 +1,6 @@
 :root {
 	--primary-color: #121212;
-	--secondary-color: #b80000;
+	--secondary-color: #e90000;
 	--header-color: #a74646;
 	--gradient-first-color: #282828;
 	--gradient-first-color-hover: #414141;
@@ -18,13 +18,13 @@
 	--disabled-color: #888888;
 
 	--forza: #f74b45;
-	--forza-text: #740e0e;
-	--equilibrio: #f7d04b;
-	--equilibrio-text: #74510e;
-	--resistenza: #4bf7a8;
-	--resistenza-text: #0e7451;
+	--forza-text: white;
+	--equilibrio: #916f00;
+	--equilibrio-text: white;
+	--resistenza: #00743e;
+	--resistenza-text: white;
 	--stabilita: #4b4ff7;
-	--stabilita-text: #0e0e74;
+	--stabilita-text: white;
 
 	--box-shadow-1: #282828;
 	--box-shadow-2: #1b1b1b;
@@ -41,7 +41,7 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--primary-color: #f7f7f7;
-		--secondary-color: #b80000;
+		--secondary-color: #750000;
 		--header-color: #a74646;
 		--gradient-first-color: #a5a5a5;
 		--gradient-first-color-hover: #bebebe;
@@ -59,13 +59,13 @@
 		--disabled-color: #888888;
 	
 		--forza: #f74b45;
-		--forza-text: #740e0e;
-		--equilibrio: #f7d04b;
-		--equilibrio-text: #74510e;
-		--resistenza: #4bf7a8;
-		--resistenza-text: #0e7451;
+		--forza-text: white;
+		--equilibrio: #916f00;
+		--equilibrio-text: white;
+		--resistenza: #00743e;
+		--resistenza-text: white;
 		--stabilita: #4b4ff7;
-		--stabilita-text: #0e0e74;
+		--stabilita-text: white;
 
 		--box-shadow-1: #cecece;
 		--box-shadow-2: #e7e7e7;
@@ -289,18 +289,18 @@ footer {
 #copyright_text {
 	margin-top: 2em;
 	font-size: 0.8em;
-	color: var(--gradient-first-color);
+	color: var(--titoli);
 	font-style: italic;
 }
 
 #copyright_text span {
-	color: var(--gradient-first-color);
+	color: var(--titoli);
 }
 
 #autori_text {
 	margin-top: 1em;
 	font-size: 0.8em;
-	color: var(--gradient-first-color);
+	color: var(--titoli);
 }
 
 /* 
@@ -401,23 +401,23 @@ nav ul {
 }
 
 #home_titolo_titolo {
-	color: var(--titoli);
+	color: var(--text-color);
 	font-size: 4em;
 	line-height: 0.9em;
-	text-shadow: 2px 2px 5px var(--titoli-shadow);
+	
 }
 
 #home_titolo_testo {
-	color: var(--titoli);
+	color: var(--text-color);
 	margin: 1em;
 	padding: 0.5em;
 	font-size: 1.3em;
 	line-height: 1.3em;
-	text-shadow: 2px 2px 5px var(--titoli-shadow);
+	
 }
 
 #home_titolo_testo span {
-	color: var(--titoli);
+	color: var(--red);
 }
 
 /* 
@@ -569,7 +569,7 @@ nav ul {
 
 #home_iscrizione_piano3 {
 	grid-area: p3;
-	background-color: #d4c72f;
+	background-color: #8d8100;
 }
 
 #home_iscrizione_piano1:hover {
@@ -581,7 +581,7 @@ nav ul {
 }
 
 #home_iscrizione_piano3:hover {
-	background-color: #aa9d0c;
+	background-color: #5e5600;
 }
 
 #home_iscrizione_piano1,
