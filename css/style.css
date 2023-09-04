@@ -367,7 +367,7 @@ nav ul {
 .menu_link {
 	background-color: var(--secondary-color);
 	padding: 1.0em;
-	margin: 0 0 0.5em 0;
+	margin-bottom: 0.5em;
 	color: var(--text-color);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 1.2em;
@@ -399,7 +399,16 @@ nav ul {
 #home_titolo_text_box {
 	height: auto;
 	width: auto;
-	margin: 3em 0 0 3em;
+	margin: 1.5em 0 0 1.5em;
+	padding-bottom: 1em;
+}
+
+#home_titolo_for_mobile {
+	background-color: var(--gradient-first-color-hover);
+	background-color: var(--gradient-blurry);
+	padding: 1em;
+	margin: 1em;
+	margin-bottom: 2em;
 }
 
 #home_titolo_titolo {
