@@ -32,6 +32,8 @@
 	--titoli-shadow: #1b1b1b;
 
 	--gradient-blurry : #000000d8;
+
+	--error-color: #00328f;
 }
 
 /* Tema chiaro ========================= */
@@ -71,6 +73,8 @@
 		--titoli-shadow: #1b1b1b;
 
 		--gradient-blurry : #ffffffd8;
+
+		--error-color: #fbff00;
 	}
 }
 * {
@@ -1323,7 +1327,7 @@ JoinUS
 	margin-top: .5em;
 	margin-left: .5em;
 	margin-right: .5em;
-	background-color: yellow;
+	background-color: var(--error-color);
 	color: #000;
 	border-color: #000;
 	border-radius: 4px;
