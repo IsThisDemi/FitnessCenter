@@ -294,6 +294,14 @@ nav ul {
 ====================================================
 */
 
+#home_titolo_for_mobile {
+	background-color: var(--primary-color);
+	background-color: var(--primary-color);
+	padding: 1em;
+	margin: 1em;
+	margin-bottom: 2em;
+}
+
 #home_content {
 	display: flex;
 	flex-direction: column;
@@ -327,6 +335,10 @@ nav ul {
 
 .menu_link:hover {
 	background-color: var(--visited-links);
+}
+
+.menu_link u {
+	color: var(--disabled-color);
 }
 
 /* 
@@ -419,6 +431,13 @@ nav ul {
 	CORSI
 ---------------
 */
+
+#corsi_for_mobile {
+	background-color: var(--primary-color);
+	background-color: var(--primary-color);
+	margin: 1em;
+}
+
 #corpo_corso .breadcrumbs {
 	margin: 0em;
 }
@@ -1264,7 +1283,7 @@ JoinUS
 .formint {
 	display: grid;
 	grid-template-columns: 1fr;
-	background: #b80000;
+	background: var(--primary-color);
 }
 
 .formint input,
@@ -1296,6 +1315,7 @@ JoinUS
 
 .imgform img {
 	min-height: 100%;
+	filter: grayscale(100%);
 }
 
 .messaggi {
