@@ -78,8 +78,8 @@ if (isset($_GET["action"])) {
     else{
 ?>
     <ul class="topselector">
-        <li><button type="button" id=loginselector class="selected" value="login">login</button></il>
-        <li><button type="button" id=registerelector>register</button></il>
+        <li><button type="button" id=loginselector class="selected" value="login">login</button></li>
+        <li><button type="button" id=registerelector>register</button></li>
     </ul>
     <form class="loginform" action="login.php?action=login" method="post" id="login" >
         <label for="username_login" lang="en">Username o mail</label>
