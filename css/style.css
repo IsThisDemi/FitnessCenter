@@ -667,6 +667,12 @@ nav ul {
 ====================================================
 */
 
+#corsi_for_mobile {
+	background-color: var(--gradient-first-color-hover);
+	background-color: var(--gradient-blurry);
+	margin: 1em;
+}
+
 .titolo_corsi {
 	color: var(--text-color);
 	font-size: 4em;
@@ -759,9 +765,8 @@ nav ul {
 
 .overlay {
 	position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	top: 0%;
+	left: 25%;
 }
 
 #corsi {
@@ -1305,7 +1310,7 @@ JoinUS
 .titleform h1 {
 	text-align: center;
 	padding-top: .5em;
-	padding-bottom: .5em;
+	padding-bottom: .2em;
 }
 
 .formpage {

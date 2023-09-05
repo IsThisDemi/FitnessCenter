@@ -21,7 +21,7 @@ echo genera_header("500");
     <div id="home_titolo_bg">
         <div id="home_titolo_text_box">
             <h1 id="home_titolo_titolo" class="errore">Errore Server</h1>
-            <p id="home_titolo_testo">Stiamo avendo dei problemi tecnici. Ci scusiamo per il disagio.
+            <p id="home_titolo_testo">Stiamo avendo dei problemi tecnici. Ci scusiamo per il disagio. </p>
         </div>
     </div>
 </div>
