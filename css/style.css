@@ -667,6 +667,12 @@ nav ul {
 ====================================================
 */
 
+#corsi_for_mobile {
+	background-color: var(--gradient-first-color-hover);
+	background-color: var(--gradient-blurry);
+	margin: 1em;
+}
+
 .titolo_corsi {
 	color: var(--text-color);
 	font-size: 4em;
@@ -759,9 +765,8 @@ nav ul {
 
 .overlay {
 	position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	top: 0;
+	left: 0;
 }
 
 #corsi {
