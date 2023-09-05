@@ -1146,12 +1146,12 @@ iframe#map {
 	width: 80%;
 }
 .adminform input,.adminform textarea,.adminform select{
-	align-self:left;
+	align-self:start;
 	grid-column: 2;
 }
 .adminform label{
-	align-self:left;
-	align-content:left;
+	align-self:start;
+	align-content:start;
 	text-align: left;
 	grid-column: 1;
 }
