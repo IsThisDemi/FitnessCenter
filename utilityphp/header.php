@@ -16,7 +16,7 @@ $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-la
 
 $link_pagine=[];//nome->link
 $link_pagine["Join US"]="JoinUS.php";
-$link_pagine["home"]="home.php";
+$link_pagine["home"]="index.php";
 $link_pagine["palestre"]="clubs.php";
 $link_pagine["offerta corsi"]="offerta_corsi.php";
 $link_pagine["categoria"] = "history.back()";
