@@ -1028,12 +1028,14 @@ iframe#map {
 	align-content: center;
 }
 #logoutmessage{	
-	width: calc(min(40rem,80%));
+	width: 80%;
+	max-width: 40rem;
 	/*grid-row: 1;
 	grid-column: 2;*/
 }
 .topselector{
-	width: calc(min(20rem,80%));
+	width: 80%;
+	max-width: 20rem;
 	background-color: var(--scrollbar);
 	display:flex ;
 	list-style: none;
@@ -1052,19 +1054,20 @@ iframe#map {
 .loginform{
 	display:flex ;
 	flex-direction: column;
-	width: calc(min(20rem,80%));
+	width: 80%;
+	max-width: 20rem;
 	/*grid-row: 3;
 	grid-column: 2;*/
 }
 .adminform{
 	display:flex ;
 	flex-direction: column;
-	width: calc(min(30rem,80%));
 	width: 80%;
+	max-width: 30rem;
 }
 .adminform fieldset{
 	display:grid;
-	grid-template-columns: auto auto auto auto;
+	grid-template-columns: auto auto;
 	width: 80%;
 }
 .adminform input,.adminform textarea,.adminform select{
