@@ -5,13 +5,12 @@ if(!isset($_SESSION)){
 $template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto" tabindex="0" acceskey="s">salta al contenuto</a>
 	<header>
             <h1 class="logo"> FitnessCenter </h1>
-            </div>
             <nav>
                         <MENU/>
             </nav>
       </header>
       <div class="breadcrumbs">
-      	<p> Ti trovi in: <span id="percorso"><BREADCRUMB/> </p>
+      	<p> Ti trovi in: <span id="percorso"><BREADCRUMB/> </span></p>
       </div>';
 
 $link_pagine=[];//nome->link
