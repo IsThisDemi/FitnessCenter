@@ -404,7 +404,9 @@ nav ul {
 }
 
 #home_titolo_for_mobile {
+	background-color: #bebebe;
 	background-color: var(--gradient-first-color-hover);
+	background-color: #ffffffd8;
 	background-color: var(--gradient-blurry);
 	padding: 1em;
 	margin: 1em;
@@ -448,7 +450,9 @@ nav ul {
 }
 
 #home_sedi_for_mobile {
+	background-color: #bebebe;
 	background-color: var(--gradient-first-color-hover);
+	background-color: #ffffffd8;
 	background-color: var(--gradient-blurry);
 	margin: 3em 0.5em 3em 12em;
 }
@@ -491,7 +495,9 @@ nav ul {
 }
 
 #home_corsi_for_mobile {
+	background-color: #bebebe;
 	background-color: var(--gradient-first-color-hover);
+	background-color: #ffffffd8;
 	background-color: var(--gradient-blurry);
 	margin: 3em 0.5em 3em 12em;
 }
@@ -669,7 +675,9 @@ nav ul {
 */
 
 #corsi_for_mobile {
+	background-color: #bebebe;
 	background-color: var(--gradient-first-color-hover);
+	background-color: #ffffffd8;
 	background-color: var(--gradient-blurry);
 	margin: 1em;
 }
@@ -1203,12 +1211,12 @@ iframe#map {
 	width: 80%;
 }
 .adminform input,.adminform textarea,.adminform select{
-	align-self:left;
+	align-self:start;
 	grid-column: 2;
 }
 .adminform label{
-	align-self:left;
-	align-content:left;
+	align-self:start;
+	align-content:start;
 	text-align: left;
 	grid-column: 1;
 }
