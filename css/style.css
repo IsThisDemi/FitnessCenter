@@ -377,7 +377,7 @@ nav ul {
 }
 
 .menu_link:hover {
-	background-color: var(--visited-links);
+	background-color: var(--header-color);
 }
 
 /* 
@@ -529,30 +529,31 @@ nav ul {
 ------------------
 */
 
+/* 
+#home_iscrizione {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	padding: 1em;
+} */
+
+
 #home_iscrizione {
 	margin: 1em;
 	margin-bottom: 0.5em;
 	text-align: center;
-	display: grid;
-	row-gap: 1em;
-	column-gap: 0em;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-areas: 
-	"iti iti iti"
-	"ite ite ite"
-	"p1 p2 p3"
-	". b .";
 }
 
 #home_iscrizione_titolo {
-	grid-area: iti;
 	font-size: 2.5em;
 	text-transform: uppercase;
 	padding: 0.3em 0.3em 0 0.3em;
 }
 
 #home_iscrizione_testo {
-	grid-area: ite;
 	background-color: var(--gradient-first-color-hover);
 	width: 70%;
 	height: auto;
@@ -569,17 +570,14 @@ nav ul {
 }
 
 #home_iscrizione_piano1 {
-	grid-area: p1;
 	background-color: #ca1f19;
 }
 
 #home_iscrizione_piano2 {
-	grid-area: p2;
 	background-color: #195c97;
 }
 
 #home_iscrizione_piano3 {
-	grid-area: p3;
 	background-color: #696100;
 }
 
@@ -601,7 +599,11 @@ nav ul {
 	margin: 0.5em;
 	padding: 0.5em;
 	text-align: left;
-	border-radius: 5%;
+	border-radius: 1em;
+}
+
+#home_iscrizione_piano3 {
+	margin-bottom: 1.5em;
 }
 
 #home_iscrizione_piano1 h4,
@@ -614,7 +616,6 @@ nav ul {
 }
 
 #home_iscrizione .menu_link {
-	grid-area: b;
 	margin: 0.5em;
 	padding: 0.8em 1em;
 	text-transform: uppercase;
