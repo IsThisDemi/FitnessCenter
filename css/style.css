@@ -974,6 +974,12 @@ nav ul {
 	margin-bottom: 1em;
 }
 
+/* 
+----------------------------------
+		barra di ricerca
+---------------------------------- 
+*/
+
 #search_bar {
 	grid-area: s;
 	text-align: center;
@@ -999,6 +1005,12 @@ nav ul {
 	font-style: italic;
 }
 
+/* 
+----------------------------------
+		mappa google
+---------------------------------- 
+*/
+
 #google_map {
 	grid-area: m;
 	height: 600px;
@@ -1011,6 +1023,12 @@ iframe#map {
 	border:none;           
     /*filter:invert(90%) hue-rotate(180deg);  filtro mappa, non usabile per problema di contrasto colori*/
 }
+
+/* 
+----------------------------------
+		accordion lista palestre
+---------------------------------- 
+*/
 
 #addresses_container {
 	grid-area: l;
@@ -1050,7 +1068,6 @@ iframe#map {
 
 .address {
 	background-color: var(--gradient-first-color);
-	color: #504b6d;
 	cursor: pointer;
 	padding: 18px;
 	display: block;
@@ -1059,6 +1076,9 @@ iframe#map {
 	border: none;
 	outline: none;
 	transition: 0.4s;
+
+	color: var(--text-color);
+	text-decoration: none;
   }
 
   .address:after {
@@ -1066,16 +1086,7 @@ iframe#map {
 	color: #504b6d;
 	float: right;
 	margin-left: 5px;
-  }
-
-  .address button {
-	background-color: inherit;
 	font-size: 1em;
-	border: none;
-  }
-
-  .active button {
-	color: var(--secondary-color);
   }
   
   .active:after {
@@ -1084,6 +1095,7 @@ iframe#map {
   
   .active, .address:hover {
 	background-color: var(--gradient-first-color-hover);
+	color: var(--secondary-color);
   }
   
   .panel {
