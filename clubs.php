@@ -8,7 +8,7 @@
     //Includo footer
     $footer = file_get_contents("utilityphp/footer.php");
 	//Gererazione header
-	$header = genera_header("clubs");
+	$header = genera_header("palestre");
 
     //Stabilisco connessione con il database
 	$connessione = new Connection();
@@ -24,12 +24,10 @@
 		if($clubs != null) {
 
 			foreach ($clubs as $club) {
-				$stringa_clubs .= '<button class="address">'
-								.'<a href="' . $club['link'] . '" target="map">' . $club['nome'] . '</a>'
-								.'</button>'
-								.'<div class="panel">'
-								.'<p>' . $club['info'] . '</p>'
-								.'</div>';
+				$stringa_clubs .= '<a class="address" href="' . $club['link'] . '" target="map">' . $club['nome'] . '</a>'
+								. '<div class="panel">'
+								. '<p>' . $club['info'] . '</p>'
+								. '</div>';
 			}
 		} else {
 			$stringa_clubs = "<p>Nessun club presente</p>";

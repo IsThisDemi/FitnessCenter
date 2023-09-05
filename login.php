@@ -78,28 +78,28 @@ if (isset($_GET["action"])) {
     else{
 ?>
     <ul class="topselector">
-        <li><button type="button" id=loginselector class="selected">login</button></il>
-        <li><button type="button" id=registerelector>register</button></il>
+        <li><button type="button" id=loginselector class="selected" value="login">login</button></li>
+        <li><button type="button" id=registerelector>register</button></li>
     </ul>
     <form class="loginform" action="login.php?action=login" method="post" id="login" >
         <label for="username_login" lang="en">Username o mail</label>
         <input id="username_login" type="text" placeholder=" Username" name="username_login" required />
 
-        <label for="password_login" lang="en">Password</label>
+        <label for="password_login" lang="en">Password </label>
         <input id="password_login" type="password" placeholder=" Password" name="password_login" required />
 
-        <input type="submit" name="login">
+        <input type="submit" name="login" value="Accedi">
     </form>
     <form class="loginform hidden" action="login.php?action=register" method="post" id="registra">
         <label for="username_registra" lang="en">Username</label>
         <input id="username_registra" type="text" placeholder=" Username" name="username_registra" required />
 
-        <label for="email_registra" lang="en">Password</label>
+        <label for="email_registra" lang="en">Email</label>
         <input id="email_registra" type="email" placeholder=" email@provider.com" name="email_registra" required />
     
         <label for="password_registra" lang="en">Password</label>
         <input id="password_registra" type="password" placeholder=" Password" name="password_registra" required />
-        <input type="submit" name="registra">
+        <input type="submit" name="registra" value="Registra">
     </form>
     
 <?php

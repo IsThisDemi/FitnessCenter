@@ -1,0 +1,4 @@
+
+ErrorDocument 404 /rimartin/404.php
+ErrorDocument 500 /rimartin/500.php
+

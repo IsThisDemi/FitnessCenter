@@ -9,9 +9,10 @@
     <meta name="description" content="Questa pagina continene una lista degli obiettivi e delle categorie di corsi forniti dalla palestra.">
     <meta name="keywords" content="corsi, palestra, obiettivi, equilibrio, danza, funzionale, corsa, forza, acquatici, yoga">
     <meta name="author" content="FitCenter">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="stylesheet" href="css/style.css"/> 
-    <link rel="stylesheet" href="css/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
+    <link rel="stylesheet" href="css/mini.css" media="screen and (max-width:768px)" />
     <link rel="stylesheet" href="css/print.css" media="print" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/> 
     <script src="js/corsi.js"></script>
@@ -28,8 +29,10 @@
                 Your browser does not support the video tag.
             </video>
             <div class="overlay">
-                <h1 id="home_titolo_titolo">Scopri i nostri corsi</h1>
-                <p id="home_titolo_testo">Esplora le tue passioni con <b><span class="testo_rosso"> %numero_corsi% corsi</span></b> tra cui scegliere</p>
+                <div id="corsi_for_mobile">
+                    <h1 class="titolo_corsi">Scopri i nostri <span class="testo_rosso">corsi</span></h1>
+                    <p id="home_titolo_testo">Esplora le tue passioni con <b><span class="testo_rosso"> %numero_corsi% corsi</span></b> tra cui scegliere</p>
+                </div>
             </div>
         </div>
         <div class="text-container">

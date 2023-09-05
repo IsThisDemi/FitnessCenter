@@ -2,22 +2,21 @@
 if(!isset($_SESSION)){
 	session_start();
 }
-$template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto" tabindex="0" acceskey="s">salta al contenuto</a>
+$template='<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto">Salta al contenuto</a>
 	<header>
             <h1 class="logo"> FitnessCenter </h1>
-            </div>
             <nav>
                         <MENU/>
             </nav>
       </header>
       <div class="breadcrumbs">
-      	<p> Ti trovi in: <span id="percorso"><BREADCRUMB/> </p>
+      	<p> Ti trovi in: <span id="percorso"><BREADCRUMB/> </span></p>
       </div>';
 
 $link_pagine=[];//nome->link
 $link_pagine["Join US"]="JoinUS.php";
-$link_pagine["home"]="home.php";
-$link_pagine["clubs"]="clubs.php";
+$link_pagine["home"]="index.php";
+$link_pagine["palestre"]="clubs.php";
 $link_pagine["offerta corsi"]="offerta_corsi.php";
 $link_pagine["categoria"] = "history.back()";
 $link_pagine["corso"] = "corso.php";
@@ -32,19 +31,23 @@ $link_pagine["Strenght"]="categoria.php?id=6";
 $link_pagine["Water"]="categoria.php?id=7";
 $link_pagine["Yoga"]="categoria.php?id=8";
 $link_pagine["admin"]="adminpage.php";
+$link_pagine["404"]="404.php";
+$link_pagine["500"]="500.php";
 
 $fl_pagine=[];//nome->link
 $fl_pagine["home"]="h";
-$fl_pagine["clubs"]="c";
+$fl_pagine["palestre"]="p";
 $fl_pagine["offerta corsi"]="o";
 $fl_pagine["more"]="m";
 $fl_pagine["login"]="l";
 
-$navmenu=["home","clubs","offerta corsi","more","login"];
+$navmenu=["home","palestre","offerta corsi","more","login"];
 
 $genitore_pagine=[];//nome->genitore
+$genitore_pagine["404"]="#";
+$genitore_pagine["500"]="#";
 $genitore_pagine["home"]="#";
-$genitore_pagine["clubs"]="home";
+$genitore_pagine["palestre"]="home";
 $genitore_pagine["offerta corsi"]="home";
 $genitore_pagine["more"]="home";
 $genitore_pagine["login"]="home";
@@ -105,10 +108,10 @@ function genera_header($pagina){
 			{
 				$menuentry=$_SESSION["user"];
 			}
-			$menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . $i . "\" acceskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
+			$menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . 0 . "\" accesskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
 			
         } else {
-            $menu = $menu . "<li class=\"menu_name\" \"first_letter_underlined\">" . $menuentry . "</li>";
+            $menu = $menu . "<li class=\"menu_name first_letter_underlined\">" . $menuentry . "</li>";
         }
 		$i++;
     }

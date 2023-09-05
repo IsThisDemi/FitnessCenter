@@ -1,15 +1,15 @@
 :root {
-	--primary-color: #121212;
-	--secondary-color: #e90000;
-	--header-color: #a74646;
+	--primary-color: white;
+	--secondary-color: black;
+	--header-color: black;
 	--gradient-first-color: #282828;
 	--gradient-first-color-hover: #414141;
 	--gradient-second-color: #1b1b1b;
 	--gradient-last-color: #121212;
-	--visited-links: #191919 ;
-	--text-color: white;
+	--visited-links: #333333;
+	--text-color: black;
 	--alternative-text-color: black;
-	--red: rgb(196, 47, 47);
+	--red: black;
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
 	--links-visited-color:#675396;
@@ -17,68 +17,22 @@
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
 
-	--forza: #f74b45;
-	--forza-text: white;
-	--equilibrio: #916f00;
-	--equilibrio-text: white;
-	--resistenza: #00743e;
-	--resistenza-text: white;
-	--stabilita: #4b4ff7;
-	--stabilita-text: white;
+	--forza: white;
+	--forza-text: black;
+	--equilibrio: white;
+	--equilibrio-text: black;
+	--resistenza: white;
+	--resistenza-text: black;
+	--stabilita: white;
+	--stabilita-text: black;
 
-	--box-shadow-1: #282828;
-	--box-shadow-2: #1b1b1b;
-	--titoli: #ffffff;
-	--titoli-shadow: #1b1b1b;
+	--box-shadow-1: #28282800;
+	--box-shadow-2: #1b1b1b00;
+	--titoli: black;
+	--titoli-shadow: #1b1b1b00;
 
-	--gradient-blurry : #000000d8;
-
-	--error-color: #00328f;
-	--breadcrumb-color: #ec0000;
 }
 
-/* Tema chiaro ========================= */
-
-@media (prefers-color-scheme: light) {
-	:root {
-		--primary-color: #f7f7f7;
-		--secondary-color: #d44e4e;
-		--header-color: #a74646;
-		--gradient-first-color: #a5a5a5;
-		--gradient-first-color-hover: #bebebe;
-		--gradient-second-color: #929292;
-		--gradient-last-color: #858585;
-		--visited-links: #191919 ;
-		--text-color: black;
-		--alternative-text-color: black;
-		--red: rgb(196, 47, 47);
-		--error-color: #C2B800;
-		--links-hover-color: #ffdd36;
-		--links-visited-color:#675396;
-		--scrollbar: #585858;
-		--scrollbar-background: #282828;
-		--disabled-color: #888888;
-	
-		--forza: #f74b45;
-		--forza-text: white;
-		--equilibrio: #916f00;
-		--equilibrio-text: white;
-		--resistenza: #00743e;
-		--resistenza-text: white;
-		--stabilita: #4b4ff7;
-		--stabilita-text: white;
-
-		--box-shadow-1: #cecece;
-		--box-shadow-2: #e7e7e7;
-		--titoli: #ffffff;
-		--titoli-shadow: #1b1b1b;
-
-		--gradient-blurry : #ffffffd8;
-
-		--error-color: #fbff00;
-		--breadcrumb-color: #500000;
-	}
-}
 * {
 	padding: 0;
 	margin: 0;
@@ -128,16 +82,7 @@ body {
 
 img {
 	max-width: 100%;
-	height: auto
-}
-
-/*
-------------------------------------------------------------
-							ERRORI
-------------------------------------------------------------
-*/
-.errore{
-	padding-bottom: 1em;
+	height: auto;
 }
 
 /* 
@@ -151,6 +96,7 @@ header, .breadcrumbs, footer {
 }
 
 header {
+	/*
 	border: 1px solid var(--secondary-color);
 	background-color: var(--header-color);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -163,6 +109,8 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	*/
+	display: none;
 }
 
 header li {
@@ -195,7 +143,7 @@ header li {
 
 .navmenu {
 	list-style: none;
-	font-size: 1em;
+	font-size: 1.5em;
 }
 
 .navmenu a {
@@ -227,17 +175,17 @@ nav .menu_name {
 	padding: 0.7em ;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.4em;
-	background-color: var(--gradient-second-color);
+	background-color: white;
 }
 
 .breadcrumbs #percorso {
-	color: var(--text-color);
+	color: var(--secondary-color);
 	font-weight: 700;
 }
 
 .breadcrumbs a{
 	text-transform: uppercase;
-	color: var(--breadcrumb-color);
+	color: var(--secondary-color);
 }
 
 .breadcrumbs a:hover{
@@ -265,7 +213,7 @@ footer {
 	border-top: solid 2px var(--primary-color);
 	padding-top: 1em;
 	padding: 1em;
-	background-color: var(--header-color);
+	background-color: rgba(168, 125, 125, 0);
 }
 
 #footer_text_box {
@@ -286,23 +234,24 @@ footer {
     text-indent: -1000px;
     font-size: 3em;
 	width: 2em;
+	filter: invert(100%);
 }
 
 #copyright_text {
 	margin-top: 2em;
 	font-size: 0.8em;
-	color: var(--titoli);
+	color: var(--text-color);
 	font-style: italic;
 }
 
 #copyright_text span {
-	color: var(--titoli);
+	color: var(--text-color);
 }
 
 #autori_text {
 	margin-top: 1em;
 	font-size: 0.8em;
-	color: var(--titoli);
+	color: var(--text-color);
 }
 
 /* 
@@ -345,6 +294,14 @@ nav ul {
 ====================================================
 */
 
+#home_titolo_for_mobile {
+	background-color: var(--primary-color);
+	background-color: var(--primary-color);
+	padding: 1em;
+	margin: 1em;
+	margin-bottom: 2em;
+}
+
 #home_content {
 	display: flex;
 	flex-direction: column;
@@ -367,17 +324,21 @@ nav ul {
 .menu_link {
 	background-color: var(--secondary-color);
 	padding: 1.0em;
-	margin-bottom: 0.5em;
-	color: var(--text-color);
+	margin: 0 0.5em 0.5em 0;
+	color: var(--primary-color);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 1.2em;
+	font-size: 0.8em;
 	font-weight: bold;
 	text-decoration: none;
 	box-shadow: 5px 5px 5px var(--box-shadow-1);
 }
 
 .menu_link:hover {
-	background-color: var(--header-color);
+	background-color: var(--visited-links);
+}
+
+.menu_link u {
+	color: var(--disabled-color);
 }
 
 /* 
@@ -387,50 +348,39 @@ nav ul {
 */
 
 #home_titolo_bg {
-	background-image: url('../img/home_title_background.jpg');
+	background-image: url();
 	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 800px;
+	position: relative;
+	height: 100%;
 	width: 100%;
-	margin-bottom: 1em;
 }
 
 #home_titolo_text_box {
 	height: auto;
 	width: auto;
-	margin: 1.5em 0 0 1.5em;
-	padding-bottom: 1em;
-}
-
-#home_titolo_for_mobile {
-	background-color: #bebebe;
-	background-color: var(--gradient-first-color-hover);
-	background-color: #ffffffd8;
-	background-color: var(--gradient-blurry);
-	padding: 1em;
-	margin: 1em;
-	margin-bottom: 2em;
+	margin: 3em 0 0 3em;
 }
 
 #home_titolo_titolo {
-	color: var(--text-color);
+	color: var(--titoli);
 	font-size: 4em;
 	line-height: 0.9em;
-	
+	text-shadow: 2px 2px 5px var(--titoli-shadow);
 }
 
 #home_titolo_testo {
-	color: var(--text-color);
+	color: var(--titoli);
 	margin: 1em;
 	padding: 0.5em;
-	font-size: 1.3em;
+	font-size: 1em;
 	line-height: 1.3em;
-	
+	text-shadow: 2px 2px 5px var(--titoli-shadow);
 }
 
 #home_titolo_testo span {
-	color: var(--red);
+	color: var(--titoli);
 }
 
 /* 
@@ -440,7 +390,7 @@ nav ul {
 */
 
 #home_sedi_text_box {
-	background-image: url('../img/home_sedi_bg.png');
+	background-image: url('');
 	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -450,27 +400,25 @@ nav ul {
 }
 
 #home_sedi_for_mobile {
-	background-color: #bebebe;
-	background-color: var(--gradient-first-color-hover);
-	background-color: #ffffffd8;
-	background-color: var(--gradient-blurry);
+	background-color: var(--primary-color);
+	background-color: var(--primary-color);
 	margin: 3em 0.5em 3em 12em;
 }
 
 #home_sedi_titolo {
 	text-align: center;
 	font-size: 2em;
-	padding-top: 0.5em;
+	font-size: 2.5em;
 }
 
 #home_sedi_testo {
 	text-align: center;
-	margin: 1em 0 0.5em 1em;
+	margin: 1em 1em 0.5em 1em;
 	padding: 0.5em;
-	font-size: 1.3em;
+	font-size: 1em;
 }
 
-#home_sedi_text_box .menu_link {
+#home_sedi_text_box .first_letter_underlined {
 	float:right;
 }
 
@@ -484,8 +432,18 @@ nav ul {
 ---------------
 */
 
+#corsi_for_mobile {
+	background-color: var(--primary-color);
+	background-color: var(--primary-color);
+	margin: 1em;
+}
+
+#corpo_corso .breadcrumbs {
+	margin: 0em;
+}
+
 #home_corsi_text_box {
-	background-image: url('../img/corsi/cycle-body-main.jpg');
+	background-image: url('');
 	background-position: top;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -495,38 +453,37 @@ nav ul {
 }
 
 #home_corsi_for_mobile {
-	background-color: #bebebe;
-	background-color: var(--gradient-first-color-hover);
-	background-color: #ffffffd8;
-	background-color: var(--gradient-blurry);
+	background-color: var(--primary-color);
+	background-color: var(--primary-color);
 	margin: 3em 0.5em 3em 12em;
 }
 
 #home_corsi_titolo {
 	text-align: center;
 	font-size: 2em;
-	padding-top: 0.5em;
+	font-size: 2.5em;
 }
 
 .home_corsi_testo {
 	margin: 1em 1em 0.5em 1em;
 	padding: 0.5em;
-	font-size: 1.3em;
+	font-size: 1em;
 }
 
 .u_list {
-	margin-left: 20%;
+	margin-left: 4em;
 	font-size: 1.3em;
 	list-style-type: circle;
 }
 
-#home_corsi_text_box .menu_link {
+#home_corsi_text_box .first_letter_underlined {
 	float:right;
 }
 
 #home_corsi_text_box .menu_link {
 	margin: 0 0 1em 0;
 	padding: 0.8em 1em;
+	
 }
 
 /* 
@@ -535,37 +492,33 @@ nav ul {
 ------------------
 */
 
-/* 
-#home_iscrizione {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	padding: 1em;
-} */
-
-
 #home_iscrizione {
 	margin: 1em;
-	margin-bottom: 0.5em;
 	text-align: center;
+	display: grid;
+	gap: 1em;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	"iti iti iti"
+	"ite ite ite"
+	"p1 p2 p3"
+	". b .";
 }
 
 #home_iscrizione_titolo {
+	grid-area: iti;
 	font-size: 2.5em;
 	text-transform: uppercase;
 	padding: 0.3em 0.3em 0 0.3em;
 }
 
 #home_iscrizione_testo {
-	background-color: var(--gradient-first-color-hover);
-	width: 70%;
+	grid-area: ite;
+	background-color: var(--primary-color);
+	width: 60%;
 	height: auto;
 	margin: auto;
 	padding: 1em;
-	font-size: 1.3em;
 	text-align: center;
 	line-height: 1.3em;
 	object-position: center;
@@ -576,27 +529,33 @@ nav ul {
 }
 
 #home_iscrizione_piano1 {
-	background-color: #ca1f19;
+	grid-area: p1;
+	background-color: var(--primary-color);
+	border: #000000 solid 4px;
 }
 
 #home_iscrizione_piano2 {
-	background-color: #195c97;
+	grid-area: p2;
+	background-color: var(--primary-color);
+	border: #000000 solid 4px;
 }
 
 #home_iscrizione_piano3 {
-	background-color: #696100;
+	grid-area: p3;
+	background-color: var(--primary-color);
+	border: #000000 solid 4px;
 }
 
 #home_iscrizione_piano1:hover {
-	background-color: #ad130e;
+	background-color: var(--primary-color);
 }
 
 #home_iscrizione_piano2:hover {
-	background-color: #0c4c85;
+	background-color: var(--primary-color);
 }
 
 #home_iscrizione_piano3:hover {
-	background-color: #5e5600;
+	background-color: var(--primary-color);
 }
 
 #home_iscrizione_piano1,
@@ -605,11 +564,7 @@ nav ul {
 	margin: 0.5em;
 	padding: 0.5em;
 	text-align: left;
-	border-radius: 1em;
-}
-
-#home_iscrizione_piano3 {
-	margin-bottom: 1.5em;
+	border-radius: 5%;
 }
 
 #home_iscrizione_piano1 h4,
@@ -622,10 +577,14 @@ nav ul {
 }
 
 #home_iscrizione .menu_link {
+	grid-area: b;
 	margin: 0.5em;
 	padding: 0.8em 1em;
 	text-transform: uppercase;
 	font-size: 1.4em;
+	border: 5px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 /* 
@@ -658,6 +617,9 @@ nav ul {
 	padding: 0.8em 1em;
 	text-transform: uppercase;
 	font-size: 1.4em;
+	border: 5px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 #home_info abbr {
@@ -665,7 +627,7 @@ nav ul {
 }
 
 #home_info .menu_link abbr {
-	color:var(--text-color);
+	color:var(--secondary-color);
 }
 
 /* 
@@ -673,20 +635,6 @@ nav ul {
 						CORSI
 ====================================================
 */
-
-#corsi_for_mobile {
-	background-color: #bebebe;
-	background-color: var(--gradient-first-color-hover);
-	background-color: #ffffffd8;
-	background-color: var(--gradient-blurry);
-	margin: 1em;
-}
-
-.titolo_corsi {
-	color: var(--text-color);
-	font-size: 4em;
-	line-height: 0.9em;
-}
 
 .etichetta_corsi {
 	font-size: 14px;
@@ -700,7 +648,7 @@ nav ul {
 .video-background {
 	width: 100%;
 	max-width: -webkit-fill-available;
-
+    display: none;
 }
 
 .unstyled {
@@ -709,6 +657,10 @@ nav ul {
 
 .container {
 	position: relative;
+}
+
+.container img {
+	display: none;
 }
 
 .container video {
@@ -774,8 +726,11 @@ nav ul {
 
 .overlay {
 	position: absolute;
-	top: 0%;
-	left: 25%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: relative;
+		margin-top: 3em;
 }
 
 #corsi {
@@ -801,6 +756,10 @@ nav ul {
 	padding: 1em;
 }
 
+.flex-container-col img {
+	filter: grayscale(100%);
+}
+
 .article-wrapper a:visited {
 	color: var(--primary-color);
 }
@@ -816,18 +775,18 @@ nav ul {
 	border-radius: 10px;
 	margin: 20px;
 	padding: 5px;
-	border: 4px solid transparent;
+	border: 4px solid var(--text-color);
 	cursor: pointer;
-	background-color: var(--gradient-first-color-hover);
+	background-color: var(--primary-color);
 }
 
 .article-wrapper:hover {
 	-webkit-box-shadow: 10px 10px 0 var(--box-shadow-1), 20px 20px 0 var(--box-shadow-2);
 	box-shadow: 10px 10px 0 var(--box-shadow-1), 20px 20px 0 var(--box-shadow-2);
 	border-color: var(--gradient-second-color);
-	-webkit-transform: translate(-20px, -20px);
-	-ms-transform: translate(-20px, -20px);
-	transform: translate(-20px, -20px);
+	-webkit-transform: translate(-0, -0);
+	-ms-transform: translate(-0, -0);
+	transform: translate(-0, -0);
 }
 
 .article-wrapper:active {
@@ -879,6 +838,7 @@ nav ul {
 	width: 100%;
 	border-radius: 10px;
 	object-fit: cover;
+    display: none;
 }
 
 .project-title {
@@ -922,7 +882,7 @@ nav ul {
 }
 
 .testo-forza {
-	color: var(--forza);
+	color: var(--forza-text);
 }
 
 .equilibrio {
@@ -931,7 +891,7 @@ nav ul {
 }
 
 .testo-equilibrio {
-	color: var(--equilibrio);
+	color: var(--equilibrio-text);
 }
 
 .resistenza {
@@ -940,7 +900,7 @@ nav ul {
 }
 
 .testo-resistenza {
-	color: var(--resistenza);
+	color: var(--resistenza-text);
 }
 
 .stabilita {
@@ -949,7 +909,7 @@ nav ul {
 }
 
 .testo-stabilita {
-	color: var(--stabilita);
+	color: var(--stabilita-text);
 }
 
 .project-hover {
@@ -983,12 +943,6 @@ nav ul {
 	margin-bottom: 1em;
 }
 
-/* 
-----------------------------------
-		barra di ricerca
----------------------------------- 
-*/
-
 #search_bar {
 	grid-area: s;
 	text-align: center;
@@ -1014,12 +968,6 @@ nav ul {
 	font-style: italic;
 }
 
-/* 
-----------------------------------
-		mappa google
----------------------------------- 
-*/
-
 #google_map {
 	grid-area: m;
 	height: 600px;
@@ -1030,22 +978,17 @@ iframe#map {
 	height: 100%;
 	width: 100%;
 	border:none;           
-    /*filter:invert(90%) hue-rotate(180deg);  filtro mappa, non usabile per problema di contrasto colori*/
+    filter:invert(90%) hue-rotate(180deg) grayscale(100%);  
 }
-
-/* 
-----------------------------------
-		accordion lista palestre
----------------------------------- 
-*/
 
 #addresses_container {
 	grid-area: l;
-	background-color: var(--gradient-second-color);
+	background-color: var(--primary-color);
 	height: 600px;
 	margin : 1em 0em 1em 1em;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	border: #000000 solid 4px;
 }
 
 #addresses_container h2 {
@@ -1076,26 +1019,27 @@ iframe#map {
 }
 
 .address {
-	background-color: var(--gradient-first-color);
+	background-color: var(--primary-color);
+	color: var(--primary-color);
+	font-size: 1em;
 	cursor: pointer;
 	padding: 18px;
-	display: block;
 	width: 100%;
 	text-align: left;
 	border: none;
 	outline: none;
 	transition: 0.4s;
-
-	color: var(--text-color);
-	text-decoration: none;
   }
 
   .address:after {
 	content: '\02795'; 
-	color: #504b6d;
+	color: var(--primary-color);
 	float: right;
 	margin-left: 5px;
-	font-size: 1em;
+  }
+
+  .active a {
+	color: var(--secondary-color);
   }
   
   .active:after {
@@ -1103,8 +1047,7 @@ iframe#map {
   }
   
   .active, .address:hover {
-	background-color: var(--gradient-first-color-hover);
-	color: var(--secondary-color);
+	background-color: var(--primary-color);
   }
   
   .panel {
@@ -1134,15 +1077,12 @@ iframe#map {
 	background-color: var(--primary-color);
 	font-size: 1.2rem;
 }
-.loginpage input[type=submit]{
-	background-color: var(--secondary-color);
-}
 .adminpage fieldset{
 	border-color: var(--header-color);
 }
 .loginpage .selected{
-	color: var(--text-color);
-	background-color: var(--secondary-color);
+	color: var(--alternative-text-color);
+	background-color: var(--header-color);
 }
 .loginpage,.adminpage{
 	display: flex;
@@ -1166,14 +1106,12 @@ iframe#map {
 	align-content: center;
 }
 #logoutmessage{	
-	width: 80%;
-	max-width: 40rem;
+	width: calc(min(40rem,80%));
 	/*grid-row: 1;
 	grid-column: 2;*/
 }
 .topselector{
-	width: 80%;
-	max-width: 20rem;
+	width: calc(min(20rem,80%));
 	background-color: var(--scrollbar);
 	display:flex ;
 	list-style: none;
@@ -1192,25 +1130,19 @@ iframe#map {
 .loginform{
 	display:flex ;
 	flex-direction: column;
-	width: 80%;
-	max-width: 20rem;
+	width: calc(min(20rem,80%));
 	/*grid-row: 3;
 	grid-column: 2;*/
 }
-
-.submit-button{
-	background-color: var(--secondary-color);
-}
-
 .adminform{
 	display:flex ;
 	flex-direction: column;
+	width: calc(min(30rem,80%));
 	width: 80%;
-	max-width: 30rem;
 }
 .adminform fieldset{
 	display:grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: auto auto auto auto;
 	width: 80%;
 }
 .adminform input,.adminform textarea,.adminform select{
@@ -1261,7 +1193,8 @@ iframe#map {
 }
 .infopage dt{
 	/*color: var(--alternative-text-color);*/
-	background-color: var(--header-color);
+	background-color: var(--primary-color);
+	border: #000000 solid 4px;
 }
 .infopage{
 	display: grid;
@@ -1278,13 +1211,6 @@ iframe#map {
 }*/
 #faq{
 	grid-area: faq;
-}
-#faq dt{
-	font-weight: 700;
-}
-#faq dd{
-	margin-left: 1em;
-	font-size: 0.8em;
 }
 #contatti_social{
 	grid-area: contacts;
@@ -1322,7 +1248,7 @@ JoinUS
 .titleform h1 {
 	text-align: center;
 	padding-top: .5em;
-	padding-bottom: .2em;
+	padding-bottom: .5em;
 }
 
 .formpage {
@@ -1347,16 +1273,17 @@ JoinUS
 }
 
 
-/* @media (min-width: 769px) { */
-.wrapper {
+@media (min-width: 769px) {
+	.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
+	}
 }
 
 .formint {
 	display: grid;
 	grid-template-columns: 1fr;
-	background: #b80000;
+	background: var(--primary-color);
 }
 
 .formint input,
@@ -1388,14 +1315,9 @@ JoinUS
 
 .imgform img {
 	min-height: 100%;
+	filter: grayscale(100%);
 }
 
 .messaggi {
-	margin-top: .5em;
-	margin-left: .5em;
-	margin-right: .5em;
-	background-color: var(--error-color);
-	color: #000;
-	border-color: #000;
-	border-radius: 4px;
+	margin-left: 1em;
 }

@@ -136,22 +136,22 @@ class InfoCorso
     {
         $pagina = file_get_contents(__DIR__ . '\info_corso.html');
         if ($this->forza == 1) {
-            $pagina = str_replace('%forza%', 'Forza', $pagina);
+            $pagina = str_replace('%forza%', '<span class="testo-forza">Forza</span>', $pagina);
         } else {
             $pagina = str_replace('%forza%', '', $pagina);
         }
         if ($this->equilibrio == 1) {
-            $pagina = str_replace('%equilibrio%', 'Equilibrio', $pagina);
+            $pagina = str_replace('%equilibrio%', '<span class="testo-equilibrio">Equilibrio</span>', $pagina);
         } else {
             $pagina = str_replace('%equilibrio%', '', $pagina);
         }
         if ($this->resistenza == 1) {
-            $pagina = str_replace('%resistenza%', 'Resistenza', $pagina);
+            $pagina = str_replace('%resistenza%', '<span class="testo-resistenza">Resistenza</span>', $pagina);
         } else {
             $pagina = str_replace('%resistenza%', '', $pagina);
         }
         if ($this->stabilità == 1) {
-            $pagina = str_replace('%stabilità%', 'Stabilità', $pagina);
+            $pagina = str_replace('%stabilità%', '<span class="testo-stabilita">Stabilità</span>', $pagina);
         } else {
             $pagina = str_replace('%stabilità%', '', $pagina);
         }

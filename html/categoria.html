@@ -8,23 +8,26 @@
 
     <meta name="description" content="Questa pagina continene una lista dei corsi della categoria %categoria%">
     <meta name="keywords" content="%categoria%, corsi, palestra">
-    <meta name="author" content="FitCenter">
+    <meta name="author" content="FitnessCenter">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="stylesheet" href="css/style.css"/> 
-    <link rel="stylesheet" href="css/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)" />
+    <link rel="stylesheet" href="css/mini.css" media="screen and (max-width:768px)" />
     <link rel="stylesheet" href="css/print.css" media="print" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/> 
     <script src="js/corsi.js"></script>
 </head>
 
-<bod id="corpo_corso">
+<body id="corpo_corso">
     %header%
     <section id="cover">
         <div class="container">
-            <img src="img/corsi/%immagine_categoria%"alt="%alt%">
+            <img src="img/corsi/%immagine_categoria%" alt="%alt%">
             <div class="overlay">
-                <h1 id="home_titolo_titolo"><span lang="en">%categoria%</span></h1>
-                <p id="home_titolo_testo">%descrizione%</p>
+                <div id="corsi_for_mobile">
+                    <h1 class="titolo_corsi"><span lang="en" class="testo_rosso">%categoria%</span></h1>
+                    <p id="home_titolo_testo">%descrizione%</p>
+                </div>
             </div>
         </div>
         <div id="corsi">
