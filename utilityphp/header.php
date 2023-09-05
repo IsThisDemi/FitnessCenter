@@ -111,7 +111,7 @@ function genera_header($pagina){
 			$menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . 0 . "\" accesskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
 			
         } else {
-            $menu = $menu . "<li class=\"menu_name\" \"first_letter_underlined\">" . $menuentry . "</li>";
+            $menu = $menu . "<li class=\"menu_name first_letter_underlined\">" . $menuentry . "</li>";
         }
 		$i++;
     }
