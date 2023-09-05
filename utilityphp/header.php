@@ -2,7 +2,7 @@
 if(!isset($_SESSION)){
 	session_start();
 }
-$template='	<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto" tabindex="0" acceskey="s">salta al contenuto</a>
+$template='<a href="#content" class="SRskip" title="salta al contenuto" aria-label="salta al contenuto">Salta al contenuto</a>
 	<header>
             <h1 class="logo"> FitnessCenter </h1>
             <nav>
@@ -111,7 +111,7 @@ function genera_header($pagina){
 			$menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . 0 . "\" accesskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
 			
         } else {
-            $menu = $menu . "<li class=\"menu_name\" \"first_letter_underlined\">" . $menuentry . "</li>";
+            $menu = $menu . "<li class=\"menu_name first_letter_underlined\">" . $menuentry . "</li>";
         }
 		$i++;
     }
