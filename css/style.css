@@ -802,7 +802,7 @@ nav ul {
 }
 
 .article-wrapper a:visited {
-	color: var(--primary-color);
+	color: var(--visited-links);
 }
 
 .article-wrapper a:hover{
@@ -817,10 +817,10 @@ nav ul {
 	margin: 20px;
 	padding: 5px;
 	border: 4px solid transparent;
-	cursor: pointer;
 	background-color: var(--gradient-first-color-hover);
 }
 
+/*
 .article-wrapper:hover {
 	-webkit-box-shadow: 10px 10px 0 var(--box-shadow-1), 20px 20px 0 var(--box-shadow-2);
 	box-shadow: 10px 10px 0 var(--box-shadow-1), 20px 20px 0 var(--box-shadow-2);
@@ -829,6 +829,7 @@ nav ul {
 	-ms-transform: translate(-20px, -20px);
 	transform: translate(-20px, -20px);
 }
+*/
 
 .article-wrapper:active {
 	-webkit-box-shadow: none;
