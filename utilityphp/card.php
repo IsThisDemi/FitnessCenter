@@ -165,7 +165,7 @@ class InfoCorso
         $pagina = str_replace('%calorie%', $this->calorie, $pagina);
         if ($this->asciugamano == 1) {
             $pagina = str_replace('%asciugamano%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/asciugamano.svg" alt="asciugamano">
+                    <img src="img/corsi/icone/asciugamano.svg" alt="">
                     <p>Asciugamano</p>
                     </div>', $pagina);
         } else {
@@ -173,7 +173,7 @@ class InfoCorso
         }
         if ($this->borraccia == 1) {
             $pagina = str_replace('%borraccia%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/borraccia.svg" alt="borraccia">
+                    <img src="img/corsi/icone/borraccia.svg" alt="">
                     <p>Borraccia</p>
                     </div>', $pagina);
         } else {
@@ -181,7 +181,7 @@ class InfoCorso
         }
         if ($this->calzini == 1) {
             $pagina = str_replace('%calzini%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/calzini.svg" alt="calzini">
+                    <img src="img/corsi/icone/calzini.svg" alt="">
                     <p>Calzini</p>
                     </div>', $pagina);
         } else {
@@ -189,7 +189,7 @@ class InfoCorso
         }
         if ($this->tappetino == 1) {
             $pagina = str_replace('%tappetino%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/tappetino.svg" alt="tappetino">
+                    <img src="img/corsi/icone/tappetino.svg" alt="">
                     <p>Tappetino</p>
                     </div>', $pagina);
         } else {
@@ -197,7 +197,7 @@ class InfoCorso
         }
         if ($this->scarpe_sportive == 1) {
             $pagina = str_replace('%scarpe_sportive%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/scarpe_sportive.svg" alt="scarpe_sportive">
+                    <img src="img/corsi/icone/scarpe_sportive.svg" alt="">
                     <p>Scarpe sportive</p>
                     </div>', $pagina);
         } else {
@@ -205,7 +205,7 @@ class InfoCorso
         }
         if ($this->guantoni == 1) {
             $pagina = str_replace('%guantoni%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/guantoni.svg" alt="guantoni">
+                    <img src="img/corsi/icone/guantoni.svg" alt="">
                     <p>Guantoni</p>
                     </div>', $pagina);
         } else {
@@ -213,7 +213,7 @@ class InfoCorso
         }
         if ($this->capelli_raccolti == 1) {
             $pagina = str_replace('%capelli_raccolti%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/capelli_raccolti.svg" alt="capelli_raccolti">
+                    <img src="img/corsi/icone/capelli_raccolti.svg" alt="">
                     <p>Capelli raccolti</p>
                     </div>', $pagina);
         } else {
@@ -221,7 +221,7 @@ class InfoCorso
         }
         if ($this->abbigliamento_outdoor == 1) {
             $pagina = str_replace('%abbigliamento_outdoor%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/abbigliamento_outdoor.svg" alt="abbigliamento_outdoor">
+                    <img src="img/corsi/icone/abbigliamento_outdoor.svg" alt="">
                     <p>Abbigliamento outdoor</p>
                     </div>', $pagina);
         } else {
@@ -229,7 +229,7 @@ class InfoCorso
         }
         if ($this->scarpe_outdoor == 1) {
             $pagina = str_replace('%scarpe_outdoor%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/scarpe_outdoor.svg" alt="scarpe_outdoor">
+                    <img src="img/corsi/icone/scarpe_outdoor.svg" alt="">
                     <p>Scarpe outdoor</p>
                     </div>', $pagina);
         } else {
@@ -237,7 +237,7 @@ class InfoCorso
         }
         if ($this->accappatoio == 1) {
             $pagina = str_replace('%accappatoio%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/accappatoio.svg" alt="accappatoio">
+                    <img src="img/corsi/icone/accappatoio.svg" alt="">
                     <p>accappatoio</p>
                     </div>', $pagina);
         } else {
@@ -245,7 +245,7 @@ class InfoCorso
         }
         if ($this->cuffia == 1) {
             $pagina = str_replace('%cuffia%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/cuffia.svg" alt="cuffia">
+                    <img src="img/corsi/icone/cuffia.svg" alt="">
                     <p>Cuffia</p>
                     </div>', $pagina);
         } else {
@@ -253,7 +253,7 @@ class InfoCorso
         }
         if ($this->costume == 1) {
             $pagina = str_replace('%costume%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/costume.svg" alt="costume">
+                    <img src="img/corsi/icone/costume.svg" alt="">
                     <p>Costume</p>
                     </div>', $pagina);
         } else {
@@ -261,7 +261,7 @@ class InfoCorso
         }
         if ($this->ciabatte == 1) {
             $pagina = str_replace('%ciabatte%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/ciabatte.svg" alt="ciabatte">
+                    <img src="img/corsi/icone/ciabatte.svg" alt="">
                     <p>Ciabatte</p>
                     </div>', $pagina);
         } else {
@@ -269,7 +269,7 @@ class InfoCorso
         }
         if ($this->piedi_nudi == 1) {
             $pagina = str_replace('%piedi_nudi%', '<div class="flex-container-col">
-                    <img src="img/corsi/icone/piedi_nudi.svg" alt="piedi nudi">
+                    <img src="img/corsi/icone/piedi_nudi.svg" alt="">
                     <p>Piedi Nudi</p>
                     </div>', $pagina);
         } else {
