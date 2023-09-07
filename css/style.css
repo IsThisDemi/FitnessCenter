@@ -1,6 +1,6 @@
 :root {
 	--primary-color: #121212;
-	--secondary-color: #e90000;
+	--secondary-color: #B30000;
 	--header-color: #AB2121;
 	--gradient-first-color: #282828;
 	--gradient-first-color-hover: #414141;
@@ -9,7 +9,6 @@
 	--visited-links: #191919 ;
 	--text-color: white;
 	--alternative-text-color: black;
-	--red: rgb(196, 47, 47);
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
 	--links-visited-color:#675396;
@@ -21,7 +20,7 @@
 	--forza-text: white;
 	--equilibrio: #916f00;
 	--equilibrio-text: white;
-	--resistenza: #00743e;
+	--resistenza: #006627;
 	--resistenza-text: white;
 	--stabilita: #4b4ff7;
 	--stabilita-text: white;
@@ -36,8 +35,10 @@
 	--error-color: #00328f;
 	--breadcrumb-color: #ec0000;
 
-	--verde: #006627;
-	--blu: #379AF1;
+	--red: #EC6F6F;
+	--resistenza-h: #09642c;
+	--blu: #0057A3;
+	--blu-h: #0a5da7;
 }
 
 /* Tema chiaro ========================= */
@@ -45,8 +46,8 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--primary-color: #f7f7f7;
-		--secondary-color: #d44e4e;
-		--header-color: #AB2121;
+		--secondary-color: #E17575;
+		--header-color: #F56B6B;
 		--gradient-first-color: #a5a5a5;
 		--gradient-first-color-hover: #bebebe;
 		--gradient-second-color: #929292;
@@ -54,7 +55,6 @@
 		--visited-links: #191919 ;
 		--text-color: black;
 		--alternative-text-color: black;
-		--red: rgb(196, 47, 47);
 		--error-color: #C2B800;
 		--links-hover-color: #ffdd36;
 		--links-visited-color:#675396;
@@ -66,7 +66,7 @@
 		--forza-text: white;
 		--equilibrio: #916f00;
 		--equilibrio-text: white;
-		--resistenza: #00743e;
+		--resistenza: #0CB04B;
 		--resistenza-text: white;
 		--stabilita: #4b4ff7;
 		--stabilita-text: white;
@@ -81,8 +81,10 @@
 		--error-color: #fbff00;
 		--breadcrumb-color: #500000;
 
-		--verde: #0CB04B;
-		--blu: #0057A3;
+		--red: #AB2121;
+		--resistenza-h: #00b846;
+		--blu: #379AF1;
+		--blu-h: #1d8cee;
 	}
 }
 * {
@@ -185,6 +187,12 @@ header li {
     text-indent: -2000px;
     font-size: 4em;
 	width:2em;
+}
+
+@media (prefers-color-scheme: light) {
+	.logo {
+		background-image: url("../img/fitnesscenter-logo-files/logo-no-background.png");
+	}
 }
 
 .SRskip {
@@ -292,28 +300,35 @@ footer {
     text-indent: -1000px;
     font-size: 3em;
 	width: 2em;
+	color: var(--text-color);
+}
+
+@media (prefers-color-scheme: light) {
+	#titolo_footer {
+		background-image: url("../img/fitnesscenter-logo-files/logo-no-background.png");
+	}
 }
 
 #info_sede_centrale,
 #info_sede_centrale b {
-	color:var(--titoli)
+	color:var(--text-color)
 }
 
 #copyright_text {
 	margin-top: 2em;
 	font-size: 0.8em;
-	color: var(--titoli);
+	color: var(--text-color);
 	font-style: italic;
 }
 
 #copyright_text span {
-	color: var(--titoli);
+	color: var(--text-color);
 }
 
 #autori_text {
 	margin-top: 1em;
 	font-size: 0.8em;
-	color: var(--titoli);
+	color: var(--text-color);
 }
 
 /* 
@@ -583,27 +598,27 @@ nav ul {
 }
 
 #home_iscrizione_piano1 {
-	background-color: #ca1f19;
+	background-color: var(--header-color);
 }
 
 #home_iscrizione_piano2 {
-	background-color: #195c97;
-}
-
-#home_iscrizione_piano3 {
-	background-color: var(--verde);
-}
-
-#home_iscrizione_piano1:hover {
-	background-color: var(--forza);
-}
-
-#home_iscrizione_piano2:hover {
 	background-color: var(--blu);
 }
 
+#home_iscrizione_piano3 {
+	background-color: var(--resistenza);
+}
+
+#home_iscrizione_piano1:hover {
+	background-color: var(--secondary-color);
+}
+
+#home_iscrizione_piano2:hover {
+	background-color: var(--blu-h);
+}
+
 #home_iscrizione_piano3:hover {
-	background-color: var(--verde);
+	background-color: var(--resistenza-h);
 }
 
 #home_iscrizione_piano1,
@@ -651,7 +666,7 @@ nav ul {
 
 #home_info_titolo {
 	font-size: 2.5em;
-	color: var(--secondary-color);
+	color: var(--red);
 }
 
 #home_info_testo {
