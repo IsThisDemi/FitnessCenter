@@ -3,7 +3,7 @@ require_once "utilityphp/connessione.php";
 require_once "utilityphp/header.php";
 
 $paginaHTML = file_get_contents("html/JoinUS.html");
-$header =  genera_header("Join US");
+$header =  genera_header("Contattaci");
 $footer = file_get_contents("utilityphp/footer.php");
 
 use DB\DBAccess; //importa la classe DBAccess presente in "connessione"

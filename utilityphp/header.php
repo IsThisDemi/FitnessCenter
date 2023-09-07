@@ -14,7 +14,7 @@ $template='<a href="#content" class="SRskip" title="salta al contenuto" aria-lab
       </div>';
 
 $link_pagine=[];//nome->link
-$link_pagine["Join US"]="JoinUS.php";
+$link_pagine["Contattaci"]="JoinUS.php";
 $link_pagine["home"]="index.php";
 $link_pagine["palestre"]="clubs.php";
 $link_pagine["offerta corsi"]="offerta_corsi.php";
@@ -52,7 +52,7 @@ $genitore_pagine["offerta corsi"]="home";
 $genitore_pagine["more"]="home";
 $genitore_pagine["login"]="home";
 $genitore_pagine["categoria"]="offerta corsi";
-$genitore_pagine["Join US"]="home";
+$genitore_pagine["Contattaci"]="home";
 $genitore_pagine["admin"]="login";
 
 //Genitore e figli delle categorie
