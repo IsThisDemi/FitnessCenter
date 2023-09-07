@@ -13,13 +13,13 @@ $messaggiPerForm = ''; //messaggi di errore per la form
 
 //Variabili per il form
 
-$nome = '';
-$cognome = '';
-$sesso = '';
-$dataNascita = '';
-$email = '';
-$telefono = '';
-$note = '';
+$nome = "";
+$cognome = "";
+$sesso = "";
+$dataNascita = "";
+$email = "";
+$telefono = "";
+$note = "";
 
 function pulisciInput($value) {
     $value = trim($value); //trim() rimuove gli spazi bianchi (o altri caratteri) dall'inizio e dalla fine di una stringa
