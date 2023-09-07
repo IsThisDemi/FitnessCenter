@@ -37,8 +37,6 @@ function pulisciNote($value){
 }
 
 
-//per il controllo degli errori/input, si adotta come si vede il pattern matching
-
 
 if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'interno della form
 
@@ -126,7 +124,7 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
 
 $paginaHTML = str_replace("%header%", $header, $paginaHTML);
 $paginaHTML = str_replace("%footer%", $footer, $paginaHTML);
-$paginaHTML = str_replace("<messaggiForm />", $messaggiPerForm, $paginaHTML); //sostituisce il valore del segnaposto con il codice corrispondente
+$paginaHTML = str_replace("<messaggiForm />", $messaggiPerForm, $paginaHTML); 
 $paginaHTML = str_replace("<valoreNome />", $nome, $paginaHTML); 
 $paginaHTML = str_replace("<valoreCognome />", $cognome, $paginaHTML);
 $paginaHTML = str_replace("<valData />", $dataNascita, $paginaHTML);
