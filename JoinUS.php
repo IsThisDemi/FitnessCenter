@@ -105,6 +105,13 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
             $queryOK = $connessione1->insertNewCostumer($nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note);
             if($queryOK) {
                 $messaggiPerForm = '<div id="greetings"><p>Inserimento avvenuto con successo.</p></div>';
+                $nome = "";
+                $cognome = "";
+                $sesso = "";
+                $dataNascita = "";
+                $email = "";
+                $telefono = "";
+                $note = "";
             } else {
                 $messaggiPerForm = '<div id="messageErrors"><p>Problema nell\'inserimento dei dati, controlla se hai usato caratteri speciali. </p></div>';
             }
