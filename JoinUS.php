@@ -13,13 +13,13 @@ $messaggiPerForm = ''; //messaggi di errore per la form
 
 //Variabili per il form
 
-$nome = '';
-$cognome = '';
-$sesso = '';
-$dataNascita = '';
-$email = '';
-$telefono = '';
-$note = '';
+$nome = "";
+$cognome = "";
+$sesso = "";
+$dataNascita = "";
+$email = "";
+$telefono = "";
+$note = "";
 
 function pulisciInput($value) {
     $value = trim($value); //trim() rimuove gli spazi bianchi (o altri caratteri) dall'inizio e dalla fine di una stringa
@@ -36,8 +36,6 @@ function pulisciNote($value){
     return $value;
 }
 
-
-//per il controllo degli errori/input, si adotta come si vede il pattern matching
 
 
 if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'interno della form
@@ -105,6 +103,13 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
             $queryOK = $connessione1->insertNewCostumer($nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note);
             if($queryOK) {
                 $messaggiPerForm = '<div id="greetings"><p>Inserimento avvenuto con successo.</p></div>';
+                $nome = "";
+                $cognome = "";
+                $sesso = "";
+                $dataNascita = "";
+                $email = "";
+                $telefono = "";
+                $note = "";
             } else {
                 $messaggiPerForm = '<div id="messageErrors"><p>Problema nell\'inserimento dei dati, controlla se hai usato caratteri speciali. </p></div>';
             }
@@ -119,7 +124,7 @@ if(isset($_POST['submit'])){  //se è stato premuto il bottone "submit" all'inte
 
 $paginaHTML = str_replace("%header%", $header, $paginaHTML);
 $paginaHTML = str_replace("%footer%", $footer, $paginaHTML);
-$paginaHTML = str_replace("<messaggiForm />", $messaggiPerForm, $paginaHTML); //sostituisce il valore del segnaposto con il codice corrispondente
+$paginaHTML = str_replace("<messaggiForm />", $messaggiPerForm, $paginaHTML); 
 $paginaHTML = str_replace("<valoreNome />", $nome, $paginaHTML); 
 $paginaHTML = str_replace("<valoreCognome />", $cognome, $paginaHTML);
 $paginaHTML = str_replace("<valData />", $dataNascita, $paginaHTML);
