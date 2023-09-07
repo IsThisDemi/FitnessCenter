@@ -125,11 +125,11 @@ function genera_header($pagina){
 		// aggiunge genitore/ a breadrumbs in formato figlio/.....
 		if($parent == "categoria")
 		{
-			$breadcrumb = "<a href='javascript:history.back()'>" . $parent . "</a> >" . $breadcrumb;
+			$breadcrumb = "<a href='javascript:history.back()'>" . $parent . "</a> > " . $breadcrumb;
 			$parent = $genitore_pagine[$parent];
 		}
 		else {
-			$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> >" . $breadcrumb;
+			$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> > " . $breadcrumb;
 			$parent = $genitore_pagine[$parent];
 		}
 	}

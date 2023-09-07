@@ -42,6 +42,9 @@ nav .menu_name {
 	border-radius: 5%;
 }
 
+.menu_name {
+	background-color:var(--header-h-color);
+}
 
 /* 
 ------------------------------------------------------------

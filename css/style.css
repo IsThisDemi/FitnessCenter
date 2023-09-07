@@ -1,7 +1,8 @@
 :root {
 	--primary-color: #121212;
 	--secondary-color: #B30000;
-	--header-color: #AB2121;
+	--header-color: #A42323;
+	--header-h-color:#000DC2;
 	--gradient-first-color: #282828;
 	--gradient-first-color-hover: #414141;
 	--gradient-second-color: #1b1b1b;
@@ -21,7 +22,7 @@
 	--forza-text: white;
 	--equilibrio: #916f00;
 	--equilibrio-text: white;
-	--resistenza: #007c30;
+	--resistenza: #025F26;
 	--resistenza-text: white;
 	--stabilita: #4b4ff7;
 	--stabilita-text: white;
@@ -35,13 +36,16 @@
 
 	--error-color: #00328f;
 	--breadcrumb-text-color: #FF8080;
-	--breadcrumb-text-h-color: #007add;
+	--breadcrumb-text-h-color: #000F4D;
 	--breadcrumb-bg-color: #1b1b1b;
 
-	--red: #EC6F6F;
-	--resistenza-h: #09642c;
+	--red: #F47676;
+	--verde: #025F26;
+	--verde-h: #006d2a;
 	--blu: #0057A3;
 	--blu-h: #0a5da7;
+
+	--primary-button-fill-color: #65A6FB;
 }
 
 /* Tema chiaro ========================= */
@@ -51,6 +55,7 @@
 		--primary-color: #f7f7f7;
 		--secondary-color: #E17575;
 		--header-color: #F56B6B;
+		--header-h-color:#A5ABF8;
 		--gradient-first-color: #a5a5a5;
 		--gradient-first-color-hover: #bebebe;
 		--gradient-second-color: #929292;
@@ -60,7 +65,7 @@
 		--text-color: black;
 		--alternative-text-color: black;
 		--error-color: #C2B800;
-		--links-hover-color: #ffdd36;
+		--links-hover-color: #1644fd;
 		--links-visited-color:#675396;
 		--scrollbar: #585858;
 		--scrollbar-background: #282828;
@@ -70,7 +75,7 @@
 		--forza-text: white;
 		--equilibrio: #916f00;
 		--equilibrio-text: white;
-		--resistenza: #007c30;
+		--resistenza: #025F26;
 		--resistenza-text: white;
 		--stabilita: #4b4ff7;
 		--stabilita-text: white;
@@ -84,13 +89,16 @@
 
 		--error-color: #fbff00;
 		--breadcrumb-text-color: #800000;
-		--breadcrumb-text-h-color: #0819b1;
-		--breadcrumb-bg-color: #D1D1D1;
+		--breadcrumb-text-h-color: #1644fd;
+		--breadcrumb-bg-color: #B8B8B8;
 
-		--red: #AB2121;
-		--resistenza-h: #00b846;
-		--blu: #379AF1;
+		--red: #A42323;
+		--verde: #00b846;
+		--verde-h: #07c750;
+		--blu: #3F9FF3;
 		--blu-h: #1d8cee;
+
+		--primary-button-fill-color: #14509F;
 	}
 }
 * {
@@ -214,6 +222,8 @@ header li {
 
 .menu_name {
 	font-weight: 700;
+	background-color: var(--header-h-color);
+	border: solid 1px var(--text-color);
 }
 
 .navmenu {
@@ -229,7 +239,13 @@ header li {
 }
 
 .navmenu a:hover {
-	color: var(--links-hover-color);
+	background-color: var(--header-h-color);
+	border: solid 1px var(--text-color);
+}
+
+.navmenu span:hover,
+.navmenu a:hover span {
+	color: var(--text-color);
 }
 
 nav li a,
@@ -618,7 +634,7 @@ nav ul {
 }
 
 #home_iscrizione_piano3 {
-	background-color: var(--resistenza);
+	background-color: var(--verde);
 }
 
 #home_iscrizione_piano1:hover {
@@ -630,7 +646,7 @@ nav ul {
 }
 
 #home_iscrizione_piano3:hover {
-	background-color: var(--resistenza-h);
+	background-color: var(--verde-h);
 }
 
 #home_iscrizione_piano1,
@@ -1124,25 +1140,36 @@ iframe#map {
 
 	color: var(--text-color);
 	text-decoration: none;
-  }
+}
+
+.address::after {
+	content: "Apri";
+	float: right;
+	font-size: 0.7em;
+}
+
+.active::after {
+	content: "Chiudi";
+} 
   
-  .active, .address:hover {
+.active, .address:hover {
 	background-color: var(--gradient-first-color-hover);
 	color: var(--breadcrumb-text-color);
-  }
+}
+
   
-  .panel {
+.panel {
 	font-size:0.8em;
 	padding: 0px 18px;
 	background-color: var(--gradient-last-color);
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
-  }
+}
 
-  .panel p {
+.panel p {
 	padding: 0.5em;
-  }
+}
 /* 
 ---------------
 	Login And Admin
@@ -1422,4 +1449,8 @@ JoinUS
 	color: #000;
 	border-color: #000;
 	border-radius: 4px;
+}
+
+.reload-button {
+	background: var(--primary-button-fill-color);
 }
