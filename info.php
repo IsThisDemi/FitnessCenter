@@ -6,7 +6,7 @@
     //Includo footer
     $footer = file_get_contents("utilityphp/footer.php");
 	//Gererazione header
-	$header = genera_header("more");
+	$header = genera_header("<span lang='en'>more</span>");
 
     $campi_replace = array("%header%", "%footer%");
 	$valori_replace = array($header, $footer);

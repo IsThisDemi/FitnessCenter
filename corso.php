@@ -57,7 +57,7 @@
 
     //Sostituzione dei campi della pagina html con i valori				
     $campi_replace = array("%header%", "%footer%",  "%info_corso%", "%corso%", "%descrizione%", "%immagine_corso%", "%alt%");
-    $valori_replace = array(genera_header($nome_corso), $footer, $listaCard_offerta, $nome_corso, $descrizione_corso, $immagine_corso, $alt_corso);
+    $valori_replace = array(genera_header("<span lang='en'>".$nome_corso."</span>"), $footer, $listaCard_offerta, $nome_corso, $descrizione_corso, $immagine_corso, $alt_corso);
 
     $paginaHTML = str_replace($campi_replace, $valori_replace, $paginaHTML);
     echo $paginaHTML;

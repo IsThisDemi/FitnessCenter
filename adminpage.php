@@ -73,7 +73,7 @@ else
 
 <?php 
 
-    echo genera_header("admin");
+    echo genera_header("<span lang='en'>admin</span>");
     $categorie;
     if(GetCategorie($categorie)!="success"||!$categorie){
 

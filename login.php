@@ -56,7 +56,7 @@ if (isset($_GET["action"])) {
 
 <?php 
 
-    echo genera_header("login");
+    echo genera_header("<span lang='en'>login</span>");
 
 ?>
 <div id="content" class="loginpage">
