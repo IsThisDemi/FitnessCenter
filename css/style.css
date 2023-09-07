@@ -1,7 +1,7 @@
 :root {
 	--primary-color: #121212;
 	--secondary-color: #e90000;
-	--header-color: #a74646;
+	--header-color: #AB2121;
 	--gradient-first-color: #282828;
 	--gradient-first-color-hover: #414141;
 	--gradient-second-color: #1b1b1b;
@@ -17,7 +17,7 @@
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
 
-	--forza: #f74b45;
+	--forza: #A80600;
 	--forza-text: white;
 	--equilibrio: #916f00;
 	--equilibrio-text: white;
@@ -35,6 +35,9 @@
 
 	--error-color: #00328f;
 	--breadcrumb-color: #ec0000;
+
+	--verde: #006627;
+	--blu: #379AF1;
 }
 
 /* Tema chiaro ========================= */
@@ -43,7 +46,7 @@
 	:root {
 		--primary-color: #f7f7f7;
 		--secondary-color: #d44e4e;
-		--header-color: #a74646;
+		--header-color: #AB2121;
 		--gradient-first-color: #a5a5a5;
 		--gradient-first-color-hover: #bebebe;
 		--gradient-second-color: #929292;
@@ -59,7 +62,7 @@
 		--scrollbar-background: #282828;
 		--disabled-color: #888888;
 	
-		--forza: #f74b45;
+		--forza: #A80600;
 		--forza-text: white;
 		--equilibrio: #916f00;
 		--equilibrio-text: white;
@@ -77,6 +80,9 @@
 
 		--error-color: #fbff00;
 		--breadcrumb-color: #500000;
+
+		--verde: #0CB04B;
+		--blu: #0057A3;
 	}
 }
 * {
@@ -286,6 +292,11 @@ footer {
     text-indent: -1000px;
     font-size: 3em;
 	width: 2em;
+}
+
+#info_sede_centrale,
+#info_sede_centrale b {
+	color:var(--titoli)
 }
 
 #copyright_text {
@@ -584,19 +595,19 @@ nav ul {
 }
 
 #home_iscrizione_piano3 {
-	background-color: #696100;
+	background-color: var(--verde);
 }
 
 #home_iscrizione_piano1:hover {
-	background-color: #ad130e;
+	background-color: var(--forza);
 }
 
 #home_iscrizione_piano2:hover {
-	background-color: #0c4c85;
+	background-color: var(--blu);
 }
 
 #home_iscrizione_piano3:hover {
-	background-color: #5e5600;
+	background-color: var(--verde);
 }
 
 #home_iscrizione_piano1,
@@ -686,6 +697,7 @@ nav ul {
 	color: var(--text-color);
 	font-size: 4em;
 	line-height: 0.9em;
+	margin: 0.5em;
 }
 
 .etichetta_corsi {
@@ -1088,18 +1100,6 @@ iframe#map {
 
 	color: var(--text-color);
 	text-decoration: none;
-  }
-
-  .address:after {
-	content: '\02795'; 
-	color: #504b6d;
-	float: right;
-	margin-left: 5px;
-	font-size: 1em;
-  }
-  
-  .active:after {
-	content: "\2796"; 
   }
   
   .active, .address:hover {
