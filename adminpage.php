@@ -67,7 +67,7 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link type="text/css"  rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" media="print" href="css/print.css" type="text/css"/>
-	<link rel="shortcut icon" href="../images/favicon.ico" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
 
@@ -150,7 +150,6 @@ if($DisplayMessage!=""){
                 <option value="4">ciabatte</option>
                 <option value="5">piedi nudi</option>
             </select>
-            <input type="checkbox" id="forza" name="forza" value="forza">
                 <label for="asciugamano"> asciugamano</label>
                 <input type="checkbox" id="asciugamano" name="asciugamano" value="asciugamano">
                 <label for="borraccia"> borraccia</label>
