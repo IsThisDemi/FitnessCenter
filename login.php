@@ -50,7 +50,7 @@ if (isset($_GET["action"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link type="text/css"  rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" media="print" href="css/print.css" type="text/css"/>
-	<link rel="shortcut icon" href="../images/favicon.ico" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
 
