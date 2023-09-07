@@ -7,6 +7,7 @@
 	--gradient-second-color: #1b1b1b;
 	--gradient-last-color: #121212;
 	--visited-links: #191919 ;
+	--header-hover: #191919;
 	--text-color: white;
 	--alternative-text-color: black;
 	--error-color: #C2B800;
@@ -33,7 +34,9 @@
 	--gradient-blurry : #000000d8;
 
 	--error-color: #00328f;
-	--breadcrumb-color: #ec0000;
+	--breadcrumb-text-color: #FF8080;
+	--breadcrumb-text-h-color: #007add;
+	--breadcrumb-bg-color: #1b1b1b;
 
 	--red: #EC6F6F;
 	--resistenza-h: #09642c;
@@ -52,7 +55,8 @@
 		--gradient-first-color-hover: #bebebe;
 		--gradient-second-color: #929292;
 		--gradient-last-color: #858585;
-		--visited-links: #191919 ;
+		--visited-links: #f8f3f3 ;
+		--header-hover: #f8f3f3;
 		--text-color: black;
 		--alternative-text-color: black;
 		--error-color: #C2B800;
@@ -79,7 +83,9 @@
 		--gradient-blurry : #ffffffd8;
 
 		--error-color: #fbff00;
-		--breadcrumb-color: #500000;
+		--breadcrumb-text-color: #800000;
+		--breadcrumb-text-h-color: #0819b1;
+		--breadcrumb-bg-color: #D1D1D1;
 
 		--red: #AB2121;
 		--resistenza-h: #00b846;
@@ -114,12 +120,15 @@ select{
     color: var(--disabled-color);
 }
 
-a:visited span{
-	color: var(--visited-links);
-}
 a:hover span{
 	color: var(--links-hover-color);
 }
+
+/*   far apparire i link visitati con un colore differente
+a:visited {
+	color: var(--links-visited-color);
+}
+*/
 
 html {
 	font-size: 100%;
@@ -220,7 +229,7 @@ header li {
 }
 
 .navmenu a:hover {
-	color: var(--visited-links);
+	color: var(--links-hover-color);
 }
 
 nav li a,
@@ -241,7 +250,7 @@ nav .menu_name {
 	padding: 0.7em ;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.4em;
-	background-color: var(--gradient-second-color);
+	background-color: var(--breadcrumb-bg-color);
 }
 
 .breadcrumbs #percorso {
@@ -249,13 +258,16 @@ nav .menu_name {
 	font-weight: 700;
 }
 
-.breadcrumbs a{
+.breadcrumbs a,
+.breadcrumbs a span{
 	text-transform: uppercase;
-	color: var(--breadcrumb-color);
+	color: var(--breadcrumb-text-color);
 }
 
-.breadcrumbs a:hover{
-	color: var(--links-visited-color);
+
+.breadcrumbs a:hover,
+.breadcrumbs a span:hover{
+	color: var(--breadcrumb-text-h-color);
 	font-weight: 900;
 }
 
@@ -1116,7 +1128,7 @@ iframe#map {
   
   .active, .address:hover {
 	background-color: var(--gradient-first-color-hover);
-	color: var(--secondary-color);
+	color: var(--breadcrumb-text-color);
   }
   
   .panel {
