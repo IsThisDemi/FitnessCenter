@@ -1286,6 +1286,7 @@ iframe#map {
 .adminform input,.adminform textarea,.adminform select{
 	align-self:start;
 	grid-column: 2;
+	background-color: var(--primary-color);
 }
 .adminform label{
 	align-self:start;

@@ -119,7 +119,7 @@ function genera_header_param($pagina,$param){
 	// genera breadcrumb nel formato genitore/figlio/.....		
 	while($parent&&$parent!="#"){//verifica il raggiungimento della radice
 		// aggiunge genitore/ a breadrumbs in formato figlio/.....
-		$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> <span aria-hidden='true'></span>" . $breadcrumb;
+		$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> <span aria-hidden='true'>></span>" . $breadcrumb;
 		$parent = $genitore_pagine[$parent];
 	}
 	$output= str_replace("<MENU/>",$menu,$template);

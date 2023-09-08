@@ -120,7 +120,7 @@ if($DisplayMessage!=""){
             <label for="link_immagine" lang="it">Link immagine</label>    
             <input id="link_immagine" type="text" placeholder="image.png" name="link_immagine" required />
             <label for="alt_immagine" lang="it">Alt text immagine</label>    
-            <textarea id="alt_immagine" name="alt_immagine" rows="1" cols="25" required>
+            <textarea id="alt_immagine" name="alt_immagine" rows="4" cols="25" required>
                 Breve descrizione dell' immagine
             </textarea>
         </fieldset>
