@@ -26,6 +26,7 @@ $link_pagine["<span lang='en'>login</span>"]="login.php";
 
 $link_pagine["<span lang='en'>admin</span>"]="adminpage.php";
 $link_pagine["inserimento corsi"]="inserimento_corsi.php";
+$link_pagine["modifica corso"]="edit_corso.php";
 $link_pagine["404"]="404.php";
 $link_pagine["500"]="500.php";
 
@@ -51,6 +52,7 @@ $genitore_pagine["corso"]="categoria";
 $genitore_pagine["Contattaci"]="<span lang='en'>home</span>";
 $genitore_pagine["<span lang='en'>admin</span>"]="<span lang='en'>login</span>";
 $genitore_pagine["inserimento corsi"]="<span lang='en'>admin</span>";
+$genitore_pagine["modifica corso"]="<span lang='en'>admin</span>";
 
 $genitore_pagine["corso"]="categoria";
 $genitore_pagine["area_utente"]="<span lang='en'>login</span>";

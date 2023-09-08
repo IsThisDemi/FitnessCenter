@@ -32,10 +32,10 @@ else
             $durata=htmlentities(trim($_POST["durata"]));
             $calorie=htmlentities(trim($_POST["calorie"]));
             $calzature=htmlentities(trim($_POST["equipaggiamento_calzature"]));
-            $forza=isset($_POST["calzature"]);
+            $forza=isset($_POST["forza"]);
             $equilibrio=isset($_POST["equilibrio"]);
             $resistenza=isset($_POST["resistenza"]);
-            $stabilita=isset($_POST["stabilita"]);
+            $stabilita=isset($_POST["stabilità"]);
             $tappetino=isset($_POST["tappetino"]);
             $asciugamano=isset($_POST["asciugamano"]);
             $borraccia=isset($_POST["borraccia"]);
