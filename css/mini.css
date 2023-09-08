@@ -227,6 +227,28 @@ footer {
 
 /* 
 ====================================================
+						CORSI
+==================================================== 
+*/
+
+.titolo_corsi{
+	font-size: 2.5em;
+}
+
+#corsi_for_mobile {
+	margin: 0.5em;
+}
+
+#corsi_titolo_testo,
+#categoria_titolo_testo {
+	margin: 0 0.5em;
+	font-size: 1.1em;
+	line-height: 1.1em;
+	padding: 0.1em;
+}
+
+/* 
+====================================================
 						CLUBS
 ==================================================== 
 */

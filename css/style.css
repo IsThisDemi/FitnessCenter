@@ -18,14 +18,14 @@
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
 
-	--forza: #d30700;
-	--forza-text: white;
-	--equilibrio: #916f00;
-	--equilibrio-text: white;
-	--resistenza: #025F26;
-	--resistenza-text: white;
-	--stabilita: #4b4ff7;
-	--stabilita-text: white;
+	--forza: #F5706B;
+	--forza-text: black;
+	--equilibrio: #E3B726;
+	--equilibrio-text: black;
+	--resistenza: #0CC051;
+	--resistenza-text: black;
+	--stabilita: #8F91FF;
+	--stabilita-text: black;
 
 	--box-shadow-1: #282828;
 	--box-shadow-2: #1b1b1b;
@@ -36,7 +36,7 @@
 
 	--error-color: #00328f;
 	--breadcrumb-text-color: #FF8080;
-	--breadcrumb-text-h-color: #000F4D;
+	--breadcrumb-text-h-color: #A1ABF7;
 	--breadcrumb-bg-color: #1b1b1b;
 
 	--red: #F47676;
@@ -71,13 +71,13 @@
 		--scrollbar-background: #282828;
 		--disabled-color: #888888;
 	
-		--forza: #d30700;
+		--forza: #A42323;
 		--forza-text: white;
-		--equilibrio: #916f00;
+		--equilibrio: #6B5200;
 		--equilibrio-text: white;
 		--resistenza: #025F26;
 		--resistenza-text: white;
-		--stabilita: #4b4ff7;
+		--stabilita: #2024EE;
 		--stabilita-text: white;
 
 		--box-shadow-1: #cecece;
@@ -88,7 +88,7 @@
 		--gradient-blurry : #ffffffd8;
 
 		--error-color: #fbff00;
-		--breadcrumb-text-color: #800000;
+		--breadcrumb-text-color: #561010;
 		--breadcrumb-text-h-color: #1644fd;
 		--breadcrumb-bg-color: #B8B8B8;
 
@@ -480,7 +480,6 @@ nav ul {
 	padding: 0.5em;
 	font-size: 1.3em;
 	line-height: 1.3em;
-	
 }
 
 /* 
@@ -730,13 +729,27 @@ nav ul {
 	background-color: #ffffffd8;
 	background-color: var(--gradient-blurry);
 	margin: 1em;
+	padding: 0.2em 0;
+}
+
+#corsi_titolo_testo,
+#categoria_titolo_testo {
+	color: var(--text-color);
+	margin: 1em;
+	padding: 0.5em;
+	font-size: 1.3em;
+	line-height: 1.3em;
 }
 
 .titolo_corsi {
 	color: var(--text-color);
 	font-size: 4em;
 	line-height: 0.9em;
-	margin: 0.5em;
+	margin: 0.25em;
+}
+
+.titolo_corsi  .testo_rosso {
+	color: var(--text-color);
 }
 
 .etichetta_corsi {
@@ -1019,6 +1032,10 @@ nav ul {
 	background: var(--gradient-second-color);
 }
 
+#corsi h3 {
+	padding-top: 0.5em;
+}
+
 /* 
 ====================================================
 						CLUBS
@@ -1093,7 +1110,7 @@ iframe#map {
 
 #addresses_container {
 	grid-area: l;
-	background-color: var(--gradient-second-color);
+	background-color: var(--header-color);
 	height: 600px;
 	margin : 1em 0em 1em 1em;
 	text-overflow: ellipsis;
@@ -1108,7 +1125,6 @@ iframe#map {
 
 #addresses_list {
 	margin-top: 1em;
-	height: 89%;
 	overflow: scroll;
 	overflow-x: hidden;
 }
@@ -1313,6 +1329,7 @@ iframe#map {
 .infopage dt{
 	/*color: var(--alternative-text-color);*/
 	background-color: var(--header-color);
+	padding: 0.5em;
 }
 .infopage{
 	display: grid;
