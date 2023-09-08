@@ -49,89 +49,44 @@ if (isset($_GET["action"])) {
         exit; // Fine script
 
     } else {
-            header('Location: login.php'); // Reindirizzamento
-            exit; // Fine script
+        header('Location: login.php'); // Reindirizzamento
+        exit; // Fine script
     }
 }
-?>
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <title>Login FitnessCenter</title>
-    <meta charset="utf-8"/>
-    <meta name="keywords" content="Login FitnessCenter"/>
-    <meta name="description" content="pagina di login per FitnessCenter" />
-	<meta name="author" content=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link type="text/css"  rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/mini.css" media="screen and (max-width:768px)" />
-	<link rel="stylesheet" media="print" href="css/print.css" type="text/css"/>
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
-</head>
-<body>
-
-<?php 
-
-    echo genera_header("<span lang='en'>login</span>");
-
-?>
-<div id="content" class="loginpage">
-<?php 
+    //Includo file html
+    $paginaHTML = file_get_contents("html/login.html");
+    $login_content = file_get_contents("html/login_content.html");
+    $login_form = file_get_contents("html/login_form.html");
+    //Includo footer
+    $footer = file_get_contents("utilityphp/footer.php");
+    //Gererazione header
+    $header = genera_header("<span lang='en'>login</span>");
 
     $user=get_logged_user();
+    $admin = '';
+    $form = '';
+    $content = '';
     if($user&&$user!=""){
-?>  <p id='logoutmessage'> sei attualmente loggato come <?php echo $user ?></p>
-    <form class="loginform" action="login.php?action=logout" method="post" id="login" >
-        <button type="submit" lang='eng'> log out</button>
-    </form>
-<?php
         if($_SESSION["admin"]){
-    ?>  
-        <a href=adminpage.php class="adminlink">accedi all area di amministrazione </a>
-    <?php
+            $admin = '<a href=adminpage.php class="adminlink">accedi all area di amministrazione </a>';
         }
+        $campi_replace_content = array("%user%", "%admin%");
+        $valori_replace_content = array($user, $admin);
+        $login_content = str_replace($campi_replace_content, $valori_replace_content, $login_content);
+        $content = $login_content;
+    }else{
+        if($DisplayMessage!=""){
+            $DisplayMessage = '<p class="formresult">'.$DisplayMessage.'</p>';
+        }
+        $campi_replace_form = array("%messaggio%");
+        $valori_replace_form = array($DisplayMessage);
+        $login_form = str_replace($campi_replace_form, $valori_replace_form, $login_form);
+        $form = $login_form;
     }
-    else{
+
+    //Sostituzione dei campi della pagina html con i valori				
+    $campi_replace = array("%header%", "%footer%", "%content%", "%form%");
+    $valori_replace = array($header, $footer, $content, $form);
+    $paginaHTML = str_replace($campi_replace, $valori_replace, $paginaHTML);
+    echo $paginaHTML;
 ?>
-    <ul class="topselector">
-        <li><button type="button" id=loginselector class="selected" value="login">login</button></li>
-        <li><button type="button" id=registerelector>register</button></li>
-    </ul>
-    <form class="loginform" action="login.php?action=login" method="post" id="login" >
-        <label for="username_login" lang="en">Username o mail</label>
-        <input id="username_login" type="text" placeholder=" Username" name="username_login" required />
-
-        <label for="password_login" lang="en">Password </label>
-        <input id="password_login" type="password" placeholder=" Password" name="password_login" required />
-
-        <input type="submit" name="login" value="Accedi">
-    </form>
-    <form class="loginform hidden" action="login.php?action=register" method="post" id="registra">
-        <label for="username_registra" lang="en">Username</label>
-        <input id="username_registra" type="text" placeholder=" Username" name="username_registra" required />
-
-        <label for="email_registra" lang="en">Email</label>
-        <input id="email_registra" type="email" placeholder=" email@provider.com" name="email_registra" required />
-    
-        <label for="password_registra" lang="en">Password</label>
-        <input id="password_registra" type="password" placeholder=" Password" name="password_registra" required />
-        <input type="submit" name="registra" value="Registra">
-    </form>
-    
-<?php
-    if($DisplayMessage!=""){
-        echo '<p class="formresult">';
-        echo $DisplayMessage;
-        echo '</p>';
-    }
-    }
-?>    
-</div>
-
-<?php 
-    include_once "utilityphp/footer.php";
-?>
-
-<script src="js/login.js"> </script>
-</body>
-</html>
