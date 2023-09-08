@@ -49,6 +49,7 @@ if (isset($_GET["action"])) {
 	<meta name="author" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link type="text/css"  rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mini.css" media="screen and (max-width:768px)" />
 	<link rel="stylesheet" media="print" href="css/print.css" type="text/css"/>
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
 </head>
@@ -109,8 +110,13 @@ if (isset($_GET["action"])) {
         echo '</p>';
     }
     }
-    
 ?>    
 </div>
+
+<?php 
+    include_once "utilityphp/footer.php";
+?>
+
 <script src="js/login.js"> </script>
 </body>
+</html>
