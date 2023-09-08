@@ -1166,14 +1166,15 @@ iframe#map {
 	text-decoration: none;
 }
 
-.address::after {
+.address_span::after {
 	content: "Apri";
 	float: right;
 	font-size: 0.7em;
 }
 
-.active::after {
+.active .address_span::after {
 	content: "Chiudi";
+	color: var(--breadcrumb-text-color);
 } 
   
 .active, .address:hover {

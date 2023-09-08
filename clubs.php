@@ -24,7 +24,8 @@
 		if($clubs != null) {
 
 			foreach ($clubs as $club) {
-				$stringa_clubs .= '<a class="address" href="' . $club['link'] . '" target="map">' . $club['nome'] . '</a>'
+				$stringa_clubs .= '<a class="address" href="' . $club['link'] . '" target="map">' . $club['nome'] 
+								. '<span class="address_span" aria-hidden="true"></span></a>'
 								. '<div class="panel">'
 								. '<p>' . $club['info'] . '</p>'
 								. '</div>';
