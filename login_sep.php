@@ -65,7 +65,6 @@ if (isset($_GET["action"])) {
     $user=get_logged_user();
     $admin = '';
     $form = '';
-    $content = '';
     if($user&&$user!=""){
         if($_SESSION["admin"]){
             $admin = '<a href=adminpage.php class="adminlink">accedi all area di amministrazione </a>';
@@ -73,7 +72,6 @@ if (isset($_GET["action"])) {
         $campi_replace_content = array("%user%", "%admin%");
         $valori_replace_content = array($user, $admin);
         $login_content = str_replace($campi_replace_content, $valori_replace_content, $login_content);
-        $content = $login_content;
     }else{
         if($DisplayMessage!=""){
             $DisplayMessage = '<p class="formresult">'.$DisplayMessage.'</p>';
@@ -86,7 +84,7 @@ if (isset($_GET["action"])) {
 
     //Sostituzione dei campi della pagina html con i valori				
     $campi_replace = array("%header%", "%footer%", "%content%", "%form%");
-    $valori_replace = array($header, $footer, $content, $form);
+    $valori_replace = array($header, $footer, $login_content, $form);
     $paginaHTML = str_replace($campi_replace, $valori_replace, $paginaHTML);
     echo $paginaHTML;
 ?>
