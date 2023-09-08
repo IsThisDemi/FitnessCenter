@@ -1,92 +1,60 @@
-<?php 
-require_once "utilityphp/header.php";
-require_once "utilityphp/corsi_utilities.php";
-if(!isset($_SESSION["admin"])||!$_SESSION["admin"]){
-    $_SESSION["prev_page"]="adminpage.php";
-    header("location:login.php");
-}
-else
-{   $result="";
-    if (isset($_GET["action"])) {
-        if($_GET["action"]="delete"&&isset($_GET["id"]))
-        {
-            if(RimuoviCorso($_GET["id"])){
-                $result="corso eliminato";
-            }
-            else{
-                $result="errore backend";
-            }
-        }
-    }
-    ?>
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <title>Admin FitnessCenter</title>
-    <meta charset="utf-8"/>
-    <meta name="description" content="pagina di amministrazione per FitnessCenter" />
-	<meta name="author" content=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link type="text/css"  rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" media="print" href="css/print.css" type="text/css"/>
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
-</head>
-<body>
-
-<?php 
-
-    echo genera_header("<span lang='en'>admin</span>");
-    $corsi;
-    $categorie;
-    if(GetCorsi($corsi)!="success"||!$corsi||GetCategorie($categorie)!="success"||!$categorie){
-
-        ?>
-
-            <p>errore connessione o database</p>
-        </body>
-        
-        <?php 
-    }
-    else{
-
-?>
-<div id="content" class="adminpage">
-    <a href="inserimento_corsi.php">Inserisci corso</a>
-    <?php
-    if($result!=""){
-        echo '<p class="formresult">';
-        echo $result;
-        echo '</p>';
-    }
-?>
-    <table id="lista_corsi">
-        <tr>
-            <th scope=col>nome corso</th>
-            <th scope=col>categoria</th>
-            <th scope=col>descrizione</th>
-            <th scope=col>intensita</th>
-            <th scope=col>durata</th>
-            <th scope=col>actions</th>
-        </tr>
-        <?php
-        foreach($corsi as $corso){
-            echo "<tr>";
-            echo "<td>".$corso["nome_corso"]."</td>";
-            echo "<td>".$categorie[$corso["id_categoria"]]."</td>";
-            echo "<td>".$corso["descrizione"]."</td>";
-            echo "<td>".$corso["intensita"]."</td>";
-            echo "<td>".$corso["durata"]."</td>";
-            echo "<td><a href='adminpage.php?action=delete&id=".$corso["id_corso"]."'>elimina</a></td>";
-            echo "</tr>";
-        }
-        
-        ?>
-    </table>
-
-</div>
-
-</body>
 <?php
+    session_start();     
+	require_once "utilityphp/header.php";
+    require_once "utilityphp/corsi_utilities.php";
+    if(!isset($_SESSION["admin"])||!$_SESSION["admin"]){
+        $_SESSION["prev_page"]="adminpage.php";
+        header("location:login.php");
     }
-}
+    else
+    {   
+        $result="";
+        if (isset($_GET["action"])) {
+            if($_GET["action"]="delete"&&isset($_GET["id"]))
+            {
+                if(RimuoviCorso($_GET["id"])){
+                    $result="corso eliminato";
+                }
+                else{
+                    $result="errore backend";
+                }
+            }
+        }
+        //Includo file html
+        $paginaHTML = file_get_contents("html/admin_page.html");
+        $corsoHTML = file_get_contents("html/admin_corso.html");
+        //Includo footer
+        $footer = file_get_contents("utilityphp/footer.php");
+        //Gererazione header
+        $header = genera_header("<span lang='en'>admin</span>");
+
+        $corsi;
+        $categorie;
+
+        if(GetCorsi($corsi)!="success"||!$corsi||GetCategorie($categorie)!="success"||!$categorie){
+            echo '<p>errore connessione o database</p>';
+        }
+        else{
+            if($result!=""){
+                $result='<p class="formresult">'.$result.'</p>';
+            }
+            $listaCorsi = "";
+            foreach($corsi as $corso){
+                $corsoHTML = file_get_contents("html/admin_corso.html");
+                //Sostituzione dei campi della pagina corpo_admin con i valori	
+                $campi_replace_corso = array("%nome_corso%" , "%id_categoria%" , "%descrizione%" , "%intensita%" , "%durata%" , "%id_corso%");
+                $valori_replace_corso = array($corso["nome_corso"] , $categorie[$corso["id_categoria"]], $corso["descrizione"], $corso["intensita"], $corso["durata"], $corso["id_corso"]);
+                $corsoHTML = str_replace($campi_replace_corso, $valori_replace_corso, $corsoHTML);
+                //echo $corsoHTML."<br>";
+                $listaCorsi .= $corsoHTML;
+            }
+            
+
+            //Sostituzione dei campi della pagina html con i valori				
+            $campi_replace = array("%header%", "%footer%", "%notifiche%", "%lista_corsi%");
+            $valori_replace = array($header, $footer, $result, $listaCorsi);
+            $paginaHTML = str_replace($campi_replace, $valori_replace, $paginaHTML);
+            echo $paginaHTML;
+        }
+    }
 ?>
