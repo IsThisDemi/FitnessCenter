@@ -17,7 +17,7 @@ if (isset($_GET["action"])) {
                     header("location:".$_SESSION["prev_page"]);
                 }
                 else{
-                    header("location:index.php");
+                    header("location:login.php");
                 }
             }
             else{
