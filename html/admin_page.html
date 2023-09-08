@@ -19,15 +19,19 @@
     <table id="lista_corsi" summary="Nella tabella viene fornita la lista dei corsi attualmente visualizzabili sul sito. Ogni riga descive 
     un corso tramite l'indicazione del suo nome, della categoria di appartenenza, una breve descizione, informazione sull'intensità e la durata, 
     la/le azioni eseguibili " >
-        <tr>
-            <th scope=col>Nome</th>
-            <th scope=col>Categoria</th>
-            <th scope=col>Descrizione</th>
-            <th scope=col>Intensità</th>
-            <th scope=col>Durata</th>
-            <th scope=col>Azioni</th>
-        </tr>
-        %lista_corsi%
+    <caption>Lista dei corsi</caption>>
+        <thead>
+            <tr>
+                <th scope=col>Nome</th>
+                <th scope=col>Categoria</th>
+                <th scope=col>Intensità</th>
+                <th scope=col>Durata</th>
+                <th scope=col>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            %lista_corsi%
+        </tbody>
     </table>
 </div>
 %footer%

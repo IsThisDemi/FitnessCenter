@@ -42,8 +42,8 @@
             foreach($corsi as $corso){
                 $corsoHTML = file_get_contents("html/admin_corso.html");
                 //Sostituzione dei campi della pagina corpo_admin con i valori	
-                $campi_replace_corso = array("%nome_corso%" , "%id_categoria%" , "%descrizione%" , "%intensita%" , "%durata%" , "%id_corso%");
-                $valori_replace_corso = array($corso["nome_corso"] , $categorie[$corso["id_categoria"]], $corso["descrizione"], $corso["intensita"], $corso["durata"], $corso["id_corso"]);
+                $campi_replace_corso = array("%nome_corso%" , "%id_categoria%" , "%intensita%" , "%durata%" , "%id_corso%");
+                $valori_replace_corso = array($corso["nome_corso"] , $categorie[$corso["id_categoria"]], $corso["intensita"], $corso["durata"], $corso["id_corso"]);
                 $corsoHTML = str_replace($campi_replace_corso, $valori_replace_corso, $corsoHTML);
                 //echo $corsoHTML."<br>";
                 $listaCorsi .= $corsoHTML;
