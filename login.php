@@ -48,9 +48,6 @@ if (isset($_GET["action"])) {
         header('Location: login.php'); // Reindirizzamento
         exit; // Fine script
 
-    } else {
-        header('Location: login.php'); // Reindirizzamento
-        exit; // Fine script
     }
 }
     //Includo file html
