@@ -228,7 +228,7 @@ class Connection{
     public function DeleteCorso($id){
 
         $connection=$this->conn;
-        $query='Delete FROM corsi where id=?';
+        $query='Delete FROM corsi where id_corso=?';
         $preparedQuery = $connection->prepare($query);
         $preparedQuery->bind_param(
             's',

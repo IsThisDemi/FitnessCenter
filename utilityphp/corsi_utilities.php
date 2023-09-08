@@ -74,7 +74,7 @@ function RimuoviCorso($id){
     if(!$connOK) {
         return "errore di connessione";
     }
-    $corsi=$connessione1->DeleteCorso();
+    $corsi=$connessione1->DeleteCorso($id);
     $connessione1->closeDBConnection();
     return "success";
 }
