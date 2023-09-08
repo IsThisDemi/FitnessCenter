@@ -103,7 +103,7 @@ function genera_header_param($pagina,$param){
 		}
 		$categoria=$corso["id_categoria"];
 		$breadcrumb="<a href='".$link_pagine["categoria"]."?".$categoria."'>" . $categorie[$categoria] .
-		 "</a> <span aria-hidden='true'></span><span id=current_page>" . $corso["nome_corso"] . "</span>";
+		 "</a> <span aria-hidden='true'></span>><span id=current_page>" . $corso["nome_corso"] . "</span>";
 		$parent=$genitore_pagine["categoria"];
 	}
 	elseif ($pagina=="categoria") {
