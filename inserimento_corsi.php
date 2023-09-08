@@ -10,7 +10,7 @@ if(!isset($_SESSION["admin"])||!$_SESSION["admin"]){
 else
 {
     if (isset($_GET["action"])) {
-        print_r($_POST);
+        //print_r($_POST);
         //id_corso`, `nome_corso`, `id_categoria`, `descrizione`, `immagine`, `alt`, `forza`, `equilibrio`, `resistenza`, `stabilità`, `intensita`, `durata`, `calorie`, `asciugamano`, `borraccia`, `calzini`, `tappetino`, `scarpe_sportive`, `guantoni`, `capelli_raccolti`, `abbigliamento_outdoor`, `scarpe_outdoor`, `accappatoio`, `cuffia`, `costume`, `ciabatte`, `piedi_nudi`
         if($_GET["action"]=="insert"
         &&isset($_POST["nome_corso"])
