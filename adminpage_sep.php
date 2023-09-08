@@ -22,7 +22,6 @@
         }
         //Includo file html
         $paginaHTML = file_get_contents("html/admin_page.html");
-        $corpoHTML = file_get_contents("html/admin_corpo.html");
         $corsoHTML = file_get_contents("html/admin_corso.html");
         //Includo footer
         $footer = file_get_contents("utilityphp/footer.php");
