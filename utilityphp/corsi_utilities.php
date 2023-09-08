@@ -19,7 +19,7 @@ function GetCorsi(&$corsi){
     if(!$connOK) {
         return "errore di connessione";
     }
-    $corsi=$connessione1->GetCategorie();
+    $corsi=$connessione1->GetCorsi();
     $connessione1->closeDBConnection();
     return "success";
 }
@@ -67,4 +67,14 @@ function InserisciCorso($nome_corso,$id_categoria,$descrizione,$immagine,$alt,$f
         }
     $connessione1->closeDBConnection();
     return "errore inserimento database";
+}
+function RimuoviCorso($id){
+    $connessione1 = new Connection();
+    $connOK = $connessione1->apriConnessione();
+    if(!$connOK) {
+        return "errore di connessione";
+    }
+    $corsi=$connessione1->DeleteCorso();
+    $connessione1->closeDBConnection();
+    return "success";
 }
