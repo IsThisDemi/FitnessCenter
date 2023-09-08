@@ -170,6 +170,21 @@ class Connection{
         $preparedQuery->close();
         return $categorie;
     }
+    public function GetCorsi(){
+        $connection=$this->conn;
+        $query='SELECT * FROM corsi';
+        $preparedQuery = $connection->prepare($query);
+        $preparedQuery->execute();
+        $res=$preparedQuery->get_result();
+        $categorie=[];
+        $i=0;
+        while($row = $res->fetch_assoc()){
+            $categorie[$i]=$row;
+            $i++;
+        }
+        $preparedQuery->close();
+        return $categorie;
+    }
     public function InsertCorso($nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilità,$intensita,$durata,$calorie,$asciugamano,$borraccia,$calzini,$tappetino,$scarpesportive,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$scarpeoutdoor,$accappatoio,$cuffia,$costume,$ciabatte,$piedinudi){
 
         $connection=$this->conn;

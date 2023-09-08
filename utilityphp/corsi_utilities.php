@@ -19,7 +19,7 @@ function GetCorsi(&$corsi){
     if(!$connOK) {
         return "errore di connessione";
     }
-    $corsi=$connessione1->GetCategorie();
+    $corsi=$connessione1->GetCorsi();
     $connessione1->closeDBConnection();
     return "success";
 }

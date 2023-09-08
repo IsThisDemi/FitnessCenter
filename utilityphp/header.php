@@ -1,4 +1,5 @@
 <?php 
+require_once "utilityphp/corsi_utilities.php";
 if(!isset($_SESSION)){
 	session_start();
 }
@@ -18,10 +19,11 @@ $link_pagine["Contattaci"]="JoinUS.php";
 $link_pagine["<span lang='en'>home</span>"]="index.php";
 $link_pagine["palestre"]="clubs.php";
 $link_pagine["offerta corsi"]="offerta_corsi.php";
-$link_pagine["categoria"] = "history.back()";
-$link_pagine["corso"] = "corso.php";
+$link_pagine["corso"]="corso.php";
+$link_pagine["categoria"]="categoria.php";
 $link_pagine["<span lang='en'>more</span>"]="info.php";
 $link_pagine["<span lang='en'>login</span>"]="login.php";
+/*
 $link_pagine["<span lang='en'>Balance</span>"]="categoria.php?id=1";
 $link_pagine["<span lang='en'>Cycle</span>"]="categoria.php?id=2";
 $link_pagine["<span lang='en'>Dance</span>"]="categoria.php?id=3";
@@ -30,6 +32,7 @@ $link_pagine["<span lang='en'>Running</span>"]="categoria.php?id=5";
 $link_pagine["<span lang='en'>Strenght</span>"]="categoria.php?id=6";
 $link_pagine["<span lang='en'>Water</span>"]="categoria.php?id=7";
 $link_pagine["<span lang='en'>Yoga</span>"]="categoria.php?id=8";
+*/
 $link_pagine["<span lang='en'>admin</span>"]="adminpage.php";
 $link_pagine["404"]="404.php";
 $link_pagine["500"]="500.php";
@@ -52,51 +55,19 @@ $genitore_pagine["offerta corsi"]="<span lang='en'>home</span>";
 $genitore_pagine["<span lang='en'>more</span>"]="<span lang='en'>home</span>";
 $genitore_pagine["<span lang='en'>login</span>"]="<span lang='en'>home</span>";
 $genitore_pagine["categoria"]="offerta corsi";
+$genitore_pagine["corso"]="categoria";
 $genitore_pagine["Contattaci"]="<span lang='en'>home</span>";
 $genitore_pagine["<span lang='en'>admin</span>"]="<span lang='en'>login</span>";
-
-//Genitore e figli delle categorie
-$genitore_pagine["<span lang='en'>Balance</span>"] = "offerta corsi";
-$genitore_pagine["<span lang='en'>Cycle</span>"] = "offerta corsi";
-$genitore_pagine["<span lang='en'>Dance</span>"] = "offerta corsi";
-$genitore_pagine["<span lang='en'>Functional</span>"] = "offerta corsi";
-$genitore_pagine["<span lang='en'>Running</span>"] = "offerta corsi";
-$genitore_pagine["<span lang='en'>Strenght</span>"] = "offerta corsi";
-$genitore_pagine["<span lang='en'>Water</span>"] = "offerta corsi";
-$genitore_pagine["<span lang='en'>Yoga</span>"] = "offerta corsi";
-
-//Genitore e figli dei corsi
-$genitore_pagine["<span lang='en'>Flexability</span>"] = "<span lang='en'>Balance</span>";
-$genitore_pagine["<span lang='en'>Pancafit</span>"] = "<span lang='en'>Balance</span>";
-$genitore_pagine["<span lang='en'>Postural</span>"] = "<span lang='en'>Balance</span>";
-$genitore_pagine["<span lang='en'>Cycle Body</span>"] = "<span lang='en'>Cycle</span>";
-$genitore_pagine["<span lang='en'>Cycle Race</span>"] = "<span lang='en'>Cycle</span>";
-$genitore_pagine["<span lang='en'>Cycle Spirit</span>"] = "<span lang='en'>Cycle</span>";
-$genitore_pagine["<span lang='en'>Aero Dance</span>"] = "<span lang='en'>Dance</span>";
-$genitore_pagine["<span lang='en'>Step</span>"] = "<span lang='en'>Dance</span>";
-$genitore_pagine["<span lang='en'>Zumba</span>"] = "<span lang='en'>Dance</span>";
-$genitore_pagine["<span lang='en'>Boxe</span>"] = "<span lang='en'>Functional</span>";
-$genitore_pagine["<span lang='en'>Calisthenics</span>"] = "<span lang='en'>Functional</span>";
-$genitore_pagine["<span lang='en'>Grid</span>"] = "<span lang='en'>Functional</span>";
-$genitore_pagine["<span lang='en'>Long Run</span>"] = "<span lang='en'>Running</span>";
-$genitore_pagine["<span lang='en'>Speed Run</span>"] = "<span lang='en'>Running</span>";
-$genitore_pagine["<span lang='en'>Walking</span>"] = "<span lang='en'>Running</span>";
-$genitore_pagine["<span lang='en'>Bars</span>"] = "<span lang='en'>Strenght</span>";
-$genitore_pagine["<span lang='en'>Full Body</span>"] = "<span lang='en'>Strenght</span>";
-$genitore_pagine["<span lang='en'>Sculpt</span>"] = "<span lang='en'>Strenght</span>";
-$genitore_pagine["<span lang='en'>Water Endurance</span>"] = "<span lang='en'>Water</span>";
-$genitore_pagine["<span lang='en'>Water Hydrobike</span>"] = "<span lang='en'>Water</span>";
-$genitore_pagine["<span lang='en'>Water Reax Raft</span>"] = "<span lang='en'>Water</span>";
-$genitore_pagine["<span lang='en'>Water Tone</span>"] = "<span lang='en'>Water</span>";
-$genitore_pagine["<span lang='en'>Yoga Align</span>"] = "<span lang='en'>Yoga</span>";
-$genitore_pagine["<span lang='en'>Yoga Calm</span>"] = "<span lang='en'>Yoga</span>";
-$genitore_pagine["<span lang='en'>Yoga Strength</span>"] = "<span lang='en'>Yoga</span>";
 
 $genitore_pagine["corso"]="categoria";
 $genitore_pagine["area_utente"]="<span lang='en'>login</span>";
 
-/// Genera l'header di una data pagina
 function genera_header($pagina){
+	return genera_header_param($pagina,0);
+}
+
+/// Genera l'header di una data pagina
+function genera_header_param($pagina,$param){
 	global $template, $link_pagine, $fl_pagine, $navmenu, $genitore_pagine;
 	$menu='<ul class="navmenu">';
 	$i = 1;
@@ -117,21 +88,46 @@ function genera_header($pagina){
     }
 	$menu=$menu.'</ul>';
 	$output= str_replace("<MENU/>",$menu,$template);
-	$breadcrumb="<span id=current_page>" . $pagina . "</span>"; 
-	$parent = $genitore_pagine[$pagina];
+	$breadcrumb="";
+	$parent=null;
+	if($pagina=="corso"){
+		$corsi;
+		GetCorsi($corsi);
+		$categorie;
+		GetCategorie($categorie);
+		$corso=null;
+		$notfound=true;
+		for($i=0;$i<sizeof($corsi)&&$notfound;$i++){
+			if($corsi[$i]["id_corso"]==$param){
+				$corsi[$i]["id_corso"];
+				$corso=$corsi[$i];
+				$notfound=false;
+			}
+		}
+		if($notfound){
+			header("location: offerta_corsi.php");
+        	exit;
+		}
+		$categoria=$corso["id_categoria"];
+		$breadcrumb="<a href='".$link_pagine["categoria"]."?".$categoria."'>" . $categorie[$categoria] .
+		 "</a> <span aria-hidden='true'></span><span id=current_page>" . $corso["nome_corso"] . "</span>";
+		$parent=$genitore_pagine["categoria"];
+	}
+	elseif ($pagina=="categoria") {
+		$categorie;
+		GetCategorie($categorie);
+		$breadcrumb="<span id=current_page>" . $categorie[$param] . "</span>";
+		$parent = $genitore_pagine[$pagina];
+	}else{
+		$breadcrumb="<span id=current_page>" . $pagina . "</span>";
+		$parent = $genitore_pagine[$pagina];
+	}
 
 	// genera breadcrumb nel formato genitore/figlio/.....		
 	while($parent&&$parent!="#"){//verifica il raggiungimento della radice
 		// aggiunge genitore/ a breadrumbs in formato figlio/.....
-		if($parent == "categoria")
-		{
-			$breadcrumb = "<a href='javascript:history.back()'>" . $parent . "</a> <span aria-hidden='true'>></span>" . $breadcrumb;
-			$parent = $genitore_pagine[$parent];
-		}
-		else {
-			$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> <span aria-hidden='true'>></span>" . $breadcrumb;
-			$parent = $genitore_pagine[$parent];
-		}
+		$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> <span aria-hidden='true'></span>" . $breadcrumb;
+		$parent = $genitore_pagine[$parent];
 	}
 	$output= str_replace("<MENU/>",$menu,$template);
 	$output= str_replace("<BREADCRUMB/>",$breadcrumb,$output);
