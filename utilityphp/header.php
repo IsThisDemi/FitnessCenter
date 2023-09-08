@@ -102,14 +102,14 @@ function genera_header_param($pagina,$param){
         	exit;
 		}
 		$categoria=$corso["id_categoria"];
-		$breadcrumb="<a href='".$link_pagine["categoria"]."?".$categoria."'>" . $categorie[$categoria] .
-		 "</a> <span aria-hidden='true'></span>><span id=current_page>" . $corso["nome_corso"] . "</span>";
+		$breadcrumb="<a href='".$link_pagine["categoria"]."?".$categoria."'> <span lang='en'>" . $categorie[$categoria] .
+		 "</span></a> <span aria-hidden='true'>> </span><span id=current_page> <span lang='en'>" . $corso["nome_corso"] . "</span></span>";
 		$parent=$genitore_pagine["categoria"];
 	}
 	elseif ($pagina=="categoria") {
 		$categorie;
 		GetCategorie($categorie);
-		$breadcrumb="<span id=current_page>" . $categorie[$param] . "</span>";
+		$breadcrumb="<span id=current_page><span lang='en'>" . $categorie[$param] . "</span></span>";
 		$parent = $genitore_pagine[$pagina];
 	}else{
 		$breadcrumb="<span id=current_page>" . $pagina . "</span>";
