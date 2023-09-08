@@ -18,7 +18,7 @@ class CardCategoria {
 
     public function makeCard_categoria(){
     
-        $pagina = file_get_contents(__DIR__.'\card_categoria.html');
+        $pagina = file_get_contents(__DIR__.'/card_categoria.html');
         $pagina = str_replace('%id%',$this->id,$pagina);
         $pagina = str_replace('%categoria%',$this->nome,$pagina);
         $pagina = str_replace("%immagine_categoria%", $this->immagine, $pagina);
@@ -53,7 +53,7 @@ class CardCorso {
     }
 
     public function makeCard_corso(){
-        $pagina = file_get_contents(__DIR__ . '\card_corso.html');
+        $pagina = file_get_contents(__DIR__ . '/card_corso.html');
         $pagina = str_replace('%id_corso%', $this->id, $pagina);
         $pagina = str_replace('%corso%', $this->nome, $pagina);
         $pagina = str_replace("%immagine_corso%", $this->immagine, $pagina);
@@ -134,7 +134,7 @@ class InfoCorso
 
     public function makeInfo_corso()
     {
-        $pagina = file_get_contents(__DIR__ . '\info_corso.html');
+        $pagina = file_get_contents(__DIR__ . '/info_corso.html');
         if ($this->forza == 1) {
             $pagina = str_replace('%forza%', '<span class="testo-forza">Forza</span>', $pagina);
         } else {
