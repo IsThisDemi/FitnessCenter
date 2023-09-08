@@ -224,6 +224,19 @@ class Connection{
         $res=$preparedQuery->execute();
         $preparedQuery->close();
         return $res;
-    }    
+    }
+    public function DeleteCorso($id){
+
+        $connection=$this->conn;
+        $query='Delete FROM corsi where id=?';
+        $preparedQuery = $connection->prepare($query);
+        $preparedQuery->bind_param(
+            's',
+            $id
+        );
+        $res=$preparedQuery->execute();
+        $preparedQuery->close();
+        return $res;
+    }
 }
 ?>

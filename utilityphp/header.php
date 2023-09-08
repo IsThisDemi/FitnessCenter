@@ -23,17 +23,9 @@ $link_pagine["corso"]="corso.php";
 $link_pagine["categoria"]="categoria.php";
 $link_pagine["<span lang='en'>more</span>"]="info.php";
 $link_pagine["<span lang='en'>login</span>"]="login.php";
-/*
-$link_pagine["<span lang='en'>Balance</span>"]="categoria.php?id=1";
-$link_pagine["<span lang='en'>Cycle</span>"]="categoria.php?id=2";
-$link_pagine["<span lang='en'>Dance</span>"]="categoria.php?id=3";
-$link_pagine["<span lang='en'>Functional</span>"]="categoria.php?id=4";
-$link_pagine["<span lang='en'>Running</span>"]="categoria.php?id=5";
-$link_pagine["<span lang='en'>Strenght</span>"]="categoria.php?id=6";
-$link_pagine["<span lang='en'>Water</span>"]="categoria.php?id=7";
-$link_pagine["<span lang='en'>Yoga</span>"]="categoria.php?id=8";
-*/
+
 $link_pagine["<span lang='en'>admin</span>"]="adminpage.php";
+$link_pagine["inserimento corsi"]="inserimento_corsi.php";
 $link_pagine["404"]="404.php";
 $link_pagine["500"]="500.php";
 
@@ -58,6 +50,7 @@ $genitore_pagine["categoria"]="offerta corsi";
 $genitore_pagine["corso"]="categoria";
 $genitore_pagine["Contattaci"]="<span lang='en'>home</span>";
 $genitore_pagine["<span lang='en'>admin</span>"]="<span lang='en'>login</span>";
+$genitore_pagine["inserimento corsi"]="<span lang='en'>admin</span>";
 
 $genitore_pagine["corso"]="categoria";
 $genitore_pagine["area_utente"]="<span lang='en'>login</span>";
