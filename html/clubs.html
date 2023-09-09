@@ -16,36 +16,36 @@
 <body id="SediPage" >
 
     %header%
+    <div id="content">
+        <div id="clubs_content">
 
-    <div id="clubs_content">
-
-        <div id="search_bar">
-            <div id="search_title">
-                <p>Trova il club più vicino a te</p>
+            <div id="search_bar">
+                <div id="search_title">
+                    <p>Trova il club più vicino a te</p>
+                </div>
+                <label for="searchbar_club"></label>
+                <input id= "searchbar_club" type="text" placeholder="Inserisci città" name="searchbar_club" onkeyup="search_club()" 
+                tabindex="0" accesskey="s">
             </div>
-            <label for="searchbar_club"></label>
-            <input id= "searchbar_club" type="text" placeholder="Inserisci città" name="searchbar_club" onkeyup="search_club()" 
-            tabindex="0" accesskey="s">
-        </div>
 
-        <div id="addresses_container">
-            <h2 lang="en">FitnessCenter Clubs</h2>
-            <div id="addresses_list">
-                
-                %lista_club%
+            <div id="addresses_container">
+                <h2 lang="en">FitnessCenter Clubs</h2>
+                <div id="addresses_list">
+                    
+                    %lista_club%
 
+                </div>
             </div>
-        </div>
 
-        <div id="google_map" aria-hidden="true">
-            <iframe id="map" 
-                title="Mappa dove viene indicata la posizone geografica della palestra" name="map" 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6040205.290066971!2d7.12644935443186!3d42.33572198916995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d4fe82448dd203%3A0xe22cf55c24635e6f!2sItalia!5e0!3m2!1sit!2sit!4v1693841748280!5m2!1sit!2sit"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <div id="google_map" aria-hidden="true">
+                <iframe id="map" 
+                    title="Mappa dove viene indicata la posizone geografica della palestra" name="map" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6040205.290066971!2d7.12644935443186!3d42.33572198916995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d4fe82448dd203%3A0xe22cf55c24635e6f!2sItalia!5e0!3m2!1sit!2sit!4v1693841748280!5m2!1sit!2sit"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
     </div>
-    
     %footer%
 
     <script src="js/searchbar_sedi.js"></script>
