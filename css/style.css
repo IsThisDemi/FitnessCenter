@@ -13,7 +13,7 @@
 	--alternative-text-color: black;
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
-	--links-visited-color:#675396;
+	--links-visited-color:#c396e7;
 	--scrollbar: #585858;
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
@@ -66,7 +66,7 @@
 		--alternative-text-color: black;
 		--error-color: #C2B800;
 		--links-hover-color: #1644fd;
-		--links-visited-color:#675396;
+		--links-visited-color:#4c00ff;
 		--scrollbar: #585858;
 		--scrollbar-background: #282828;
 		--disabled-color: #888888;
@@ -275,16 +275,22 @@ nav .menu_name {
 }
 
 .breadcrumbs a,
-.breadcrumbs a span{
+.breadcrumbs a span {
 	text-transform: uppercase;
 	color: var(--breadcrumb-text-color);
 }
 
-
 .breadcrumbs a:hover,
-.breadcrumbs a span:hover{
+.breadcrumbs a:visited:hover,
+.breadcrumbs a:hover span,
+.breadcrumbs a:visited:hover span {
 	color: var(--breadcrumb-text-h-color);
 	font-weight: 900;
+}
+
+.breadcrumbs a:visited,
+.breadcrumbs a:visited span {
+	color: var(--links-visited-color);
 }
 
 .breadcrumbs #current_page{
@@ -433,6 +439,14 @@ nav ul {
 .menu_link:hover {
 	background-color: var(--header-color);
 }
+
+.menu_link:visited,
+.menu_link:visited u,
+.menu_link:visited span,
+#home_info .menu_link:visited abbr {
+	color: var(--links-visited-color);
+}
+
 
 /* 
 ---------------
@@ -967,6 +981,13 @@ nav ul {
 	text-decoration: none;
 }
 
+.project-title:visited span {
+	color: var(--links-visited-color);
+} 
+
+.project-title:visited:hover span {
+	color: var(--links-hover-color);
+}
 .project-text {
 	font-size: 1em;
 	margin: 0;
@@ -1140,13 +1161,14 @@ iframe#map {
 #addresses_list {
 	margin-top: 1em;
 	overflow: scroll;
+	height: 100%;
 	overflow-x: hidden;
 }
 
 #addresses_list::-webkit-scrollbar {
 	width: 12px;               /* width of the entire scrollbar */
 }
-  
+
 #addresses_list::-webkit-scrollbar-track {
 	background: var(--gradient-first-color-hover);        /* color of the tracking area */
 }
@@ -1183,12 +1205,21 @@ iframe#map {
 	color: var(--breadcrumb-text-color);
 } 
   
-.active, .address:hover {
+.active, 
+.address:hover,
+.address:visited:hover {
 	background-color: var(--gradient-first-color-hover);
 	color: var(--breadcrumb-text-color);
 }
 
-  
+.address:hover ::after {
+	color: var(--breadcrumb-text-color);
+}
+
+.address:visited {
+	color: var(--links-visited-color);
+}
+
 .panel {
 	font-size:0.8em;
 	padding: 0px 18px;
@@ -1202,19 +1233,52 @@ iframe#map {
 	padding: 0.5em;
 }
 /* 
----------------
-	Login And Admin
----------------
+==================================================== 
+					Login And Admin
+==================================================== 
 */
 
-.adminlink{
-	margin-top: 2rem;
+/* 
+-------------------------- 
+		Login
+--------------------------
+*/
+
+.loginpage .adminlink {
+	margin-top: 1em;
+	padding: 0.5em;
+	text-decoration: none;
+	color: var(--text-color);
+	border: 4px double var(--text-color);
+	background-color: var(--primary-color);
 }
 
-.loginpage input,.loginpage button,.loginpage input[type=email],.adminpage input,.adminpage button,.adminpage select{
+.adminlink u{
+	margin: 0;
+	padding: 0;
+}
+
+.loginpage .adminlink:hover {
+	background-color: var(--header-color);
+}
+
+.loginpage .adminlink:visited,
+.adminlink u {
+	color: var(--links-visited-color);
+}
+
+
+
+.loginpage input,.loginpage button,
+.loginpage input[type=email],
+.loginpage .adminlink,
+.adminpage input,
+.adminpage button,
+.adminpage select{
 	color: var(--text-color);
 	background-color: var(--primary-color);
 	font-size: 1.2rem;
+	font-weight: bold;
 }
 .loginpage input[type=submit]{
 	background-color: var(--secondary-color);
@@ -1225,6 +1289,7 @@ iframe#map {
 .loginpage .selected{
 	color: var(--text-color);
 	background-color: var(--secondary-color);
+	text-transform: uppercase;
 }
 .loginpage,.adminpage{
 	display: flex;
@@ -1245,6 +1310,19 @@ iframe#map {
 	min-height: 100vh;
 }
 
+#logoutmessage{	
+	padding: 0.5em 1em;
+	font-size: 1.5em;
+
+	width: 80%;
+	max-width: 40em;
+
+	border-bottom: 1px solid var(--text-color);
+	border-radius: 0;
+	/*grid-row: 1;
+	grid-column: 2;*/
+}
+
 .adminpage *{
 	padding: 0.25rem;
 	border-radius: 0.5rem;
@@ -1252,12 +1330,7 @@ iframe#map {
 	align-self: center;
 	align-content: center;
 }
-#logoutmessage{	
-	width: 80%;
-	max-width: 40rem;
-	/*grid-row: 1;
-	grid-column: 2;*/
-}
+
 .topselector{
 	width: 80%;
 	max-width: 20rem;
@@ -1284,7 +1357,9 @@ iframe#map {
 	max-width: 20rem;
 	/*grid-row: 3;
 	grid-column: 2;*/
-	margin-bottom: 3em;
+	margin: 1em;
+	border: 1px solid var(--text-color);
+	padding: 1em;
 }
 
 .submit-button{
@@ -1325,16 +1400,85 @@ iframe#map {
 }
 .formresult{
 	width: calc(min(50rem,80%));
-	/*grid-row: 4;
-	grid-column: 2;*/
+	padding: 2em 1em;
+	margin: 1em;
+	border: 1px solid var(--text-color);
+	background-color: var(--blu);
+	font-size: 1.3em
 }
 .hidden{
 	display: none;
 }
+
 /* 
----------------
-	info
----------------
+----------------------------------------------------
+			Pagina admin con Tabella Corsi
+----------------------------------------------------
+*/
+#link_insert_corso {
+	text-decoration: none;
+	color: var(--text-color);
+	border: 4px double var(--text-color);
+	margin: 1em 0;
+	padding: 0.5em;
+	font-size: 1.5em;
+	background-color: var(--primary-color);
+}
+
+#link_insert_corso:hover {
+	background-color: var(--header-color);
+}
+
+#link_insert_corso:visited,
+#link_insert_corso:visited u {
+	color: var(--links-visited-color);
+}
+
+.adminpage u{
+	margin: 0;
+	padding: 0;
+}
+
+.adminpage table, .adminpage caption, .adminpage th, .adminpage td {
+	border: 1px solid;
+	border-radius: 0em;
+}
+
+.adminpage thead, .adminpage caption {
+	margin: 0;
+	border-collapse: collapse;
+	background-color: var(--header-color);
+	font-weight: 700;
+}
+
+.adminpage table {
+	width: 90%;
+	border-collapse: collapse;
+	margin: 1em 0;
+}
+
+.adminpage th, .adminpage td {
+	padding: 0.5em 0.25em;
+}
+
+.adminpage caption {
+	padding: 0.75em 0.5em;
+	text-transform: uppercase;
+}
+
+.adminpage td a:hover {
+	color: var(--breadcrumb-text-h-color);
+}
+
+.adminpage td a:visited {
+	color: var(--links-visited-color);
+}
+
+
+/* 
+==================================================== 
+						INFO
+====================================================
 
 .infopage{
 	display: flex;

@@ -1,8 +1,10 @@
 <tr>
-<td scope="row">%nome_corso%</td>
-<td>%id_categoria%</td>
-<td>%intensita%</td>
-<td>%durata%</td>
-<td><a href='adminpage.php?action=delete&id=%id_corso%'>elimina</a>
-    <a href='edit_corso.php?id=%id_corso%'>modifica</a></td>
+    <th data-title="Corso" xml:lang="en" scope="row">%nome_corso%</th>
+    <td data-title="Categoria" xml:lang="en">%id_categoria%</td>
+    <td data-title="Intensità">%intensita%</td>
+    <td data-title="Durata">%durata% minuti</td>
+    <td data-title="Azioni">
+        <a href='edit_corso.php?id=%id_corso%'>Modifica</a>
+        <a href='adminpage.php?action=delete&id=%id_corso%'>Elimina</a>
+    </td>
 </tr>

@@ -65,7 +65,7 @@ if (isset($_GET["action"])) {
     $content = '';
     if($user&&$user!=""){
         if($_SESSION["admin"]){
-            $admin = '<a href=adminpage.php class="adminlink">accedi all area di amministrazione </a>';
+            $admin = '<a href=adminpage.php class="adminlink" tabindex="0" accesskey="a"><u>A</u>ccedi all\'area di amministrazione </a>';
         }
         $campi_replace_content = array("%user%", "%admin%");
         $valori_replace_content = array($user, $admin);

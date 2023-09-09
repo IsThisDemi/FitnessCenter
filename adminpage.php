@@ -13,10 +13,10 @@
             if($_GET["action"]="delete"&&isset($_GET["id"]))
             {
                 if(RimuoviCorso($_GET["id"])){
-                    $result="corso eliminato";
+                    $result="Corso eliminato con successo";
                 }
                 else{
-                    $result="errore backend";
+                    $result="Errore <span lang='en'>backend</span>";
                 }
             }
         }

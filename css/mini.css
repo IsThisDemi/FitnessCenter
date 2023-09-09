@@ -321,4 +321,47 @@ JOINUS
 	justify-content: center;
 }
 
+/* 
+==================================================== 
+					Login And Admin
+==================================================== 
+*/
+
+/* 
+-------------------------- 
+		Tabella Corsi
+--------------------------
+*/
+
+.adminpage table {
+	width: 80%;
+	font-size: 1.3em;
+} 
+
+.adminpage thead {
+	display: none;
+}
+
+.adminpage th {
+	background-color: var(--header-color);
+	color: var(--text-color);
+	text-transform: uppercase;
+}
+
+.adminpage tr, .adminpage th, .adminpage td {
+	display: block;
+	padding: 0.25em 0.1em 0 0.1em;
+	margin: 0;
+	white-space: normal;
+}
+
+.adminpage th, .adminpage td {
+	padding: 0.5em;
+}
+
+.adminpage th[data-title]:before,
+.adminpage td[data-title]:before {
+	content: attr(data-title) ":\00A0";
+	font-weight: bold;
+}
 
