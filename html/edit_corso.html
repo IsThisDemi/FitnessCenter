@@ -21,8 +21,8 @@
         <label for="nome_corso" lang="it">Nome</label>    
         <input id="nome_corso" type="text" placeholder="Nome corso" name="nome_corso" required value="%nome_corso%" />
         <label for="categoria_corso" lang="it">Categoria</label>
-        <select id="categoria_corso" name="categoria_corso" required value="%categoria_corso%">
-            <option value="" disabled selected>Seleziona categoria</option>
+        <select id="categoria_corso" name="categoria_corso" required>
+            <option value="" disabled>Seleziona categoria</option>
             %categorie%
         </select>
     </fieldset>
@@ -62,7 +62,7 @@
         <legend>Equipaggiamento</legend>
         <label for="calzature" lang="it">calzature</label>
         <select id="calzature" name="equipaggiamento_calzature" required>
-            <option value="" disabled selected>Seleziona calzatura</option>
+            <option value="" disabled>Seleziona calzatura</option>
             <option value="1" %calzini%>calzini</option>
             <option value="2" %scarpe_sportive%>scarpe sportive</option>
             <option value="3" %scarpe_outdoor%>scarpe outdoor</option>
