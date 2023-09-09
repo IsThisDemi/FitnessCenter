@@ -442,7 +442,7 @@ nav ul {
 .menu_link:hover u,
 .menu_link:hover span,
 #home_info .menu_link:hover abbr {
-	background-color: var(--links-hover-color);
+	color: var(--links-hover-color);
 }
 
 .menu_link:visited,
@@ -1468,8 +1468,16 @@ iframe#map {
 
 #link_insert_corso:hover {
 	background-color: var(--header-color);
+}
+
+#link_insert_corso:hover,
+#link_insert_corso:visited:hover,
+#link_insert_corso:hover u,
+#link_insert_corso:visited:hover u {
 	color:var(--links-hover-color);
 }
+
+
 
 #link_insert_corso:visited,
 #link_insert_corso:visited u {
@@ -1508,7 +1516,8 @@ iframe#map {
 	text-transform: uppercase;
 }
 
-.adminpage td a:hover {
+.adminpage td a:hover,
+.adminpage td a:visited:hover {
 	color: var(--breadcrumb-text-h-color);
 }
 
