@@ -78,7 +78,7 @@ class Connection{
         }
     }
 
-    public function editCorso($nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilita,$intensita,$durata,$calorie,$calzature,$asciugamano,$borraccia,$tappetino,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$accappatoio,$cuffia,$costume){
+    public function editCorso($id_corso,$nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilita,$intensita,$durata,$calorie,$calzature,$asciugamano,$borraccia,$tappetino,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$accappatoio,$cuffia,$costume){
         $connessione1 = new Connection();
         $connOK = $connessione1->apriConnessione();
         if(!$connOK) {
@@ -116,8 +116,7 @@ class Connection{
             $piedi_nudi = 1;
         }
         $query = "UPDATE corsi 
-        SET nome_corso, id_categoria, descrizione, immagine, alt, forza, equilibrio, resistenza, stabilità, intensita, durata, calorie, asciugamano, borraccia, calzini, tappetino, scarpe_sportive, guantoni, capelli_raccolti, abbigliamento_outdoor, scarpe_outdoor, accappatoio, cuffia, costume, ciabatte, piedi_nudi 
-        VALUES ('$nome_corso', '$id_categoria', '$descrizione', '$immagine', '$alt', '$forza', '$equilibrio', '$resistenza', '$stabilita', '$intensita', '$durata', '$calorie', '$asciugamano', '$borraccia', '$calzini', '$tappetino', '$scarpe_sportive', '$guantoni', '$capelli_raccolti', '$abbigliamento_outdoor', '$scarpe_outdoor', '$accappatoio', '$cuffia', '$costume', '$ciabatte', '$piedi_nudi')
+        SET nome_corso = '$nome_corso', id_categoria = '$id_categoria', descrizione = '$descrizione', immagine = '$immagine', alt = '$alt', forza = '$forza', equilibrio = '$equilibrio', resistenza = '$resistenza', stabilità = '$stabilita', intensita = '$intensita', durata = '$durata', calorie = '$calorie', asciugamano = '$asciugamano', borraccia = '$borraccia', calzini = '$calzini', tappetino = '$tappetino', scarpe_sportive = '$scarpe_sportive', guantoni = '$guantoni', capelli_raccolti = '$capelli_raccolti', abbigliamento_outdoor = '$abbigliamento_outdoor', scarpe_outdoor = '$scarpe_outdoor', accappatoio = '$accappatoio', cuffia = '$cuffia', costume = '$costume', ciabatte = '$ciabatte', piedi_nudi = '$piedi_nudi'
         WHERE id_corso = '$id_corso';";
         $queryResult=mysqli_query($this->conn, $query) or die("Errore in apriConnessione: ".mysqli_error($this->conn)); //esegue la query e se fallisce ritorna un errore
     }
