@@ -139,14 +139,38 @@ COMMIT;
 --
 
 CREATE TABLE `costumer` (
-    `nome` varchar(100) NOT NULL,
-    `cognome` varchar(100) NOT NULL,
-    `sesso` varchar(10) NOT NULL,
-    `dataNascita` varchar(100) NOT NULL,
-    `email` varchar(100) NOT NULL,
-    `telefono` varchar(100) NOT NULL,
-    `note` varchar(100)
-)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+  `id_costumer` int(20) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `cognome` varchar(100) NOT NULL,
+  `sesso` varchar(10) NOT NULL,
+  `dataNascita` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telefono` varchar(100) NOT NULL,
+  `note` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Indici per le tabelle scaricate
+--
+
+--
+-- Indici per le tabelle `costumer`
+--
+ALTER TABLE `costumer`
+  ADD PRIMARY KEY (`id_costumer`);
+
+--
+-- AUTO_INCREMENT per le tabelle scaricate
+--
+
+--
+-- AUTO_INCREMENT per la tabella `costumer`
+--
+ALTER TABLE `costumer`
+  MODIFY `id_costumer` int(20) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
 
 CREATE TABLE `user` (
     `id_user` int(16) NOT NULL AUTO_INCREMENT PRIMARY KEY,
