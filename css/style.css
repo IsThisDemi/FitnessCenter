@@ -47,6 +47,7 @@
 	--blu-h: #0a5da7;
 
 	--primary-button-fill-color: #65A6FB;
+	--placeholder-color: #cccccc;
 }
 
 /* Tema chiaro ========================= */
@@ -101,6 +102,7 @@
 		--blu-h: #1d8cee;
 
 		--primary-button-fill-color: #14509F;
+		--placeholder-color: #2e2e2e;
 	}
 }
 * {
@@ -1129,7 +1131,7 @@ nav ul {
 }
 
 #searchbar_club::placeholder {
-	color: var(--text-color);
+	color: var(--placeholder-color);
 	font-style: italic;
 }
 
@@ -1445,6 +1447,11 @@ iframe#map {
 }
 .adminform input[class=column2]{
 	grid-column: 4;
+}
+.adminform input::placeholder {
+	color: var(--placeholder-color);
+	font-style: italic;
+	font-size: 0.8em;
 }
 .loginform *{
 	width: 80%;
