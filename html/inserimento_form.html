@@ -1,76 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Login FitnessCenter</title>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="Login FitnessCenter"/>
+    <meta name="description" content="pagina di login per FitnessCenter" />
+	<meta name="author" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link type="text/css"  rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mini.css" media="screen and (max-width:768px)" />
+	<link rel="stylesheet" media="print" href="css/print.css" type="text/css"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+%header%
 <div id="content" class="adminpage">
     %messaggio%
-    <form class="adminform" action="inserimento_corsi.php?action=insert" method="post" id="inserisci">
+    <form class="adminform" action="edit_corso.php?action=edit&id=%id_corso%" method="post" id="inserisci">
         <fieldset>
-        <label for="nome_corso" lang="it">Nome:</label>    
-        <input id="nome_corso" type="text" placeholder="Nome corso" name="nome_corso" required />
-        <label for="categoria_corso" lang="it">Categoria:</label>
-        <select id="categoria_corso" name="categoria_corso" size="8" required>
+        <label for="nome_corso" lang="it">Nome</label>    
+        <input id="nome_corso" type="text" placeholder="Nome corso" name="nome_corso" required value="%nome_corso%" />
+        <label for="categoria_corso" lang="it">Categoria</label>
+        <select id="categoria_corso" name="categoria_corso" required>
+            <option value="" disabled>Seleziona categoria</option>
             %categorie%
         </select>
     </fieldset>
     <fieldset>
         <legend>Presentazione:</legend>
-        <label for="descrizione_corso" lang="it">Descrizione:</label>    
+        <label for="descrizione_corso" lang="it">Descrizione</label>    
         <textarea id="descrizione_corso" name="descrizione_corso" rows="4" cols="50" required>
-            Breve descrizione del corso e delle attività svolte
+            %descrizione_corso%
         </textarea>
-        <label for="link_immagine" lang="it">Link immagine:</label>    
-        <input id="link_immagine" type="text" placeholder="image.png" name="link_immagine" required />
-        <label for="alt_immagine" lang="it">Descrizione immagine:</label>    
+        <label for="link_immagine" lang="it">Link immagine</label>    
+        <input id="link_immagine" type="text" placeholder="image.png" name="link_immagine" required value="%immagine_corso%"/>
+        <label for="alt_immagine" lang="it">Alt text immagine</label>    
         <textarea id="alt_immagine" name="alt_immagine" rows="4" cols="25" required>
-            Breve descrizione dell' immagine
+            %alt_immagine_corso%
         </textarea>
     </fieldset>
     <fieldset>
         <legend>Caratteristiche</legend>
             <label for="forza"> forza</label>
-            <input type="checkbox" id="forza" name="forza" value="forza">
-            <label for="equilibrio"> equilibrio:</label>
-            <input type="checkbox" id="equilibrio" name="equilibrio" value="equilibrio">
-            <label for="resistenza">resistenza:</label>
-            <input type="checkbox" id="resistenza" name="resistenza" value="resistenza">
-            <label for="stabilità">stabilità:</label>
-            <input type="checkbox" id="stabilità" name="stabilità" value="stabilità">
-            <label for="intensita">intensita:</label>
-            <input type="number" id="intensita" name="intensita" required min="0" max="3">
+            <input type="checkbox" id="forza" name="forza" value="forza" %checked_forza%>
+            <label for="equilibrio"> equilibrio</label>
+            <input type="checkbox" id="equilibrio" name="equilibrio" value="equilibrio" %checked_equilibrio%>
+            <label for="resistenza">resistenza</label>
+            <input type="checkbox" id="resistenza" name="resistenza" value="resistenza" %checked_resistenza%>
+            <label for="stabilità">stabilità</label>
+            <input type="checkbox" id="stabilità" name="stabilità" value="stabilità" %checked_stabilita%>
+            <label for="intensita">intensita</label>
+            <input type="number" id="intensita" name="intensita" required min="0" max="3" value="%intensita_corso%">
 
-            <label for="durata">durata:</label>
+            <label for="durata">durata in minuti</label>
             <!--<input type="number" id="durata" name="durata" required>-->
-            <input type="text" id="durata" name="durata" placeholder="Durata in minuti" required>
-            <label for="calorie">calorie esercizio:</label>
-            <input type="text" id="calorie" name="calorie" placeholder="Chilocalorie bruciate" required>
+            <input type="text" id="durata" name="durata" placeholder="30-45" required value="%durata_corso%">
+            <label for="calorie">calorie esercizio</label>
+            <input type="text" id="calorie" name="calorie" required value="%calorie_corso%">
     </fieldset>
     <fieldset>
         <legend>Equipaggiamento</legend>
-        <label for="calzature" lang="it">calzature:</label>
-        <select id="calzature" name="equipaggiamento_calzature" size="5" required>
-            <option value="1">Calzini</option>
-            <option value="2">Scarpe Sportive</option>
-            <option value="3">Scarpe outdoor</option>
-            <option value="4">Ciabatte</option>
-            <option value="5">Piedi Nudi</option>
+        <label for="calzature" lang="it">calzature</label>
+        <select id="calzature" name="equipaggiamento_calzature" required>
+            <option value="" disabled>Seleziona calzatura</option>
+            <option value="1" %calzini%>calzini</option>
+            <option value="2" %scarpe_sportive%>scarpe sportive</option>
+            <option value="3" %scarpe_outdoor%>scarpe outdoor</option>
+            <option value="4" %ciabatte%>ciabatte</option>
+            <option value="5" %piedi_nudi%>piedi nudi</option>
         </select>
-            <label for="asciugamano"> asciugamano:</label>
-            <input type="checkbox" id="asciugamano" name="asciugamano" value="asciugamano">
-            <label for="borraccia"> borraccia:</label>
-            <input type="checkbox" id="borraccia" name="borraccia" value="borraccia">
-            <label for="tappetino">tappetino:</label>
-            <input type="checkbox" id="tappetino" name="tappetino" value="tappetino">
-            <label for="guantoni">guantoni:</label>
-            <input type="checkbox" id="guantoni" name="guantoni" value="guantoni">
-            <label for="capelli_raccolti">capelli raccolti:</label>
-            <input type="checkbox" id="capelli_raccolti" name="capelli_raccolti" value="capelli_raccolti">
-            <label for="abbigliamento_outdoor">abbigliamento Outdoor:</label>
-            <input type="checkbox" id="abbigliamento_outdoor" name="abbigliamento_outdoor" value="abbigliamento_outdoor">
-            <label for="accappatoio">accappatoio:</label>
-            <input type="checkbox" id="accappatoio" name="accappatoio" value="accappatoio">
-            <label for="cuffia">cuffia:</label>
-            <input type="checkbox" id="cuffia" name="cuffia" value="cuffia">
-            <label for="costume">costume:</label>
-            <input type="checkbox" id="costume" name="costume" value="costume">
+            <label for="asciugamano"> asciugamano</label>
+            <input type="checkbox" id="asciugamano" name="asciugamano" value="asciugamano" %checked_asciugamano%>
+            <label for="borraccia"> borraccia</label>
+            <input type="checkbox" id="borraccia" name="borraccia" value="borraccia" %checked_borraccia%>
+            <label for="tappetino">tappetino</label>
+            <input type="checkbox" id="tappetino" name="tappetino" value="tappetino" %checked_tappetino%>
+            <label for="guantoni">guantoni</label>
+            <input type="checkbox" id="guantoni" name="guantoni" value="guantoni" %checked_guantoni%>
+            <label for="capelli_raccolti">capelli raccolti</label>
+            <input type="checkbox" id="capelli_raccolti" name="capelli_raccolti" value="capelli_raccolti" %checked_capelli%>
+            <label for="abbigliamento_outdoor">abbigliamento outdoor</label>
+            <input type="checkbox" id="abbigliamento_outdoor" name="abbigliamento_outdoor" value="abbigliamento_outdoor" %checked_outdoor%>
+            <label for="accappatoio">accappatoio</label>
+            <input type="checkbox" id="accappatoio" name="accappatoio" value="accappatoio" %checked_accappatoio%>
+            <label for="cuffia">cuffia</label>
+            <input type="checkbox" id="cuffia" name="cuffia" value="cuffia" %checked_cuffia%>
+            <label for="costume">costume</label>
+            <input type="checkbox" id="costume" name="costume" value="costume" %checked_costume%>
     </fieldset>
     
-    <input type="submit" id="submit_button" name="inserisci" value="Inserisci">
+    <input type="submit" id="submit_button" value="Modifica">
 </form>
 </div>
+%footer%
+</body>
