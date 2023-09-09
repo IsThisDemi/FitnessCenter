@@ -77,6 +77,49 @@ class Connection{
             $this->conn->close();
         }
     }
+
+    public function editCorso($id_corso,$nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilita,$intensita,$durata,$calorie,$calzature,$asciugamano,$borraccia,$tappetino,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$accappatoio,$cuffia,$costume){
+        $connessione1 = new Connection();
+        $connOK = $connessione1->apriConnessione();
+        if(!$connOK) {
+            return "errore di connessione";
+        }
+        if ($calzature == 1) {
+            $scarpe_sportive = 0;
+            $calzini = 1;
+            $scarpe_outdoor = 0;
+            $ciabatte = 0;
+            $piedi_nudi = 0;
+        } elseif ($calzature == 2) {
+            $scarpe_sportive = 1;
+            $calzini = 0;
+            $scarpe_outdoor = 0;
+            $ciabatte = 0;
+            $piedi_nudi = 0;
+        } elseif ($calzature == 3) {
+            $scarpe_sportive = 0;
+            $calzini = 0;
+            $scarpe_outdoor = 1;
+            $ciabatte = 0;
+            $piedi_nudi = 0;
+        } elseif ($calzature == 4) {
+            $scarpe_sportive = 0;
+            $calzini = 0;
+            $scarpe_outdoor = 0;
+            $ciabatte = 1;
+            $piedi_nudi = 0;
+        } elseif ($calzature == 5) {
+            $scarpe_sportive = 0;
+            $calzini = 0;
+            $scarpe_outdoor = 0;
+            $ciabatte = 0;
+            $piedi_nudi = 1;
+        }
+        $query = "UPDATE corsi 
+        SET nome_corso = '$nome_corso', id_categoria = '$id_categoria', descrizione = '$descrizione', immagine = '$immagine', alt = '$alt', forza = '$forza', equilibrio = '$equilibrio', resistenza = '$resistenza', stabilità = '$stabilita', intensita = '$intensita', durata = '$durata', calorie = '$calorie', asciugamano = '$asciugamano', borraccia = '$borraccia', calzini = '$calzini', tappetino = '$tappetino', scarpe_sportive = '$scarpe_sportive', guantoni = '$guantoni', capelli_raccolti = '$capelli_raccolti', abbigliamento_outdoor = '$abbigliamento_outdoor', scarpe_outdoor = '$scarpe_outdoor', accappatoio = '$accappatoio', cuffia = '$cuffia', costume = '$costume', ciabatte = '$ciabatte', piedi_nudi = '$piedi_nudi'
+        WHERE id_corso = '$id_corso';";
+        $queryResult=mysqli_query($this->conn, $query) or die("Errore in apriConnessione: ".mysqli_error($this->conn)); //esegue la query e se fallisce ritorna un errore
+    }
     
     public function insertNewCostumer($nome, $cognome, $sesso, $dataNascita, $email, $telefono, $note){
         //le virgolette servono per evitare errori di sintassi e la query non compilerebbe (non riconoscerebbe le variabili)
@@ -84,7 +127,7 @@ class Connection{
         VALUES(\"$nome\", \"$cognome\", \"$sesso\", \"$dataNascita\", \"$email\", \"$telefono\", \"$note\")";
        
         //alternativamente si sceglie tra questo modo e mysqli_affected_rows
-        $queryResult=mysqli_query($this->conn, $query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        $queryResult=mysqli_query($this->conn, $query) or die("Errore in openDBConnection: ".mysqli_error($this->conn));
         
         if(mysqli_affected_rows($this->conn) > 0){ //se ci sono dei dati da ritornare
             return true;
