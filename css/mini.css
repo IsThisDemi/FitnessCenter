@@ -290,6 +290,10 @@ iframe#map {
 	font-size: 1.5em;
 }
 
+#addresses_list {
+	height: 91%;
+}
+
 .address {
 	font-size: 1.3em;
 }
@@ -365,3 +369,12 @@ JOINUS
 	font-weight: bold;
 }
 
+/* 
+-------------------------- 
+			Admin
+--------------------------
+*/
+
+.adminform fieldset label{
+	font-size: 1.2em;
+}

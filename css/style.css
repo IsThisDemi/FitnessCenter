@@ -1161,7 +1161,7 @@ iframe#map {
 #addresses_list {
 	margin-top: 1em;
 	overflow: scroll;
-	height: 100%;
+	height: 87%;
 	overflow-x: hidden;
 }
 
@@ -1240,7 +1240,7 @@ iframe#map {
 
 /* 
 -------------------------- 
-		Login
+			Login
 --------------------------
 */
 
@@ -1280,7 +1280,8 @@ iframe#map {
 	font-size: 1.2rem;
 	font-weight: bold;
 }
-.loginpage input[type=submit]{
+.loginpage input[type=submit], 
+#log_out_button {
 	background-color: var(--secondary-color);
 }
 .adminpage fieldset{
@@ -1323,6 +1324,16 @@ iframe#map {
 	grid-column: 2;*/
 }
 
+/* 
+-------------------------- 
+			Admin
+--------------------------
+*/
+
+.adminpage {
+	padding: 1em 1em 0 1em;
+}
+
 .adminpage *{
 	padding: 0.25rem;
 	border-radius: 0.5rem;
@@ -1331,7 +1342,7 @@ iframe#map {
 	align-content: center;
 }
 
-.topselector{
+.topselector {
 	width: 80%;
 	max-width: 20rem;
 	background-color: var(--scrollbar);
@@ -1346,11 +1357,11 @@ iframe#map {
 	flex: 50%;
 	align-items: center;
 }
-.topselector li button{
+.topselector li button {
 	width: 80%;
 	align-self: center;
 }
-.loginform{
+.loginform {
 	display:flex ;
 	flex-direction: column;
 	width: 80%;
@@ -1366,22 +1377,46 @@ iframe#map {
 	background-color: var(--secondary-color);
 }
 
-.adminform{
+.adminform {
 	display:flex ;
 	flex-direction: column;
-	width: 80%;
-	max-width: 30rem;
+	width: 100%;
 }
+
 .adminform fieldset{
 	display:grid;
 	grid-template-columns: auto auto;
-	width: 80%;
+	width: 100%;
 }
-.adminform input,.adminform textarea,.adminform select{
+
+.adminform legend {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.5em;
+}
+
+.adminform fieldset label{
+	text-transform: capitalize;
+	font-weight: bold;
+}
+
+.adminform input,
+.adminform textarea,
+.adminform select {
 	align-self:start;
 	grid-column: 2;
 	background-color: var(--primary-color);
+	font-size: 1.1em;
+	margin-bottom: 0.5em;
 }
+
+#submit_button {
+	margin: 0.5em 0;
+	padding: 0.5em 1em;
+	align-self: flex-end;
+	background-color: var(--secondary-color);
+}
+
 .adminform label{
 	align-self:start;
 	align-content:start;
