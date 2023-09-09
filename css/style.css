@@ -13,7 +13,7 @@
 	--alternative-text-color: black;
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
-	--links-visited-color:#c396e7;
+	--links-visited-color:#FBDCFE;
 	--scrollbar: #585858;
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
@@ -36,7 +36,8 @@
 
 	--error-color: #00328f;
 	--breadcrumb-text-color: #FF8080;
-	--breadcrumb-text-h-color: #A1ABF7;
+	--breadcrumb-text-h-color: #ffdd36;
+	--breadcrumb-links-visited-color: #FBDCFE;
 	--breadcrumb-bg-color: #1b1b1b;
 
 	--red: #F47676;
@@ -66,7 +67,7 @@
 		--alternative-text-color: black;
 		--error-color: #C2B800;
 		--links-hover-color: #1644fd;
-		--links-visited-color:#4c00ff;
+		--links-visited-color: #290F66;
 		--scrollbar: #585858;
 		--scrollbar-background: #282828;
 		--disabled-color: #888888;
@@ -90,6 +91,7 @@
 		--error-color: #fbff00;
 		--breadcrumb-text-color: #561010;
 		--breadcrumb-text-h-color: #1644fd;
+		--breadcrumb-links-visited-color: #2A0189;
 		--breadcrumb-bg-color: #B8B8B8;
 
 		--red: #A42323;
@@ -290,7 +292,7 @@ nav .menu_name {
 
 .breadcrumbs a:visited,
 .breadcrumbs a:visited span {
-	color: var(--links-visited-color);
+	color: var(--breadcrumb-links-visited-color);
 }
 
 .breadcrumbs #current_page{
@@ -436,8 +438,11 @@ nav ul {
 	box-shadow: 5px 5px 5px var(--box-shadow-1);
 }
 
-.menu_link:hover {
-	background-color: var(--header-color);
+.menu_link:hover,
+.menu_link:hover u,
+.menu_link:hover span,
+#home_info .menu_link:hover abbr {
+	background-color: var(--links-hover-color);
 }
 
 .menu_link:visited,
@@ -1209,11 +1214,11 @@ iframe#map {
 .address:hover,
 .address:visited:hover {
 	background-color: var(--gradient-first-color-hover);
-	color: var(--breadcrumb-text-color);
+	color: var(--links-hover-color);
 }
 
 .address:hover ::after {
-	color: var(--breadcrumb-text-color);
+	color: var(--links-hover-color);
 }
 
 .address:visited {
@@ -1260,6 +1265,7 @@ iframe#map {
 
 .loginpage .adminlink:hover {
 	background-color: var(--header-color);
+	color:var(--links-hover-color);
 }
 
 .loginpage .adminlink:visited,
@@ -1462,6 +1468,7 @@ iframe#map {
 
 #link_insert_corso:hover {
 	background-color: var(--header-color);
+	color:var(--links-hover-color);
 }
 
 #link_insert_corso:visited,
