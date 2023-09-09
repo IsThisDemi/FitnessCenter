@@ -441,9 +441,20 @@ nav ul {
 .menu_link:hover,
 .menu_link:hover u,
 .menu_link:hover span,
-#home_info .menu_link:hover abbr {
+#home_info .menu_link:hover abbr,
+.menu_link:visited:hover,
+.menu_link:visited:hover u,
+.menu_link:visited:hover span,
+#home_info .menu_link:visited:hover abbr {
 	color: var(--links-hover-color);
+	background-color: var(--red);
 }
+
+.menu_link:hover,
+.menu_link:visited:hover {
+	border: 1px solid var(--links-hover-color);
+}
+
 
 .menu_link:visited,
 .menu_link:visited u,
@@ -1513,7 +1524,6 @@ iframe#map {
 
 .adminpage caption {
 	padding: 0.75em 0.5em;
-	text-transform: uppercase;
 }
 
 .adminpage td a:hover,
