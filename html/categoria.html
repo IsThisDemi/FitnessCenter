@@ -20,25 +20,27 @@
 
 <body id="corpo_corso">
     %header%
-    <section id="cover">
-        <div class="container">
-            <img class="hero-img" src="img/corsi/%immagine_categoria%" alt="">
-            <div class="overlay">
-                <div id="corsi_for_mobile">
-                    <h1 class="titolo_corsi"><span lang="en" class="testo_rosso">%categoria%</span></h1>
-                    <p id="categoria_titolo_testo">%descrizione%</p>
+    <div id="content">
+        <section id="cover">
+            <div class="container">
+                <img class="hero-img" src="img/corsi/%immagine_categoria%" alt="">
+                <div class="overlay">
+                    <div id="corsi_for_mobile">
+                        <h1 class="titolo_corsi"><span lang="en" class="testo_rosso">%categoria%</span></h1>
+                        <p id="categoria_titolo_testo">%descrizione%</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="corsi">
-            <div class="text-container">
-            <h2>%numero_corsi% corsi:</h2>
+            <div id="corsi">
+                <div class="text-container">
+                <h2>%numero_corsi% corsi:</h2>
+                </div>
+                <div class="flex-container">
+                    %lista_corsi%
+                </div>
             </div>
-            <div class="flex-container">
-                %lista_corsi%
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
     %footer%
     </body>
 </html>
