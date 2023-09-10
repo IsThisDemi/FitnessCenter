@@ -13,7 +13,7 @@
 	--alternative-text-color: black;
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
-	--links-visited-color:#FBDCFE;
+	--links-visited-color:#5c51f8;
 	--scrollbar: #585858;
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
@@ -37,7 +37,7 @@
 	--error-color: #00328f;
 	--breadcrumb-text-color: #FF8080;
 	--breadcrumb-text-h-color: #ffdd36;
-	--breadcrumb-links-visited-color: #FBDCFE;
+	--breadcrumb-links-visited-color: #5c51f8;
 	--breadcrumb-bg-color: #1b1b1b;
 
 	--red: #F47676;
@@ -68,7 +68,7 @@
 		--alternative-text-color: black;
 		--error-color: #C2B800;
 		--links-hover-color: #1644fd;
-		--links-visited-color: #290F66;
+		--links-visited-color: #410ac2;
 		--scrollbar: #585858;
 		--scrollbar-background: #282828;
 		--disabled-color: #888888;
@@ -92,7 +92,7 @@
 		--error-color: #fbff00;
 		--breadcrumb-text-color: #561010;
 		--breadcrumb-text-h-color: #1644fd;
-		--breadcrumb-links-visited-color: #2A0189;
+		--breadcrumb-links-visited-color: #410ac2;
 		--breadcrumb-bg-color: #B8B8B8;
 
 		--red: #A42323;
@@ -429,7 +429,7 @@ nav ul {
 }
 
 .menu_link {
-	background-color: var(--secondary-color);
+	background-color: var(--red);
 	padding: 1.0em;
 	margin-bottom: 0.5em;
 	color: var(--text-color);
@@ -449,7 +449,7 @@ nav ul {
 .menu_link:visited:hover span,
 #home_info .menu_link:visited:hover abbr {
 	color: var(--links-hover-color);
-	background-color: var(--red);
+	background-color: var(--secondary-color);
 }
 
 .menu_link:hover,
@@ -615,18 +615,6 @@ nav ul {
 	ISCRIZIONE
 ------------------
 */
-
-/* 
-#home_iscrizione {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	padding: 1em;
-} */
-
 
 #home_iscrizione {
 	margin: 1em;
