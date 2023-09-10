@@ -22,7 +22,7 @@ echo genera_header("404");
     <div id="home_titolo_bg">
         <div id="home_titolo_text_box">
             <h1 id="home_titolo_titolo" class="errore">Pagina non trovata</h1>
-            <a href="home.php">Torna alla home</a>
+            <a href="index.php">Torna alla home</a>
         </div>
     </div>
 </div>
