@@ -70,7 +70,7 @@ else
 
             $BackendResult=$connessione->editCorso($id_corso, $nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilita,$intensita,$durata,$calorie,$calzature,$asciugamano,$borraccia,$tappetino,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$accappatoio,$cuffia,$costume);
             if($BackendResult==""){
-                $DisplayMessage="inserimento completato";
+                $DisplayMessage="modifica completata";
             }
             else{
                 $DisplayMessage=$BackendResult;
