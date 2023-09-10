@@ -53,24 +53,24 @@ else
             $durata=htmlentities(trim($_POST["durata"]));
             $calorie=htmlentities(trim($_POST["calorie"]));
             $calzature=htmlentities(trim($_POST["equipaggiamento_calzature"]));
-            $forza=isset($_POST["forza"]);
-            $equilibrio=isset($_POST["equilibrio"]);
-            $resistenza=isset($_POST["resistenza"]);
-            $stabilita=isset($_POST["stabilità"]);
-            $tappetino=isset($_POST["tappetino"]);
-            $asciugamano=isset($_POST["asciugamano"]);
-            $borraccia=isset($_POST["borraccia"]);
-            $guantoni=isset($_POST["guantoni"]);
-            $capelli_raccolti=isset($_POST["capelli_raccolti"]);
-            $abbigliamento_outdoor=isset($_POST["abbigliamento_outdoor"]);
-            $accappatoio=isset($_POST["accappatoio"]);
-            $cuffia=isset($_POST["cuffia"]);
-            $costume=isset($_POST["costume"]);
+            if(isset($_POST["forza"])){$forza = $_POST["forza"];}else {$forza = 0;};
+            if(isset($_POST["equilibrio"])){$equilibrio = $_POST["equilibrio"];}else {$equilibrio = 0;};
+            if(isset($_POST["resistenza"])){$resistenza = $_POST["resistenza"];}else {$resistenza = 0;};
+            if(isset($_POST["stabilità"])){$stabilita = $_POST["stabilità"];}else {$stabilita = 0;};
+            if(isset($_POST["tappetino"])){$tappetino = $_POST["tappetino"];}else {$tappetino = 0;};
+            if(isset($_POST["asciugamano"])){$asciugamano = $_POST["asciugamano"];}else {$asciugamano = 0;};
+            if(isset($_POST["borraccia"])){$borraccia = $_POST["borraccia"];}else {$borraccia = 0;};
+            if(isset($_POST["guantoni"])){$guantoni = $_POST["guantoni"];}else {$guantoni = 0;};
+            if(isset($_POST["capelli_raccolti"])){$capelli_raccolti = $_POST["capelli_raccolti"];}else {$capelli_raccolti = 0;};
+            if(isset($_POST["abbigliamento_outdoor"])){$abbigliamento_outdoor = $_POST["abbigliamento_outdoor"];}else {$abbigliamento_outdoor = 0;};
+            if(isset($_POST["accappatoio"])){$accappatoio = $_POST["accappatoio"];}else {$accappatoio = 0;};
+            if(isset($_POST["cuffia"])){$cuffia = $_POST["cuffia"];}else {$cuffia = 0;};
+            if(isset($_POST["costume"])){$costume = $_POST["costume"];}else {$costume = 0;};
 
 
             $BackendResult=$connessione->editCorso($id_corso, $nome_corso,$id_categoria,$descrizione,$immagine,$alt,$forza,$equilibrio,$resistenza,$stabilita,$intensita,$durata,$calorie,$calzature,$asciugamano,$borraccia,$tappetino,$guantoni,$capelli_raccolti,$abbigliamento_outdoor,$accappatoio,$cuffia,$costume);
             if($BackendResult==""){
-                $DisplayMessage="inserimento completato";
+                $DisplayMessage="modifica completata";
             }
             else{
                 $DisplayMessage=$BackendResult;
