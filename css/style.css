@@ -13,7 +13,7 @@
 	--alternative-text-color: black;
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
-	--links-visited-color:#5c51f8;
+	--links-visited-color:#B7B2F5;
 	--scrollbar: #585858;
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
@@ -37,10 +37,11 @@
 	--error-color: #00328f;
 	--breadcrumb-text-color: #FF8080;
 	--breadcrumb-text-h-color: #ffdd36;
-	--breadcrumb-links-visited-color: #5c51f8;
+	--breadcrumb-links-visited-color: #B7B2F5;
 	--breadcrumb-bg-color: #1b1b1b;
 
 	--red: #F47676;
+	--link-bg-hover: #810E0E;
 	--verde: #025F26;
 	--verde-h: #006d2a;
 	--blu: #0057A3;
@@ -65,10 +66,10 @@
 		--visited-links: #f8f3f3 ;
 		--header-hover: #f8f3f3;
 		--text-color: black;
-		--alternative-text-color: black;
+		--alternative-text-color: white;
 		--error-color: #C2B800;
-		--links-hover-color: #1644fd;
-		--links-visited-color: #410ac2;
+		--links-hover-color: #0A2CB2;
+		--links-visited-color: #340B93;
 		--scrollbar: #585858;
 		--scrollbar-background: #282828;
 		--disabled-color: #888888;
@@ -91,11 +92,12 @@
 
 		--error-color: #fbff00;
 		--breadcrumb-text-color: #561010;
-		--breadcrumb-text-h-color: #1644fd;
-		--breadcrumb-links-visited-color: #410ac2;
+		--breadcrumb-text-h-color: #0A2CB2;
+		--breadcrumb-links-visited-color: #340B93;
 		--breadcrumb-bg-color: #B8B8B8;
 
 		--red: #A42323;
+		--link-bg-hover: #FCCACA;
 		--verde: #00b846;
 		--verde-h: #07c750;
 		--blu: #3F9FF3;
@@ -429,7 +431,7 @@ nav ul {
 }
 
 .menu_link {
-	background-color: var(--red);
+	background-color: var(--secondary-color);
 	padding: 1.0em;
 	margin-bottom: 0.5em;
 	color: var(--text-color);
@@ -438,6 +440,13 @@ nav ul {
 	font-weight: bold;
 	text-decoration: none;
 	box-shadow: 5px 5px 5px var(--box-shadow-1);
+}
+
+.menu_link u,
+.menu_link span,
+#home_info .menu_link abbr {
+	background-color: var(--secondary-color);
+	color: var(--text-color);
 }
 
 .menu_link:hover,
@@ -449,7 +458,7 @@ nav ul {
 .menu_link:visited:hover span,
 #home_info .menu_link:visited:hover abbr {
 	color: var(--links-hover-color);
-	background-color: var(--secondary-color);
+	background-color: var(--link-bg-hover);
 }
 
 .menu_link:hover,
@@ -462,7 +471,8 @@ nav ul {
 .menu_link:visited u,
 .menu_link:visited span,
 #home_info .menu_link:visited abbr {
-	color: var(--links-visited-color);
+	background-color: var(--links-visited-color);
+	color: var(--alternative-text-color);
 }
 
 
@@ -1264,13 +1274,16 @@ iframe#map {
 	padding: 0;
 }
 
-.loginpage .adminlink:hover {
-	background-color: var(--header-color);
+.loginpage .adminlink:hover,
+.loginpage .adminlink:hover u, 
+.loginpage .adminlink:visited:hover,
+.loginpage .adminlink:visited:hover u {
+	background-color: var(--link-bg-hover);
 	color:var(--links-hover-color);
 }
 
 .loginpage .adminlink:visited,
-.adminlink u {
+.adminlink:visited u {
 	color: var(--links-visited-color);
 }
 
@@ -1473,7 +1486,7 @@ iframe#map {
 }
 
 #link_insert_corso:hover {
-	background-color: var(--header-color);
+	background-color: var(--link-bg-hover);
 }
 
 #link_insert_corso:hover,
