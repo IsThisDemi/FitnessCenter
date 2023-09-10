@@ -13,7 +13,7 @@
 	--alternative-text-color: black;
 	--error-color: #C2B800;
 	--links-hover-color: #ffdd36;
-	--links-visited-color:#5c51f8;
+	--links-visited-color:#B7B2F5;
 	--scrollbar: #585858;
 	--scrollbar-background: #282828;
 	--disabled-color: #888888;
@@ -37,7 +37,7 @@
 	--error-color: #00328f;
 	--breadcrumb-text-color: #FF8080;
 	--breadcrumb-text-h-color: #ffdd36;
-	--breadcrumb-links-visited-color: #5c51f8;
+	--breadcrumb-links-visited-color: #B7B2F5;
 	--breadcrumb-bg-color: #1b1b1b;
 
 	--red: #F47676;
@@ -65,10 +65,10 @@
 		--visited-links: #f8f3f3 ;
 		--header-hover: #f8f3f3;
 		--text-color: black;
-		--alternative-text-color: black;
+		--alternative-text-color: white;
 		--error-color: #C2B800;
 		--links-hover-color: #1644fd;
-		--links-visited-color: #410ac2;
+		--links-visited-color: #340B93;
 		--scrollbar: #585858;
 		--scrollbar-background: #282828;
 		--disabled-color: #888888;
@@ -92,7 +92,7 @@
 		--error-color: #fbff00;
 		--breadcrumb-text-color: #561010;
 		--breadcrumb-text-h-color: #1644fd;
-		--breadcrumb-links-visited-color: #410ac2;
+		--breadcrumb-links-visited-color: #340B93;
 		--breadcrumb-bg-color: #B8B8B8;
 
 		--red: #A42323;
@@ -462,7 +462,8 @@ nav ul {
 .menu_link:visited u,
 .menu_link:visited span,
 #home_info .menu_link:visited abbr {
-	color: var(--links-visited-color);
+	background-color: var(--links-visited-color);
+	color: var(--alternative-text-color);
 }
 
 
@@ -1264,7 +1265,9 @@ iframe#map {
 	padding: 0;
 }
 
-.loginpage .adminlink:hover {
+.loginpage .adminlink:hover,
+.loginpage .adminlink:visited:hover,
+.loginpage .adminlink:visited:hover u {
 	background-color: var(--header-color);
 	color:var(--links-hover-color);
 }
