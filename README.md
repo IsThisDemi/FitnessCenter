@@ -1,4 +1,4 @@
-# Pop Tech
+# FitnessCenter
 <ol>
 <li> Progetto di Tecnologie Web per l'anno 2022/2023 per il corso della prof.ssa Gaggi, UniPD, Informatica. </li>
 <li> Voto: -/30 </li>
