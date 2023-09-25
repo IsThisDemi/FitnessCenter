@@ -138,7 +138,6 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	display: none;
 }
 
 header li {
@@ -148,18 +147,20 @@ header li {
 
 .logo {
 	margin-left: 0.2em;
-	background-image: url("../img/fitnesscenter-logo-files/logo-white-no-background.png");
+	content:url("../img/fitnesscenter-logo-files/logo-no-background.png"); ;
+	background-image: url("");
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
     text-indent: -2000px;
     font-size: 4em;
 	width:2em;
+	display: block !important;
 }
 
 @media (prefers-color-scheme: light) {
 	.logo {
-		background-image: url("../img/fitnesscenter-logo-files/logo-no-background.png");
+		background-image: url("");
 	}
 }
 
@@ -180,6 +181,7 @@ header li {
 .navmenu {
 	list-style: none;
 	font-size: 1em;
+	display: none;
 }
 
 .navmenu a {
