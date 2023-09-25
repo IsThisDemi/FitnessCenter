@@ -805,15 +805,6 @@ nav ul {
 	color: var(--text-color);
 }
 
-.etichetta_corsi {
-	font-size: 14px;
-	text-align: center;
-	text-transform: uppercase;
-	flex: 1;
-	margin-bottom: 30px;
-	font-weight: 600;
-}
-
 .video-background {
 	width: 100%;
 	height: 60vh;
@@ -1679,8 +1670,6 @@ JoinUS
 	padding-left: .5em;
 }
 
-
-/* @media (min-width: 769px) { */
 .wrapper {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
