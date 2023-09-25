@@ -1,6 +1,13 @@
 <?php 
 require_once "utilityphp/header.php";
 require_once "utilityphp/user_utilities.php";
+//Se loggato come admin rimando ad admin page
+if (isset($_SESSION["admin"])) {
+    if($_SESSION["admin"])
+    {
+        header("location:adminpage.php");
+    }
+}
 $BackendResult="";
 $DisplayMessage="";
 if (isset($_GET["action"])) {
@@ -17,7 +24,12 @@ if (isset($_GET["action"])) {
                     header("location:".$_SESSION["prev_page"]);
                 }
                 else{
-                    header("location:login.php");
+                    if ($_SESSION["admin"]) {
+                        header("location:adminpage.php");
+                    }
+                    else{
+                        header("location:login.php");
+                    }
                 }
             }
             else{

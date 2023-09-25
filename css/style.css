@@ -1503,6 +1503,35 @@ iframe#map {
 	color: var(--links-visited-color);
 }
 
+#link_logout {
+	text-decoration: none;
+	color: var(--text-color);
+	border: 4px double var(--text-color);
+	margin: 1em 0;
+	margin-left: 1em;
+	padding: 0.5em;
+	font-size: 1.5em;
+	background-color: var(--primary-color);
+}
+
+#link_logout:hover {
+	background-color: var(--link-bg-hover);
+}
+
+#link_logout:hover,
+#link_logout:visited:hover,
+#link_logout:hover u,
+#link_logout:visited:hover u {
+	color: var(--links-hover-color);
+}
+
+
+
+#link_logout:visited,
+#link_logout:visited u {
+	color: var(--links-visited-color);
+}
+
 .adminpage u{
 	margin: 0;
 	padding: 0;

@@ -70,13 +70,16 @@ function genera_header_param($pagina,$param){
       	if ($menuentry != $pagina) {
 			$link=$link_pagine[$menuentry];
 			$fl=$fl_pagine[$menuentry];
-			if($menuentry=="login"&&isset($_SESSION["user"]))
+			if($menuentry == "<span lang='en'>login</span>"&&isset($_SESSION["user"]))
 			{
 				$menuentry=$_SESSION["user"];
 			}
 			$menu = $menu . "<li><a class=\"first_letter_underlined\" href=\"" . $link . "\" tabindex=\"" . 0 . "\" accesskey=\"" . $fl . "\">" . $menuentry . "</a></li>";
 			
         } else {
+			if ($menuentry == "<span lang='en'>login</span>" && isset($_SESSION["user"])) {
+				$menuentry = $_SESSION["user"];
+			}
             $menu = $menu . "<li class=\"menu_name first_letter_underlined\">" . $menuentry . "</li>";
         }
 		$i++;
