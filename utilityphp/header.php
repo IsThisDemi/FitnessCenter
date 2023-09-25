@@ -105,7 +105,7 @@ function genera_header_param($pagina,$param){
 		}
 		$categoria=$corso["id_categoria"];
 		$breadcrumb="<a href='".$link_pagine["categoria"]."?".$categoria."'> <span lang='en'>" . $categorie[$categoria] .
-		 "</span></a> <span aria-hidden='true'>> </span><span id=current_page> <span lang='en'>" . $corso["nome_corso"] . "</span></span>";
+		"</span></a> <span aria-hidden='true'>&gt </span><span id=current_page> <span lang='en'>" . $corso["nome_corso"] . "</span></span>";
 		$parent=$genitore_pagine["categoria"];
 	}
 	elseif ($pagina=="categoria") {
@@ -121,7 +121,7 @@ function genera_header_param($pagina,$param){
 	// genera breadcrumb nel formato genitore/figlio/.....		
 	while($parent&&$parent!="#"){//verifica il raggiungimento della radice
 		// aggiunge genitore/ a breadrumbs in formato figlio/.....
-		$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> <span aria-hidden='true'>> </span>" . $breadcrumb;
+		$breadcrumb = "<a href=\"" . $link_pagine[$parent] . "\">" . $parent . "</a> <span aria-hidden='true'>&gt </span>" . $breadcrumb;
 		$parent = $genitore_pagine[$parent];
 	}
 	$output= str_replace("<MENU/>",$menu,$template);
