@@ -2,11 +2,11 @@
 	require_once "utilityphp/header.php";
 
     //Includo file html
-    $paginaHTML = file_get_contents("html/info.html");
+    $paginaHTML = file_get_contents("html/home.html");
     //Includo footer
     $footer = file_get_contents("utilityphp/footer.php");
 	//Gererazione header
-	$header = genera_header("<span lang='en'>more</span>");
+	$header = genera_header("<span lang='en'>home</span>");
 
     $campi_replace = array("%header%", "%footer%");
 	$valori_replace = array($header, $footer);

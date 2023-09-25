@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title lang="en">Admin-FitnessCenter</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="pagina di amministrazione per FitnessCenter" />
+	<meta name="author" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link type="text/css"  rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mini.css" media="screen and (max-width:768px)" />
+	<link rel="stylesheet" href="css/print.css" media="print" type="text/css"/>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+%header%
+<div id="content" class="adminpage">
+    <a id="link_insert_corso" href="inserimento_corsi.php" tabindex="0" accesskey="i" ><u>I</u>nserisci corso</a>
+    %notifiche%
+    <table id="lista_corsi" >
+    <caption>Lista dei corsi con indicazione di nome, categoria, intensità, durata e azioni eseguibili</caption>
+        <thead>
+            <tr>
+                <th abbr="nome" scope=col>Nome Corso</th>
+                <th abbr="categ" scope=col>Categoria</th>
+                <th abbr="intes" scope=col>Intensità</th>
+                <th abbr="tempo" scope=col>Durata</th>
+                <th abbr="azion" scope=col>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            %lista_corsi%
+        </tbody>
+    </table>
+</div>
+%footer%
+</body>

@@ -1,11 +1,14 @@
 <footer>
     <div>
-        <img id="html_valid" src="img/valid-xhtml.png" alt="HTML valido">
-        <h4 titolo_footer>FitnessCenter SRL</h4>
+        <h4 id="titolo_footer">FitnessCenter SRL</h4>
+    </div>
+    <div id="footer_text_box">
         <p id="info_sede_centrale">
-            Via Attendolo, 11 - Milano (MI) | CAP 20141 | Telefono: 327 8455663 | Mail: info@FitnessCenter.it
+            <b>- Sede Centrale -</b><br>
+            Via Attendolo 11 - Milano (MI) | CAP: 20141 | Telefono: 327 8455663 | Mail: info@FitnessCenter.it
         </p>
-        <p id="copyright_text">© Copyright 2023 <a href="home.php" tabindex="99" accesskey="h">FitnessCenter</a>. <span lang="en">All rights reserved.</span></p>
-        <img id="css_valid" src="img/valid-css.gif" alt="CSS valido">
+        <p id="copyright_text">© Copyright 2023 FitnessCenter. <span lang="en">All rights reserved.</span></p>
+        <p id="autori_text">Sito realizzato per il progetto del corso di Tecnologie Web 2023 dell'università di Padova<br> 
+            Gruppo:  Giovanni C. / Riccardo M. / Mattia P. / Federico Y.</p>
     </div>
 </footer> 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Contattaci-FitnessCenter
+    </title>
+    <meta name="description"
+        content="Questa pagina è dedicata ad un form per permettere all'utente di entrare in contatto con noi, per porre domande riguardo le 
+        nostre palestre ed entrare in contatto con i nostri personal trainer, che potranno aiutarli a scegliere il piano più adatto a loro">
+    <meta name="keyword" content="FitnessCenter, palestra, contatto, informazioni, domande ">
+    <meta name="author" content="FitnessCenter">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css"/> 
+    <link rel="stylesheet" href="css/mini.css" media="screen and (max-width:768px)" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+</head>
+
+
+<body>
+    %header%
+    <main id="content">
+        <div id="titolo_form" class="titleform">
+            <h1>
+                Contattaci
+            </h1>
+        </div>
+
+        <div class="formpage">
+            <div class="wrapper">
+                <div class="imgform">
+                    <img src="img/immagine_stock1.jpg" alt="">
+                </div>
+                <div class="formint">
+                    <form method="post" action="JoinUS.php" onsubmit="return validazioneForm();">
+                        <fieldset>
+                            <div class="messaggi">   <!--tentativo fix grafico-->
+                            <messaggiForm />
+                            </div>
+                            <div class="top">
+                                <label for="nome">Nome: </label>
+                                <span><input type="text" name="nome" id="nome" value="<valoreNome />" required></span><br>
+                            </div>
+
+                            <label for="cognome">Cognome: </label>
+                            <span><input type="text" name="cognome" id="cognome" value="<valoreCognome />" required></span>
+                            <br>
+
+                            <p>Sesso:</p>
+                            <div class="radioform">
+                                <span><input type="radio" id="maschio" name="sesso" value="maschio" checked></span>
+                                <label for="maschio">M</label><br>
+                                <span><input type="radio" id="femmina" name="sesso" value="femmina"></span>
+                                <label for="femmina">F</label><br>
+                            </div>
+
+                            <br>
+
+                            <label for="dataNascita">Data di Nascita: </label>
+                            <span><input type="date" name="dataNascita" id="dataNascita" value="<valData />"
+                                    required></span><br>
+
+
+
+                            <label for="email">E-Mail:</label>
+                            <span><input type="text" name="email" id="email" value="<valoreMail />" required></span> <br>
+
+
+                            <label for="telefono">Telefono:</label>
+                            <span><input type="tel" name="telefono" id="telefono" value="<valoreTel />" required></span><br>
+
+
+
+
+                            <label for="note">Note: </label> <br>
+                            <span><textarea id="note" rows="10" cols="40" name="note"></textarea></span><br>
+
+                            <input type="submit" id="submit" name="submit" class="margineSinistro" value="Conferma" />
+                            <input type="reset" id="reset" class="margineSinistro" value="Cancella" />
+                        </fieldset>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    %footer%
+
+</body>
+
+</html>

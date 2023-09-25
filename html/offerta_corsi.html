@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Offerta Corsi-FitnessCenter</title>
+
+    <meta name="description" content="Questa pagina continene una lista degli obiettivi e delle categorie di corsi forniti dalla palestra.">
+    <meta name="keywords" content="corsi, palestra, obiettivi, equilibrio, danza, funzionale, corsa, forza, acquatici, yoga">
+    <meta name="author" content="FitCenter">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/style.css"/> 
+    <link rel="stylesheet" href="css/mini.css" media="screen and (max-width:768px)" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/> 
+    <script src="js/corsi.js"></script>
+</head>
+
+<body id="corpo_corso">
+    %header%
+    <div id="content">
+        <section id="cover">
+            <div class="container">
+                <video class="video-background" autoplay muted playsinline preload="auto">
+                    <source
+                        src="https://player.vimeo.com/progressive_redirect/playback/787631395/rendition/1080p/file.mp4?loc=external&amp;signature=61fc2002eacfa849cd11c063b1e487d3a25314bf5d41d73e5681328af84d53aa"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <div id="corsi_for_mobile">
+                        <h1 class="titolo_corsi">Scopri i nostri <span class="testo_rosso">corsi</span></h1>
+                        <p id="home_titolo_testo">Esplora le tue passioni con <b><span class="testo_rosso"> %numero_corsi% corsi</span></b> tra cui scegliere</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-container">
+                <h2>Per ogni tuo <span class="testo_rosso">obiettivo</span></h2>
+                <div id="Forza_box">
+                    <h3>Forza</h3>
+                    <p>Ogni allenamento è pensato per sviluppare in modo mirato le diverse sfumature della dimensione
+                        “forza”, in armonia con
+                        le necessità del corpo.</p>
+                </div>
+                <div id="Equilibrio_box">
+                    <h3>Equilibrio</h3>
+                    <p>Allenarsi per ritrovare una maggiore serenità interiore, mettendo al centro di tutto proprio il
+                        “potere della mente” che
+                        agisce sul corpo.</p>
+                </div>
+                <div id="Resistenza_box">
+                    <h3>Resistenza</h3>
+                    <p>Ottimizzare i risultati di allenamento in poco tempo è possibile, razionalizzando l'uso della forza e
+                        mantenendo alta
+                        l'intensità.</p>
+                </div>
+                <div id="Stabilità_box">
+                    <h3>Stabilità</h3>
+                    <p>Stabilità è soprattutto ricerca del benessere fisico, sentire le articolazioni che funzionano, i
+                        muscoli che lavorano, e
+                        la testa che segue questo percorso.</p>
+                </div>
+            </div>
+
+            <div id="corsi">
+                <div class="text-container">
+                    <h2>Iscriviti ai nostri <span class="testo_rosso">corsi</span></h2>
+                </div>
+                <div class="flex-container">
+                    %lista_categorie%
+                </div>
+            </div>
+        </section>
+    </div>
+    %footer%
+</body>
+
+</html>
