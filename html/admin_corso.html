@@ -5,6 +5,6 @@
     <td data-title="Durata">%durata% minuti</td>
     <td data-title="Azioni">
         <a href='edit_corso.php?id=%id_corso%'>Modifica</a>
-        <a href='adminpage.php?action=delete&id=%id_corso%'>Elimina</a>
+        <a href='adminpage.php?action=delete&id=%id_corso%' onclick="return confirm('Vuoi veramente cancellare il corso?')";)>Elimina</a>
     </td>
 </tr>
