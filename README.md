@@ -1,34 +1,32 @@
 # FitnessCenter
-<ol>
-<li> Progetto di Tecnologie Web per l'anno 2022/2023 per il corso della prof.ssa Gaggi, UniPD, Informatica. </li>
-<li> Voto: -/30 </li>
-<li> Svolto principalmente dai primi 3 componenti listati nei commit (il quarto non faceva nulla e siamo rimasti in 3) </li>
-</ol>
 
-## Indicazione collegamento Tecweb disponibile al link:
-
-https://1drv.ms/w/s!Ak3mTs3kRWPWgfkM4-iPJpMXAMxL5A?e=hWdxMf
+- **_Tecnologie Web_** project for academic year 2022/2023, course directed by prof.ssa Gaggi, UniPD, Informatica. </li>
+- Project completed mainly by the first 3 members listed in the commits ( the 4th one did little to nothing so we completed it by ourselves) </li>
 
 
-## Come installare il progetto in localhost
+## You can find instruction and the report of the project at the following link:
 
-Scaricare un programma per la creazione del server locale
+[OneDrive - https://1drv.ms/w/s!Ak3mTs3kRWPWgfkM4-iPJpMXAMxL5A?e=hWdxMf](https://1drv.ms/w/s!Ak3mTs3kRWPWgfkM4-iPJpMXAMxL5A?e=hWdxMf)
+
+## How to install your project in localhost
+
+Download a program for starting a local server
 
 - [XAMPP Server](https://www.apachefriends.org/download.html)
 - [WAMP Server](https://www.wampserver.com/en/download-wampserver-64bits/)
 
-_meglio utilizzare PHP 8_
+_better using PHP 8_
 
-### Clonare la repository 
+### Clone the repository
 
-Scaricare la repository via zip o clonare con
+Download the zip folder or clone it using
 
 `git clone https://github.com/IsThisDemi/Progetto-TecWeb`
 
-nella cartella Progetto-TecWeb nel localhost (solitamente in una cartella chiamata "htdocs" dentro la cartella "xampp")
+inside your localhost folder (usually it's a folder named "htdocs" inside the "xampp" folder)
  
-### Usare il progetto
+### Open the project
 
-Aprire il browser e andare su [http://localhost/Progetto-TecWeb](http://localhost/Progetto-TecWeb)
+Open your browser and go to [http://localhost/Progetto-TecWeb](http://localhost/Progetto-TecWeb)
 
 _get fit_
